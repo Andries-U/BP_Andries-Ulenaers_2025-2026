@@ -1,31 +1,31 @@
 \section{Inleiding}%
 \label{sec:inleiding}
 
-De Einstein Telescope (ET) wordt naar verwachting de meest gevoelige ondergrondse zwaartekrachtgolfdetector ter wereld. De Euregio Maas Rijn, een grensregio die België, Nederland en Duitsland omvat, is één van de kandidaat locaties voor dit grootschalig wetenschappelijk infrastructuurproject. Om deze locatie te laten weerhouden in het bidding process moet een uitgewerkt voorstel ingediend worden waarin onder andere een haalbare, duurzame energievoorziening wordt gedemonstreerd. Dit stelt uitzonderlijke eisen: niet alleen moet de energievoorziening betrouwbaar en stabiel zijn, maar door de extreme gevoeligheid van de meetapparatuur is ook trillingvrije energieopwekking en -levering essentieel. Daarnaast streeft het biddingvoorstel naar een maatschappelijk verantwoorde energiemix door samen te werken met lokale gemeenschappen en in te zetten op innovatieve hernieuwbare energiebronnen zoals Agro-Photovoltaics (AgriPV), warmte-krachtkoppeling (WKK) en diepe geothermie. Het voorbereiden van dit energievoorstel vereist een systematische analyse van de geografische mogelijkheden en beperkingen in de Euregio Maas Rijn.
+De Einstein Telescope (ET) wordt naar verwachting de meest gevoelige ondergrondse zwaartekrachtgolfdetector ter wereld. De Euregio Maas-Rijn, een grensregio die België, Nederland en Duitsland omvat, is één van de kandidaat locaties voor dit grootschalig wetenschappelijk infrastructuurproject. Om deze locatie te laten weerhouden in het bidding process moet een uitgewerkt voorstel ingediend worden waarin onder andere een haalbare, duurzame energievoorziening wordt gedemonstreerd. Dit stelt uitzonderlijke eisen: niet alleen moet de energievoorziening betrouwbaar en stabiel zijn, maar door de extreme gevoeligheid van de meetapparatuur is ook trillingvrije energieopwekking en -levering essentieel. Daarnaast streeft het biddingvoorstel naar een maatschappelijk verantwoorde energiemix door samen te werken met lokale gemeenschappen en in te zetten op innovatieve hernieuwbare energiebronnen zoals Agro-Photovoltaics (AgriPV), warmte-krachtkoppeling (WKK) en diepe geothermie. Het voorbereiden van dit energievoorstel vereist een systematische analyse van de geografische mogelijkheden en beperkingen in de Euregio Maas-Rijn.
 
 Het plannen van een dergelijke energiemix wordt bemoeilijkt door meerdere factoren. Ten eerste is de locatie grensoverschrijdend, wat betekent dat geografische en infrastructurele data afkomstig is van verschillende regionale, nationale en internationale bronnen (Geopunt Vlaanderen, PDOK Nederland, GeoBasis-DE) met uiteenlopende formats, resoluties en toegankelijkheid. Ten tweede leggen Natura2000-gebieden en andere beschermde natuurzones strikte beperkingen op aan de plaatsing van energie-infrastructuur. Ten derde vereist de seismische gevoeligheid van de detector dat bepaalde energiebronnen (zoals windturbines in de nabijheid) uitgesloten worden of extra criteria moeten hanteren.
 
-\textcolor{purple}{Deze bachelorproef gaat zich focussen op het ontwikkelen van een tool die GIS-datasets combineert met gebruikersgedefinieerde criteria en beperkingen ter ondersteuning van de site-selectie voor duurzame energievoorziening ter ondersteuning van de bidding voor de Einstein Telescope locatie Euregio Maas Rijn.}
+\textcolor{purple}{Deze bachelorproef gaat zich focussen op het ontwikkelen van een tool die geografisch informatiesysteem (GIS) datasets combineert met gebruikersgedefinieerde criteria ter ondersteuning van de site-selectie voor duurzame energievoorziening ter ondersteuning van de bidding voor de ET locatie Euregio Maas-Rijn.}
 
 % Doelgroep
-Deze bachelorproef richt zich op de Einstein Telescope onderzoeksgroep en specifiek op de energie- en infrastructuurplanners die verantwoordelijk zijn voor het ontwerpen van een haalbare en duurzame energievoorziening voor de faciliteit. Secundair kunnen de resultaten ook relevant zijn voor andere grootschalige grensoverschrijdende infrastructuurprojecten die te maken hebben met complexe subjectieve criteria en beperkingen alsook multi-nationale data-integratie.
+Deze bachelorproef richt zich op de ET onderzoeksgroep en specifiek op de energie- en infrastructuurplanners die verantwoordelijk zijn voor het ontwerpen van een haalbare en duurzame energievoorziening voor de faciliteit. Secundair kunnen de resultaten ook relevant zijn voor andere grootschalige grensoverschrijdende infrastructuurprojecten die te maken hebben met complexe subjectieve criteria alsook non-uniforme multi-origine datasets.
 
 % Probleemstelling
-De ET-onderzoeksgroep staat voor de uitdaging om te bepalen welke combinatie van duurzame energiebronnen technisch haalbaar is voor hun specifieke locatie. Momenteel ontbreekt een methode om systematisch GIS datasets uit verschillende regionale, nationale en internationale bronnen te combineren en te visualiseren. Het handmatig verzamelen, harmoniseren en analyseren van deze datasets is tijdsintensief en foutgevoelig. Bovendien is er behoefte aan een flexibel platform dat onderzoekers toelaat naast objectieve data gedreven criteria ook subjectieve criteria toe te voegen om de geschiktheid van een locatie te bepalen.
+De ET-onderzoeksgroep staat voor de uitdaging om te bepalen welke combinatie van duurzame energiebronnen technisch haalbaar is voor hun specifieke locatie. Momenteel ontbreekt een methode om systematisch GIS-datasets uit verschillende regionale, nationale en internationale bronnen te combineren en te visualiseren. Het handmatig verzamelen, harmoniseren en analyseren van deze datasets is tijdsintensief en foutgevoelig. Bovendien is er behoefte aan een flexibel platform dat onderzoekers toelaat naast objectieve data gedreven criteria ook subjectieve criteria toe te voegen om de geschiktheid van een locatie te bepalen.
 
 % Centrale onderzoeksvraag
 De centrale onderzoeksvraag van dit onderzoek luidt: 
 
-\textcolor{purple}{\textbf{Hoe kan een tool ontwikkeld worden die GIS datasets combineert met gebruikersgedefinieerde criteria voor site-selectie van duurzame energievoorziening voor de Einstein Telescope?}}
+\textcolor{purple}{\textbf{Hoe kan een tool ontwikkeld worden die GIS-datasets combineert met gebruikersgedefinieerde criteria voor site-selectie van duurzame energievoorziening voor de ET locatie Euregio Maas-Rijn?}}
 
 Deze hoofdvraag wordt verder uitgesplitst in de volgende deelvragen:
 
 \textit{Deelvragen met betrekking tot het probleemdomein:}
 \textcolor{purple}{\begin{itemize}
-    \item Wat zijn de specifieke technische eisen van de Einstein Telescope aan energievoorziening en welke beperkingen leggen deze op aan duurzame energiebronnen?
-    \item Welke geografische, ecologische en infrastructurele beperkingen en opportuniteiten zijn van toepassing in de Euregio Maas Rijn voor energieinfrastructuur?
-    \item Welke GIS databronnen zijn beschikbaar in België, Nederland en Duitsland, en hoe verschillen deze qua format, resolutie, actualiteit en toegankelijkheid?
-    \item Welke bestaande tools of methoden worden momenteel gebruikt voor GIS analyse in energieplanning en wat zijn hun beperkingen?
+    \item Wat zijn de specifieke technische eisen van de ET aan energievoorziening en welke beperkingen legt deze op aan duurzame energiebronnen?
+    \item Welke geografische, ecologische en infrastructurele beperkingen en opportuniteiten zijn van toepassing in de Euregio Maas-Rijn voor energieinfrastructuur?
+    \item Welke GIS-databronnen zijn beschikbaar in België, Nederland en Duitsland, en hoe verschillen deze qua format, resolutie, actualiteit en toegankelijkheid?
+    \item Welke bestaande tools of methoden worden momenteel gebruikt voor GIS-analyse in energieplanning en wat zijn hun beperkingen?
     \item Welke datasets zijn nodig om de geschiktheid van de verschillende mogelijke energieoplossingen te bepalen?
     \item Welke methodieken bestaan er voor het kwantitatief scoren en vergelijken van locaties op basis van meervoudige criteria?
 \end{itemize}}
@@ -33,30 +33,32 @@ Deze hoofdvraag wordt verder uitgesplitst in de volgende deelvragen:
 \textit{Deelvragen met betrekking tot het oplossingsdomein:}
 \textcolor{purple}{\begin{itemize}
     \item Welke van de geidentificeerde bestaande tools voldoen aan de specifieke doeleinden van de ET-onderzoeksgroep?
-    \item Hoe kunnen gebruikersgedefinieerde criteria toegepast worden deze te combineren met GIS-datasets?
+    \item Hoe kunnen gebruikersgedefinieerde criteria gecombineerd worden met GIS-datasets?
     \item Welke methoden en technieken bestaan er om locaties te scoren en te rangschikken op basis van meerdere criteria, met als doel de meest geschikte locatie te selecteren?
-    \item Welke methodes zijn geschikt om de analyse toegankelijk en interpreteerbaar te maken voor niet-\-technische stakeholders?
+    \item Welke methodes zijn geschikt om de analyse toegankelijk en makkelijk interpreteerbaar te maken voor niet technische stakeholders?
 \end{itemize}}
 
 % Onderzoeksdoelstelling
 Het concrete eindresultaat van dit onderzoek bestaat uit meerdere componenten:
 
 \begin{enumerate}
-    \item \textbf{Een proof-\-of-\-concept tool}: Een werkende applicatie die geografische datasets kan combineren. Hierbij moet de gebruiker ook de mogelijkheid hebben om gebruikersgedefinieerde criteria toe te voegen. De tool moet een duidelijke documentatie hebben.
-    
-    \item \textbf{Een case study voor de Einstein Telescope}: Concrete toepassing van de tool op de ET-locatie(s), resulterend in:
+    \item \textbf{Een proof-\-of-\-concept tool}: Die minstens de volgende functionaliteiten moet hebben:
     \begin{itemize}
-        \item Een overzichtskaart van alle relevante constraints in de regio
-        \item Suitability maps voor verschillende hernieuwbare energiebronnen
+        \item Combineren van meerdere GIS-datasets. 
+        \item De mogelijkheid om gebruikersgedefinieerde criteria toe te voegen. 
+        \item De tool moet een duidelijke documentatie hebben om criteria toe te voegen alsook de weging van de verschillende criteria aan te passen.
     \end{itemize}
+    
+    \item \textbf{Een case study voor de ET-locatie Euregio Maas-Rijn}: Concrete toepassing van de tool op de ET-locatie Euregio Maas-Rijn, resulterend in een eindverslag met de meeste geschikte locaties voor 1 specifieke duurzame energievoorziening aan de hand van de gestelde criteria.
+
 \end{enumerate}
 
-Dit onderzoek wordt als geslaagd beschouwd indien de ET-\-onderzoeksgroep de tool kan gebruiken om data-\-gedreven criteria met relevante maatschappelijke criteria te combineren om beslissingen te nemen over hun energiestrategie, en indien de applicatie voldoende gedocumenteerd is voor verdere uitbreiding het onderzoeksteam.
+Dit onderzoek wordt als geslaagd beschouwd indien de ET-onderzoeksgroep de tool kan gebruiken om data-gedreven criteria met relevante maatschappelijke criteria te combineren om beslissingen te nemen over hun energiestrategie, en indien de applicatie voldoende gedocumenteerd is voor verdere uitbreiding het onderzoeksteam.
 
 \section{Literatuurstudie}%
 \label{sec:literatuurstudie}
 
-Site-selectie voor hernieuwbare energievoorziening op basis van GIS-datasets is geen nieuw concept. De meeste studies baseren zich echter ofwel op objectieve criteria \autocite{Nassar2025}, ofwel op subjectieve criteria. De meeste studies beperken zich ook maar tot 1 geografische regio vanwege de complexiteit eenderzijds en anderszijds de zeldzaamheid van grensoverschrijdende locaties waar samenwerking vereist is. Er worden recent ook veel vooruitgangen geboekt op frameworks en werkmethoden voor multi-criteria analyses \autocite{Seran2025}. Deze zorgen dat we in deze praktische studie hiervan gebruik kunnen maken. Enkele van deze zullen verder onderzocht worden naar geschiktheid in deze casus. Hierbij is GIS-MCDA (Multi Criteria Decision Analysis) \autocite{Malczewski2015} de voornaamste kandidaat omwille van zijn flexibiliteit in het wegen van de verschillende criteria en bewezen toepassing in de hernieuwbare energievoorziening. Om deze selectiemethodes uit te werken zal er ook gekeken worden naar de meest gebruiksvriendelijke en open gis-tools gaande van QGis \autocite{QGis2025} en verschillende Python-bibliotheken zoals GeoPandas \autocite{GeoPandas2025}, PyQGis \autocite{PyQGis2025} en GDAL \autocite{Rouault2025} om maar enkele voorbeelden te noemen.
+Site-selectie voor hernieuwbare energievoorziening op basis van GIS-datasets is geen nieuw concept. De meeste studies baseren zich echter ofwel op objectieve criteria \autocite{Nassar2025}, ofwel op subjectieve criteria. De meeste studies beperken zich ook maar tot 1 geografische regio vanwege de complexiteit eenderzijds en anderszijds de zeldzaamheid van grensoverschrijdende locaties waar samenwerking vereist is. Er worden recent ook veel vooruitgangen geboekt op frameworks en werkmethoden voor multi-criteria analyses \autocite{Seran2025}. Deze zorgen dat we in deze praktische studie hiervan gebruik kunnen maken. Enkele van deze zullen verder onderzocht worden naar geschiktheid in deze casus. Hierbij is GIS-MCDA (Multi Criteria Decision Analysis) \autocite{Malczewski2015} de voornaamste kandidaat omwille van zijn flexibiliteit in het wegen van de verschillende criteria en bewezen toepassing in de hernieuwbare energievoorziening. Om deze selectiemethodes uit te werken zal er ook gekeken worden naar de meest gebruiksvriendelijke en open GIS-tools gaande van QGis \autocite{QGis2025} en verschillende Python-bibliotheken zoals GeoPandas \autocite{GeoPandas2025}, PyQGis \autocite{PyQGis2025} en GDAL \autocite{Rouault2025} om maar enkele voorbeelden te noemen.
 
 % Hier beschrijf je de \emph{state-\-of-\-the-\-art} rondom je gekozen onderzoeksdomein, d.w.z.\ een inleidende, doorlopende tekst over het onderzoeksdomein van je bachelorproef. Je steunt daarbij heel sterk op de professionele \emph{vakliteratuur}, en niet zozeer op populariserende teksten voor een breed publiek. Wat is de huidige stand van zaken in dit domein, en wat zijn nog eventuele open vragen (die misschien de aanleiding waren tot je onderzoeksvraag!)?
 
@@ -81,16 +83,16 @@ Je mag deze sectie nog verder onderverdelen in subsecties als dit de structuur v
 \section{Methodologie}%
 \label{sec:methodologie}
 
-Om de centrale onderzoeksvraag te beantwoorden, wordt het onderzoek uitgevoerd volgens een gestructureerd stappenplan met objectieve en meetbare onderzoekstechnieken. Onderstaand stappenplan beschrijft de verschillende fasen, geplande technieken, en gewenste deliverables.
+Om de centrale onderzoeksvraag te beantwoorden, wordt het onderzoek uitgevoerd volgens een stappenplan met objectieve en meetbare stappen. Onderstaand stappenplan beschrijft de verschillende fasen, geplande technieken, en gewenste deliverables.
 
 \subsection{Stap 1: Vereistenanalyse}
 \textbf{Doel:}
-Identificeren van de vereisten en beperkingen voor het combineren van GIS-datasets en gebruikerscriteria, specifiek voor de Einstein Telescoop.
+Identificeren van de vereisten en beperkingen voor het combineren van GIS-datasets en gebruikerscriteria, specifiek voor de ET locatie Euregio Maas-Rijn.
 
 \textbf{Onderzoekstechniek:}
 \begin{itemize}
-    \item \textbf{Gestructureerde interviews} met stakeholders (ET-onderzoekers) om de benodigde datasets (bv. trillingsgevoeligheid, Natura 2000-gebieden) en criteria te bepalen per geplande energiebron.
-    \item \textbf{Dataset-analyse} van bruikbaarheid van bestaande en eventueel aangeleverde datasets en bepalen welke datasets ontbreken.
+    \item \textbf{Interviews} met stakeholders (ET-onderzoekers) om de benodigde datasets (bv. trillingsgevoeligheid, Natura 2000-gebieden) en criteria te bepalen per geplande energiebron.
+    \item \textbf{Dataset-analyse} van samenstelling en bruikbaarheid van bestaande en aangeleverde datasets en bepalen welke datasets nog ontbreken.
 \end{itemize}
 
 \textbf{Deliverable:}
@@ -99,15 +101,15 @@ Een verslag met een overzicht van de benodigde datasets, criteria, en beperkinge
 \textbf{Tijdsduur:}
 1 week.
 
-\subsection{Stap 2: Vergelijkende Studie van Bestaande Tools}
+\subsection{Stap 2: Vergelijking van bestaande tools}
 \textbf{Doel:}
 Selecteren van de meest geschikte open-source GIS-tool of library als basis voor verdere ontwikkeling.
 
-\textbf{Onderzoekstechniek:}
+\textbf{Onderzoekstechniekeb:}
 \begin{itemize}
-    \item \textbf{Vergelijkende literatuurstudie} van bestaande GIS-tools en libraries op basis van functionaliteit, gebruiksgemak, openheid en documentatie.
-    \item \textbf{vergelijkende literatuurstudie} van opties om gebruikerscriteria om te vertalen zodat het geintegreerd kan worden in de site selectie.
-    \item \textbf{Functionele analyse} van tools op ondersteuning voor GIS-formaten, visualisatieopties, en integratie van gebruikerscriteria.
+    \item \textbf{Vergelijkend verslag} van bestaande GIS-tools en libraries op basis van functionaliteit, gebruiksgemak, openheid en documentatie.
+    \item \textbf{Literatuurstudie} van opties om gebruikerscriteria om te vertalen zodat het geintegreerd kan worden in de site selectie.
+    \item \textbf{Vergelijkend verslag} van tools op ondersteuning voor GIS-formaten, visualisatieopties, en integratie van gebruikerscriteria.
 \end{itemize}
 
 \textbf{Deliverable:}
@@ -116,51 +118,48 @@ Een vergelijkende matrix met een gemotiveerde keuze voor de starttool.
 \textbf{Tijdsduur:}
 3 weken.
 
-\subsection{Stap 3: Ontwikkeling en Uitbreiding van de Tool}
+\subsection{Stap 3: Selectie van de meest geschikte beslissingstechniek}
+\textbf{Doel:}
+Identificeren van de meest geschikte technieken om de datasets en criteria te verwerken om de beste locaties te identificeren.
+
+\textbf{Onderzoekstechnieken:}
+\begin{itemize}
+    \item \textbf{Literatuurstudie} om de meest gebruikte technieken voor het oplossen van soortgelijke problemen te identificeren.
+    \item \textbf{Overzicht} van bestaande beslissingstechnieken die toepasselijk zijn voor dit onderzoek.
+    \item \textbf{Vergelijking} van bestaande beslissingstechnieken op basis van de noden van dit onderzoek.
+\end{itemize}
+
+\textbf{Deliverable:}
+De meest geschikte techniek om de datasets en criteria te verwerken om de beste locaties te identificeren.
+
+\textbf{Tijdsduur:}
+2 weken.
+
+\subsection{Stap 4: Ontwikkeling en Uitbreiding van de Tool}
 \textbf{Doel:}
 Uitbreiden van de geselecteerde tool of framework om GIS-datasets te harmoniseren en gebruikerscriteria te integreren.
 
-\textbf{Onderzoekstechniek:}
+\textbf{Onderzoekstechnieken:}
 \begin{itemize}
     \item \textbf{Proof of Concept (PoC)}: Implementatie van functionaliteiten zoals:
     \begin{itemize}
         \item Inladen en harmoniseren van GIS-datasets (bv. conversie naar gemeenschappelijk formaat).
-        \item Toevoegen van gebruikersgedefinieerde criteria (bv. trillingsgevoeligheid, wetgeving).
+        \item Toevoegen van gebruikersgedefinieerde criteria (bv. voorkeurszones, uitgesloten gebieden).
+        \item Implementatie van de geselecteerde beslissingstechniek.
     \end{itemize}
-    \item \textbf{Technische implementatie} met Python (GDAL, GeoPandas) en QGIS-plugins.
 \end{itemize}
 
 \textbf{Deliverable:}
 Een werkende PoC met documentatie van de toegevoegde functionaliteiten.
 
 \textbf{Tijdsduur:}
-6 weken.
-
----
-
-\subsection{Stap 4: Visualisatie en Validatie}
-\textbf{Doel:}
-Optimaliseren van de visualisatie van gecombineerde datasets en criteria, en valideren met echte data.
-
-\textbf{Onderzoekstechniek:}
-\begin{itemize}
-    %% :TODO: literatuurstudie is het verkeerde woord
-    \item \textbf{Overzicht} van bestaande visualisatietechnieken en bepalen welke technieken het beste passen voor de site selectie.
-    \item \textbf{Experimenten} met visualisatietechnieken die zijn voortgekomen uit de literatuurstudie.
-    \item \textbf{Validatie} met echte data uit het biddingsdossier van de Einstein Telescoop.
-\end{itemize}
-
-\textbf{Deliverable:}
-Een rapport met de gekozen visualisatietechnieken en resultaten van de validatie.
-
-\textbf{Tijdsduur:}
-4 weken.
+5 weken.
 
 \subsection{Stap 5: Risicoanalyse}
 \textbf{Doel:}
 Identificeren en mitigeren van potentiële risico's (bv. datakwaliteit, technische beperkingen).
 
-\textbf{Onderzoekstechniek:}
+\textbf{Onderzoekstechnieken:}
 \begin{itemize}
     \item \textbf{Risicomatrix} om risico's in te schatten op impact en kans.
     \item \textbf{Mitigatiestrategieën} ontwikkelen voor geïdentificeerde risico's.
@@ -198,6 +197,6 @@ Een risicoanalyseverslag met mitigatiestrategieën.
 \section{Verwacht resultaat, conclusie}%
 \label{sec:verwachte_resultaten}
 
-Verwacht wordt dat er een tool ontwikkelt zal worden die zowel objectieve als subjectieve criteria gaat gebruiken om een heatmap te genereren. Deze heatmap visualiseert de meest optimale locaties voor verschillende duurzame energiebronnen. Aan de hand van deze tool zal de onderzoeksgroep een betere beeld kunnen krijgen van de meest optimale locaties. De tool zal de onderzoeksgroep in staat stellen om een overzicht te verkrijgen van de geschiktheid van locaties, gebaseerd op zowel technische als maatschappelijke factoren.
+Verwacht wordt dat er een tool ontwikkelt zal worden die zowel objectieve als subjectieve criteria gaat gebruiken met een gewogen beslissingstechniek om de meeste geschikte locaties te identificeren. Aan de hand van deze tool zal de onderzoeksgroep de meeste geschikte locaties kunnen identificeren en grondiger analyseren om een voorstel te kunnen uitwerken voor de eigenaren van de locaties. De tool zal de onderzoeksgroep in staat stellen om een overzicht te verkrijgen van de geschiktheid van locaties, gebaseerd op zowel technische als maatschappelijke factoren.
 
 De tool zal uitgebreid gedocumenteerd zijn, zodat deze eenvoudig kan worden gebruikt door andere onderzoekers. Hierdoor kunnen toekomstige vraagstukken waar zowel objectieve als subjectieve criteria moeten onderzocht worden effectiever worden aangepakt.
