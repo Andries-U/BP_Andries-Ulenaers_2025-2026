@@ -1,6 +1,6 @@
 {
-  "latex-workshop.latex.outDir": "../output",
-  "latex-workshop.latex.recipes": [
+    "latex-workshop.latex.outDir": "../output",
+    "latex-workshop.latex.recipes": [
         {
             "name": "xelatex ➞ biber ➞ xelatex× 2",
             "tools": [
@@ -118,5 +118,8 @@
         "-file-line-error",
         "--shell-escape",
         "%DOC%"
+    ],
+    "cSpell.words": [
+        "hogent"
     ],
 }

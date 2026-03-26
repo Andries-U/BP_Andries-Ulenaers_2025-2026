@@ -440,7 +440,7 @@
 \fancyhead[R]{\thepage/\pageref{LastPage}}
 
 % Footers
-\fancyfoot[L]{\small\bfseries\@studyprogramme}%
+\fancyfoot[L]{\small\bfseries\@studyprogramme}
 \fancyfoot[C]{}
 \fancyfoot[R]{\includegraphics[height=1.1cm]{HOGENT_Logo_Pos_rgb.png}}%
 
