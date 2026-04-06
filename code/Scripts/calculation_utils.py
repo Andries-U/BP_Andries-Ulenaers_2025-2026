@@ -46,10 +46,20 @@ def select_item_from_gui_list(items: list[T], prompt: str = "Select a item", tit
 
     if dialog.exec_() == QDialog.Accepted:
         selected_item= dialog.get_selected_item()
-        return selected_item, items.index(selected_item)
+        
+        if selected_item is None:
+            raise NoItemSelectedError("Dialog accepted but returned no item.")
+            
+        try:
+            index = items.index(selected_item)
+            return selected_item, index
+        except ValueError:
+            raise NoItemSelectedError("Selected item not found in the original list.")
     elif dialog.exec_() == QDialog.Rejected:
-        print("No feature selected. Exiting.")
-        raise Exception("No item selected. User cancelled the selection.")
+        raise SelectionCancelledError("User cancelled the selection dialog.")
+    
+    # If exec_() returns something other than Accepted or Rejected (rare)
+    raise SelectionCancelledError(f"Unknown dialog result.: {dialog.result()}")
 
 def select_feature_from_layer_database(layer: QgsVectorLayer, prompt: str = "Select a feature", title: str = "Select a Feature") -> tuple[QgsFeature, int]:
     """
@@ -62,24 +72,41 @@ def select_feature_from_layer_database(layer: QgsVectorLayer, prompt: str = "Sel
     
     Returns:
         tuple[QgsFeature, int]: The selected feature and its ID.
+
+    Raises:
+        LayerFeatureError: If features cannot be retrieved.
+        SelectionCancelledError: If the user cancels the GUI.
     """
-    # Get all features from the layer
-    # Create a list of tuples: (display_string with all feature info, feature_id)
-    features_info = []
-    for feature in layer.getFeatures():
-        # Gather all info: ID, attributes (as dict), geometry summary (centroid or WKT)
-        attr_dict = {layer.fields()[i].name(): feature.attributes()[i] for i in range(len(feature.attributes()))}
-        geom_summary = feature.geometry().asWkt() if feature.geometry() else "No geometry"
-        display_string = f"ID: {feature.id()}, Attributes: {attr_dict}, Geometry: {geom_summary}"
-        features_info.append((display_string, feature.id()))
+
+    if not layer:
+        raise LayerFeatureError("The provided layer is None.", layer_name="Unknown")
     
-    selected_feature, selected_feature_id = select_item_from_gui_list(
-        items=features_info,
-        prompt=prompt,
-        title=title
-    )
+
+    try:
+        features = list(layer.getFeatures())
+        if not features:
+            raise LayerFeatureError("No features found in the layer.", layer_name=layer.name())
+        
+        features_info = []
+        for feature in layer.getFeatures():
+            # Gather all info: ID, attributes (as dict), geometry summary (centroid or WKT)
+            attr_dict = {layer.fields()[i].name(): feature.attributes()[i] for i in range(len(feature.attributes()))}
+            geom_summary = feature.geometry().asWkt() if feature.geometry() else "No geometry"
+            display_string = f"ID: {feature.id()}, Attributes: {attr_dict}, Geometry: {geom_summary}"
+            features_info.append((display_string, feature.id()))
+        
+        selected_feature, selected_feature_id = select_item_from_gui_list(
+            items=features_info,
+            prompt=prompt,
+            title=title
+        )
+    except SelectionCancelledError:
+        raise
+    except Exception as e:
+        raise LayerFeatureError(f"Error retrieving features: {str(e)}", layer_name=layer.name()) from e
+    
     if selected_feature is None and selected_feature_id is None:
-        raise Exception("No feature selected. User cancelled the selection.")
+        raise NoItemSelectedError("No feature selected from the list.")
     return selected_feature, selected_feature_id
 
 
