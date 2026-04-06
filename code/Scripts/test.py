@@ -1,15 +1,17 @@
 import pydoc
 from qgis.utils import iface
 from pvgis_client import PVGISClient
-from code.Scripts.calculation_utils import get_bbox_from_current_canvas, select_layer_from_available_cui, copy_layer_to_temp, make_empty_copy_of_vector_layer, get_centroid_of_polygon, add_column_to_layer, check_equality_of_layer_crs_to_wanted_crs
-from qgis.core import QgsField, QgsFields, QgsFeatureRequest, QgsProject, QgsVectorLayer, QgsFeature, QgsExpression, QgsGeometry
+from calculation_utils import make_empty_copy_of_vector_layer, get_centroid_of_polygon, add_column_to_layer, check_equality_of_layer_crs_to_wanted_crs
+from qgis_gui_utils import select_item_from_gui_list, get_bbox_from_current_canvas, select_layer_from_available_layers_gui, select_feature_from_layer_database
+from qgis.core import QgsProject, QgsVectorLayer, QgsFeature, QgsGeometry
 from PyQt5.QtCore import QVariant
 from reset_module_cache import reload_all_custom_modules
 
-CUSTOM_MODULES = ['andries_utils', 'pvgis_client', 'SolarDataClient']
+CUSTOM_MODULES = ['calculation_utils', 'qgis_gui_utils', 'pvgis_client', 'SolarDataClient']
 coverage_factor_solar_fields = 0.8  # Assuming 80% of the area can be covered with solar panels.
 search_circle_diameter = 5000  # Diameter of the search circle around the corner points of the ET in meters.
 features_added = 0
+
 
 # Setup
 for each in CUSTOM_MODULES:
@@ -45,7 +47,7 @@ print(f"Project name: {project.fileName()}")
 
 # Create circles around the corner points of the ET
 # Create a new layer for circles around points  
-points_layer = select_layer_from_available_cui(title="Select Points Layer", prompt="Choose the layer that contains the corner points:")
+points_layer = select_layer_from_available_layers_gui(title="Select Points Layer", prompt="Choose the layer that contains the corner points:")
 circles_layer = QgsVectorLayer(
         f"Polygon?crs={points_layer.crs().authid()}",
         points_layer.name() + "_circles_memory",
@@ -77,7 +79,7 @@ circles_layer.commitChanges()
 print(f"Circle layer created with {circles_layer.featureCount()} circles")
 
 # Select the layer to work with
-parcel_layer = select_layer_from_available_cui(title="Select a Parcel Layer", prompt="Choose the parcel layer to analyze:")
+parcel_layer = select_layer_from_available_layers_gui(title="Select a Parcel Layer", prompt="Choose the parcel layer to analyze:")
 
 # Create a temporary layer with the same schema as the selected layer
 temp_layer = make_empty_copy_of_vector_layer(f"{parcel_layer.name()}_temp2", parcel_layer)
