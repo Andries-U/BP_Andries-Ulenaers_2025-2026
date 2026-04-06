@@ -1,4 +1,4 @@
-from andries_utils import select_layer_from_available_cui, select_feature_from_layer_database, select_item_from_gui_list
+from code.Scripts.calculation_utils import select_layer_from_available_cui, select_feature_from_layer_database, select_item_from_gui_list
 from reset_module_cache import reload_all_custom_modules
 
 reload_all_custom_modules()

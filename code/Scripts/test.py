@@ -1,7 +1,7 @@
 import pydoc
 from qgis.utils import iface
 from pvgis_client import PVGISClient
-from andries_utils import get_bbox_from_current_canvas, select_layer_from_available_cui, copy_layer_to_temp, make_empty_copy_of_vector_layer, get_centroid_of_polygon, add_column_to_layer, check_equality_of_layer_crs_to_wanted_crs
+from code.Scripts.calculation_utils import get_bbox_from_current_canvas, select_layer_from_available_cui, copy_layer_to_temp, make_empty_copy_of_vector_layer, get_centroid_of_polygon, add_column_to_layer, check_equality_of_layer_crs_to_wanted_crs
 from qgis.core import QgsField, QgsFields, QgsFeatureRequest, QgsProject, QgsVectorLayer, QgsFeature, QgsExpression, QgsGeometry
 from PyQt5.QtCore import QVariant
 from reset_module_cache import reload_all_custom_modules

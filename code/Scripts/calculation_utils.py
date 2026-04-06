@@ -8,6 +8,7 @@ from qgis.core import (
 import sys
 from PyQt5.QtCore import QVariant
 from typing import TypeVar, Generic, List
+from exceptions import SelectionCancelledError, NoItemSelectedError, LayerFeatureError
 
 T = TypeVar('T')
 
@@ -31,6 +32,10 @@ def select_item_from_gui_list(items: list[T], prompt: str = "Select a item", tit
         title (str): The title of the selection dialog.
     Returns:
         tuple[T, int]: The selected item and its index in the original list.
+    
+    Raises:
+        SelectionCancelledError: If the user clicks Cancel.
+        NoItemSelectedError: If the dialog accepts but returns no item.
 
     """
     dialog = ItemSelectionDialog(
@@ -44,6 +49,7 @@ def select_item_from_gui_list(items: list[T], prompt: str = "Select a item", tit
         return selected_item, items.index(selected_item)
     elif dialog.exec_() == QDialog.Rejected:
         print("No feature selected. Exiting.")
+        raise Exception("No item selected. User cancelled the selection.")
 
 def select_feature_from_layer_database(layer: QgsVectorLayer, prompt: str = "Select a feature", title: str = "Select a Feature") -> tuple[QgsFeature, int]:
     """
@@ -72,8 +78,9 @@ def select_feature_from_layer_database(layer: QgsVectorLayer, prompt: str = "Sel
         prompt=prompt,
         title=title
     )
-    if selected_feature is not None and selected_feature_id is not None:
-        return selected_feature, selected_feature_id
+    if selected_feature is None and selected_feature_id is None:
+        raise Exception("No feature selected. User cancelled the selection.")
+    return selected_feature, selected_feature_id
 
 
 def get_centroid_of_polygon(polygon_geom: QgsGeometry) -> QgsPointXY:
