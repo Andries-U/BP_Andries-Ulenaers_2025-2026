@@ -6,14 +6,14 @@ import os
 # List the names of YOUR custom modules here (without .py)
 # Add any new module name you create to this list
 MY_MODULES = [
-    'reset_module_cache',
-    'pvgis_client',
-    'pvgis_parser',
-    'andries_utils',
-    'Item_selection',
-    'SolarDataClient',
-    # 'another_module', 
-    # 'src.api_clients.pvgis_client' # If you are using the src folder structure
+    'calculation_utils', 
+    'qgis_gui_utils', 
+    'pvgis_client', 
+    'SolarDataClient', 
+    "generate_docs",
+    "test", 
+    "exceptions", 
+    "multiselect_dialog"
 ]
 
 def reload_all_custom_modules():
@@ -35,5 +35,6 @@ def reload_all_custom_modules():
             print(f"⚪ Skipped (not loaded yet): {mod_name}")
             
     print(f"--- Reload Complete ({count} modules updated) ---")
+
 
 reload_all_custom_modules()
