@@ -1,114 +1,11 @@
 from qgis.utils import iface
 from Item_selection import ItemSelectionDialog
-from PyQt5.QtWidgets import QDialog
 from qgis.core import (
-    QgsProject, QgsVectorLayer, QgsRectangle, QgsMapLayer, QgsProject , 
+    QgsVectorLayer, QgsMapLayer,
     QgsRasterLayer, QgsMeshLayer, QgsFeature, QgsVectorTileLayer, QgsField, QgsGeometry, QgsPointXY, QgsCoordinateReferenceSystem
 )
-import sys
 from PyQt5.QtCore import QVariant
-from typing import TypeVar, Generic, List
-from exceptions import SelectionCancelledError, NoItemSelectedError, LayerFeatureError
-
-T = TypeVar('T')
-
-def progress_bar(iterable, total, prefix='', suffix='', length=30, fill='█'):
-    for i, item in enumerate(iterable):
-        percent = ("{0:.1f}").format(100 * (i / float(total)))
-        filled_length = int(length * i // total)
-        bar = fill * filled_length + '-' * (length - filled_length)
-        sys.stdout.write(f'\r{prefix} |{bar}| {percent}% {suffix}')
-        sys.stdout.flush()
-        yield item
-    sys.stdout.write('\n')
-
-
-def select_item_from_gui_list(items: list[T], prompt: str = "Select a item", title: str = "Select an item from the list") -> tuple[T, int]:
-    """
-    Select an item from a list using a GUI dialog.
-    Args:
-        items (list[T]): The list of items to select from.
-        prompt (str): The prompt to display in the selection dialog.
-        title (str): The title of the selection dialog.
-    Returns:
-        tuple[T, int]: The selected item and its index in the original list.
-    
-    Raises:
-        SelectionCancelledError: If the user clicks Cancel.
-        NoItemSelectedError: If the dialog accepts but returns no item.
-
-    """
-    dialog = ItemSelectionDialog(
-        items=items,
-        title=title,
-        prompt=prompt
-    )
-
-    if dialog.exec_() == QDialog.Accepted:
-        selected_item= dialog.get_selected_item()
-        
-        if selected_item is None:
-            raise NoItemSelectedError("Dialog accepted but returned no item.")
-            
-        try:
-            index = items.index(selected_item)
-            return selected_item, index
-        except ValueError:
-            raise NoItemSelectedError("Selected item not found in the original list.")
-    elif dialog.exec_() == QDialog.Rejected:
-        raise SelectionCancelledError("User cancelled the selection dialog.")
-    
-    # If exec_() returns something other than Accepted or Rejected (rare)
-    raise SelectionCancelledError(f"Unknown dialog result.: {dialog.result()}")
-
-def select_feature_from_layer_database(layer: QgsVectorLayer, prompt: str = "Select a feature", title: str = "Select a Feature") -> tuple[QgsFeature, int]:
-    """
-    Select a feature ID from a vector layer.
-    
-    Args:
-        layer (QgsVectorLayer): The vector layer to select from.
-        prompt (str): The prompt to display in the selection dialog.
-        title (str): The title of the selection dialog.
-    
-    Returns:
-        tuple[QgsFeature, int]: The selected feature and its ID.
-
-    Raises:
-        LayerFeatureError: If features cannot be retrieved.
-        SelectionCancelledError: If the user cancels the GUI.
-    """
-
-    if not layer:
-        raise LayerFeatureError("The provided layer is None.", layer_name="Unknown")
-    
-
-    try:
-        features = list(layer.getFeatures())
-        if not features:
-            raise LayerFeatureError("No features found in the layer.", layer_name=layer.name())
-        
-        features_info = []
-        for feature in layer.getFeatures():
-            # Gather all info: ID, attributes (as dict), geometry summary (centroid or WKT)
-            attr_dict = {layer.fields()[i].name(): feature.attributes()[i] for i in range(len(feature.attributes()))}
-            geom_summary = feature.geometry().asWkt() if feature.geometry() else "No geometry"
-            display_string = f"ID: {feature.id()}, Attributes: {attr_dict}, Geometry: {geom_summary}"
-            features_info.append((display_string, feature.id()))
-        
-        selected_feature, selected_feature_id = select_item_from_gui_list(
-            items=features_info,
-            prompt=prompt,
-            title=title
-        )
-    except SelectionCancelledError:
-        raise
-    except Exception as e:
-        raise LayerFeatureError(f"Error retrieving features: {str(e)}", layer_name=layer.name()) from e
-    
-    if selected_feature is None and selected_feature_id is None:
-        raise NoItemSelectedError("No feature selected from the list.")
-    return selected_feature, selected_feature_id
-
+from typing import List
 
 def get_centroid_of_polygon(polygon_geom: QgsGeometry) -> QgsPointXY:
     """
@@ -129,7 +26,7 @@ def get_centroid_of_polygon(polygon_geom: QgsGeometry) -> QgsPointXY:
     
     # Check for null or empty geometry
     if polygon_geom.isNull() or polygon_geom.isEmpty():
-        raise ValueError("De aangeleverde geometrie is leeg of null.")
+        raise ValueError("Given geometry is null or empty. Cannot calculate centroid.")
 
     # Calculate the centroid
     centroid_geom = polygon_geom.centroid()
@@ -139,17 +36,6 @@ def get_centroid_of_polygon(polygon_geom: QgsGeometry) -> QgsPointXY:
         raise ValueError("Kon geen centroïde berekenen voor deze geometrie.")
         
     return centroid_geom.asPoint()
-
-def get_bbox_from_current_canvas() -> QgsRectangle:
-    """
-    Gives the QgsRectangle with the coordinates for the current view in the visual editor.
-    
-    Returns:
-        QgsRectangle: Rectangle that encompasses the view of the visual editor
-    """
-    canvas = iface.mapCanvas()
-    bbox = canvas.extent()
-    return bbox
 
 def check_equality_of_layer_crs_to_wanted_crs(layers: List[QgsMapLayer], wanted_crs: QgsCoordinateReferenceSystem) -> bool:
     """
@@ -231,28 +117,6 @@ def print_count_layer(layer: QgsMapLayer):
     else:
         print(f"❌ Layer '{layer.name()}' is invalid")
 
-def select_layer_from_available_cui(title: str = "Select a Layer", prompt: str = "Choose a layer:") -> QgsMapLayer:
-    """
-    Command line tool to select one layer from the current project.
-    Returns:
-        QgsMapLayer: The selected layer
-    """
-    # Get all layers in the project
-    project = QgsProject.instance()
-    layers = list(project.mapLayers().values())
-
-    # Show the dialog
-    dialog = ItemSelectionDialog(
-        items=layers,
-        title=title,
-        prompt=prompt
-    )
-
-    if dialog.exec_() == QDialog.Accepted:
-        selected_layer = dialog.get_selected_item()
-        return selected_layer
-        # Do something with selected_layer
-
 def add_column_to_layer(layer: QgsVectorLayer, column_name: str, data_type: QVariant.Type, length: int = 255, precision: int = 0)-> tuple[QgsField, int]:
     """
     Adds a new column (field) to the given vector layer.
@@ -284,12 +148,12 @@ def add_column_to_layer(layer: QgsVectorLayer, column_name: str, data_type: QVar
         error_msg = layer.dataProvider().lastError()
         if error_msg:
             print(f"Data provider error: {error_msg}")
-        raise Exception(f"Failed to add column '{column_name}' to layer '{layer.name()}'.")
+        raise RuntimeError(f"Failed to add column '{column_name}' to layer '{layer.name()}'.")
     
     layer.updateFields()
     field_index = layer.fields().indexFromName(column_name)
     if field_index == -1:
-        raise Exception(f"Column '{column_name}' added but index could not be resolved.")
+        raise RuntimeError(f"Column '{column_name}' added but index could not be resolved.")
     
     layer.commitChanges()
     return field, field_index
@@ -320,31 +184,31 @@ def make_empty_copy_of_vector_layer(copy_layer_name: str, source_layer: QgsVecto
         return None
     return new_layer
 
-def is_within_polygon(searchPolygon: QgsGeometry, areaPolygon: QgsGeometry) -> bool:
+def is_within_polygon(search_polygon: QgsGeometry, area_polygon: QgsGeometry) -> bool:
     """
     Check if the search polygon is within the area polygon.
 
     Args:
-        searchPolygon (QgsGeometry): The polygon to search if within the search area.
+        search_polygon (QgsGeometry): The polygon to search if within the search area.
         areaPolygon (QgsGeometry): The polygon that defines the area.
 
     Returns:
         bool: True if the search polygon is within the area polygon, False otherwise.
     """
-    return areaPolygon.within(searchPolygon)
+    return area_polygon.within(search_polygon)
 
-def is_intersecting_polygon(searchPolygon: QgsGeometry, areaPolygon: QgsGeometry) -> bool:
+def is_intersecting_polygon(search_polygon: QgsGeometry, area_polygon: QgsGeometry) -> bool:
     """
     Check if the search polygon intersects with the area polygon.
 
     Args:
-        searchPolygon (QgsGeometry): The polygon to search if within the search area.
-        areaPolygon (QgsGeometry): The polygon that defines the area.
+        search_polygon (QgsGeometry): The polygon to search if within the search area.
+        area_polygon (QgsGeometry): The polygon that defines the area.
 
     Returns:
         bool: True if the search polygon intersects with the area polygon, False otherwise.
     """
-    return areaPolygon.intersects(searchPolygon)
+    return area_polygon.intersects(search_polygon)
 
 def copy_vector_layer_to_temp(copy_layer_name: str, source_layer: QgsVectorLayer) -> QgsVectorLayer:
     """
