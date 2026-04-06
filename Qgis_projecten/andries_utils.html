@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module andries_utils</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">andries_utils</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:d%3A%5Csync%5Candries%5Cschool%5Chogent%5C2025-2026%5Cbp%5Cscripts%5Candries_utils.py">d:\sync\andries\school\hogent\2025-2026\bp\scripts\andries_utils.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="sys.html">sys</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor functions-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
+    
+<tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt><a name="-add_column_to_layer"><strong>add_column_to_layer</strong></a>(layer: qgis._core.QgsVectorLayer, column_name: str, data_type: PyQt5.QtCore.QVariant.Type, length: int = 255, precision: int = 0) -&gt; tuple[qgis._core.QgsField, int]</dt><dd><span class="code">Adds&nbsp;a&nbsp;new&nbsp;column&nbsp;(field)&nbsp;to&nbsp;the&nbsp;given&nbsp;vector&nbsp;layer.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;layer&nbsp;(QgsVectorLayer):&nbsp;The&nbsp;vector&nbsp;layer&nbsp;to&nbsp;add&nbsp;the&nbsp;column&nbsp;to.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;column_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;new&nbsp;column.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;data_type&nbsp;(QVariant.Type):&nbsp;The&nbsp;data&nbsp;type&nbsp;of&nbsp;the&nbsp;new&nbsp;column&nbsp;(e.g.,&nbsp;QVariant.String,&nbsp;QVariant.Int).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;length&nbsp;(int,&nbsp;optional):&nbsp;The&nbsp;length&nbsp;of&nbsp;the&nbsp;field&nbsp;(for&nbsp;string&nbsp;types).&nbsp;Defaults&nbsp;to&nbsp;255.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;precision&nbsp;(int,&nbsp;optional):&nbsp;The&nbsp;precision&nbsp;of&nbsp;the&nbsp;field&nbsp;(for&nbsp;numeric&nbsp;types).&nbsp;Defaults&nbsp;to&nbsp;0.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;QgsField:&nbsp;The&nbsp;field&nbsp;that&nbsp;was&nbsp;added&nbsp;to&nbsp;the&nbsp;layer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;If&nbsp;the&nbsp;layer&nbsp;is&nbsp;not&nbsp;a&nbsp;vector&nbsp;layer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Exception:&nbsp;If&nbsp;adding&nbsp;the&nbsp;attribute&nbsp;fails.</span></dd></dl>
+ <dl><dt><a name="-check_equality_of_layer_crs_to_wanted_crs"><strong>check_equality_of_layer_crs_to_wanted_crs</strong></a>(layers: List[qgis._core.QgsMapLayer], wanted_crs: qgis._core.QgsCoordinateReferenceSystem) -&gt; bool</dt><dd><span class="code">Check&nbsp;if&nbsp;the&nbsp;CRS&nbsp;of&nbsp;two&nbsp;layers&nbsp;are&nbsp;the&nbsp;same.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;layer1&nbsp;(QgsMapLayer):&nbsp;The&nbsp;first&nbsp;layer&nbsp;to&nbsp;compare.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;layer2&nbsp;(QgsMapLayer):&nbsp;The&nbsp;second&nbsp;layer&nbsp;to&nbsp;compare.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;wanted_crs&nbsp;(QgsCoordinateReferenceSystem):&nbsp;The&nbsp;wanted&nbsp;coordinate&nbsp;reference&nbsp;system.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;if&nbsp;the&nbsp;CRS&nbsp;of&nbsp;both&nbsp;layers&nbsp;are&nbsp;the&nbsp;same,&nbsp;False&nbsp;otherwise.</span></dd></dl>
+ <dl><dt><a name="-copy_layer_to_temp"><strong>copy_layer_to_temp</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsMapLayer) -&gt; qgis._core.QgsMapLayer</dt><dd><span class="code">Copy&nbsp;any&nbsp;QGIS&nbsp;layer&nbsp;to&nbsp;a&nbsp;temporary&nbsp;layer.<br>
+Works&nbsp;for&nbsp;vector,&nbsp;raster,&nbsp;mesh,&nbsp;and&nbsp;other&nbsp;layer&nbsp;types.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;copy_layer_name&nbsp;(str)&nbsp;:&nbsp;The&nbsp;name&nbsp;for&nbsp;the&nbsp;copied&nbsp;layer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;source_layer&nbsp;(QgsMapLayer):&nbsp;The&nbsp;layer&nbsp;to&nbsp;copy.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;QgsMapLayer:&nbsp;A&nbsp;temporary&nbsp;copy&nbsp;of&nbsp;the&nbsp;layer.</span></dd></dl>
+ <dl><dt><a name="-copy_mesh_layer_to_temp"><strong>copy_mesh_layer_to_temp</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsMeshLayer) -&gt; qgis._core.QgsMeshLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;copy_layer_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;for&nbsp;the&nbsp;copied&nbsp;layer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;source_layer&nbsp;(QgsMeshLayer):&nbsp;The&nbsp;layer&nbsp;to&nbsp;copy.<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NotImplementedError:&nbsp;Always,&nbsp;until&nbsp;this&nbsp;function&nbsp;is&nbsp;implemented.&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;QgsMeshLayer:&nbsp;The&nbsp;in&nbsp;memory&nbsp;copy&nbsp;of&nbsp;the&nbsp;input&nbsp;layer</span></dd></dl>
+ <dl><dt><a name="-copy_plugin_layer_to_temp"><strong>copy_plugin_layer_to_temp</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsMapLayer) -&gt; qgis._core.QgsMapLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;copy_layer_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;for&nbsp;the&nbsp;copied&nbsp;layer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;source_layer&nbsp;(QgsMapLayer):&nbsp;The&nbsp;layer&nbsp;to&nbsp;copy.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;QgsMapLayer:&nbsp;The&nbsp;in&nbsp;memory&nbsp;copy&nbsp;of&nbsp;the&nbsp;input&nbsp;layer<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NotImplementedError:&nbsp;Always,&nbsp;until&nbsp;this&nbsp;function&nbsp;is&nbsp;implemented.</span></dd></dl>
+ <dl><dt><a name="-copy_raster_layer_to_temp"><strong>copy_raster_layer_to_temp</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsRasterLayer) -&gt; qgis._core.QgsRasterLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;raster&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;raster&nbsp;layer.<br>
+&nbsp;<br>
+This&nbsp;function&nbsp;is&nbsp;currently&nbsp;unimplemented&nbsp;and&nbsp;serves&nbsp;as&nbsp;a&nbsp;placeholder.<br>
+Raster&nbsp;layer&nbsp;cloning/copying&nbsp;in&nbsp;memory&nbsp;is&nbsp;non-trivial&nbsp;in&nbsp;QGIS&nbsp;and&nbsp;often<br>
+requires&nbsp;writing&nbsp;to&nbsp;a&nbsp;temporary&nbsp;file&nbsp;and&nbsp;reloading&nbsp;with&nbsp;QgsRasterLayer.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;copy_layer_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;for&nbsp;the&nbsp;copied&nbsp;layer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;source_layer&nbsp;(QgsRasterLayer):&nbsp;The&nbsp;raster&nbsp;layer&nbsp;to&nbsp;copy.<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;NotImplementedError:&nbsp;Always,&nbsp;until&nbsp;this&nbsp;function&nbsp;is&nbsp;implemented.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;QgsRasterLayer:&nbsp;(not&nbsp;returned,&nbsp;placeholder&nbsp;only)</span></dd></dl>
+ <dl><dt><a name="-copy_vector_layer_to_temp"><strong>copy_vector_layer_to_temp</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsVectorLayer) -&gt; qgis._core.QgsVectorLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;copy_layer_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;for&nbsp;the&nbsp;copied&nbsp;layer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;source_layer&nbsp;(QgsVectorLayer):&nbsp;The&nbsp;layer&nbsp;to&nbsp;copy.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:</span></dd></dl>
+ <dl><dt><a name="-copy_vector_tile_layer_to_temp"><strong>copy_vector_tile_layer_to_temp</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsVectorTileLayer) -&gt; qgis._core.QgsVectorTileLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;copy_layer_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;for&nbsp;the&nbsp;copied&nbsp;layer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;source_layer&nbsp;(QgsVectorTileLayer):&nbsp;The&nbsp;layer&nbsp;to&nbsp;copy.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;QgsVectorTileLayer:&nbsp;The&nbsp;in&nbsp;memory&nbsp;copy&nbsp;of&nbsp;the&nbsp;input&nbsp;layer<br>
+&nbsp;<br>
+Raises:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NotImplementedError:&nbsp;Always,&nbsp;until&nbsp;this&nbsp;function&nbsp;is&nbsp;implemented.</span></dd></dl>
+ <dl><dt><a name="-generate_triangle_from_multiline_string_using_convex_hull"><strong>generate_triangle_from_multiline_string_using_convex_hull</strong></a>(multiline_geom: qgis._core.QgsGeometry) -&gt; List[qgis._core.QgsPointXY]</dt><dd><span class="code">Generate&nbsp;a&nbsp;triangle&nbsp;from&nbsp;a&nbsp;multiline&nbsp;string&nbsp;geometry&nbsp;using&nbsp;the&nbsp;convex&nbsp;hull&nbsp;method.<br>
+Args:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;multiline_geom&nbsp;(QgsGeometry):&nbsp;The&nbsp;input&nbsp;multiline&nbsp;string&nbsp;geometry.<br>
+Returns:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;List[QgsPointXY]:&nbsp;A&nbsp;list&nbsp;of&nbsp;three&nbsp;points&nbsp;representing&nbsp;the&nbsp;corners&nbsp;of&nbsp;the&nbsp;triangle.</span></dd></dl>
+ <dl><dt><a name="-get_bbox_from_current_canvas"><strong>get_bbox_from_current_canvas</strong></a>() -&gt; qgis._core.QgsRectangle</dt><dd><span class="code">Gives&nbsp;the&nbsp;QgsRectangle&nbsp;with&nbsp;the&nbsp;coordinates&nbsp;for&nbsp;the&nbsp;current&nbsp;view&nbsp;in&nbsp;the&nbsp;visual&nbsp;editor.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;QgsRectangle:&nbsp;Rectangle&nbsp;that&nbsp;encompasses&nbsp;the&nbsp;view&nbsp;of&nbsp;the&nbsp;visual&nbsp;editor</span></dd></dl>
+ <dl><dt><a name="-get_centroid_of_polygon"><strong>get_centroid_of_polygon</strong></a>(polygon_geom: qgis._core.QgsGeometry) -&gt; qgis._core.QgsPointXY</dt><dd><span class="code">Calculate&nbsp;the&nbsp;geometric&nbsp;center&nbsp;(centroid)&nbsp;of&nbsp;a&nbsp;QGIS&nbsp;polygon&nbsp;geometry.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;polygon_geom&nbsp;(QgsGeometry):&nbsp;The&nbsp;geometry&nbsp;object&nbsp;of&nbsp;the&nbsp;polygon.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;QgsPointXY:&nbsp;The&nbsp;geometric&nbsp;center&nbsp;(X,&nbsp;Y).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Returns&nbsp;None&nbsp;if&nbsp;the&nbsp;geometry&nbsp;is&nbsp;invalid&nbsp;or&nbsp;empty.<br>
+&nbsp;<br>
+Example&nbsp;usage:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;feature&nbsp;=&nbsp;layer.getFeature(1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;point&nbsp;=&nbsp;<a href="#-get_centroid_of_polygon">get_centroid_of_polygon</a>(feature.geometry())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;print(f"X:&nbsp;{point.x()},&nbsp;Y:&nbsp;{point.y()}")</span></dd></dl>
+ <dl><dt><a name="-get_corners_of_polygon"><strong>get_corners_of_polygon</strong></a>(polygon_geom: qgis._core.QgsGeometry) -&gt; List[qgis._core.QgsPointXY]</dt><dd><span class="code">Get&nbsp;the&nbsp;corner&nbsp;points&nbsp;of&nbsp;a&nbsp;polygon&nbsp;geometry.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;polygon_geom&nbsp;(QgsGeometry):&nbsp;The&nbsp;input&nbsp;polygon&nbsp;geometry.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;List[QgsPointXY]:&nbsp;A&nbsp;list&nbsp;of&nbsp;corner&nbsp;points&nbsp;(X,&nbsp;Y)&nbsp;of&nbsp;the&nbsp;polygon.<br>
+&nbsp;<br>
+Example&nbsp;usage:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;feature&nbsp;=&nbsp;layer.getFeature(1)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;corners&nbsp;=&nbsp;<a href="#-get_corners_of_polygon">get_corners_of_polygon</a>(feature.geometry())<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;for&nbsp;corner&nbsp;in&nbsp;corners:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"Corner&nbsp;X:&nbsp;{corner.x()},&nbsp;Y:&nbsp;{corner.y()}")</span></dd></dl>
+ <dl><dt><a name="-is_intersecting_polygon"><strong>is_intersecting_polygon</strong></a>(searchPolygon: qgis._core.QgsGeometry, areaPolygon: qgis._core.QgsGeometry) -&gt; bool</dt><dd><span class="code">Check&nbsp;if&nbsp;the&nbsp;search&nbsp;polygon&nbsp;intersects&nbsp;with&nbsp;the&nbsp;area&nbsp;polygon.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;searchPolygon&nbsp;(QgsGeometry):&nbsp;The&nbsp;polygon&nbsp;to&nbsp;search&nbsp;if&nbsp;within&nbsp;the&nbsp;search&nbsp;area.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;areaPolygon&nbsp;(QgsGeometry):&nbsp;The&nbsp;polygon&nbsp;that&nbsp;defines&nbsp;the&nbsp;area.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;if&nbsp;the&nbsp;search&nbsp;polygon&nbsp;intersects&nbsp;with&nbsp;the&nbsp;area&nbsp;polygon,&nbsp;False&nbsp;otherwise.</span></dd></dl>
+ <dl><dt><a name="-is_within_polygon"><strong>is_within_polygon</strong></a>(searchPolygon: qgis._core.QgsGeometry, areaPolygon: qgis._core.QgsGeometry) -&gt; bool</dt><dd><span class="code">Check&nbsp;if&nbsp;the&nbsp;search&nbsp;polygon&nbsp;is&nbsp;within&nbsp;the&nbsp;area&nbsp;polygon.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;searchPolygon&nbsp;(QgsGeometry):&nbsp;The&nbsp;polygon&nbsp;to&nbsp;search&nbsp;if&nbsp;within&nbsp;the&nbsp;search&nbsp;area.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;areaPolygon&nbsp;(QgsGeometry):&nbsp;The&nbsp;polygon&nbsp;that&nbsp;defines&nbsp;the&nbsp;area.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;if&nbsp;the&nbsp;search&nbsp;polygon&nbsp;is&nbsp;within&nbsp;the&nbsp;area&nbsp;polygon,&nbsp;False&nbsp;otherwise.</span></dd></dl>
+ <dl><dt><a name="-make_empty_copy_of_vector_layer"><strong>make_empty_copy_of_vector_layer</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsVectorLayer)</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;schema&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory&nbsp;(wich&nbsp;is&nbsp;empty,&nbsp;without&nbsp;features)<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;copy_layer_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;for&nbsp;the&nbsp;copied&nbsp;layer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;source_layer&nbsp;(QgsVectorLayer):&nbsp;The&nbsp;layer&nbsp;to&nbsp;copy.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<br>
+Returns:</span></dd></dl>
+ <dl><dt><a name="-print_count_layer"><strong>print_count_layer</strong></a>(layer: qgis._core.QgsMapLayer)</dt><dd><span class="code">Print&nbsp;the&nbsp;count&nbsp;of&nbsp;the&nbsp;features&nbsp;of&nbsp;a&nbsp;valid&nbsp;layer.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;layer&nbsp;(QgsMapLayer):&nbsp;The&nbsp;layer&nbsp;to&nbsp;check&nbsp;and&nbsp;print&nbsp;the&nbsp;feature&nbsp;count&nbsp;for.</span></dd></dl>
+ <dl><dt><a name="-progress_bar"><strong>progress_bar</strong></a>(iterable, total, prefix='', suffix='', length=30, fill='█')</dt></dl>
+ <dl><dt><a name="-select_feature_from_layer_database"><strong>select_feature_from_layer_database</strong></a>(layer: qgis._core.QgsVectorLayer, prompt: str = 'Select a feature', title: str = 'Select a Feature') -&gt; tuple[qgis._core.QgsFeature, int]</dt><dd><span class="code">Select&nbsp;a&nbsp;feature&nbsp;ID&nbsp;from&nbsp;a&nbsp;vector&nbsp;layer.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;layer&nbsp;(QgsVectorLayer):&nbsp;The&nbsp;vector&nbsp;layer&nbsp;to&nbsp;select&nbsp;from.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prompt&nbsp;(str):&nbsp;The&nbsp;prompt&nbsp;to&nbsp;display&nbsp;in&nbsp;the&nbsp;selection&nbsp;dialog.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;(str):&nbsp;The&nbsp;title&nbsp;of&nbsp;the&nbsp;selection&nbsp;dialog.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple[QgsFeature,&nbsp;int]:&nbsp;The&nbsp;selected&nbsp;feature&nbsp;and&nbsp;its&nbsp;ID.</span></dd></dl>
+ <dl><dt><a name="-select_item_from_gui_list"><strong>select_item_from_gui_list</strong></a>(items: list[~T], prompt: str = 'Select a item', title: str = 'Select an item from the list') -&gt; tuple[~T, int]</dt><dd><span class="code">Select&nbsp;an&nbsp;item&nbsp;from&nbsp;a&nbsp;list&nbsp;using&nbsp;a&nbsp;GUI&nbsp;dialog.<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;items&nbsp;(list[T]):&nbsp;The&nbsp;list&nbsp;of&nbsp;items&nbsp;to&nbsp;select&nbsp;from.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prompt&nbsp;(str):&nbsp;The&nbsp;prompt&nbsp;to&nbsp;display&nbsp;in&nbsp;the&nbsp;selection&nbsp;dialog.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;(str):&nbsp;The&nbsp;title&nbsp;of&nbsp;the&nbsp;selection&nbsp;dialog.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple[T,&nbsp;int]:&nbsp;The&nbsp;selected&nbsp;item&nbsp;and&nbsp;its&nbsp;index&nbsp;in&nbsp;the&nbsp;original&nbsp;list.</span></dd></dl>
+ <dl><dt><a name="-select_layer_from_available_cui"><strong>select_layer_from_available_cui</strong></a>(title: str = 'Select a Layer', prompt: str = 'Choose a layer:') -&gt; qgis._core.QgsMapLayer</dt><dd><span class="code">Command&nbsp;line&nbsp;tool&nbsp;to&nbsp;select&nbsp;one&nbsp;layer&nbsp;from&nbsp;the&nbsp;current&nbsp;project.<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;QgsMapLayer:&nbsp;The&nbsp;selected&nbsp;layer</span></dd></dl>
+</td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>List</strong> = typing.List<br>
+<strong>T</strong> = ~T<br>
+<strong>__warningregistry__</strong> = {'version': 266, ('QgsField constructor is deprecated', &lt;class 'DeprecationWarning'&gt;, 246): True}<br>
+<strong>iface</strong> = &lt;qgis._gui.QgisInterface object&gt;</td></tr></table>
+</body></html>
