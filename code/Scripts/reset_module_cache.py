@@ -7,16 +7,16 @@ import os
 # Add any new module name you create to this list
 MY_MODULES = [
     'calculation_utils', 
+    'gis_utils',
     'qgis_gui_utils', 
     'pvgis_client', 
     'SolarDataClient', 
     "generate_docs",
-    "test", 
     "exceptions", 
     "multiselect_dialog"
 ]
 
-def reload_all_custom_modules():
+def reload_all_custom_modules(modules: list[str] = MY_MODULES):
     """
     Forces QGIS to reload all modules listed in MY_MODULES.
     """

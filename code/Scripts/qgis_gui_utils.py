@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QDialog, QApplication
 from exceptions import SelectionCancelledError, NoItemSelectedError, LayerFeatureError
 from typing import TypeVar
 from qgis.core import (QgsVectorLayer, QgsFeature, QgsRectangle, QgsMapLayer, QgsProject)
+from qgis.utils import iface
 from multiselect_dialog import ColumnMultiselectDialog
 
 T = TypeVar('T')
@@ -127,7 +128,11 @@ def get_bbox_from_current_canvas() -> QgsRectangle:
 
 def run_selection_dialog_column_values(layer: QgsVectorLayer, column_name: str, title: str = None, instruction: str = None) -> list:
     # 1. Get distinct values from the layer
-    distinct_values = layer.uniqueValues(layer.fieldNameIndex(column_name))
+    field_index = layer.fields().indexFromName(column_name)
+    if field_index == -1:
+        raise ValueError(f"Column '{column_name}' does not exist on layer '{layer.name()}'.")
+
+    distinct_values = layer.uniqueValues(field_index)
     
     if not distinct_values:
         print(f"No data found in column '{column_name}'")

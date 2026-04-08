@@ -12,7 +12,7 @@ class ColumnMultiselectDialog(QDialog):
         self.setMinimumWidth(300)
         
         self.column_name = column_name
-        self.options = options or []
+        self.options = list(options) if options is not None else []
         self.selected_items = []
         self.no_selection_allowed = no_selection_allowed
         

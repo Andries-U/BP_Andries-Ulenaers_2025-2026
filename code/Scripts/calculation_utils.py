@@ -1,8 +1,7 @@
 from qgis.utils import iface
 from Item_selection import ItemSelectionDialog
 from qgis.core import (
-    QgsVectorLayer, QgsMapLayer,
-    QgsRasterLayer, QgsMeshLayer, QgsFeature, QgsVectorTileLayer, QgsField, QgsGeometry, QgsPointXY, QgsCoordinateReferenceSystem
+    QgsVectorLayer, QgsMapLayer, QgsRasterLayer, QgsMeshLayer, QgsFeature, QgsVectorTileLayer, QgsField, QgsGeometry, QgsPointXY, QgsCoordinateReferenceSystem, QgsWkbTypes
 )
 from PyQt5.QtCore import QVariant
 from typing import List
@@ -103,7 +102,6 @@ def get_corners_of_polygon(polygon_geom: QgsGeometry) -> List[QgsPointXY]:
         return [polygon_geom.asPolygon()[0][i] for i in range(len(polygon_geom.asPolygon()[0]))]
     else:
         return [polygon_geom.asMultiPolygon()[0][0][i] for i in range(len(polygon_geom.asMultiPolygon()[0][0]))]
-
 
 def print_count_layer(layer: QgsMapLayer):
     """
@@ -350,3 +348,58 @@ def copy_layer_to_temp(copy_layer_name: str, source_layer: QgsMapLayer) -> QgsMa
         raise ValueError(f"Unsupported layer type: {source_layer.type()}")
 
     return temp_layer
+
+def generate_search_area_around_point(point: QgsPointXY, radius: float, segments: int = 36) -> QgsGeometry:
+    """
+    Generate a circular search area around a given point.
+
+    Args:
+        point (QgsPointXY): The point around which to generate a search area.
+        radius (float): The radius of the circular search area in the same units as the layer's CRS.
+        segments (int): The number of segments to use for the circular buffer.
+
+    Returns:
+        QgsGeometry: The circular search area geometry.
+    """
+    return QgsGeometry.fromPointXY(point).buffer(radius, segments)
+
+def generate_search_areas_layer_around_points_from_points_layer(points: QgsVectorLayer, radius: float, generated_layer_name: str = "Search_Areas", layer: QgsVectorLayer = None, segments: int = 36) -> QgsVectorLayer:
+    """
+    Generate a layer of circular search areas around given a list of points.
+
+    Args:
+        points (QgsPointsLayer): The layer containing the points around which to generate search areas.
+        radius (float): The radius of the circular search areas in the same units as the layer's CRS.
+        generated_layer_name (str): The name for the generated layer.
+        layer (QgsVectorLayer): The existing layer to add the search areas to. If None, a new memory layer will be created.
+        segments (int): The number of segments to use for the circular buffers.
+
+    Returns:
+        QgsVectorLayer: The layer containing the circular search areas.
+    """
+
+    if points is None or points.featureCount() == 0 or points.geometryType() != QgsWkbTypes.PointGeometry:
+        raise ValueError("The provided points layer is invalid. It must be a non-empty point layer.")
+    
+    if layer is None:
+        layer = QgsVectorLayer(
+            f"Polygon?crs={points.crs().authid()}",
+            generated_layer_name,
+            "memory"
+        )
+        layer.startEditing()
+        layer.dataProvider().addAttributes([QgsField("source_point_id", QVariant.Int)])
+        layer.dataProvider().addAttributes(points.fields())
+        layer.updateFields()
+        layer.commitChanges()
+
+    for point in points.getFeatures():
+        search_area = generate_search_area_around_point(point.geometry().asPoint(), radius, segments)
+        feature = QgsFeature()
+        feature.setGeometry(search_area)
+        feature.setAttributes([point.id()] + point.attributes())
+        layer.dataProvider().addFeature(feature)
+    layer.updateFields()
+    layer.commitChanges()
+
+    return layer

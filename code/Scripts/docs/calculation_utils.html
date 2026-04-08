@@ -102,6 +102,26 @@ Returns:<br>
 &nbsp;<br>
 Raises:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NotImplementedError:&nbsp;Always,&nbsp;until&nbsp;this&nbsp;function&nbsp;is&nbsp;implemented.</span></dd></dl>
+ <dl><dt><a name="-generate_search_area_around_point"><strong>generate_search_area_around_point</strong></a>(point: qgis._core.QgsPointXY, radius: float, segments: int = 36) -&gt; qgis._core.QgsGeometry</dt><dd><span class="code">Generate&nbsp;a&nbsp;circular&nbsp;search&nbsp;area&nbsp;around&nbsp;a&nbsp;given&nbsp;point.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;point&nbsp;(QgsPointXY):&nbsp;The&nbsp;point&nbsp;around&nbsp;which&nbsp;to&nbsp;generate&nbsp;a&nbsp;search&nbsp;area.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;radius&nbsp;(float):&nbsp;The&nbsp;radius&nbsp;of&nbsp;the&nbsp;circular&nbsp;search&nbsp;area&nbsp;in&nbsp;the&nbsp;same&nbsp;units&nbsp;as&nbsp;the&nbsp;layer's&nbsp;CRS.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;segments&nbsp;(int):&nbsp;The&nbsp;number&nbsp;of&nbsp;segments&nbsp;to&nbsp;use&nbsp;for&nbsp;the&nbsp;circular&nbsp;buffer.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;QgsGeometry:&nbsp;The&nbsp;circular&nbsp;search&nbsp;area&nbsp;geometry.</span></dd></dl>
+ <dl><dt><a name="-generate_search_areas_layer_around_points_from_points_layer"><strong>generate_search_areas_layer_around_points_from_points_layer</strong></a>(points: qgis._core.QgsVectorLayer, radius: float, generated_layer_name: str = 'Search_Areas', layer: qgis._core.QgsVectorLayer = None, segments: int = 36) -&gt; qgis._core.QgsVectorLayer</dt><dd><span class="code">Generate&nbsp;a&nbsp;layer&nbsp;of&nbsp;circular&nbsp;search&nbsp;areas&nbsp;around&nbsp;given&nbsp;a&nbsp;list&nbsp;of&nbsp;points.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;points&nbsp;(QgsPointsLayer):&nbsp;The&nbsp;layer&nbsp;containing&nbsp;the&nbsp;points&nbsp;around&nbsp;which&nbsp;to&nbsp;generate&nbsp;search&nbsp;areas.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;radius&nbsp;(float):&nbsp;The&nbsp;radius&nbsp;of&nbsp;the&nbsp;circular&nbsp;search&nbsp;areas&nbsp;in&nbsp;the&nbsp;same&nbsp;units&nbsp;as&nbsp;the&nbsp;layer's&nbsp;CRS.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;generated_layer_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;for&nbsp;the&nbsp;generated&nbsp;layer.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;layer&nbsp;(QgsVectorLayer):&nbsp;The&nbsp;existing&nbsp;layer&nbsp;to&nbsp;add&nbsp;the&nbsp;search&nbsp;areas&nbsp;to.&nbsp;If&nbsp;None,&nbsp;a&nbsp;new&nbsp;memory&nbsp;layer&nbsp;will&nbsp;be&nbsp;created.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;segments&nbsp;(int):&nbsp;The&nbsp;number&nbsp;of&nbsp;segments&nbsp;to&nbsp;use&nbsp;for&nbsp;the&nbsp;circular&nbsp;buffers.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;QgsVectorLayer:&nbsp;The&nbsp;layer&nbsp;containing&nbsp;the&nbsp;circular&nbsp;search&nbsp;areas.</span></dd></dl>
  <dl><dt><a name="-generate_triangle_from_multiline_string_using_convex_hull"><strong>generate_triangle_from_multiline_string_using_convex_hull</strong></a>(multiline_geom: qgis._core.QgsGeometry) -&gt; List[qgis._core.QgsPointXY]</dt><dd><span class="code">Generate&nbsp;a&nbsp;triangle&nbsp;from&nbsp;a&nbsp;multiline&nbsp;string&nbsp;geometry&nbsp;using&nbsp;the&nbsp;convex&nbsp;hull&nbsp;method.<br>
 Args:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;multiline_geom&nbsp;(QgsGeometry):&nbsp;The&nbsp;input&nbsp;multiline&nbsp;string&nbsp;geometry.<br>
@@ -166,6 +186,6 @@ Args:<br>
     
 <tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
 <td class="singlecolumn"><strong>List</strong> = typing.List<br>
-<strong>__warningregistry__</strong> = {'version': 431, ('QgsField constructor is deprecated', &lt;class 'DeprecationWarning'&gt;, 144): True}<br>
+<strong>__warningregistry__</strong> = {'version': 782, ('QgsField constructor is deprecated', &lt;class 'DeprecationWarning'&gt;, 391): True}<br>
 <strong>iface</strong> = &lt;qgis._gui.QgisInterface object&gt;</td></tr></table>
 </body></html>
