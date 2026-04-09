@@ -1,4 +1,4 @@
-from Item_selection import ItemSelectionDialog
+from item_selection import ItemSelectionDialog
 from PyQt5.QtWidgets import QDialog, QApplication
 from exceptions import SelectionCancelledError, NoItemSelectedError, LayerFeatureError
 from typing import TypeVar

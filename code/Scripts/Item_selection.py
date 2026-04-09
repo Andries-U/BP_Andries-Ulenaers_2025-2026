@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import (
     QDialog, QVBoxLayout, QComboBox, QPushButton,
-    QLabel, QMessageBox
+    QLabel, QMessageBox, QSizePolicy, QLineEdit
 )
 
 class ItemSelectionDialog(QDialog):
@@ -20,13 +20,22 @@ class ItemSelectionDialog(QDialog):
 
         # Store items and their data
         self.items = items
+        self.original_items = list(items)  # Store original for filtering
 
         # Label
         self.label = QLabel(prompt)
         self.layout().addWidget(self.label)
 
+        # Search box
+        self.search_box = QLineEdit()
+        self.search_box.setPlaceholderText("Type to filter...")
+        self.search_box.textChanged.connect(self.filter_items)
+        self.layout().addWidget(self.search_box)
+
         # Dropdown (QComboBox)
         self.item_combo = QComboBox()
+        self.item_combo.setMaxVisibleItems(12)
+        self.item_combo.setSizePolicy(QSizePolicy.Expanding, QSizePolicy.Fixed)
         self.layout().addWidget(self.item_combo)
 
         # OK and Cancel buttons
@@ -41,6 +50,25 @@ class ItemSelectionDialog(QDialog):
 
         # Populate the dropdown
         self.populate_combo()
+
+    def filter_items(self, search_text):
+        """Filter combo box items based on search text."""
+        self.item_combo.clear()
+        search_text_lower = search_text.lower()
+        
+        for item in self.original_items:
+            # If items are QgsMapLayer objects, use their names
+            if hasattr(item, 'name'):
+                item_name = item.name()
+            else:
+                item_name = str(item)
+            
+            # Check if search text is in the item name
+            if search_text_lower in item_name.lower():
+                if hasattr(item, 'name'):
+                    self.item_combo.addItem(item_name, item)
+                else:
+                    self.item_combo.addItem(item_name, item)
 
     def populate_combo(self):
         """Populate the dropdown with items."""

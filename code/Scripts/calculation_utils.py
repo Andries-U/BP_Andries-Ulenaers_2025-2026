@@ -1,5 +1,5 @@
 from qgis.utils import iface
-from Item_selection import ItemSelectionDialog
+from item_selection import ItemSelectionDialog
 from qgis.core import (
     QgsVectorLayer, QgsMapLayer, QgsRasterLayer, QgsMeshLayer, QgsFeature, QgsVectorTileLayer, QgsField, QgsGeometry, QgsPointXY, QgsCoordinateReferenceSystem, QgsWkbTypes
 )

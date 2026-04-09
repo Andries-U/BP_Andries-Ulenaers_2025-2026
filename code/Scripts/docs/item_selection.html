@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module item_selection</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">item_selection</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:d%3A%5Csync%5Candries%5Cschool%5Chogent%5C2025-2026%5Cbp%5Cbp_andries-ulenaers_2025-2026%5Ccode%5Cscripts%5Citem_selection.py">d:\sync\andries\school\hogent\2025-2026\bp\bp_andries-ulenaers_2025-2026\code\scripts\item_selection.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>(<a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="item_selection.html#ItemSelectionDialog">ItemSelectionDialog</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ItemSelectionDialog">class <strong>ItemSelectionDialog</strong></a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ItemSelectionDialog">ItemSelectionDialog</a>(items,&nbsp;title='Select&nbsp;an&nbsp;Item',&nbsp;prompt='Choose&nbsp;an&nbsp;item:',&nbsp;parent=None)<br>
+&nbsp;<br>
+A&nbsp;generic&nbsp;dialog&nbsp;for&nbsp;selecting&nbsp;an&nbsp;item&nbsp;from&nbsp;a&nbsp;list.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;items&nbsp;(list):&nbsp;List&nbsp;of&nbsp;items&nbsp;to&nbsp;display&nbsp;(e.g.,&nbsp;layer&nbsp;names&nbsp;or&nbsp;objects).<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;(str):&nbsp;Dialog&nbsp;window&nbsp;title.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;prompt&nbsp;(str):&nbsp;Label&nbsp;text&nbsp;prompting&nbsp;the&nbsp;user.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;parent&nbsp;(QWidget):&nbsp;Parent&nbsp;widget&nbsp;(optional).<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="item_selection.html#ItemSelectionDialog">ItemSelectionDialog</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a></dd>
+<dd><a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a></dd>
+<dd><a href="PyQt5.sip.html#wrapper">sip.wrapper</a></dd>
+<dd><a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a></dd>
+<dd><a href="PyQt5.sip.html#simplewrapper">sip.simplewrapper</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ItemSelectionDialog-__init__"><strong>__init__</strong></a>(self, items, title='Select an Item', prompt='Choose an item:', parent=None)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-filter_items"><strong>filter_items</strong></a>(self, search_text)</dt><dd><span class="code">Filter&nbsp;combo&nbsp;box&nbsp;items&nbsp;based&nbsp;on&nbsp;search&nbsp;text.</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-get_selected_item"><strong>get_selected_item</strong></a>(self)</dt><dd><span class="code">Return&nbsp;the&nbsp;selected&nbsp;item.</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-on_ok_clicked"><strong>on_ok_clicked</strong></a>(self)</dt><dd><span class="code">Handle&nbsp;the&nbsp;OK&nbsp;button&nbsp;click.</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-populate_combo"><strong>populate_combo</strong></a>(self)</dt><dd><span class="code">Populate&nbsp;the&nbsp;dropdown&nbsp;with&nbsp;items.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<dl><dt><a name="ItemSelectionDialog-accept"><strong>accept</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-accept">accept</a>(self)</span></dd></dl>
+
+<strong>accepted</strong> = &lt;unbound PYQT_SIGNAL accepted()&gt;
+<dl><dt><a name="ItemSelectionDialog-actionEvent"><strong>actionEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-changeEvent"><strong>changeEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-childEvent"><strong>childEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-closeEvent"><strong>closeEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-closeEvent">closeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QCloseEvent])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-connectNotify"><strong>connectNotify</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;a0:&nbsp;Optional[QContextMenuEvent])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-create"><strong>create</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-customEvent"><strong>customEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-destroy"><strong>destroy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-done"><strong>done</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-done">done</a>(self,&nbsp;a0:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-dropEvent"><strong>dropEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-enterEvent"><strong>enterEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-event"><strong>event</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-eventFilter"><strong>eventFilter</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-eventFilter">eventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject],&nbsp;a1:&nbsp;Optional[QEvent])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-exec"><strong>exec</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-exec">exec</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-exec_"><strong>exec_</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-exec_">exec_</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<strong>finished</strong> = &lt;unbound PYQT_SIGNAL finished(int)&gt;
+<dl><dt><a name="ItemSelectionDialog-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-hideEvent"><strong>hideEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-initPainter"><strong>initPainter</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isSizeGripEnabled"><strong>isSizeGripEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isSizeGripEnabled">isSizeGripEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-keyPressEvent">keyPressEvent</a>(self,&nbsp;a0:&nbsp;Optional[QKeyEvent])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-metric"><strong>metric</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-moveEvent"><strong>moveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-open"><strong>open</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-open">open</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-paintEvent"><strong>paintEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-receivers"><strong>receivers</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-reject"><strong>reject</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-reject">reject</a>(self)</span></dd></dl>
+
+<strong>rejected</strong> = &lt;unbound PYQT_SIGNAL rejected()&gt;
+<dl><dt><a name="ItemSelectionDialog-resizeEvent"><strong>resizeEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-resizeEvent">resizeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QResizeEvent])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-result"><strong>result</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-result">result</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-sender"><strong>sender</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setModal"><strong>setModal</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setModal">setModal</a>(self,&nbsp;modal:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setResult"><strong>setResult</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setResult">setResult</a>(self,&nbsp;r:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setSizeGripEnabled"><strong>setSizeGripEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setSizeGripEnabled">setSizeGripEnabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setVisible"><strong>setVisible</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setVisible">setVisible</a>(self,&nbsp;visible:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-showEvent"><strong>showEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-showEvent">showEvent</a>(self,&nbsp;a0:&nbsp;Optional[QShowEvent])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-sizeHint"><strong>sizeHint</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-timerEvent"><strong>timerEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ItemSelectionDialog-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<dl><dt><strong>Accepted</strong> = 1</dl>
+
+<dl><dt><strong>DialogCode</strong> = &lt;class 'PyQt5.QtWidgets.QDialog.DialogCode'&gt;</dl>
+
+<dl><dt><strong>Rejected</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><a name="ItemSelectionDialog-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-accessibleName"><strong>accessibleName</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-actions"><strong>actions</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-actions">actions</a>(self)&nbsp;-&gt;&nbsp;list[QAction]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-activateWindow"><strong>activateWindow</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-activateWindow">activateWindow</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-addAction"><strong>addAction</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-addAction">addAction</a>(self,&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-addActions"><strong>addActions</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-addActions">addActions</a>(self,&nbsp;actions:&nbsp;Iterable[QAction])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-adjustSize"><strong>adjustSize</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-adjustSize">adjustSize</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-baseSize"><strong>baseSize</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-childAt"><strong>childAt</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-childAt">childAt</a>(self,&nbsp;p:&nbsp;QPoint)&nbsp;-&gt;&nbsp;Optional[QWidget]<br>
+<a href="#ItemSelectionDialog-childAt">childAt</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-childrenRect"><strong>childrenRect</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-clearFocus"><strong>clearFocus</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-clearFocus">clearFocus</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-clearMask"><strong>clearMask</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-clearMask">clearMask</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-close"><strong>close</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-contentsRect"><strong>contentsRect</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-createWindowContainer"><strong>createWindowContainer</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-createWindowContainer">createWindowContainer</a>(window:&nbsp;Optional[QWindow],&nbsp;parent:&nbsp;Optional[QWidget]&nbsp;=&nbsp;None,&nbsp;flags:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType]&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;QWidget</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-cursor"><strong>cursor</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</span></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound PYQT_SIGNAL customContextMenuRequested(QPoint)&gt;
+<dl><dt><a name="ItemSelectionDialog-devType"><strong>devType</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;PyQt5.sip.voidptr</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-ensurePolished">ensurePolished</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-find"><strong>find</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-find">find</a>(a0:&nbsp;PyQt5.sip.voidptr)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-focusProxy"><strong>focusProxy</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-focusWidget"><strong>focusWidget</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-font"><strong>font</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-fontInfo"><strong>fontInfo</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-frameSize"><strong>frameSize</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-geometry"><strong>geometry</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-geometry">geometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-getContentsMargins">getContentsMargins</a>(self)&nbsp;-&gt;&nbsp;(Optional[int],&nbsp;Optional[int],&nbsp;Optional[int],&nbsp;Optional[int])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-grab"><strong>grab</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,&nbsp;0),&nbsp;QSize(-1,&nbsp;-1)))&nbsp;-&gt;&nbsp;QPixmap</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-grabGesture"><strong>grabGesture</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-grabGesture">grabGesture</a>(self,&nbsp;type:&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Union[Qt.GestureFlags,&nbsp;Qt.GestureFlag]&nbsp;=&nbsp;Qt.GestureFlags())</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-grabKeyboard">grabKeyboard</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-grabMouse"><strong>grabMouse</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-grabMouse">grabMouse</a>(self)<br>
+<a href="#ItemSelectionDialog-grabMouse">grabMouse</a>(self,&nbsp;a0:&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-grabShortcut">grabShortcut</a>(self,&nbsp;key:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int],&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;Optional[QGraphicsEffect]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QGraphicsProxyWidget]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-hasFocus"><strong>hasFocus</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-hasTabletTracking"><strong>hasTabletTracking</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-hasTabletTracking">hasTabletTracking</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-height"><strong>height</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-height">height</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-heightForWidth">heightForWidth</a>(self,&nbsp;a0:&nbsp;int)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-hide"><strong>hide</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-hide">hide</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHints</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;a0:&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-insertAction"><strong>insertAction</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-insertAction">insertAction</a>(self,&nbsp;before:&nbsp;Optional[QAction],&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-insertActions"><strong>insertActions</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-insertActions">insertActions</a>(self,&nbsp;before:&nbsp;Optional[QAction],&nbsp;actions:&nbsp;Iterable[QAction])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isAncestorOf">isAncestorOf</a>(self,&nbsp;child:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isEnabled"><strong>isEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isEnabledTo">isEnabledTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isHidden"><strong>isHidden</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isMaximized"><strong>isMaximized</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isMinimized"><strong>isMinimized</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isModal"><strong>isModal</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isVisible"><strong>isVisible</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isVisibleTo">isVisibleTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isWindow"><strong>isWindow</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-layout"><strong>layout</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-layout">layout</a>(self)&nbsp;-&gt;&nbsp;Optional[QLayout]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-locale"><strong>locale</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-lower"><strong>lower</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-lower">lower</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-mapFrom"><strong>mapFrom</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-mapFrom">mapFrom</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-mapFromParent">mapFromParent</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-mapTo"><strong>mapTo</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-mapTo">mapTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-mapToGlobal">mapToGlobal</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-mapToParent"><strong>mapToParent</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-mapToParent">mapToParent</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-mask"><strong>mask</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-maximumSize"><strong>maximumSize</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-minimumSize"><strong>minimumSize</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-move"><strong>move</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-move">move</a>(self,&nbsp;a0:&nbsp;QPoint)<br>
+<a href="#ItemSelectionDialog-move">move</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;type:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-overrideWindowState">overrideWindowState</a>(self,&nbsp;state:&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-paintEngine"><strong>paintEngine</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;Optional[QPaintEngine]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-palette"><strong>palette</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-parentWidget"><strong>parentWidget</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-pos"><strong>pos</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-raise_"><strong>raise_</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-raise_">raise_</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-rect"><strong>rect</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-releaseKeyboard">releaseKeyboard</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-releaseMouse">releaseMouse</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-releaseShortcut">releaseShortcut</a>(self,&nbsp;id:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-removeAction"><strong>removeAction</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-removeAction">removeAction</a>(self,&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-render"><strong>render</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-render">render</a>(self,&nbsp;target:&nbsp;Optional[QPaintDevice],&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#ItemSelectionDialog-RenderFlags">RenderFlags</a>(QWidget.RenderFlag.DrawWindowBackground|QWidget.RenderFlag.DrawChildren))<br>
+<a href="#ItemSelectionDialog-render">render</a>(self,&nbsp;painter:&nbsp;Optional[QPainter],&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#ItemSelectionDialog-RenderFlags">RenderFlags</a>(QWidget.RenderFlag.DrawWindowBackground|QWidget.RenderFlag.DrawChildren))</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-repaint"><strong>repaint</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-repaint">repaint</a>(self)<br>
+<a href="#ItemSelectionDialog-repaint">repaint</a>(self,&nbsp;x:&nbsp;int,&nbsp;y:&nbsp;int,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)<br>
+<a href="#ItemSelectionDialog-repaint">repaint</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#ItemSelectionDialog-repaint">repaint</a>(self,&nbsp;a0:&nbsp;QRegion)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-resize"><strong>resize</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-resize">resize</a>(self,&nbsp;a0:&nbsp;QSize)<br>
+<a href="#ItemSelectionDialog-resize">resize</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-restoreGeometry">restoreGeometry</a>(self,&nbsp;geometry:&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-screen"><strong>screen</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-screen">screen</a>(self)&nbsp;-&gt;&nbsp;Optional[QScreen]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-scroll"><strong>scroll</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-scroll">scroll</a>(self,&nbsp;dx:&nbsp;int,&nbsp;dy:&nbsp;int)<br>
+<a href="#ItemSelectionDialog-scroll">scroll</a>(self,&nbsp;dx:&nbsp;int,&nbsp;dy:&nbsp;int,&nbsp;a2:&nbsp;QRect)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;on:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;description:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setAccessibleName">setAccessibleName</a>(self,&nbsp;name:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setAttribute"><strong>setAttribute</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setAttribute">setAttribute</a>(self,&nbsp;attribute:&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;a0:&nbsp;QPalette.ColorRole)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setBaseSize">setBaseSize</a>(self,&nbsp;basew:&nbsp;int,&nbsp;baseh:&nbsp;int)<br>
+<a href="#ItemSelectionDialog-setBaseSize">setBaseSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setContentsMargins">setContentsMargins</a>(self,&nbsp;left:&nbsp;int,&nbsp;top:&nbsp;int,&nbsp;right:&nbsp;int,&nbsp;bottom:&nbsp;int)<br>
+<a href="#ItemSelectionDialog-setContentsMargins">setContentsMargins</a>(self,&nbsp;margins:&nbsp;QMargins)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;policy:&nbsp;Qt.ContextMenuPolicy)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setCursor"><strong>setCursor</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setCursor">setCursor</a>(self,&nbsp;a0:&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setDisabled"><strong>setDisabled</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setDisabled">setDisabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setEnabled"><strong>setEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setEnabled">setEnabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setFixedHeight">setFixedHeight</a>(self,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setFixedSize">setFixedSize</a>(self,&nbsp;a0:&nbsp;QSize)<br>
+<a href="#ItemSelectionDialog-setFixedSize">setFixedSize</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setFixedWidth">setFixedWidth</a>(self,&nbsp;w:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setFocus"><strong>setFocus</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setFocus">setFocus</a>(self)<br>
+<a href="#ItemSelectionDialog-setFocus">setFocus</a>(self,&nbsp;reason:&nbsp;Qt.FocusReason)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;policy:&nbsp;Qt.FocusPolicy)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setFocusProxy">setFocusProxy</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setFont"><strong>setFont</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setFont">setFont</a>(self,&nbsp;a0:&nbsp;QFont)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setForegroundRole">setForegroundRole</a>(self,&nbsp;a0:&nbsp;QPalette.ColorRole)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setGeometry"><strong>setGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setGeometry">setGeometry</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#ItemSelectionDialog-setGeometry">setGeometry</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int,&nbsp;aw:&nbsp;int,&nbsp;ah:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;effect:&nbsp;Optional[QGraphicsEffect])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setHidden"><strong>setHidden</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setHidden">setHidden</a>(self,&nbsp;hidden:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;hints:&nbsp;Union[Qt.InputMethodHints,&nbsp;Qt.InputMethodHint])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setLayout"><strong>setLayout</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setLayout">setLayout</a>(self,&nbsp;a0:&nbsp;Optional[QLayout])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;direction:&nbsp;Qt.LayoutDirection)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setLocale"><strong>setLocale</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setLocale">setLocale</a>(self,&nbsp;locale:&nbsp;QLocale)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setMask"><strong>setMask</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setMask">setMask</a>(self,&nbsp;a0:&nbsp;QBitmap)<br>
+<a href="#ItemSelectionDialog-setMask">setMask</a>(self,&nbsp;a0:&nbsp;QRegion)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;maxh:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setMaximumSize">setMaximumSize</a>(self,&nbsp;maxw:&nbsp;int,&nbsp;maxh:&nbsp;int)<br>
+<a href="#ItemSelectionDialog-setMaximumSize">setMaximumSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;maxw:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;minh:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setMinimumSize">setMinimumSize</a>(self,&nbsp;minw:&nbsp;int,&nbsp;minh:&nbsp;int)<br>
+<a href="#ItemSelectionDialog-setMinimumSize">setMinimumSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;minw:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setMouseTracking">setMouseTracking</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setPalette"><strong>setPalette</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setPalette">setPalette</a>(self,&nbsp;a0:&nbsp;QPalette)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setParent"><strong>setParent</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setParent">setParent</a>(self,&nbsp;parent:&nbsp;Optional[QWidget])<br>
+<a href="#ItemSelectionDialog-setParent">setParent</a>(self,&nbsp;parent:&nbsp;Optional[QWidget],&nbsp;f:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;id:&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;id:&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)<br>
+<a href="#ItemSelectionDialog-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setSizePolicy">setSizePolicy</a>(self,&nbsp;a0:&nbsp;QSizePolicy)<br>
+<a href="#ItemSelectionDialog-setSizePolicy">setSizePolicy</a>(self,&nbsp;hor:&nbsp;QSizePolicy.Policy,&nbsp;ver:&nbsp;QSizePolicy.Policy)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setStatusTip">setStatusTip</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setStyle"><strong>setStyle</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setStyle">setStyle</a>(self,&nbsp;a0:&nbsp;Optional[QStyle])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setStyleSheet">setStyleSheet</a>(self,&nbsp;styleSheet:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setTabOrder">setTabOrder</a>(a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setTabletTracking"><strong>setTabletTracking</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setTabletTracking">setTabletTracking</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setToolTip"><strong>setToolTip</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setToolTip">setToolTip</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setToolTipDuration"><strong>setToolTipDuration</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setToolTipDuration">setToolTipDuration</a>(self,&nbsp;msec:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setWhatsThis">setWhatsThis</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;filePath:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setWindowFlag"><strong>setWindowFlag</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setWindowFlag">setWindowFlag</a>(self,&nbsp;a0:&nbsp;Qt.WindowType,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setWindowFlags">setWindowFlags</a>(self,&nbsp;type:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setWindowIcon">setWindowIcon</a>(self,&nbsp;icon:&nbsp;QIcon)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setWindowIconText">setWindowIconText</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setWindowModality">setWindowModality</a>(self,&nbsp;windowModality:&nbsp;Qt.WindowModality)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setWindowModified">setWindowModified</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;level:&nbsp;float)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setWindowRole">setWindowRole</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setWindowState"><strong>setWindowState</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setWindowState">setWindowState</a>(self,&nbsp;state:&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setWindowTitle">setWindowTitle</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-show"><strong>show</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-show">show</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-showFullScreen">showFullScreen</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-showMaximized"><strong>showMaximized</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-showMaximized">showMaximized</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-showMinimized"><strong>showMinimized</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-showMinimized">showMinimized</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-showNormal"><strong>showNormal</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-showNormal">showNormal</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-size"><strong>size</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-stackUnder"><strong>stackUnder</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-stackUnder">stackUnder</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-statusTip"><strong>statusTip</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-style"><strong>style</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-style">style</a>(self)&nbsp;-&gt;&nbsp;Optional[QStyle]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-styleSheet"><strong>styleSheet</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-testAttribute"><strong>testAttribute</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-testAttribute">testAttribute</a>(self,&nbsp;attribute:&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-toolTip"><strong>toolTip</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-toolTipDuration"><strong>toolTipDuration</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-toolTipDuration">toolTipDuration</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-underMouse"><strong>underMouse</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-ungrabGesture">ungrabGesture</a>(self,&nbsp;type:&nbsp;Qt.GestureType)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-unsetCursor">unsetCursor</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-unsetLayoutDirection">unsetLayoutDirection</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-unsetLocale">unsetLocale</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-update"><strong>update</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-update">update</a>(self)<br>
+<a href="#ItemSelectionDialog-update">update</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#ItemSelectionDialog-update">update</a>(self,&nbsp;a0:&nbsp;QRegion)<br>
+<a href="#ItemSelectionDialog-update">update</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int,&nbsp;aw:&nbsp;int,&nbsp;ah:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-updateGeometry">updateGeometry</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-whatsThis"><strong>whatsThis</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-width"><strong>width</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-width">width</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-winId"><strong>winId</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-winId">winId</a>(self)&nbsp;-&gt;&nbsp;PyQt5.sip.voidptr</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-window"><strong>window</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-window">window</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-windowFlags"><strong>windowFlags</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowFlags</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-windowHandle"><strong>windowHandle</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-windowHandle">windowHandle</a>(self)&nbsp;-&gt;&nbsp;Optional[QWindow]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-windowIcon"><strong>windowIcon</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</span></dd></dl>
+
+<strong>windowIconChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconChanged(QIcon)&gt;
+<dl><dt><a name="ItemSelectionDialog-windowIconText"><strong>windowIconText</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>windowIconTextChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconTextChanged(QString)&gt;
+<dl><dt><a name="ItemSelectionDialog-windowModality"><strong>windowModality</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-windowRole"><strong>windowRole</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-windowState"><strong>windowState</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowStates</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-windowTitle"><strong>windowTitle</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>windowTitleChanged</strong> = &lt;unbound PYQT_SIGNAL windowTitleChanged(QString)&gt;
+<dl><dt><a name="ItemSelectionDialog-windowType"><strong>windowType</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-x"><strong>x</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-x">x</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-y"><strong>y</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-y">y</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = 2</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = 1</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = 4</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlags'&gt;<dd><span class="code">QWidget.<a href="#ItemSelectionDialog-RenderFlags">RenderFlags</a>()<br>
+QWidget.<a href="#ItemSelectionDialog-RenderFlags">RenderFlags</a>(f:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag])<br>
+QWidget.<a href="#ItemSelectionDialog-RenderFlags">RenderFlags</a>(a0:&nbsp;QWidget.RenderFlags)</span></dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><a name="ItemSelectionDialog-__getattr__"><strong>__getattr__</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-__getattr__">__getattr__</a>(self,&nbsp;name:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-blockSignals"><strong>blockSignals</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-blockSignals">blockSignals</a>(self,&nbsp;b:&nbsp;bool)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-children"><strong>children</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-children">children</a>(self)&nbsp;-&gt;&nbsp;list[QObject]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-deleteLater"><strong>deleteLater</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-deleteLater">deleteLater</a>(self)</span></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound PYQT_SIGNAL destroyed(QObject*)&gt;
+<dl><dt><a name="ItemSelectionDialog-disconnect"><strong>disconnect</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-disconnect">disconnect</a>(a0:&nbsp;QMetaObject.Connection)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#ItemSelectionDialog-disconnect">disconnect</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-dumpObjectInfo">dumpObjectInfo</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-dumpObjectTree">dumpObjectTree</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;list[QByteArray]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-findChild"><strong>findChild</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-findChild">findChild</a>(self,&nbsp;type:&nbsp;type[QObjectT],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObjectT<br>
+<a href="#ItemSelectionDialog-findChild">findChild</a>(self,&nbsp;types:&nbsp;tuple[type[QObjectT],&nbsp;...],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObjectT</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-findChildren"><strong>findChildren</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;type[QObjectT],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#ItemSelectionDialog-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;tuple[type[QObjectT],&nbsp;...],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#ItemSelectionDialog-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;type[QObjectT],&nbsp;regExp:&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#ItemSelectionDialog-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;tuple[type[QObjectT],&nbsp;...],&nbsp;regExp:&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#ItemSelectionDialog-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;type[QObjectT],&nbsp;re:&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#ItemSelectionDialog-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;tuple[type[QObjectT],&nbsp;...],&nbsp;re:&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-inherits"><strong>inherits</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-inherits">inherits</a>(self,&nbsp;classname:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-installEventFilter">installEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-isWindowType"><strong>isWindowType</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-killTimer"><strong>killTimer</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-killTimer">killTimer</a>(self,&nbsp;id:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-metaObject"><strong>metaObject</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;Optional[QMetaObject]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-moveToThread"><strong>moveToThread</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-moveToThread">moveToThread</a>(self,&nbsp;thread:&nbsp;Optional[QThread])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-objectName"><strong>objectName</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound PYQT_SIGNAL objectNameChanged(QString)&gt;
+<dl><dt><a name="ItemSelectionDialog-parent"><strong>parent</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-parent">parent</a>(self)&nbsp;-&gt;&nbsp;Optional[QObject]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-property"><strong>property</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-property">property</a>(self,&nbsp;name:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)</dt><dd><span class="code">QObject.<a href="#ItemSelectionDialog-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-removeEventFilter">removeEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setObjectName"><strong>setObjectName</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setObjectName">setObjectName</a>(self,&nbsp;name:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-setProperty"><strong>setProperty</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-setProperty">setProperty</a>(self,&nbsp;name:&nbsp;Optional[str],&nbsp;value:&nbsp;Any)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-startTimer"><strong>startTimer</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-startTimer">startTimer</a>(self,&nbsp;interval:&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-thread"><strong>thread</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-thread">thread</a>(self)&nbsp;-&gt;&nbsp;Optional[QThread]</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-tr"><strong>tr</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-tr">tr</a>(self,&nbsp;sourceText:&nbsp;Optional[str],&nbsp;disambiguation:&nbsp;Optional[str]&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>staticMetaObject</strong> = &lt;PyQt5.QtCore.QMetaObject object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="ItemSelectionDialog-colorCount"><strong>colorCount</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-depth"><strong>depth</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-devicePixelRatio"><strong>devicePixelRatio</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-devicePixelRatio">devicePixelRatio</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-devicePixelRatioF"><strong>devicePixelRatioF</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-devicePixelRatioF">devicePixelRatioF</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-devicePixelRatioFScale"><strong>devicePixelRatioFScale</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-devicePixelRatioFScale">devicePixelRatioFScale</a>()&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-heightMM"><strong>heightMM</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-paintingActive"><strong>paintingActive</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ItemSelectionDialog-widthMM"><strong>widthMM</strong></a>(...)</dt><dd><span class="code"><a href="#ItemSelectionDialog-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;class 'PyQt5.QtGui.QPaintDevice.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = 6</dl>
+
+<dl><dt><strong>PdmDevicePixelRatio</strong> = 11</dl>
+
+<dl><dt><strong>PdmDevicePixelRatioScaled</strong> = 12</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = 7</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = 8</dl>
+
+<dl><dt><strong>PdmHeight</strong> = 2</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = 4</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = 5</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = 9</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = 10</dl>
+
+<dl><dt><strong>PdmWidth</strong> = 1</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = 3</dl>
+
+<hr>
+Static methods inherited from <a href="PyQt5.sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><a name="ItemSelectionDialog-__new__"><strong>__new__</strong></a>(*args, **kwargs)<span class="grey"><span class="heading-text"> class method of <a href="PyQt5.sip.html#simplewrapper">sip.simplewrapper</a></span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt5.sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

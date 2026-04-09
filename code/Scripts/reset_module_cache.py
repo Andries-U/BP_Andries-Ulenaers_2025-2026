@@ -6,6 +6,7 @@ import os
 # List the names of YOUR custom modules here (without .py)
 # Add any new module name you create to this list
 MY_MODULES = [
+    'reset_module_cache',
     'calculation_utils', 
     'gis_utils',
     'qgis_gui_utils', 
@@ -13,7 +14,10 @@ MY_MODULES = [
     'SolarDataClient', 
     "generate_docs",
     "exceptions", 
-    "multiselect_dialog"
+    "multiselect_dialog",
+    "item_selection",
+    "action_selector_dialog",
+    "layer_statistics_dialog"
 ]
 
 def reload_all_custom_modules(modules: list[str] = MY_MODULES):

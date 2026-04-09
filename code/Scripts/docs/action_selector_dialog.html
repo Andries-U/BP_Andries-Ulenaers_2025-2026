@@ -1,0 +1,816 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module action_selector_dialog</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">action_selector_dialog</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:d%3A%5Csync%5Candries%5Cschool%5Chogent%5C2025-2026%5Cbp%5Cbp_andries-ulenaers_2025-2026%5Ccode%5Cscripts%5Caction_selector_dialog.py">d:\sync\andries\school\hogent\2025-2026\bp\bp_andries-ulenaers_2025-2026\code\scripts\action_selector_dialog.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>(<a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="action_selector_dialog.html#ActionSelectorDialog">ActionSelectorDialog</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="ActionSelectorDialog">class <strong>ActionSelectorDialog</strong></a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ActionSelectorDialog">ActionSelectorDialog</a>(action_map:&nbsp;Dict[str,&nbsp;Any],&nbsp;parent=None)<br>
+&nbsp;<br>
+<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="action_selector_dialog.html#ActionSelectorDialog">ActionSelectorDialog</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a></dd>
+<dd><a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a></dd>
+<dd><a href="PyQt5.sip.html#wrapper">sip.wrapper</a></dd>
+<dd><a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a></dd>
+<dd><a href="PyQt5.sip.html#simplewrapper">sip.simplewrapper</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="ActionSelectorDialog-__init__"><strong>__init__</strong></a>(self, action_map: Dict[str, Any], parent=None)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-on_button_click"><strong>on_button_click</strong></a>(self, label: str, action_data: Any) -&gt; None</dt></dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<dl><dt><a name="ActionSelectorDialog-accept"><strong>accept</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-accept">accept</a>(self)</span></dd></dl>
+
+<strong>accepted</strong> = &lt;unbound PYQT_SIGNAL accepted()&gt;
+<dl><dt><a name="ActionSelectorDialog-actionEvent"><strong>actionEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-changeEvent"><strong>changeEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-childEvent"><strong>childEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-closeEvent"><strong>closeEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-closeEvent">closeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QCloseEvent])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-connectNotify"><strong>connectNotify</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;a0:&nbsp;Optional[QContextMenuEvent])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-create"><strong>create</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-customEvent"><strong>customEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-destroy"><strong>destroy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-done"><strong>done</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-done">done</a>(self,&nbsp;a0:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-dropEvent"><strong>dropEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-enterEvent"><strong>enterEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-event"><strong>event</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-eventFilter"><strong>eventFilter</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-eventFilter">eventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject],&nbsp;a1:&nbsp;Optional[QEvent])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-exec"><strong>exec</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-exec">exec</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-exec_"><strong>exec_</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-exec_">exec_</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<strong>finished</strong> = &lt;unbound PYQT_SIGNAL finished(int)&gt;
+<dl><dt><a name="ActionSelectorDialog-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-hideEvent"><strong>hideEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-initPainter"><strong>initPainter</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isSizeGripEnabled"><strong>isSizeGripEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isSizeGripEnabled">isSizeGripEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-keyPressEvent">keyPressEvent</a>(self,&nbsp;a0:&nbsp;Optional[QKeyEvent])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-metric"><strong>metric</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-moveEvent"><strong>moveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-open"><strong>open</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-open">open</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-paintEvent"><strong>paintEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-receivers"><strong>receivers</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-reject"><strong>reject</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-reject">reject</a>(self)</span></dd></dl>
+
+<strong>rejected</strong> = &lt;unbound PYQT_SIGNAL rejected()&gt;
+<dl><dt><a name="ActionSelectorDialog-resizeEvent"><strong>resizeEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-resizeEvent">resizeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QResizeEvent])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-result"><strong>result</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-result">result</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-sender"><strong>sender</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setModal"><strong>setModal</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setModal">setModal</a>(self,&nbsp;modal:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setResult"><strong>setResult</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setResult">setResult</a>(self,&nbsp;r:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setSizeGripEnabled"><strong>setSizeGripEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setSizeGripEnabled">setSizeGripEnabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setVisible"><strong>setVisible</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setVisible">setVisible</a>(self,&nbsp;visible:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-showEvent"><strong>showEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-showEvent">showEvent</a>(self,&nbsp;a0:&nbsp;Optional[QShowEvent])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-sizeHint"><strong>sizeHint</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-timerEvent"><strong>timerEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="ActionSelectorDialog-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<dl><dt><strong>Accepted</strong> = 1</dl>
+
+<dl><dt><strong>DialogCode</strong> = &lt;class 'PyQt5.QtWidgets.QDialog.DialogCode'&gt;</dl>
+
+<dl><dt><strong>Rejected</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><a name="ActionSelectorDialog-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-accessibleName"><strong>accessibleName</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-actions"><strong>actions</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-actions">actions</a>(self)&nbsp;-&gt;&nbsp;list[QAction]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-activateWindow"><strong>activateWindow</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-activateWindow">activateWindow</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-addAction"><strong>addAction</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-addAction">addAction</a>(self,&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-addActions"><strong>addActions</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-addActions">addActions</a>(self,&nbsp;actions:&nbsp;Iterable[QAction])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-adjustSize"><strong>adjustSize</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-adjustSize">adjustSize</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-baseSize"><strong>baseSize</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-childAt"><strong>childAt</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-childAt">childAt</a>(self,&nbsp;p:&nbsp;QPoint)&nbsp;-&gt;&nbsp;Optional[QWidget]<br>
+<a href="#ActionSelectorDialog-childAt">childAt</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-childrenRect"><strong>childrenRect</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-clearFocus"><strong>clearFocus</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-clearFocus">clearFocus</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-clearMask"><strong>clearMask</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-clearMask">clearMask</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-close"><strong>close</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-contentsRect"><strong>contentsRect</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-createWindowContainer"><strong>createWindowContainer</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-createWindowContainer">createWindowContainer</a>(window:&nbsp;Optional[QWindow],&nbsp;parent:&nbsp;Optional[QWidget]&nbsp;=&nbsp;None,&nbsp;flags:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType]&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;QWidget</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-cursor"><strong>cursor</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</span></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound PYQT_SIGNAL customContextMenuRequested(QPoint)&gt;
+<dl><dt><a name="ActionSelectorDialog-devType"><strong>devType</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;PyQt5.sip.voidptr</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-ensurePolished">ensurePolished</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-find"><strong>find</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-find">find</a>(a0:&nbsp;PyQt5.sip.voidptr)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-focusProxy"><strong>focusProxy</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-focusWidget"><strong>focusWidget</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-font"><strong>font</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-fontInfo"><strong>fontInfo</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-frameSize"><strong>frameSize</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-geometry"><strong>geometry</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-geometry">geometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-getContentsMargins">getContentsMargins</a>(self)&nbsp;-&gt;&nbsp;(Optional[int],&nbsp;Optional[int],&nbsp;Optional[int],&nbsp;Optional[int])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-grab"><strong>grab</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,&nbsp;0),&nbsp;QSize(-1,&nbsp;-1)))&nbsp;-&gt;&nbsp;QPixmap</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-grabGesture"><strong>grabGesture</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-grabGesture">grabGesture</a>(self,&nbsp;type:&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Union[Qt.GestureFlags,&nbsp;Qt.GestureFlag]&nbsp;=&nbsp;Qt.GestureFlags())</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-grabKeyboard">grabKeyboard</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-grabMouse"><strong>grabMouse</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-grabMouse">grabMouse</a>(self)<br>
+<a href="#ActionSelectorDialog-grabMouse">grabMouse</a>(self,&nbsp;a0:&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-grabShortcut">grabShortcut</a>(self,&nbsp;key:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int],&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;Optional[QGraphicsEffect]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QGraphicsProxyWidget]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-hasFocus"><strong>hasFocus</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-hasTabletTracking"><strong>hasTabletTracking</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-hasTabletTracking">hasTabletTracking</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-height"><strong>height</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-height">height</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-heightForWidth">heightForWidth</a>(self,&nbsp;a0:&nbsp;int)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-hide"><strong>hide</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-hide">hide</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHints</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;a0:&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-insertAction"><strong>insertAction</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-insertAction">insertAction</a>(self,&nbsp;before:&nbsp;Optional[QAction],&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-insertActions"><strong>insertActions</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-insertActions">insertActions</a>(self,&nbsp;before:&nbsp;Optional[QAction],&nbsp;actions:&nbsp;Iterable[QAction])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isAncestorOf">isAncestorOf</a>(self,&nbsp;child:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isEnabled"><strong>isEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isEnabledTo">isEnabledTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isHidden"><strong>isHidden</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isMaximized"><strong>isMaximized</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isMinimized"><strong>isMinimized</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isModal"><strong>isModal</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isVisible"><strong>isVisible</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isVisibleTo">isVisibleTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isWindow"><strong>isWindow</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-layout"><strong>layout</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-layout">layout</a>(self)&nbsp;-&gt;&nbsp;Optional[QLayout]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-locale"><strong>locale</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-lower"><strong>lower</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-lower">lower</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-mapFrom"><strong>mapFrom</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-mapFrom">mapFrom</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-mapFromParent">mapFromParent</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-mapTo"><strong>mapTo</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-mapTo">mapTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-mapToGlobal">mapToGlobal</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-mapToParent"><strong>mapToParent</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-mapToParent">mapToParent</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-mask"><strong>mask</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-maximumSize"><strong>maximumSize</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-minimumSize"><strong>minimumSize</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-move"><strong>move</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-move">move</a>(self,&nbsp;a0:&nbsp;QPoint)<br>
+<a href="#ActionSelectorDialog-move">move</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;type:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-overrideWindowState">overrideWindowState</a>(self,&nbsp;state:&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-paintEngine"><strong>paintEngine</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;Optional[QPaintEngine]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-palette"><strong>palette</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-parentWidget"><strong>parentWidget</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-pos"><strong>pos</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-raise_"><strong>raise_</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-raise_">raise_</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-rect"><strong>rect</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-releaseKeyboard">releaseKeyboard</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-releaseMouse">releaseMouse</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-releaseShortcut">releaseShortcut</a>(self,&nbsp;id:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-removeAction"><strong>removeAction</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-removeAction">removeAction</a>(self,&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-render"><strong>render</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-render">render</a>(self,&nbsp;target:&nbsp;Optional[QPaintDevice],&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#ActionSelectorDialog-RenderFlags">RenderFlags</a>(QWidget.RenderFlag.DrawWindowBackground|QWidget.RenderFlag.DrawChildren))<br>
+<a href="#ActionSelectorDialog-render">render</a>(self,&nbsp;painter:&nbsp;Optional[QPainter],&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#ActionSelectorDialog-RenderFlags">RenderFlags</a>(QWidget.RenderFlag.DrawWindowBackground|QWidget.RenderFlag.DrawChildren))</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-repaint"><strong>repaint</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-repaint">repaint</a>(self)<br>
+<a href="#ActionSelectorDialog-repaint">repaint</a>(self,&nbsp;x:&nbsp;int,&nbsp;y:&nbsp;int,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)<br>
+<a href="#ActionSelectorDialog-repaint">repaint</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#ActionSelectorDialog-repaint">repaint</a>(self,&nbsp;a0:&nbsp;QRegion)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-resize"><strong>resize</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-resize">resize</a>(self,&nbsp;a0:&nbsp;QSize)<br>
+<a href="#ActionSelectorDialog-resize">resize</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-restoreGeometry">restoreGeometry</a>(self,&nbsp;geometry:&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-screen"><strong>screen</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-screen">screen</a>(self)&nbsp;-&gt;&nbsp;Optional[QScreen]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-scroll"><strong>scroll</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-scroll">scroll</a>(self,&nbsp;dx:&nbsp;int,&nbsp;dy:&nbsp;int)<br>
+<a href="#ActionSelectorDialog-scroll">scroll</a>(self,&nbsp;dx:&nbsp;int,&nbsp;dy:&nbsp;int,&nbsp;a2:&nbsp;QRect)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;on:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;description:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setAccessibleName">setAccessibleName</a>(self,&nbsp;name:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setAttribute"><strong>setAttribute</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setAttribute">setAttribute</a>(self,&nbsp;attribute:&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;a0:&nbsp;QPalette.ColorRole)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setBaseSize">setBaseSize</a>(self,&nbsp;basew:&nbsp;int,&nbsp;baseh:&nbsp;int)<br>
+<a href="#ActionSelectorDialog-setBaseSize">setBaseSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setContentsMargins">setContentsMargins</a>(self,&nbsp;left:&nbsp;int,&nbsp;top:&nbsp;int,&nbsp;right:&nbsp;int,&nbsp;bottom:&nbsp;int)<br>
+<a href="#ActionSelectorDialog-setContentsMargins">setContentsMargins</a>(self,&nbsp;margins:&nbsp;QMargins)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;policy:&nbsp;Qt.ContextMenuPolicy)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setCursor"><strong>setCursor</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setCursor">setCursor</a>(self,&nbsp;a0:&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setDisabled"><strong>setDisabled</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setDisabled">setDisabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setEnabled"><strong>setEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setEnabled">setEnabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setFixedHeight">setFixedHeight</a>(self,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setFixedSize">setFixedSize</a>(self,&nbsp;a0:&nbsp;QSize)<br>
+<a href="#ActionSelectorDialog-setFixedSize">setFixedSize</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setFixedWidth">setFixedWidth</a>(self,&nbsp;w:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setFocus"><strong>setFocus</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setFocus">setFocus</a>(self)<br>
+<a href="#ActionSelectorDialog-setFocus">setFocus</a>(self,&nbsp;reason:&nbsp;Qt.FocusReason)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;policy:&nbsp;Qt.FocusPolicy)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setFocusProxy">setFocusProxy</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setFont"><strong>setFont</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setFont">setFont</a>(self,&nbsp;a0:&nbsp;QFont)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setForegroundRole">setForegroundRole</a>(self,&nbsp;a0:&nbsp;QPalette.ColorRole)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setGeometry"><strong>setGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setGeometry">setGeometry</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#ActionSelectorDialog-setGeometry">setGeometry</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int,&nbsp;aw:&nbsp;int,&nbsp;ah:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;effect:&nbsp;Optional[QGraphicsEffect])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setHidden"><strong>setHidden</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setHidden">setHidden</a>(self,&nbsp;hidden:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;hints:&nbsp;Union[Qt.InputMethodHints,&nbsp;Qt.InputMethodHint])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setLayout"><strong>setLayout</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setLayout">setLayout</a>(self,&nbsp;a0:&nbsp;Optional[QLayout])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;direction:&nbsp;Qt.LayoutDirection)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setLocale"><strong>setLocale</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setLocale">setLocale</a>(self,&nbsp;locale:&nbsp;QLocale)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setMask"><strong>setMask</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setMask">setMask</a>(self,&nbsp;a0:&nbsp;QBitmap)<br>
+<a href="#ActionSelectorDialog-setMask">setMask</a>(self,&nbsp;a0:&nbsp;QRegion)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;maxh:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setMaximumSize">setMaximumSize</a>(self,&nbsp;maxw:&nbsp;int,&nbsp;maxh:&nbsp;int)<br>
+<a href="#ActionSelectorDialog-setMaximumSize">setMaximumSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;maxw:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;minh:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setMinimumSize">setMinimumSize</a>(self,&nbsp;minw:&nbsp;int,&nbsp;minh:&nbsp;int)<br>
+<a href="#ActionSelectorDialog-setMinimumSize">setMinimumSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;minw:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setMouseTracking">setMouseTracking</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setPalette"><strong>setPalette</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setPalette">setPalette</a>(self,&nbsp;a0:&nbsp;QPalette)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setParent"><strong>setParent</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setParent">setParent</a>(self,&nbsp;parent:&nbsp;Optional[QWidget])<br>
+<a href="#ActionSelectorDialog-setParent">setParent</a>(self,&nbsp;parent:&nbsp;Optional[QWidget],&nbsp;f:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;id:&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;id:&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)<br>
+<a href="#ActionSelectorDialog-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setSizePolicy">setSizePolicy</a>(self,&nbsp;a0:&nbsp;QSizePolicy)<br>
+<a href="#ActionSelectorDialog-setSizePolicy">setSizePolicy</a>(self,&nbsp;hor:&nbsp;QSizePolicy.Policy,&nbsp;ver:&nbsp;QSizePolicy.Policy)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setStatusTip">setStatusTip</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setStyle"><strong>setStyle</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setStyle">setStyle</a>(self,&nbsp;a0:&nbsp;Optional[QStyle])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setStyleSheet">setStyleSheet</a>(self,&nbsp;styleSheet:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setTabOrder">setTabOrder</a>(a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setTabletTracking"><strong>setTabletTracking</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setTabletTracking">setTabletTracking</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setToolTip"><strong>setToolTip</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setToolTip">setToolTip</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setToolTipDuration"><strong>setToolTipDuration</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setToolTipDuration">setToolTipDuration</a>(self,&nbsp;msec:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setWhatsThis">setWhatsThis</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;filePath:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setWindowFlag"><strong>setWindowFlag</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setWindowFlag">setWindowFlag</a>(self,&nbsp;a0:&nbsp;Qt.WindowType,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setWindowFlags">setWindowFlags</a>(self,&nbsp;type:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setWindowIcon">setWindowIcon</a>(self,&nbsp;icon:&nbsp;QIcon)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setWindowIconText">setWindowIconText</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setWindowModality">setWindowModality</a>(self,&nbsp;windowModality:&nbsp;Qt.WindowModality)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setWindowModified">setWindowModified</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;level:&nbsp;float)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setWindowRole">setWindowRole</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setWindowState"><strong>setWindowState</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setWindowState">setWindowState</a>(self,&nbsp;state:&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setWindowTitle">setWindowTitle</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-show"><strong>show</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-show">show</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-showFullScreen">showFullScreen</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-showMaximized"><strong>showMaximized</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-showMaximized">showMaximized</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-showMinimized"><strong>showMinimized</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-showMinimized">showMinimized</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-showNormal"><strong>showNormal</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-showNormal">showNormal</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-size"><strong>size</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-stackUnder"><strong>stackUnder</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-stackUnder">stackUnder</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-statusTip"><strong>statusTip</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-style"><strong>style</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-style">style</a>(self)&nbsp;-&gt;&nbsp;Optional[QStyle]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-styleSheet"><strong>styleSheet</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-testAttribute"><strong>testAttribute</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-testAttribute">testAttribute</a>(self,&nbsp;attribute:&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-toolTip"><strong>toolTip</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-toolTipDuration"><strong>toolTipDuration</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-toolTipDuration">toolTipDuration</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-underMouse"><strong>underMouse</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-ungrabGesture">ungrabGesture</a>(self,&nbsp;type:&nbsp;Qt.GestureType)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-unsetCursor">unsetCursor</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-unsetLayoutDirection">unsetLayoutDirection</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-unsetLocale">unsetLocale</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-update"><strong>update</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-update">update</a>(self)<br>
+<a href="#ActionSelectorDialog-update">update</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#ActionSelectorDialog-update">update</a>(self,&nbsp;a0:&nbsp;QRegion)<br>
+<a href="#ActionSelectorDialog-update">update</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int,&nbsp;aw:&nbsp;int,&nbsp;ah:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-updateGeometry">updateGeometry</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-whatsThis"><strong>whatsThis</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-width"><strong>width</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-width">width</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-winId"><strong>winId</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-winId">winId</a>(self)&nbsp;-&gt;&nbsp;PyQt5.sip.voidptr</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-window"><strong>window</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-window">window</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-windowFlags"><strong>windowFlags</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowFlags</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-windowHandle"><strong>windowHandle</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-windowHandle">windowHandle</a>(self)&nbsp;-&gt;&nbsp;Optional[QWindow]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-windowIcon"><strong>windowIcon</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</span></dd></dl>
+
+<strong>windowIconChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconChanged(QIcon)&gt;
+<dl><dt><a name="ActionSelectorDialog-windowIconText"><strong>windowIconText</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>windowIconTextChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconTextChanged(QString)&gt;
+<dl><dt><a name="ActionSelectorDialog-windowModality"><strong>windowModality</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-windowRole"><strong>windowRole</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-windowState"><strong>windowState</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowStates</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-windowTitle"><strong>windowTitle</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>windowTitleChanged</strong> = &lt;unbound PYQT_SIGNAL windowTitleChanged(QString)&gt;
+<dl><dt><a name="ActionSelectorDialog-windowType"><strong>windowType</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-x"><strong>x</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-x">x</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-y"><strong>y</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-y">y</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = 2</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = 1</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = 4</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlags'&gt;<dd><span class="code">QWidget.<a href="#ActionSelectorDialog-RenderFlags">RenderFlags</a>()<br>
+QWidget.<a href="#ActionSelectorDialog-RenderFlags">RenderFlags</a>(f:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag])<br>
+QWidget.<a href="#ActionSelectorDialog-RenderFlags">RenderFlags</a>(a0:&nbsp;QWidget.RenderFlags)</span></dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><a name="ActionSelectorDialog-__getattr__"><strong>__getattr__</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-__getattr__">__getattr__</a>(self,&nbsp;name:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-blockSignals"><strong>blockSignals</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-blockSignals">blockSignals</a>(self,&nbsp;b:&nbsp;bool)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-children"><strong>children</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-children">children</a>(self)&nbsp;-&gt;&nbsp;list[QObject]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-deleteLater"><strong>deleteLater</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-deleteLater">deleteLater</a>(self)</span></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound PYQT_SIGNAL destroyed(QObject*)&gt;
+<dl><dt><a name="ActionSelectorDialog-disconnect"><strong>disconnect</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-disconnect">disconnect</a>(a0:&nbsp;QMetaObject.Connection)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#ActionSelectorDialog-disconnect">disconnect</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-dumpObjectInfo">dumpObjectInfo</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-dumpObjectTree">dumpObjectTree</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;list[QByteArray]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-findChild"><strong>findChild</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-findChild">findChild</a>(self,&nbsp;type:&nbsp;type[QObjectT],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObjectT<br>
+<a href="#ActionSelectorDialog-findChild">findChild</a>(self,&nbsp;types:&nbsp;tuple[type[QObjectT],&nbsp;...],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObjectT</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-findChildren"><strong>findChildren</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;type[QObjectT],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#ActionSelectorDialog-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;tuple[type[QObjectT],&nbsp;...],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#ActionSelectorDialog-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;type[QObjectT],&nbsp;regExp:&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#ActionSelectorDialog-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;tuple[type[QObjectT],&nbsp;...],&nbsp;regExp:&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#ActionSelectorDialog-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;type[QObjectT],&nbsp;re:&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#ActionSelectorDialog-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;tuple[type[QObjectT],&nbsp;...],&nbsp;re:&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-inherits"><strong>inherits</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-inherits">inherits</a>(self,&nbsp;classname:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-installEventFilter">installEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-isWindowType"><strong>isWindowType</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-killTimer"><strong>killTimer</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-killTimer">killTimer</a>(self,&nbsp;id:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-metaObject"><strong>metaObject</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;Optional[QMetaObject]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-moveToThread"><strong>moveToThread</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-moveToThread">moveToThread</a>(self,&nbsp;thread:&nbsp;Optional[QThread])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-objectName"><strong>objectName</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound PYQT_SIGNAL objectNameChanged(QString)&gt;
+<dl><dt><a name="ActionSelectorDialog-parent"><strong>parent</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-parent">parent</a>(self)&nbsp;-&gt;&nbsp;Optional[QObject]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-property"><strong>property</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-property">property</a>(self,&nbsp;name:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)</dt><dd><span class="code">QObject.<a href="#ActionSelectorDialog-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-removeEventFilter">removeEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setObjectName"><strong>setObjectName</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setObjectName">setObjectName</a>(self,&nbsp;name:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-setProperty"><strong>setProperty</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-setProperty">setProperty</a>(self,&nbsp;name:&nbsp;Optional[str],&nbsp;value:&nbsp;Any)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-startTimer"><strong>startTimer</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-startTimer">startTimer</a>(self,&nbsp;interval:&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-thread"><strong>thread</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-thread">thread</a>(self)&nbsp;-&gt;&nbsp;Optional[QThread]</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-tr"><strong>tr</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-tr">tr</a>(self,&nbsp;sourceText:&nbsp;Optional[str],&nbsp;disambiguation:&nbsp;Optional[str]&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>staticMetaObject</strong> = &lt;PyQt5.QtCore.QMetaObject object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="ActionSelectorDialog-colorCount"><strong>colorCount</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-depth"><strong>depth</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-devicePixelRatio"><strong>devicePixelRatio</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-devicePixelRatio">devicePixelRatio</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-devicePixelRatioF"><strong>devicePixelRatioF</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-devicePixelRatioF">devicePixelRatioF</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-devicePixelRatioFScale"><strong>devicePixelRatioFScale</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-devicePixelRatioFScale">devicePixelRatioFScale</a>()&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-heightMM"><strong>heightMM</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-paintingActive"><strong>paintingActive</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ActionSelectorDialog-widthMM"><strong>widthMM</strong></a>(...)</dt><dd><span class="code"><a href="#ActionSelectorDialog-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;class 'PyQt5.QtGui.QPaintDevice.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = 6</dl>
+
+<dl><dt><strong>PdmDevicePixelRatio</strong> = 11</dl>
+
+<dl><dt><strong>PdmDevicePixelRatioScaled</strong> = 12</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = 7</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = 8</dl>
+
+<dl><dt><strong>PdmHeight</strong> = 2</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = 4</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = 5</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = 9</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = 10</dl>
+
+<dl><dt><strong>PdmWidth</strong> = 1</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = 3</dl>
+
+<hr>
+Static methods inherited from <a href="PyQt5.sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><a name="ActionSelectorDialog-__new__"><strong>__new__</strong></a>(*args, **kwargs)<span class="grey"><span class="heading-text"> class method of <a href="PyQt5.sip.html#simplewrapper">sip.simplewrapper</a></span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt5.sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+</td></tr></table></td></tr></table><p>
+<table class="section">
+<tr class="decor data-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
+    
+<tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><strong>ActionMap</strong> = typing.Dict[str, typing.Any]<br>
+<strong>Callable</strong> = typing.Callable<br>
+<strong>Dict</strong> = typing.Dict<br>
+<strong>List</strong> = typing.List<br>
+<strong>Optional</strong> = typing.Optional</td></tr></table>
+</body></html>
