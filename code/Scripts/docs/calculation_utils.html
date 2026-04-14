@@ -12,6 +12,13 @@
     <p></p>
 <p>
 <table class="section">
+<tr class="decor pkg-content-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Modules</strong></td></tr>
+    
+<tr><td class="decor pkg-content-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><table><tr><td class="multicolumn"><a href="processing.html">processing</a><br>
+</td><td class="multicolumn"></td><td class="multicolumn"></td><td class="multicolumn"></td></tr></table></td></tr></table><p>
+<table class="section">
 <tr class="decor functions-decor heading-text">
 <td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
     
@@ -34,12 +41,11 @@ Raises:<br>
  <dl><dt><a name="-check_equality_of_layer_crs_to_wanted_crs"><strong>check_equality_of_layer_crs_to_wanted_crs</strong></a>(layers: List[qgis._core.QgsMapLayer], wanted_crs: qgis._core.QgsCoordinateReferenceSystem) -&gt; bool</dt><dd><span class="code">Check&nbsp;if&nbsp;the&nbsp;CRS&nbsp;of&nbsp;two&nbsp;layers&nbsp;are&nbsp;the&nbsp;same.<br>
 &nbsp;<br>
 Args:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;layer1&nbsp;(QgsMapLayer):&nbsp;The&nbsp;first&nbsp;layer&nbsp;to&nbsp;compare.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;layer2&nbsp;(QgsMapLayer):&nbsp;The&nbsp;second&nbsp;layer&nbsp;to&nbsp;compare.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;layers&nbsp;(List[QgsMapLayer]):&nbsp;The&nbsp;layers&nbsp;to&nbsp;check.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;wanted_crs&nbsp;(QgsCoordinateReferenceSystem):&nbsp;The&nbsp;wanted&nbsp;coordinate&nbsp;reference&nbsp;system.<br>
 &nbsp;<br>
 Returns:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;if&nbsp;the&nbsp;CRS&nbsp;of&nbsp;both&nbsp;layers&nbsp;are&nbsp;the&nbsp;same,&nbsp;False&nbsp;otherwise.</span></dd></dl>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;if&nbsp;the&nbsp;CRS&nbsp;of&nbsp;all&nbsp;layers&nbsp;match&nbsp;the&nbsp;wanted&nbsp;CRS,&nbsp;False&nbsp;otherwise.</span></dd></dl>
  <dl><dt><a name="-copy_layer_to_temp"><strong>copy_layer_to_temp</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsMapLayer) -&gt; qgis._core.QgsMapLayer</dt><dd><span class="code">Copy&nbsp;any&nbsp;QGIS&nbsp;layer&nbsp;to&nbsp;a&nbsp;temporary&nbsp;layer.<br>
 Works&nbsp;for&nbsp;vector,&nbsp;raster,&nbsp;mesh,&nbsp;and&nbsp;other&nbsp;layer&nbsp;types.<br>
 &nbsp;<br>
@@ -179,6 +185,18 @@ Returns:</span></dd></dl>
  <dl><dt><a name="-print_count_layer"><strong>print_count_layer</strong></a>(layer: qgis._core.QgsMapLayer)</dt><dd><span class="code">Print&nbsp;the&nbsp;count&nbsp;of&nbsp;the&nbsp;features&nbsp;of&nbsp;a&nbsp;valid&nbsp;layer.<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;layer&nbsp;(QgsMapLayer):&nbsp;The&nbsp;layer&nbsp;to&nbsp;check&nbsp;and&nbsp;print&nbsp;the&nbsp;feature&nbsp;count&nbsp;for.</span></dd></dl>
+ <dl><dt><a name="-split_layer_by_search_areas"><strong>split_layer_by_search_areas</strong></a>(layer: qgis._core.QgsVectorLayer, search_areas_layer: qgis._core.QgsVectorLayer) -&gt; Tuple[qgis._core.QgsVectorLayer, qgis._core.QgsVectorLayer, qgis._core.QgsVectorLayer]</dt><dd><span class="code">Split&nbsp;a&nbsp;layer&nbsp;by&nbsp;given&nbsp;search&nbsp;areas.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;layer&nbsp;(QgsVectorLayer):&nbsp;The&nbsp;layer&nbsp;to&nbsp;split.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;search_areas_layer&nbsp;(QgsVectorLayer):&nbsp;The&nbsp;layer&nbsp;containing&nbsp;the&nbsp;search&nbsp;areas&nbsp;to&nbsp;split&nbsp;by.<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;A&nbsp;tuple&nbsp;containing&nbsp;three&nbsp;layers:&nbsp;(features_within_search_areas,&nbsp;features_intersecting_search_areas,&nbsp;features_outside_search_areas)</span></dd></dl>
+ <dl><dt><a name="-split_layer_by_search_areas_processing"><strong>split_layer_by_search_areas_processing</strong></a>(split_layer: qgis._core.QgsVectorLayer, search_areas_layer: qgis._core.QgsVectorLayer) -&gt; Tuple[qgis._core.QgsVectorLayer, qgis._core.QgsVectorLayer, qgis._core.QgsVectorLayer]</dt><dd><span class="code">Efficiently&nbsp;splits&nbsp;a&nbsp;potentially&nbsp;large&nbsp;layer&nbsp;using&nbsp;QGIS&nbsp;Processing&nbsp;(optimized&nbsp;for&nbsp;memory).<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;(fully_inside_layer,&nbsp;partially_inside_layer,&nbsp;outside_layer)</span></dd></dl>
 </td></tr></table><p>
 <table class="section">
 <tr class="decor data-decor heading-text">
@@ -186,5 +204,7 @@ Args:<br>
     
 <tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
 <td class="singlecolumn"><strong>List</strong> = typing.List<br>
+<strong>Tuple</strong> = typing.Tuple<br>
+<strong>__warningregistry__</strong> = {'version': 842, ('QgsField constructor is deprecated', &lt;class 'DeprecationWarning'&gt;, 391): True}<br>
 <strong>iface</strong> = &lt;qgis._gui.QgisInterface object&gt;</td></tr></table>
 </body></html>

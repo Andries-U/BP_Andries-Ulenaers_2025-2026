@@ -17,7 +17,8 @@ MY_MODULES = [
     "multiselect_dialog",
     "item_selection",
     "action_selector_dialog",
-    "layer_statistics_dialog"
+    "layer_statistics_dialog",
+    "main"
 ]
 
 def reload_all_custom_modules(modules: list[str] = MY_MODULES):

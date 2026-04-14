@@ -4,7 +4,8 @@ from qgis.core import (
     QgsVectorLayer, QgsMapLayer, QgsRasterLayer, QgsMeshLayer, QgsFeature, QgsVectorTileLayer, QgsField, QgsGeometry, QgsPointXY, QgsCoordinateReferenceSystem, QgsWkbTypes
 )
 from PyQt5.QtCore import QVariant
-from typing import List
+from typing import List, Tuple
+import processing
 
 def get_centroid_of_polygon(polygon_geom: QgsGeometry) -> QgsPointXY:
     """
@@ -41,12 +42,11 @@ def check_equality_of_layer_crs_to_wanted_crs(layers: List[QgsMapLayer], wanted_
     Check if the CRS of two layers are the same.
     
     Args:
-        layer1 (QgsMapLayer): The first layer to compare.
-        layer2 (QgsMapLayer): The second layer to compare.
+        layers (List[QgsMapLayer]): The layers to check.
         wanted_crs (QgsCoordinateReferenceSystem): The wanted coordinate reference system.
     
     Returns:
-        bool: True if the CRS of both layers are the same, False otherwise.
+        bool: True if the CRS of all layers match the wanted CRS, False otherwise.
     """
 
     for layer in layers:
@@ -193,7 +193,7 @@ def is_within_polygon(search_polygon: QgsGeometry, area_polygon: QgsGeometry) ->
     Returns:
         bool: True if the search polygon is within the area polygon, False otherwise.
     """
-    return area_polygon.within(search_polygon)
+    return search_polygon.within(area_polygon)
 
 def is_intersecting_polygon(search_polygon: QgsGeometry, area_polygon: QgsGeometry) -> bool:
     """
@@ -403,3 +403,145 @@ def generate_search_areas_layer_around_points_from_points_layer(points: QgsVecto
     layer.commitChanges()
 
     return layer
+
+def split_layer_by_search_areas(layer: QgsVectorLayer, search_areas_layer: QgsVectorLayer) -> Tuple[QgsVectorLayer, QgsVectorLayer, QgsVectorLayer]:
+    """
+    Split a layer by given search areas.
+
+    Args:
+        layer (QgsVectorLayer): The layer to split.
+        search_areas_layer (QgsVectorLayer): The layer containing the search areas to split by.
+
+    Returns:
+        tuple: A tuple containing three layers: (features_within_search_areas, features_intersecting_search_areas, features_outside_search_areas)
+    """
+
+    if layer is None or layer.featureCount() == 0:
+        raise ValueError("The provided layer to split is invalid. It must be a non-empty vector layer.")
+    if search_areas_layer is None:
+        raise ValueError("The provided search areas layer is invalid. It must be a non-empty vector layer.")
+    if search_areas_layer.geometryType() != QgsWkbTypes.PolygonGeometry:
+        raise ValueError("The search areas layer must be a polygon layer.")
+    if search_areas_layer.featureCount() == 0:
+        raise ValueError("The search areas layer must contain at least one feature.")
+    
+    within_layer = make_empty_copy_of_vector_layer(f"{layer.name()}_within_search_areas", layer)
+    intersecting_layer = make_empty_copy_of_vector_layer(f"{layer.name()}_intersecting_search_areas", layer)
+    outside_layer = make_empty_copy_of_vector_layer(f"{layer.name()}_outside_search_areas", layer)
+
+    for feature in layer.getFeatures():
+        feature_geom = feature.geometry()
+        within = False
+        intersecting = False
+
+        for search_area in search_areas_layer.getFeatures():
+            search_area_geom = search_area.geometry()
+            if feature_geom.within(search_area_geom):
+                within = True
+                break
+            elif feature_geom.intersects(search_area_geom):
+                intersecting = True
+        
+        if within:
+            within_layer.dataProvider().addFeature(feature)
+            within_layer.updateFields()
+            within_layer.commitChanges()
+        elif intersecting:
+            intersecting_layer.dataProvider().addFeature(feature)
+            intersecting_layer.updateFields()
+            intersecting_layer.commitChanges()
+        else:
+            outside_layer.dataProvider().addFeature(feature)
+            outside_layer.updateFields()
+            outside_layer.commitChanges()
+    
+    return within_layer, intersecting_layer, outside_layer
+
+def split_layer_by_search_areas_processing(split_layer: QgsVectorLayer, search_areas_layer: QgsVectorLayer) -> Tuple[QgsVectorLayer, QgsVectorLayer, QgsVectorLayer]: 
+    """
+    Efficiently splits a potentially large layer using QGIS Processing (optimized for memory).
+    
+    Returns:
+        tuple: (fully_inside_layer, partially_inside_layer, outside_layer)
+    """
+
+    if split_layer is None or split_layer.featureCount() == 0:
+        raise ValueError("The provided layer to split is invalid. It must be a non-empty vector layer.")
+    if search_areas_layer is None or search_areas_layer.featureCount() == 0:
+        raise ValueError("The search areas layer must be a non-empty polygon layer.")
+    if search_areas_layer.geometryType() != 2:  # 2 = PolygonGeometry
+        raise ValueError("The search areas layer must be a polygon layer.")
+
+    # 1. CLIP: Extract only features that intersect with search areas.
+    try:
+        print("Clipping layer to search areas...")
+        clip_result = processing.run("native:clip", {
+            'INPUT': split_layer,
+            'OVERLAY': search_areas_layer,
+            'OUTPUT': 'memory:'
+        })
+        clipped_layer = clip_result['OUTPUT']
+        print(f"Type of clipped_layer: {type(clipped_layer)}")
+        print(f"Value of clipped_layer: {clipped_layer}")
+        
+    except Exception as e:
+        print(f"Clipping failed: {e}")
+        return None, None, None
+
+    clipped_layer = split_layer
+    # 2. SPLIT: Use Processing to separate "Within" and "Intersecting" features.
+    #    "Within" = features completely inside search areas
+    #    "Intersecting" = features partially inside search areas
+    try:
+        print("Extracting features fully within search areas...")
+        within_result = processing.run("native:extractbylocation", {
+            'INPUT': clipped_layer,
+            'INTERSECT': search_areas_layer,
+            'PREDICATE': 6,
+            'OUTPUT': 'memory:'
+        })
+        fully_inside_layer = within_result['OUTPUT']
+
+        print("Extracting features intersecting search areas...")
+        intersecting_result = processing.run("native:extractbylocation", {
+            'INPUT': clipped_layer,
+            'INTERSECT': search_areas_layer,
+            'PREDICATE': 0,
+            'OUTPUT': 'memory:'
+        })
+        partially_inside_layer = intersecting_result['OUTPUT']
+
+        print("Removing fully within features from intersecting layer to avoid duplicates...")
+        # Remove "Within" features from "Intersecting" layer to avoid duplicates
+        processing.run("native:difference", {
+            'INPUT': partially_inside_layer,
+            'OVERLAY': fully_inside_layer,
+            'OUTPUT': 'memory:'
+        }, feedback=None)
+
+        print("Difference operation completed. Updating partially inside layer...")
+        partially_inside_layer = processing.run("native:difference", {
+            'INPUT': partially_inside_layer,
+            'OVERLAY': fully_inside_layer,
+            'OUTPUT': 'memory:'
+        })['OUTPUT']
+    
+    except Exception as e:
+        print(f"Extracting within/intersecting failed: {e}")
+        return None, None, None
+
+    # 3. HANDLE "OUTSIDE": Features not intersecting with search areas
+    try:
+        print("Extracting features outside search areas...")
+        outside_result = processing.run("native:extractbylocation", {
+            'INPUT': split_layer,
+            'INTERSECT': search_areas_layer,
+            'PREDICATE': 2,
+            'OUTPUT': 'memory:'
+        })
+        outside_layer = outside_result['OUTPUT']
+    except Exception as e:
+        print(f"Extracting outside failed: {e}")
+        outside_layer = None
+
+    return fully_inside_layer, partially_inside_layer, outside_layer

@@ -12,9 +12,12 @@ from typing import Dict, List, Any, Optional
 from collections import Counter
 
 class LayerStatisticsDialog(QDialog):
-    def __init__(self, layer: QgsVectorLayer, parent=None):
+    def __init__(self, layer: QgsVectorLayer, parent=None, title: Optional[str] = None):
         super().__init__(parent)
-        self.setWindowTitle(f"Statistics for: {layer.name()}")
+        if title:
+            self.setWindowTitle(title)
+        else:
+            self.setWindowTitle(f"Statistics for: {layer.name()}")
         self.setWindowFlags(self.windowFlags() | Qt.WindowMaximizeButtonHint)
         self.setModal(True)
         self.layer = layer

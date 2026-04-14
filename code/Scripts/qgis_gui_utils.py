@@ -1,8 +1,8 @@
 from item_selection import ItemSelectionDialog
-from PyQt5.QtWidgets import QDialog, QApplication
+from PyQt5.QtWidgets import QDialog, QApplication, QInputDialog, QLineEdit, QMessageBox
 from exceptions import SelectionCancelledError, NoItemSelectedError, LayerFeatureError
-from typing import TypeVar
-from qgis.core import (QgsVectorLayer, QgsFeature, QgsRectangle, QgsMapLayer, QgsProject)
+from typing import Optional, TypeVar
+from qgis.core import (QgsVectorLayer, QgsFeature, QgsRectangle, QgsMapLayer, QgsProject, QgsMessageLog, Qgis)
 from qgis.utils import iface
 from multiselect_dialog import ColumnMultiselectDialog
 
@@ -158,3 +158,50 @@ def run_selection_dialog_column_values(layer: QgsVectorLayer, column_name: str, 
     else:
         print("Selection cancelled.")
         return []
+
+def get_user_input_dialog(title: str, prompt: str, default_value: str="") -> Optional[str]:
+    """
+    Creates a QGIS dialog popup to get user input.
+    
+    Args:
+        title (str): The title of the dialog window.
+        question (str): The text displayed in the dialog.
+        default_value (T): The pre-filled text in the input field.
+
+    
+    Returns:
+        T: The user's input if 'OK' is pressed, empty string if 'Cancel' is pressed.
+        bool: Returns False if the user cancels the dialog.
+    """
+    
+    text, ok = QInputDialog.getText(
+        None, 
+        title, 
+        prompt, 
+        QLineEdit.Normal, 
+        str(default_value)
+    )
+    
+    if ok and text:
+        return text
+    else:
+        return None
+    
+def show_error_popup(title: str, message: str):
+    """
+    Displays a modal error popup dialog that stops execution until the user clicks OK.
+    Also logs the error to the QGIS Log Panel.
+    
+    Args:
+        title (str): The title of the popup window.
+        message (str): The error message text.
+    """
+    # Create the popup
+    msg_box = QMessageBox()
+    msg_box.setIcon(QMessageBox.Critical)
+    msg_box.setWindowTitle(title)
+    msg_box.setText(message)
+    msg_box.setStandardButtons(QMessageBox.Ok)
+    
+    # Execute the dialog (this pauses execution here)
+    msg_box.exec()

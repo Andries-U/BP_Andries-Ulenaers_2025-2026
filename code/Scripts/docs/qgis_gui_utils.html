@@ -20,6 +20,17 @@
 &nbsp;<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;QgsRectangle:&nbsp;Rectangle&nbsp;that&nbsp;encompasses&nbsp;the&nbsp;view&nbsp;of&nbsp;the&nbsp;visual&nbsp;editor</span></dd></dl>
+ <dl><dt><a name="-get_user_input_dialog"><strong>get_user_input_dialog</strong></a>(title: str, prompt: str, default_value: str = '') -&gt; Optional[str]</dt><dd><span class="code">Creates&nbsp;a&nbsp;QGIS&nbsp;dialog&nbsp;popup&nbsp;to&nbsp;get&nbsp;user&nbsp;input.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;(str):&nbsp;The&nbsp;title&nbsp;of&nbsp;the&nbsp;dialog&nbsp;window.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;question&nbsp;(str):&nbsp;The&nbsp;text&nbsp;displayed&nbsp;in&nbsp;the&nbsp;dialog.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;default_value&nbsp;(T):&nbsp;The&nbsp;pre-filled&nbsp;text&nbsp;in&nbsp;the&nbsp;input&nbsp;field.<br>
+&nbsp;<br>
+&nbsp;<br>
+Returns:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;T:&nbsp;The&nbsp;user's&nbsp;input&nbsp;if&nbsp;'OK'&nbsp;is&nbsp;pressed,&nbsp;empty&nbsp;string&nbsp;if&nbsp;'Cancel'&nbsp;is&nbsp;pressed.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;Returns&nbsp;False&nbsp;if&nbsp;the&nbsp;user&nbsp;cancels&nbsp;the&nbsp;dialog.</span></dd></dl>
  <dl><dt><a name="-run_selection_dialog_column_values"><strong>run_selection_dialog_column_values</strong></a>(layer: qgis._core.QgsVectorLayer, column_name: str, title: str = None, instruction: str = None) -&gt; list</dt></dl>
  <dl><dt><a name="-select_feature_from_layer_database"><strong>select_feature_from_layer_database</strong></a>(layer: qgis._core.QgsVectorLayer, prompt: str = 'Select a feature', title: str = 'Select a Feature') -&gt; tuple[qgis._core.QgsFeature, int]</dt><dd><span class="code">Select&nbsp;a&nbsp;feature&nbsp;ID&nbsp;from&nbsp;a&nbsp;vector&nbsp;layer.<br>
 &nbsp;<br>
@@ -48,12 +59,19 @@ Raises:<br>
  <dl><dt><a name="-select_layer_from_available_layers"><strong>select_layer_from_available_layers</strong></a>(title: str = 'Select a Layer', prompt: str = 'Choose a layer:') -&gt; qgis._core.QgsMapLayer</dt><dd><span class="code">Command&nbsp;line&nbsp;tool&nbsp;to&nbsp;select&nbsp;one&nbsp;layer&nbsp;from&nbsp;the&nbsp;current&nbsp;project.<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;QgsMapLayer:&nbsp;The&nbsp;selected&nbsp;layer</span></dd></dl>
+ <dl><dt><a name="-show_error_popup"><strong>show_error_popup</strong></a>(title: str, message: str)</dt><dd><span class="code">Displays&nbsp;a&nbsp;modal&nbsp;error&nbsp;popup&nbsp;dialog&nbsp;that&nbsp;stops&nbsp;execution&nbsp;until&nbsp;the&nbsp;user&nbsp;clicks&nbsp;OK.<br>
+Also&nbsp;logs&nbsp;the&nbsp;error&nbsp;to&nbsp;the&nbsp;QGIS&nbsp;Log&nbsp;Panel.<br>
+&nbsp;<br>
+Args:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title&nbsp;(str):&nbsp;The&nbsp;title&nbsp;of&nbsp;the&nbsp;popup&nbsp;window.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;message&nbsp;(str):&nbsp;The&nbsp;error&nbsp;message&nbsp;text.</span></dd></dl>
 </td></tr></table><p>
 <table class="section">
 <tr class="decor data-decor heading-text">
 <td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Data</strong></td></tr>
     
 <tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
-<td class="singlecolumn"><strong>T</strong> = ~T<br>
+<td class="singlecolumn"><strong>Optional</strong> = typing.Optional<br>
+<strong>T</strong> = ~T<br>
 <strong>iface</strong> = &lt;qgis._gui.QgisInterface object&gt;</td></tr></table>
 </body></html>
