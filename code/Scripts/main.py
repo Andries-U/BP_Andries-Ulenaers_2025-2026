@@ -1,12 +1,13 @@
 from reset_module_cache import reload_all_custom_modules
 from generate_docs import generate_docs_for_custom_modules
 from qgis_gui_utils import run_selection_dialog_column_values, select_item_from_gui_list, select_layer_from_available_layers,get_user_input_dialog, show_error_popup
-from calculation_utils import generate_search_areas_layer_around_points_from_points_layer, split_layer_by_search_areas, check_equality_of_layer_crs_to_wanted_crs, split_layer_by_search_areas_processing
+from calculation_utils import export_layer_to_csv, generate_search_areas_layer_around_points_from_points_layer, split_layer_by_search_areas, check_equality_of_layer_crs_to_wanted_crs, split_layer_by_search_areas_processing
 from qgis.core import QgsProject, QgsMapLayer, QgsVectorLayer, QgsWkbTypes, QgsLayerTreeGroup
 from qgis.utils import iface
 from action_selector_dialog import ActionSelectorDialog, ActionMap
 from layer_statistics_dialog import LayerStatisticsDialog
-from PyQt5.QtWidgets import QDialog
+from PyQt5.QtWidgets import QDialog, QFileDialog
+from analyse_layer_dialog import AnalyzeLayerSettingsDialog
 
 MY_MODULES = [
     'reset_module_cache',
@@ -20,6 +21,7 @@ MY_MODULES = [
     "multiselect_dialog",
     "item_selection",
     "action_selector_dialog",
+    "analyse_layer_dialog",
     "layer_statistics_dialog"
 ]
 TEMP_GROUP_NAME = "Temp_Group_For_Processing"
@@ -112,6 +114,28 @@ def run_size_analysis():
     dialog2 = LayerStatisticsDialog(layer_intersecting, parent=iface.mainWindow(), title="Features Intersecting Search Area")
     dialog2.exec_()
 
+def test_analysis_settings():
+    print("Running test function...")
+    # Get all layers in the project
+    project = QgsProject.instance()
+    layers = list(project.mapLayers().values())
+    dialog = AnalyzeLayerSettingsDialog(analyze_layers=layers, search_area_layers=layers, parent=iface.mainWindow())
+    settings = dialog.exec_()
+    if settings:
+        print("Selected Analyze Layer:", settings["analyze_layer"].name() if settings["analyze_layer"] else "None")
+        print("Selected Search Area Layer:", settings["search_area_layer"].name() if settings["search_area_layer"] else "None")
+
+def test_folder():
+    print("Running test function...")
+    test_layer = select_layer_from_available_layers(title="Select the test layer", prompt="Select the layer that is used for testing:")
+
+    folder_path = QFileDialog.getExistingDirectory(
+    None,
+    "Select Folder to Save CSV files to",
+    ""  # Default directory (leave empty for user's home directory)
+)
+    export_layer_to_csv(test_layer, folder_path + "/test_output.csv")
+
 def run_solar_potential():
     print("Analyzing solar potential...")
     # TODO: Implement solar potential analysis logic
@@ -126,6 +150,7 @@ def main():
         "Analyze Layer Options": run_layer_analysis,
         "Analyze Size (Search Area)": run_size_analysis,
         "Analyze Solar Potential": run_solar_potential,
+        "Test Function": test_analysis_settings,
     }
 
     # 2. Instantiate and run

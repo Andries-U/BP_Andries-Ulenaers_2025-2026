@@ -1,0 +1,824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Python: module analyse_layer_dialog</title>
+</head><body>
+
+<table class="heading">
+<tr class="heading-text decor">
+<td class="title">&nbsp;<br><strong class="title">analyse_layer_dialog</strong></td>
+<td class="extra"><a href=".">index</a><br><a href="file:d%3A%5Csync%5Candries%5Cschool%5Chogent%5C2025-2026%5Cbp%5Cbp_andries-ulenaers_2025-2026%5Ccode%5Cscripts%5Canalyse_layer_dialog.py">d:\sync\andries\school\hogent\2025-2026\bp\bp_andries-ulenaers_2025-2026\code\scripts\analyse_layer_dialog.py</a></td></tr></table>
+    <p></p>
+<p>
+<table class="section">
+<tr class="decor index-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Classes</strong></td></tr>
+    
+<tr><td class="decor index-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
+<td class="singlecolumn"><dl>
+<dt class="heading-text"><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>(<a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>)
+</dt><dd>
+<dl>
+<dt class="heading-text"><a href="analyse_layer_dialog.html#AnalyzeLayerSettingsDialog">AnalyzeLayerSettingsDialog</a>
+</dt></dl>
+</dd>
+</dl>
+ <p>
+<table class="section">
+<tr class="decor title-decor heading-text">
+<td class="section-title" colspan=3>&nbsp;<br><a name="AnalyzeLayerSettingsDialog">class <strong>AnalyzeLayerSettingsDialog</strong></a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>)</td></tr>
+    
+<tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#AnalyzeLayerSettingsDialog">AnalyzeLayerSettingsDialog</a>(analyze_layers:&nbsp;list,&nbsp;search_area_layers:&nbsp;list&nbsp;=&nbsp;None,&nbsp;search_radius:&nbsp;int&nbsp;=&nbsp;5000,&nbsp;max_distinct_values:&nbsp;int&nbsp;=&nbsp;20,&nbsp;parent=None)<br>
+&nbsp;<br>
+<br>&nbsp;</span></td></tr>
+<tr><td>&nbsp;</td>
+<td class="singlecolumn"><dl><dt>Method resolution order:</dt>
+<dd><a href="analyse_layer_dialog.html#AnalyzeLayerSettingsDialog">AnalyzeLayerSettingsDialog</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a></dd>
+<dd><a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a></dd>
+<dd><a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a></dd>
+<dd><a href="PyQt5.sip.html#wrapper">sip.wrapper</a></dd>
+<dd><a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a></dd>
+<dd><a href="PyQt5.sip.html#simplewrapper">sip.simplewrapper</a></dd>
+<dd><a href="builtins.html#object">builtins.object</a></dd>
+</dl>
+<hr>
+Methods defined here:<br>
+<dl><dt><a name="AnalyzeLayerSettingsDialog-__init__"><strong>__init__</strong></a>(self, analyze_layers: list, search_area_layers: list = None, search_radius: int = 5000, max_distinct_values: int = 20, parent=None)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-deselect_all"><strong>deselect_all</strong></a>(self)</dt><dd><span class="code">Deselect&nbsp;all&nbsp;checkboxes.</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-exec_"><strong>exec_</strong></a>(self)</dt><dd><span class="code">Override&nbsp;exec_&nbsp;to&nbsp;ensure&nbsp;settings&nbsp;are&nbsp;collected&nbsp;before&nbsp;closing.</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-get_settings"><strong>get_settings</strong></a>(self)</dt><dd><span class="code">Return&nbsp;the&nbsp;selected&nbsp;settings&nbsp;as&nbsp;a&nbsp;dictionary.</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-on_confirm_layer_selection"><strong>on_confirm_layer_selection</strong></a>(self)</dt><dd><span class="code">Validate&nbsp;layer&nbsp;selections&nbsp;and&nbsp;populate&nbsp;column&nbsp;dropdowns.</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-run_analysis"><strong>run_analysis</strong></a>(self)</dt><dd><span class="code">Collect&nbsp;inputs&nbsp;and&nbsp;run&nbsp;the&nbsp;analysis.</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-select_all"><strong>select_all</strong></a>(self)</dt><dd><span class="code">Select&nbsp;all&nbsp;checkboxes.</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-select_output_folder"><strong>select_output_folder</strong></a>(self)</dt><dd><span class="code">Open&nbsp;a&nbsp;folder&nbsp;dialog&nbsp;to&nbsp;select&nbsp;the&nbsp;output&nbsp;folder.</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-toggle_analysis_type"><strong>toggle_analysis_type</strong></a>(self, checked)</dt><dd><span class="code">Toggle&nbsp;visibility&nbsp;of&nbsp;column&nbsp;and&nbsp;distinct&nbsp;values&nbsp;sections&nbsp;based&nbsp;on&nbsp;analysis&nbsp;type.</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-update_column_combo"><strong>update_column_combo</strong></a>(self)</dt><dd><span class="code">Update&nbsp;column&nbsp;dropdown&nbsp;based&nbsp;on&nbsp;the&nbsp;selected&nbsp;analyze&nbsp;layer.</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-update_distinct_values"><strong>update_distinct_values</strong></a>(self)</dt><dd><span class="code">Update&nbsp;distinct&nbsp;values&nbsp;checkboxes&nbsp;for&nbsp;the&nbsp;selected&nbsp;column.</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-update_radius_visibility"><strong>update_radius_visibility</strong></a>(self)</dt><dd><span class="code">Show/hide&nbsp;radius&nbsp;selector&nbsp;based&nbsp;on&nbsp;search&nbsp;area&nbsp;layer&nbsp;type.</span></dd></dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<dl><dt><a name="AnalyzeLayerSettingsDialog-accept"><strong>accept</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-accept">accept</a>(self)</span></dd></dl>
+
+<strong>accepted</strong> = &lt;unbound PYQT_SIGNAL accepted()&gt;
+<dl><dt><a name="AnalyzeLayerSettingsDialog-actionEvent"><strong>actionEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-changeEvent"><strong>changeEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-childEvent"><strong>childEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-closeEvent"><strong>closeEvent</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-closeEvent">closeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QCloseEvent])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-connectNotify"><strong>connectNotify</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;a0:&nbsp;Optional[QContextMenuEvent])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-create"><strong>create</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-customEvent"><strong>customEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-destroy"><strong>destroy</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-done"><strong>done</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-done">done</a>(self,&nbsp;a0:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-dropEvent"><strong>dropEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-enterEvent"><strong>enterEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-event"><strong>event</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-eventFilter"><strong>eventFilter</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-eventFilter">eventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject],&nbsp;a1:&nbsp;Optional[QEvent])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-exec"><strong>exec</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-exec">exec</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<strong>finished</strong> = &lt;unbound PYQT_SIGNAL finished(int)&gt;
+<dl><dt><a name="AnalyzeLayerSettingsDialog-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-hideEvent"><strong>hideEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-initPainter"><strong>initPainter</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isSizeGripEnabled"><strong>isSizeGripEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isSizeGripEnabled">isSizeGripEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-keyPressEvent">keyPressEvent</a>(self,&nbsp;a0:&nbsp;Optional[QKeyEvent])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-metric"><strong>metric</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-moveEvent"><strong>moveEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-open"><strong>open</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-open">open</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-paintEvent"><strong>paintEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-receivers"><strong>receivers</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-reject"><strong>reject</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-reject">reject</a>(self)</span></dd></dl>
+
+<strong>rejected</strong> = &lt;unbound PYQT_SIGNAL rejected()&gt;
+<dl><dt><a name="AnalyzeLayerSettingsDialog-resizeEvent"><strong>resizeEvent</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-resizeEvent">resizeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QResizeEvent])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-result"><strong>result</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-result">result</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-sender"><strong>sender</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setModal"><strong>setModal</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setModal">setModal</a>(self,&nbsp;modal:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setResult"><strong>setResult</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setResult">setResult</a>(self,&nbsp;r:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setSizeGripEnabled"><strong>setSizeGripEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setSizeGripEnabled">setSizeGripEnabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setVisible"><strong>setVisible</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setVisible">setVisible</a>(self,&nbsp;visible:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-showEvent"><strong>showEvent</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-showEvent">showEvent</a>(self,&nbsp;a0:&nbsp;Optional[QShowEvent])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-sizeHint"><strong>sizeHint</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-timerEvent"><strong>timerEvent</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
+<dl><dt><strong>Accepted</strong> = 1</dl>
+
+<dl><dt><strong>DialogCode</strong> = &lt;class 'PyQt5.QtWidgets.QDialog.DialogCode'&gt;</dl>
+
+<dl><dt><strong>Rejected</strong> = 0</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><a name="AnalyzeLayerSettingsDialog-acceptDrops"><strong>acceptDrops</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-acceptDrops">acceptDrops</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-accessibleDescription"><strong>accessibleDescription</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-accessibleDescription">accessibleDescription</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-accessibleName"><strong>accessibleName</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-actions"><strong>actions</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-actions">actions</a>(self)&nbsp;-&gt;&nbsp;list[QAction]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-activateWindow"><strong>activateWindow</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-activateWindow">activateWindow</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-addAction"><strong>addAction</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-addAction">addAction</a>(self,&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-addActions"><strong>addActions</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-addActions">addActions</a>(self,&nbsp;actions:&nbsp;Iterable[QAction])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-adjustSize"><strong>adjustSize</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-adjustSize">adjustSize</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-autoFillBackground"><strong>autoFillBackground</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-autoFillBackground">autoFillBackground</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-baseSize"><strong>baseSize</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-childAt"><strong>childAt</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-childAt">childAt</a>(self,&nbsp;p:&nbsp;QPoint)&nbsp;-&gt;&nbsp;Optional[QWidget]<br>
+<a href="#AnalyzeLayerSettingsDialog-childAt">childAt</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-childrenRect"><strong>childrenRect</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-childrenRect">childrenRect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-childrenRegion"><strong>childrenRegion</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-childrenRegion">childrenRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-clearFocus"><strong>clearFocus</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-clearFocus">clearFocus</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-clearMask"><strong>clearMask</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-clearMask">clearMask</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-close"><strong>close</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-close">close</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-contentsMargins"><strong>contentsMargins</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-contentsMargins">contentsMargins</a>(self)&nbsp;-&gt;&nbsp;QMargins</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-contentsRect"><strong>contentsRect</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-contentsRect">contentsRect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-createWindowContainer"><strong>createWindowContainer</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-createWindowContainer">createWindowContainer</a>(window:&nbsp;Optional[QWindow],&nbsp;parent:&nbsp;Optional[QWidget]&nbsp;=&nbsp;None,&nbsp;flags:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType]&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;QWidget</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-cursor"><strong>cursor</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</span></dd></dl>
+
+<strong>customContextMenuRequested</strong> = &lt;unbound PYQT_SIGNAL customContextMenuRequested(QPoint)&gt;
+<dl><dt><a name="AnalyzeLayerSettingsDialog-devType"><strong>devType</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;PyQt5.sip.voidptr</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-ensurePolished">ensurePolished</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-find"><strong>find</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-find">find</a>(a0:&nbsp;PyQt5.sip.voidptr)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-focusProxy"><strong>focusProxy</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-focusWidget"><strong>focusWidget</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-focusWidget">focusWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-font"><strong>font</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-font">font</a>(self)&nbsp;-&gt;&nbsp;QFont</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-fontInfo"><strong>fontInfo</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-fontInfo">fontInfo</a>(self)&nbsp;-&gt;&nbsp;QFontInfo</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-fontMetrics"><strong>fontMetrics</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-fontMetrics">fontMetrics</a>(self)&nbsp;-&gt;&nbsp;QFontMetrics</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-foregroundRole"><strong>foregroundRole</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-foregroundRole">foregroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-frameGeometry"><strong>frameGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-frameGeometry">frameGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-frameSize"><strong>frameSize</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-frameSize">frameSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-geometry"><strong>geometry</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-geometry">geometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-getContentsMargins"><strong>getContentsMargins</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-getContentsMargins">getContentsMargins</a>(self)&nbsp;-&gt;&nbsp;(Optional[int],&nbsp;Optional[int],&nbsp;Optional[int],&nbsp;Optional[int])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-grab"><strong>grab</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-grab">grab</a>(self,&nbsp;rectangle:&nbsp;QRect&nbsp;=&nbsp;QRect(QPoint(0,&nbsp;0),&nbsp;QSize(-1,&nbsp;-1)))&nbsp;-&gt;&nbsp;QPixmap</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-grabGesture"><strong>grabGesture</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-grabGesture">grabGesture</a>(self,&nbsp;type:&nbsp;Qt.GestureType,&nbsp;flags:&nbsp;Union[Qt.GestureFlags,&nbsp;Qt.GestureFlag]&nbsp;=&nbsp;Qt.GestureFlags())</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-grabKeyboard"><strong>grabKeyboard</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-grabKeyboard">grabKeyboard</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-grabMouse"><strong>grabMouse</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-grabMouse">grabMouse</a>(self)<br>
+<a href="#AnalyzeLayerSettingsDialog-grabMouse">grabMouse</a>(self,&nbsp;a0:&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-grabShortcut"><strong>grabShortcut</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-grabShortcut">grabShortcut</a>(self,&nbsp;key:&nbsp;Union[QKeySequence,&nbsp;QKeySequence.StandardKey,&nbsp;Optional[str],&nbsp;int],&nbsp;context:&nbsp;Qt.ShortcutContext&nbsp;=&nbsp;Qt.WindowShortcut)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-graphicsEffect"><strong>graphicsEffect</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-graphicsEffect">graphicsEffect</a>(self)&nbsp;-&gt;&nbsp;Optional[QGraphicsEffect]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-graphicsProxyWidget"><strong>graphicsProxyWidget</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-graphicsProxyWidget">graphicsProxyWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QGraphicsProxyWidget]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-hasFocus"><strong>hasFocus</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-hasFocus">hasFocus</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-hasHeightForWidth"><strong>hasHeightForWidth</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-hasHeightForWidth">hasHeightForWidth</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-hasMouseTracking"><strong>hasMouseTracking</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-hasMouseTracking">hasMouseTracking</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-hasTabletTracking"><strong>hasTabletTracking</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-hasTabletTracking">hasTabletTracking</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-height"><strong>height</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-height">height</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-heightForWidth"><strong>heightForWidth</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-heightForWidth">heightForWidth</a>(self,&nbsp;a0:&nbsp;int)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-hide"><strong>hide</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-hide">hide</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHints</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;a0:&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-insertAction"><strong>insertAction</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-insertAction">insertAction</a>(self,&nbsp;before:&nbsp;Optional[QAction],&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-insertActions"><strong>insertActions</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-insertActions">insertActions</a>(self,&nbsp;before:&nbsp;Optional[QAction],&nbsp;actions:&nbsp;Iterable[QAction])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isActiveWindow"><strong>isActiveWindow</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isActiveWindow">isActiveWindow</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isAncestorOf"><strong>isAncestorOf</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isAncestorOf">isAncestorOf</a>(self,&nbsp;child:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isEnabled"><strong>isEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isEnabled">isEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isEnabledTo"><strong>isEnabledTo</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isEnabledTo">isEnabledTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isFullScreen"><strong>isFullScreen</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isFullScreen">isFullScreen</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isHidden"><strong>isHidden</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isHidden">isHidden</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isLeftToRight"><strong>isLeftToRight</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isLeftToRight">isLeftToRight</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isMaximized"><strong>isMaximized</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isMaximized">isMaximized</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isMinimized"><strong>isMinimized</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isMinimized">isMinimized</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isModal"><strong>isModal</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isModal">isModal</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isRightToLeft"><strong>isRightToLeft</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isRightToLeft">isRightToLeft</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isVisible"><strong>isVisible</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isVisible">isVisible</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isVisibleTo"><strong>isVisibleTo</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isVisibleTo">isVisibleTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isWindow"><strong>isWindow</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isWindow">isWindow</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-layout"><strong>layout</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-layout">layout</a>(self)&nbsp;-&gt;&nbsp;Optional[QLayout]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-locale"><strong>locale</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-lower"><strong>lower</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-lower">lower</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-mapFrom"><strong>mapFrom</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-mapFrom">mapFrom</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-mapFromGlobal"><strong>mapFromGlobal</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-mapFromGlobal">mapFromGlobal</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-mapFromParent"><strong>mapFromParent</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-mapFromParent">mapFromParent</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-mapTo"><strong>mapTo</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-mapTo">mapTo</a>(self,&nbsp;a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-mapToGlobal"><strong>mapToGlobal</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-mapToGlobal">mapToGlobal</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-mapToParent"><strong>mapToParent</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-mapToParent">mapToParent</a>(self,&nbsp;a0:&nbsp;QPoint)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-mask"><strong>mask</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-mask">mask</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-maximumHeight"><strong>maximumHeight</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-maximumHeight">maximumHeight</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-maximumSize"><strong>maximumSize</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-maximumSize">maximumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-minimumSize"><strong>minimumSize</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-move"><strong>move</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-move">move</a>(self,&nbsp;a0:&nbsp;QPoint)<br>
+<a href="#AnalyzeLayerSettingsDialog-move">move</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-nextInFocusChain"><strong>nextInFocusChain</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-nextInFocusChain">nextInFocusChain</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-normalGeometry"><strong>normalGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-normalGeometry">normalGeometry</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-overrideWindowFlags"><strong>overrideWindowFlags</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-overrideWindowFlags">overrideWindowFlags</a>(self,&nbsp;type:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-overrideWindowState">overrideWindowState</a>(self,&nbsp;state:&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-paintEngine"><strong>paintEngine</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;Optional[QPaintEngine]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-palette"><strong>palette</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-parentWidget"><strong>parentWidget</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-parentWidget">parentWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-pos"><strong>pos</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-pos">pos</a>(self)&nbsp;-&gt;&nbsp;QPoint</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-previousInFocusChain"><strong>previousInFocusChain</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-previousInFocusChain">previousInFocusChain</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-raise_"><strong>raise_</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-raise_">raise_</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-rect"><strong>rect</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-rect">rect</a>(self)&nbsp;-&gt;&nbsp;QRect</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-releaseKeyboard"><strong>releaseKeyboard</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-releaseKeyboard">releaseKeyboard</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-releaseMouse"><strong>releaseMouse</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-releaseMouse">releaseMouse</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-releaseShortcut"><strong>releaseShortcut</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-releaseShortcut">releaseShortcut</a>(self,&nbsp;id:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-removeAction"><strong>removeAction</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-removeAction">removeAction</a>(self,&nbsp;action:&nbsp;Optional[QAction])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-render"><strong>render</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-render">render</a>(self,&nbsp;target:&nbsp;Optional[QPaintDevice],&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#AnalyzeLayerSettingsDialog-RenderFlags">RenderFlags</a>(QWidget.RenderFlag.DrawWindowBackground|QWidget.RenderFlag.DrawChildren))<br>
+<a href="#AnalyzeLayerSettingsDialog-render">render</a>(self,&nbsp;painter:&nbsp;Optional[QPainter],&nbsp;targetOffset:&nbsp;QPoint&nbsp;=&nbsp;QPoint(),&nbsp;sourceRegion:&nbsp;QRegion&nbsp;=&nbsp;QRegion(),&nbsp;flags:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag]&nbsp;=&nbsp;QWidget.<a href="#AnalyzeLayerSettingsDialog-RenderFlags">RenderFlags</a>(QWidget.RenderFlag.DrawWindowBackground|QWidget.RenderFlag.DrawChildren))</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-repaint"><strong>repaint</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-repaint">repaint</a>(self)<br>
+<a href="#AnalyzeLayerSettingsDialog-repaint">repaint</a>(self,&nbsp;x:&nbsp;int,&nbsp;y:&nbsp;int,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)<br>
+<a href="#AnalyzeLayerSettingsDialog-repaint">repaint</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#AnalyzeLayerSettingsDialog-repaint">repaint</a>(self,&nbsp;a0:&nbsp;QRegion)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-resize"><strong>resize</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-resize">resize</a>(self,&nbsp;a0:&nbsp;QSize)<br>
+<a href="#AnalyzeLayerSettingsDialog-resize">resize</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-restoreGeometry"><strong>restoreGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-restoreGeometry">restoreGeometry</a>(self,&nbsp;geometry:&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-saveGeometry"><strong>saveGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-saveGeometry">saveGeometry</a>(self)&nbsp;-&gt;&nbsp;QByteArray</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-screen"><strong>screen</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-screen">screen</a>(self)&nbsp;-&gt;&nbsp;Optional[QScreen]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-scroll"><strong>scroll</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-scroll">scroll</a>(self,&nbsp;dx:&nbsp;int,&nbsp;dy:&nbsp;int)<br>
+<a href="#AnalyzeLayerSettingsDialog-scroll">scroll</a>(self,&nbsp;dx:&nbsp;int,&nbsp;dy:&nbsp;int,&nbsp;a2:&nbsp;QRect)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setAcceptDrops"><strong>setAcceptDrops</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setAcceptDrops">setAcceptDrops</a>(self,&nbsp;on:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setAccessibleDescription"><strong>setAccessibleDescription</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setAccessibleDescription">setAccessibleDescription</a>(self,&nbsp;description:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setAccessibleName"><strong>setAccessibleName</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setAccessibleName">setAccessibleName</a>(self,&nbsp;name:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setAttribute"><strong>setAttribute</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setAttribute">setAttribute</a>(self,&nbsp;attribute:&nbsp;Qt.WidgetAttribute,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setAutoFillBackground"><strong>setAutoFillBackground</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setAutoFillBackground">setAutoFillBackground</a>(self,&nbsp;enabled:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setBackgroundRole"><strong>setBackgroundRole</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setBackgroundRole">setBackgroundRole</a>(self,&nbsp;a0:&nbsp;QPalette.ColorRole)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setBaseSize"><strong>setBaseSize</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setBaseSize">setBaseSize</a>(self,&nbsp;basew:&nbsp;int,&nbsp;baseh:&nbsp;int)<br>
+<a href="#AnalyzeLayerSettingsDialog-setBaseSize">setBaseSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setContentsMargins"><strong>setContentsMargins</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setContentsMargins">setContentsMargins</a>(self,&nbsp;left:&nbsp;int,&nbsp;top:&nbsp;int,&nbsp;right:&nbsp;int,&nbsp;bottom:&nbsp;int)<br>
+<a href="#AnalyzeLayerSettingsDialog-setContentsMargins">setContentsMargins</a>(self,&nbsp;margins:&nbsp;QMargins)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setContextMenuPolicy"><strong>setContextMenuPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setContextMenuPolicy">setContextMenuPolicy</a>(self,&nbsp;policy:&nbsp;Qt.ContextMenuPolicy)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setCursor"><strong>setCursor</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setCursor">setCursor</a>(self,&nbsp;a0:&nbsp;Union[QCursor,&nbsp;Qt.CursorShape])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setDisabled"><strong>setDisabled</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setDisabled">setDisabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setEnabled"><strong>setEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setEnabled">setEnabled</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setFixedHeight"><strong>setFixedHeight</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setFixedHeight">setFixedHeight</a>(self,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setFixedSize"><strong>setFixedSize</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setFixedSize">setFixedSize</a>(self,&nbsp;a0:&nbsp;QSize)<br>
+<a href="#AnalyzeLayerSettingsDialog-setFixedSize">setFixedSize</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setFixedWidth"><strong>setFixedWidth</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setFixedWidth">setFixedWidth</a>(self,&nbsp;w:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setFocus"><strong>setFocus</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setFocus">setFocus</a>(self)<br>
+<a href="#AnalyzeLayerSettingsDialog-setFocus">setFocus</a>(self,&nbsp;reason:&nbsp;Qt.FocusReason)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setFocusPolicy"><strong>setFocusPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setFocusPolicy">setFocusPolicy</a>(self,&nbsp;policy:&nbsp;Qt.FocusPolicy)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setFocusProxy"><strong>setFocusProxy</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setFocusProxy">setFocusProxy</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setFont"><strong>setFont</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setFont">setFont</a>(self,&nbsp;a0:&nbsp;QFont)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setForegroundRole"><strong>setForegroundRole</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setForegroundRole">setForegroundRole</a>(self,&nbsp;a0:&nbsp;QPalette.ColorRole)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setGeometry"><strong>setGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setGeometry">setGeometry</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#AnalyzeLayerSettingsDialog-setGeometry">setGeometry</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int,&nbsp;aw:&nbsp;int,&nbsp;ah:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setGraphicsEffect"><strong>setGraphicsEffect</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setGraphicsEffect">setGraphicsEffect</a>(self,&nbsp;effect:&nbsp;Optional[QGraphicsEffect])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setHidden"><strong>setHidden</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setHidden">setHidden</a>(self,&nbsp;hidden:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setInputMethodHints"><strong>setInputMethodHints</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setInputMethodHints">setInputMethodHints</a>(self,&nbsp;hints:&nbsp;Union[Qt.InputMethodHints,&nbsp;Qt.InputMethodHint])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setLayout"><strong>setLayout</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setLayout">setLayout</a>(self,&nbsp;a0:&nbsp;Optional[QLayout])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setLayoutDirection"><strong>setLayoutDirection</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setLayoutDirection">setLayoutDirection</a>(self,&nbsp;direction:&nbsp;Qt.LayoutDirection)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setLocale"><strong>setLocale</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setLocale">setLocale</a>(self,&nbsp;locale:&nbsp;QLocale)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setMask"><strong>setMask</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setMask">setMask</a>(self,&nbsp;a0:&nbsp;QBitmap)<br>
+<a href="#AnalyzeLayerSettingsDialog-setMask">setMask</a>(self,&nbsp;a0:&nbsp;QRegion)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setMaximumHeight"><strong>setMaximumHeight</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setMaximumHeight">setMaximumHeight</a>(self,&nbsp;maxh:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setMaximumSize"><strong>setMaximumSize</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setMaximumSize">setMaximumSize</a>(self,&nbsp;maxw:&nbsp;int,&nbsp;maxh:&nbsp;int)<br>
+<a href="#AnalyzeLayerSettingsDialog-setMaximumSize">setMaximumSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setMaximumWidth"><strong>setMaximumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setMaximumWidth">setMaximumWidth</a>(self,&nbsp;maxw:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setMinimumHeight"><strong>setMinimumHeight</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setMinimumHeight">setMinimumHeight</a>(self,&nbsp;minh:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setMinimumSize"><strong>setMinimumSize</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setMinimumSize">setMinimumSize</a>(self,&nbsp;minw:&nbsp;int,&nbsp;minh:&nbsp;int)<br>
+<a href="#AnalyzeLayerSettingsDialog-setMinimumSize">setMinimumSize</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setMinimumWidth"><strong>setMinimumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setMinimumWidth">setMinimumWidth</a>(self,&nbsp;minw:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setMouseTracking"><strong>setMouseTracking</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setMouseTracking">setMouseTracking</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setPalette"><strong>setPalette</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setPalette">setPalette</a>(self,&nbsp;a0:&nbsp;QPalette)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setParent"><strong>setParent</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setParent">setParent</a>(self,&nbsp;parent:&nbsp;Optional[QWidget])<br>
+<a href="#AnalyzeLayerSettingsDialog-setParent">setParent</a>(self,&nbsp;parent:&nbsp;Optional[QWidget],&nbsp;f:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setShortcutAutoRepeat"><strong>setShortcutAutoRepeat</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setShortcutAutoRepeat">setShortcutAutoRepeat</a>(self,&nbsp;id:&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setShortcutEnabled"><strong>setShortcutEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setShortcutEnabled">setShortcutEnabled</a>(self,&nbsp;id:&nbsp;int,&nbsp;enabled:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setSizeIncrement"><strong>setSizeIncrement</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;w:&nbsp;int,&nbsp;h:&nbsp;int)<br>
+<a href="#AnalyzeLayerSettingsDialog-setSizeIncrement">setSizeIncrement</a>(self,&nbsp;s:&nbsp;QSize)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setSizePolicy"><strong>setSizePolicy</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setSizePolicy">setSizePolicy</a>(self,&nbsp;a0:&nbsp;QSizePolicy)<br>
+<a href="#AnalyzeLayerSettingsDialog-setSizePolicy">setSizePolicy</a>(self,&nbsp;hor:&nbsp;QSizePolicy.Policy,&nbsp;ver:&nbsp;QSizePolicy.Policy)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setStatusTip"><strong>setStatusTip</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setStatusTip">setStatusTip</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setStyle"><strong>setStyle</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setStyle">setStyle</a>(self,&nbsp;a0:&nbsp;Optional[QStyle])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setStyleSheet"><strong>setStyleSheet</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setStyleSheet">setStyleSheet</a>(self,&nbsp;styleSheet:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setTabOrder"><strong>setTabOrder</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setTabOrder">setTabOrder</a>(a0:&nbsp;Optional[QWidget],&nbsp;a1:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setTabletTracking"><strong>setTabletTracking</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setTabletTracking">setTabletTracking</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setToolTip"><strong>setToolTip</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setToolTip">setToolTip</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setToolTipDuration"><strong>setToolTipDuration</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setToolTipDuration">setToolTipDuration</a>(self,&nbsp;msec:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setUpdatesEnabled"><strong>setUpdatesEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setUpdatesEnabled">setUpdatesEnabled</a>(self,&nbsp;enable:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setWhatsThis"><strong>setWhatsThis</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setWhatsThis">setWhatsThis</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setWindowFilePath"><strong>setWindowFilePath</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setWindowFilePath">setWindowFilePath</a>(self,&nbsp;filePath:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setWindowFlag"><strong>setWindowFlag</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setWindowFlag">setWindowFlag</a>(self,&nbsp;a0:&nbsp;Qt.WindowType,&nbsp;on:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setWindowFlags"><strong>setWindowFlags</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setWindowFlags">setWindowFlags</a>(self,&nbsp;type:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setWindowIcon"><strong>setWindowIcon</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setWindowIcon">setWindowIcon</a>(self,&nbsp;icon:&nbsp;QIcon)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setWindowIconText"><strong>setWindowIconText</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setWindowIconText">setWindowIconText</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setWindowModality"><strong>setWindowModality</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setWindowModality">setWindowModality</a>(self,&nbsp;windowModality:&nbsp;Qt.WindowModality)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setWindowModified"><strong>setWindowModified</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setWindowModified">setWindowModified</a>(self,&nbsp;a0:&nbsp;bool)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setWindowOpacity"><strong>setWindowOpacity</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setWindowOpacity">setWindowOpacity</a>(self,&nbsp;level:&nbsp;float)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setWindowRole"><strong>setWindowRole</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setWindowRole">setWindowRole</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setWindowState"><strong>setWindowState</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setWindowState">setWindowState</a>(self,&nbsp;state:&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setWindowTitle">setWindowTitle</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-show"><strong>show</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-show">show</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-showFullScreen">showFullScreen</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-showMaximized"><strong>showMaximized</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-showMaximized">showMaximized</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-showMinimized"><strong>showMinimized</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-showMinimized">showMinimized</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-showNormal"><strong>showNormal</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-showNormal">showNormal</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-size"><strong>size</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-size">size</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-sizeIncrement"><strong>sizeIncrement</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-sizeIncrement">sizeIncrement</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-sizePolicy"><strong>sizePolicy</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-sizePolicy">sizePolicy</a>(self)&nbsp;-&gt;&nbsp;QSizePolicy</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-stackUnder"><strong>stackUnder</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-stackUnder">stackUnder</a>(self,&nbsp;a0:&nbsp;Optional[QWidget])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-statusTip"><strong>statusTip</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-statusTip">statusTip</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-style"><strong>style</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-style">style</a>(self)&nbsp;-&gt;&nbsp;Optional[QStyle]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-styleSheet"><strong>styleSheet</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-testAttribute"><strong>testAttribute</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-testAttribute">testAttribute</a>(self,&nbsp;attribute:&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-toolTip"><strong>toolTip</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-toolTipDuration"><strong>toolTipDuration</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-toolTipDuration">toolTipDuration</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-underMouse"><strong>underMouse</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-underMouse">underMouse</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-ungrabGesture"><strong>ungrabGesture</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-ungrabGesture">ungrabGesture</a>(self,&nbsp;type:&nbsp;Qt.GestureType)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-unsetCursor"><strong>unsetCursor</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-unsetCursor">unsetCursor</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-unsetLayoutDirection"><strong>unsetLayoutDirection</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-unsetLayoutDirection">unsetLayoutDirection</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-unsetLocale"><strong>unsetLocale</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-unsetLocale">unsetLocale</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-update"><strong>update</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-update">update</a>(self)<br>
+<a href="#AnalyzeLayerSettingsDialog-update">update</a>(self,&nbsp;a0:&nbsp;QRect)<br>
+<a href="#AnalyzeLayerSettingsDialog-update">update</a>(self,&nbsp;a0:&nbsp;QRegion)<br>
+<a href="#AnalyzeLayerSettingsDialog-update">update</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int,&nbsp;aw:&nbsp;int,&nbsp;ah:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-updateGeometry">updateGeometry</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-whatsThis"><strong>whatsThis</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-width"><strong>width</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-width">width</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-winId"><strong>winId</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-winId">winId</a>(self)&nbsp;-&gt;&nbsp;PyQt5.sip.voidptr</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-window"><strong>window</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-window">window</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-windowFilePath"><strong>windowFilePath</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-windowFilePath">windowFilePath</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-windowFlags"><strong>windowFlags</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-windowFlags">windowFlags</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowFlags</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-windowHandle"><strong>windowHandle</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-windowHandle">windowHandle</a>(self)&nbsp;-&gt;&nbsp;Optional[QWindow]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-windowIcon"><strong>windowIcon</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-windowIcon">windowIcon</a>(self)&nbsp;-&gt;&nbsp;QIcon</span></dd></dl>
+
+<strong>windowIconChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconChanged(QIcon)&gt;
+<dl><dt><a name="AnalyzeLayerSettingsDialog-windowIconText"><strong>windowIconText</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-windowIconText">windowIconText</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>windowIconTextChanged</strong> = &lt;unbound PYQT_SIGNAL windowIconTextChanged(QString)&gt;
+<dl><dt><a name="AnalyzeLayerSettingsDialog-windowModality"><strong>windowModality</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-windowModality">windowModality</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowModality</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-windowOpacity"><strong>windowOpacity</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-windowOpacity">windowOpacity</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-windowRole"><strong>windowRole</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-windowRole">windowRole</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-windowState"><strong>windowState</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-windowState">windowState</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowStates</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-windowTitle"><strong>windowTitle</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-windowTitle">windowTitle</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>windowTitleChanged</strong> = &lt;unbound PYQT_SIGNAL windowTitleChanged(QString)&gt;
+<dl><dt><a name="AnalyzeLayerSettingsDialog-windowType"><strong>windowType</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-windowType">windowType</a>(self)&nbsp;-&gt;&nbsp;Qt.WindowType</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-x"><strong>x</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-x">x</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-y"><strong>y</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-y">y</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QWidget</a>:<br>
+<dl><dt><strong>DrawChildren</strong> = 2</dl>
+
+<dl><dt><strong>DrawWindowBackground</strong> = 1</dl>
+
+<dl><dt><strong>IgnoreMask</strong> = 4</dl>
+
+<dl><dt><strong>RenderFlag</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlag'&gt;</dl>
+
+<dl><dt><strong>RenderFlags</strong> = &lt;class 'PyQt5.QtWidgets.QWidget.RenderFlags'&gt;<dd><span class="code">QWidget.<a href="#AnalyzeLayerSettingsDialog-RenderFlags">RenderFlags</a>()<br>
+QWidget.<a href="#AnalyzeLayerSettingsDialog-RenderFlags">RenderFlags</a>(f:&nbsp;Union[QWidget.RenderFlags,&nbsp;QWidget.RenderFlag])<br>
+QWidget.<a href="#AnalyzeLayerSettingsDialog-RenderFlags">RenderFlags</a>(a0:&nbsp;QWidget.RenderFlags)</span></dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><a name="AnalyzeLayerSettingsDialog-__getattr__"><strong>__getattr__</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-__getattr__">__getattr__</a>(self,&nbsp;name:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-blockSignals"><strong>blockSignals</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-blockSignals">blockSignals</a>(self,&nbsp;b:&nbsp;bool)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-children"><strong>children</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-children">children</a>(self)&nbsp;-&gt;&nbsp;list[QObject]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-deleteLater"><strong>deleteLater</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-deleteLater">deleteLater</a>(self)</span></dd></dl>
+
+<strong>destroyed</strong> = &lt;unbound PYQT_SIGNAL destroyed(QObject*)&gt;
+<dl><dt><a name="AnalyzeLayerSettingsDialog-disconnect"><strong>disconnect</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-disconnect">disconnect</a>(a0:&nbsp;QMetaObject.Connection)&nbsp;-&gt;&nbsp;bool<br>
+<a href="#AnalyzeLayerSettingsDialog-disconnect">disconnect</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-dumpObjectInfo">dumpObjectInfo</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-dumpObjectTree"><strong>dumpObjectTree</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-dumpObjectTree">dumpObjectTree</a>(self)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-dynamicPropertyNames"><strong>dynamicPropertyNames</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-dynamicPropertyNames">dynamicPropertyNames</a>(self)&nbsp;-&gt;&nbsp;list[QByteArray]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-findChild"><strong>findChild</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-findChild">findChild</a>(self,&nbsp;type:&nbsp;type[QObjectT],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObjectT<br>
+<a href="#AnalyzeLayerSettingsDialog-findChild">findChild</a>(self,&nbsp;types:&nbsp;tuple[type[QObjectT],&nbsp;...],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;QObjectT</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-findChildren"><strong>findChildren</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;type[QObjectT],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#AnalyzeLayerSettingsDialog-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;tuple[type[QObjectT],&nbsp;...],&nbsp;name:&nbsp;Optional[str]&nbsp;=&nbsp;'',&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#AnalyzeLayerSettingsDialog-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;type[QObjectT],&nbsp;regExp:&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#AnalyzeLayerSettingsDialog-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;tuple[type[QObjectT],&nbsp;...],&nbsp;regExp:&nbsp;QRegExp,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#AnalyzeLayerSettingsDialog-findChildren">findChildren</a>(self,&nbsp;type:&nbsp;type[QObjectT],&nbsp;re:&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]<br>
+<a href="#AnalyzeLayerSettingsDialog-findChildren">findChildren</a>(self,&nbsp;types:&nbsp;tuple[type[QObjectT],&nbsp;...],&nbsp;re:&nbsp;QRegularExpression,&nbsp;options:&nbsp;Union[Qt.FindChildOptions,&nbsp;Qt.FindChildOption]&nbsp;=&nbsp;Qt.FindChildrenRecursively)&nbsp;-&gt;&nbsp;list[QObjectT]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-inherits"><strong>inherits</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-inherits">inherits</a>(self,&nbsp;classname:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-installEventFilter">installEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-isWindowType"><strong>isWindowType</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-isWindowType">isWindowType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-killTimer"><strong>killTimer</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-killTimer">killTimer</a>(self,&nbsp;id:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-metaObject"><strong>metaObject</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-metaObject">metaObject</a>(self)&nbsp;-&gt;&nbsp;Optional[QMetaObject]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-moveToThread"><strong>moveToThread</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-moveToThread">moveToThread</a>(self,&nbsp;thread:&nbsp;Optional[QThread])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-objectName"><strong>objectName</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-objectName">objectName</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<strong>objectNameChanged</strong> = &lt;unbound PYQT_SIGNAL objectNameChanged(QString)&gt;
+<dl><dt><a name="AnalyzeLayerSettingsDialog-parent"><strong>parent</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-parent">parent</a>(self)&nbsp;-&gt;&nbsp;Optional[QObject]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-property"><strong>property</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-property">property</a>(self,&nbsp;name:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;Any</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-pyqtConfigure"><strong>pyqtConfigure</strong></a>(...)</dt><dd><span class="code">QObject.<a href="#AnalyzeLayerSettingsDialog-pyqtConfigure">pyqtConfigure</a>(...)<br>
+&nbsp;<br>
+Each&nbsp;keyword&nbsp;argument&nbsp;is&nbsp;either&nbsp;the&nbsp;name&nbsp;of&nbsp;a&nbsp;Qt&nbsp;property&nbsp;or&nbsp;a&nbsp;Qt&nbsp;signal.<br>
+For&nbsp;properties&nbsp;the&nbsp;property&nbsp;is&nbsp;set&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;of&nbsp;an<br>
+appropriate&nbsp;type.<br>
+For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
+callable.</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-removeEventFilter">removeEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setObjectName"><strong>setObjectName</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setObjectName">setObjectName</a>(self,&nbsp;name:&nbsp;Optional[str])</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-setProperty"><strong>setProperty</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-setProperty">setProperty</a>(self,&nbsp;name:&nbsp;Optional[str],&nbsp;value:&nbsp;Any)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-signalsBlocked"><strong>signalsBlocked</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-signalsBlocked">signalsBlocked</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-startTimer"><strong>startTimer</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-startTimer">startTimer</a>(self,&nbsp;interval:&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-thread"><strong>thread</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-thread">thread</a>(self)&nbsp;-&gt;&nbsp;Optional[QThread]</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-tr"><strong>tr</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-tr">tr</a>(self,&nbsp;sourceText:&nbsp;Optional[str],&nbsp;disambiguation:&nbsp;Optional[str]&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><span class="code">list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object</span></dd>
+</dl>
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject</a>:<br>
+<dl><dt><strong>staticMetaObject</strong> = &lt;PyQt5.QtCore.QMetaObject object&gt;</dl>
+
+<hr>
+Methods inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><a name="AnalyzeLayerSettingsDialog-colorCount"><strong>colorCount</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-colorCount">colorCount</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-depth"><strong>depth</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-depth">depth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-devicePixelRatio"><strong>devicePixelRatio</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-devicePixelRatio">devicePixelRatio</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-devicePixelRatioF"><strong>devicePixelRatioF</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-devicePixelRatioF">devicePixelRatioF</a>(self)&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-devicePixelRatioFScale"><strong>devicePixelRatioFScale</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-devicePixelRatioFScale">devicePixelRatioFScale</a>()&nbsp;-&gt;&nbsp;float</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-heightMM"><strong>heightMM</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-heightMM">heightMM</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-logicalDpiX"><strong>logicalDpiX</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-logicalDpiX">logicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-logicalDpiY"><strong>logicalDpiY</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-logicalDpiY">logicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-paintingActive"><strong>paintingActive</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-paintingActive">paintingActive</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-physicalDpiX"><strong>physicalDpiX</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-physicalDpiX">physicalDpiX</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-physicalDpiY"><strong>physicalDpiY</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-physicalDpiY">physicalDpiY</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-widthMM"><strong>widthMM</strong></a>(...)</dt><dd><span class="code"><a href="#AnalyzeLayerSettingsDialog-widthMM">widthMM</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<hr>
+Data and other attributes inherited from <a href="PyQt5.QtGui.html#QPaintDevice">PyQt5.QtGui.QPaintDevice</a>:<br>
+<dl><dt><strong>PaintDeviceMetric</strong> = &lt;class 'PyQt5.QtGui.QPaintDevice.PaintDeviceMetric'&gt;</dl>
+
+<dl><dt><strong>PdmDepth</strong> = 6</dl>
+
+<dl><dt><strong>PdmDevicePixelRatio</strong> = 11</dl>
+
+<dl><dt><strong>PdmDevicePixelRatioScaled</strong> = 12</dl>
+
+<dl><dt><strong>PdmDpiX</strong> = 7</dl>
+
+<dl><dt><strong>PdmDpiY</strong> = 8</dl>
+
+<dl><dt><strong>PdmHeight</strong> = 2</dl>
+
+<dl><dt><strong>PdmHeightMM</strong> = 4</dl>
+
+<dl><dt><strong>PdmNumColors</strong> = 5</dl>
+
+<dl><dt><strong>PdmPhysicalDpiX</strong> = 9</dl>
+
+<dl><dt><strong>PdmPhysicalDpiY</strong> = 10</dl>
+
+<dl><dt><strong>PdmWidth</strong> = 1</dl>
+
+<dl><dt><strong>PdmWidthMM</strong> = 3</dl>
+
+<hr>
+Static methods inherited from <a href="PyQt5.sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><a name="AnalyzeLayerSettingsDialog-__new__"><strong>__new__</strong></a>(*args, **kwargs)<span class="grey"><span class="heading-text"> class method of <a href="PyQt5.sip.html#simplewrapper">sip.simplewrapper</a></span></span></dt><dd><span class="code">Create&nbsp;and&nbsp;return&nbsp;a&nbsp;new&nbsp;object.&nbsp;&nbsp;See&nbsp;help(type)&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+
+<hr>
+Data descriptors inherited from <a href="PyQt5.sip.html#simplewrapper">sip.simplewrapper</a>:<br>
+<dl><dt><strong>__dict__</strong></dt>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>

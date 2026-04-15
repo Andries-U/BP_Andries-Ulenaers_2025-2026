@@ -18,6 +18,8 @@ MY_MODULES = [
     "item_selection",
     "action_selector_dialog",
     "layer_statistics_dialog",
+    "analyse_layer_dialog",
+    "filtered_item_selector",
     "main"
 ]
 
