@@ -545,25 +545,5 @@ def split_layer_by_search_areas_processing(split_layer: QgsVectorLayer, search_a
         outside_layer = None
 
     return fully_inside_layer, partially_inside_layer, outside_layer
-
-def export_layer_to_csv(layer: QgsVectorLayer, output_path: str):
-    """
-    Export a vector layer to CSV format.
-
-    Args:
-        layer (QgsVectorLayer): The vector layer to export.
-        output_path (str): The file path where the CSV will be saved.
-    """
-    if layer is None or layer.featureCount() == 0:
-        raise ValueError("The provided layer is invalid. It must be a non-empty vector layer.")
+  
     
-    options = QgsVectorFileWriter.SaveVectorOptions()
-    options.driverName = "CSV"
-    options.fileEncoding = "UTF-8"
-    
-    error = QgsVectorFileWriter.writeAsVectorFormatV2(layer, output_path, QgsCoordinateTransformContext(), options)
-    
-    if error[0] != QgsVectorFileWriter.NoError:
-        raise RuntimeError(f"Failed to export layer to CSV: {error[1]}")    
-    
-

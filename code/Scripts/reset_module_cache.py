@@ -20,6 +20,7 @@ MY_MODULES = [
     "layer_statistics_dialog",
     "analyse_layer_dialog",
     "filtered_item_selector",
+    "export_layer_utils",
     "main"
 ]
 

@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import (
     QDoubleSpinBox, QWidget, QRadioButton, QButtonGroup
 )
 from PyQt5.QtCore import Qt
+from analyse_layer_settings import AnalyseLayerSettings
 from qgis.core import QgsProject, QgsWkbTypes
 from filtered_item_selector import FilteredItemSelector
 
@@ -243,19 +244,21 @@ class AnalyzeLayerSettingsDialog(QDialog):
         else:
             self.radius_widget.setVisible(False)
 
-    def get_settings(self):
-        """Return the selected settings as a dictionary."""
-        return {
-            "analyze_layer": self.analyze_layer_selector.get_selected_item(),
-            "search_area_layer": self.search_area_layer_selector.get_selected_item(),
-            "search_radius": self.radius_spinbox.value() if self.radius_widget.isVisible() else None,
-            "column_name": self.column_combo.currentText() if self.column_combo.isEnabled() else None,
-            "distinct_values": [cb.text() for cb in self.checkboxes if cb.isChecked()] if hasattr(self, 'checkboxes') else None,
-            "export_type": self.export_type_combo.currentText(),
-            "output_folder": self.output_folder_lineedit.text(),
-            "analysis_type": "Partial" if self.partial_analysis_radio.isChecked() else "Full"
-
-        }
+    def get_settings(self) -> AnalyseLayerSettings:
+        """Return the selected settings as a typed dataclass."""
+        print(f"Radius value: {self.radius_spinbox.value()}")
+        return AnalyseLayerSettings(
+            analyze_layer=self.analyze_layer_selector.get_selected_item(),
+            search_area_layer=self.search_area_layer_selector.get_selected_item(),
+            search_radius=self.radius_spinbox.value(),
+            column_name=self.column_combo.currentText() if self.column_combo.isEnabled() else None,
+            distinct_values=[cb.text() for cb in self.checkboxes if cb.isChecked()]
+            if hasattr(self, "checkboxes") else [],
+            export_csv=self.export_type_combo.currentText() in ["CSV", "Both (CSV + PDF)"],
+            export_pdf=self.export_type_combo.currentText() in ["PDF", "Both (CSV + PDF)"],
+            output_folder=self.output_folder_lineedit.text(),
+            full_analysis=self.full_analysis_radio.isChecked()
+        )
     
     def toggle_analysis_type(self, checked):
         """Toggle visibility of column and distinct values sections based on analysis type."""
@@ -280,15 +283,6 @@ class AnalyzeLayerSettingsDialog(QDialog):
             return None
     
     def run_analysis(self):
-        """Collect inputs and run the analysis."""
-        analyze_layer = self.analyze_layer_selector.get_selected_item()
-        search_area_layer = self.search_area_layer_selector.get_selected_item()
 
-        if not analyze_layer or not search_area_layer:
-            QMessageBox.warning(self, "Error", "Please select both layers!")
-            return
-
-        print("Analyze Layer:", analyze_layer.name())
-        print("Search Area Layer:", search_area_layer.name())
-
+        self.accept()  # Close the dialog and return settings
         QMessageBox.information(self, "Success", "Analysis settings saved! Ready to run.")

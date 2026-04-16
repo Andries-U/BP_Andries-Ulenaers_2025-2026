@@ -1,7 +1,9 @@
 from reset_module_cache import reload_all_custom_modules
 from generate_docs import generate_docs_for_custom_modules
 from qgis_gui_utils import run_selection_dialog_column_values, select_item_from_gui_list, select_layer_from_available_layers,get_user_input_dialog, show_error_popup
-from calculation_utils import export_layer_to_csv, generate_search_areas_layer_around_points_from_points_layer, split_layer_by_search_areas, check_equality_of_layer_crs_to_wanted_crs, split_layer_by_search_areas_processing
+from calculation_utils import export_layer_to_csv, generate_search_areas_layer_around_points_from_points_layer, split_layer_by_search_areas, check_equality_of_layer_crs_to_wanted_crs, split_layer_by_search_areas_processing, export_layer_to_pdf
+from export_layer_utils import export_layer_to_pdf, export_layer_to_csv, generate_layer_statistics_to_pdf
+
 from qgis.core import QgsProject, QgsMapLayer, QgsVectorLayer, QgsWkbTypes, QgsLayerTreeGroup
 from qgis.utils import iface
 from action_selector_dialog import ActionSelectorDialog, ActionMap
@@ -69,6 +71,34 @@ def run_layer_analysis():
     dialog = LayerStatisticsDialog(selected_area, parent=iface.mainWindow())
     dialog.exec_()
 
+def run_full_layer_analysis_within_search_area(analyze_layer: QgsVectorLayer, search_area_layer: QgsVectorLayer, csv: bool = False, output_folder: str = None, pdf: bool = False):
+    layer_within, layer_intersecting, layer_outside = split_layer_by_search_areas_processing(analyze_layer, search_area_layer)
+    
+    search_area_layer.updateFields()
+    search_area_layer.commitChanges()
+
+    select_group_layer(TEMP_GROUP_NAME)
+    if search_area_layer is not None:
+        project.addMapLayer(search_area_layer)
+    if layer_within is not None:
+        project.addMapLayer(layer_within)
+        layer_within.setName(f"{analyze_layer.name()} - Within Search Area")
+    if layer_intersecting is not None:
+        project.addMapLayer(layer_intersecting)
+        layer_intersecting.setName(f"{analyze_layer.name()} - Intersecting Search Area")
+    if layer_outside is not None:
+        project.addMapLayer(layer_outside)
+
+    if csv and output_folder:
+        export_layer_to_csv(layer_within, output_folder + f"/{analyze_layer.name()}_within_search_area.csv")
+        export_layer_to_csv(layer_intersecting, output_folder + f"/{analyze_layer.name()}_intersecting_search_area.csv")
+
+    if pdf and output_folder:
+        generate_layer_statistics_to_pdf(layer_within, output_folder + f"/{analyze_layer.name()}_within_search_area.pdf")
+        generate_layer_statistics_to_pdf(layer_intersecting, output_folder + f"/{analyze_layer.name()}_intersecting_search_area.pdf")
+
+    
+
 def run_size_analysis():
     selected_area = select_layer_from_available_layers(title="Select the analysis layer", prompt="Select the layer you want to analyze inside the search area:")
 
@@ -114,16 +144,37 @@ def run_size_analysis():
     dialog2 = LayerStatisticsDialog(layer_intersecting, parent=iface.mainWindow(), title="Features Intersecting Search Area")
     dialog2.exec_()
 
-def test_analysis_settings():
-    print("Running test function...")
+
+def layer_analysis_with_settings():
+    print("Running layer analysis with settings...")
     # Get all layers in the project
     project = QgsProject.instance()
     layers = list(project.mapLayers().values())
+
     dialog = AnalyzeLayerSettingsDialog(analyze_layers=layers, search_area_layers=layers, parent=iface.mainWindow())
     settings = dialog.exec_()
-    if settings:
-        print("Selected Analyze Layer:", settings["analyze_layer"].name() if settings["analyze_layer"] else "None")
-        print("Selected Search Area Layer:", settings["search_area_layer"].name() if settings["search_area_layer"] else "None")
+    if settings is None:
+        print("no settings")
+        return
+
+    print("Selected Analyze Layer:", settings.analyze_layer.name() if settings.analyze_layer else "None")
+    print("Selected Search Area Layer:", settings.search_area_layer.name() if settings.search_area_layer else "None")
+    print("Search Radius:", settings.search_radius)
+    print("Column Name:", settings.column_name)
+    print("Distinct Values:", settings.distinct_values)
+    print("Export CSV:", settings.export_csv)
+    print("Export PDF:", settings.export_pdf)
+    print("Output Folder:", settings.output_folder)
+    print("Analysis Type:", "Full" if settings.full_analysis else "Partial")
+
+    search_area_layer = settings.search_area_layer
+    if search_area_layer.geometryType() == QgsWkbTypes.PointGeometry:
+        print("The search area layer holds Points. Generating circular search areas around the points.") 
+        search_area_layer = generate_search_areas_layer_around_points_from_points_layer(points=search_area_layer, radius=settings.search_radius, segments=36)
+
+    if settings.full_analysis:
+        run_full_layer_analysis_within_search_area(settings.analyze_layer, search_area_layer, csv=(settings.export_csv), output_folder=settings.output_folder, pdf=(settings.export_pdf))
+
 
 def test_folder():
     print("Running test function...")
@@ -133,7 +184,7 @@ def test_folder():
     None,
     "Select Folder to Save CSV files to",
     ""  # Default directory (leave empty for user's home directory)
-)
+    )
     export_layer_to_csv(test_layer, folder_path + "/test_output.csv")
 
 def run_solar_potential():
@@ -149,6 +200,7 @@ def main():
     actions: ActionMap = {
         "Analyze Layer Options": run_layer_analysis,
         "Analyze Size (Search Area)": run_size_analysis,
+        "Custom layer analysis": layer_analysis_with_settings,
         "Analyze Solar Potential": run_solar_potential,
         "Test Function": test_analysis_settings,
     }
