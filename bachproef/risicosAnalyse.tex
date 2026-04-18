@@ -1,0 +1,17 @@
+%%=============================================================================
+%% Analyseren van de gebruiksrisico's
+%%=============================================================================
+
+\chapter{\IfLanguageName{dutch}{Analyseren van de gebruiksrisico's}{Analyzing the risks of use}}%
+\label{ch:risicosAnalyse}
+
+De ontwikkelde tool is een ondersteuning voor de analyse voor de samenstelling van de energievoorziening van de ET. Het gebruik van de tool is niet zonder risico's. In dit hoofdstuk zal ik proberen de risico's van het gebruik van de tool te identificeren en mogelijke oplossingen hiervoor te formuleren.
+
+\section{Dubbele telling van locaties}
+Omdat de tool verschillende kaarten kan analyseren en niet de mogelijkheid om al deze analyses samen uit te voeren. Is er de mogelijkheid dat bepaalde locaties meerdere keren voorkomen. Het zal echter fysiek niet mogelijk zijn om bijvoorbeeld AgriPv en een solar farm op dezelfde locatie te hebben. Zeker wanneer de analyse per hoekpunt wordt uitgevoerd bestaat de kans dat meerdere locaties binnen de gekozen straal van meerdere hoekpunten valt. Om dit deels te voorkomen zal er bij een gesplitste analyse ook een volledige analyse uitgevoerd worden. Hierdoor kan er snel een beeld gevormd worden over de oppervlakte die dubbel of eventueel driedubbel is geteld (totaal punt 1 + totaal punt 2 + totaal punt 3 - totaal alle punten = overtelde oppervlakte). Er is nog een mogelijkheid om al deze opties op te splitsen maar dit zou de moeilijkheid om de data te interpreteren verhogen.
+
+\section{Afhankelijkheid van voorziene data}
+De tool werkt enkel met voorziene data. Indien er fouten in deze data zitten of indien locaties hier dubbel in zitten zal de analyse foutief zijn. Het is dus belangrijk dat de data die wordt gebruikt correct is. Indien de dit een groot probleem zou vormen is het eventueel mogelijk om hiervoor een uitbreiding te maken. Echter gaat hier het bepalen van prioriteit over welke data te behouden en welke niet een obstakel vormen.
+
+\section{Grensoverschrijdende data}
+Vanwege de locatie op grensgebieden en verschillende aanpakken over het verzamelen van data is het niet mogelijk om bijvoorbeeld een analyse van landbouw gebied grensoverschrijdend te doen. Hiervoor zou de data laag per laag gelijkgemaakt moeten worden.
