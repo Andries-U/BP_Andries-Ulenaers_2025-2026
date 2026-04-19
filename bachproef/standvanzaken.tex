@@ -78,38 +78,40 @@ De 2 voornaamste types van GIS-kaarten zijn de vector- en raster-kaarten. Bij ra
 De optie van Small Modular Reactors (SMRs) en Advanced Modular Reactors (AMRs) wordt door de onderzoekers niet verder overwogen. Voor deze nieuwe technologieën wordt verwacht dat het eerste exemplaar in Europa pas begin jaren 2030 operationeel zal zijn \autocite{EuropeanCommission2026}. Dit is te laat, aangezien de bouw van de Einstein Telescoop naar verwachting al in 2028 van start zal \autocite{Telescope2026}.
 Vanwege gevoeligheid van de meetapparatuur zijn in de directe omgeving van de detector windmolens uitgesloten. Er is een perimeter van 10 kilometer rond elk hoekpunt van de telescoop ingesteld, waarbinnen nu al geen windmolens gebouwd mogen worden. Deze beperking is nodig om ondergrondse trillingen, die de metingen kunnen verstoren, te voorkomen \autocite{Telescope2026}. Indien de Euregio Maas-Rijn geselecteerd wordt als locatie zullen bestaande exemplaren ook verwijderd worden.
 
-\section{GIS-tools voor data-analyse}
-% OUD
-%$Voor het analyseren van GIS-data zijn er verschillende opties. 
-%Om deze selectiemethode uit te werken zal er ook gekeken worden naar de meest gebruiksvriendelijke en open-source GIS-\-tools gaande van QGis \autocite{QGis2025} en verschillende Python-\-bibliotheken zoals GeoPandas \autocite{GeoPandas2025}, PyQGis \autocite{PyQGis2025} en GDAL \autocite{Rouault2025}. Hieruit blijkt QGIS vaak gebruikt te zijn aangezien deze verschillende andere geïdentificeerde tools (bv. GRASS, GDAL, Python, etc.) integreert. Aangezien QGIS open-source software is dient er ook geen rekening gehouden te worden met financiële beperkingen. QGIS wordt vanwege zijn open source ontwikkeling ook steeds populairder in wetenschappelijk onderzoek \autocite{RosasChavoya2022}. In \autocite{Graser2025} is zelfs te zien dat het zeer kort bij ArcGIS komt in populariteit bij zoekopdrachten in google \autocite{Trends2026} \textcolor{red}{Wat wil je hiermee zeggen? Wat is ArcGis? Want eerste keer dat je het vermeld en hoezo 2 bron vermeldingen maar op verschillende plaatsen?}. 
+\section{GIS-tools voor data-analyse} \label{sec:GIS-tools}
+Voor het analyseren van GIS-data zijn er verschillende mogelijkheden, deze kunnen worden onderverdeeld in twee hoofdgroepen: softwarepaketten en bibliotheken. Beide groepen hebben hun eigen toepassingen en voor- en nadelen.
 
-Voor het analyseren van GIS-data bestaan er verschillende tools, deze kunnen worden onderverdeeld in twee hoofdgroepen: geïntegreerde programma's en bibliotheken in programmeertalen. Beide groepen hebben hun eigen toepassingen en voor- en nadelen.
-
-\subsection{Geïntegreerde programma's}
-Geïntegreerde programma's bieden een complete gebruikersinterface en functionaliteit voor GIS-analyse. Het zijn voorontwikkelde programmas die veel functionaliteit bezitten om analyse op datasets uit te voeren  Ze kunnen worden onderverdeeld in open-source en betalende/closed-source opties:
+\subsection{softwarepaketten}
+softwarepaketten bieden een complete, meestal grafische, gebruikersinterface en functionaliteiten voor GIS-analyse, zowel grafisch als analytisch. Het zijn softwarepaketten die veel functionaliteit bezitten om analyse op datasets uit te voeren. Voor de toepassing van dit onderzoek zijn ze onderverdeeld in 2 groepen:
 
 \subsubsection{Open-source programma's}
+Open source software zijn programma’s waarvan de broncode vrij beschikbaar is, zodat gebruikers de software kunnen bekijken, aanpassen en verbeteren. Dit wordt gegarandeerd door een licentie die specifiek de vrijheid biedt om de software te verspreiden, afgeleide werken te maken en deze onder dezelfde voorwaarden te delen. Belangrijk is dat deze rechten voor iedereen gelden, zonder discriminatie op basis van wie de software gebruikt of waarvoor \autocite{Opensource2007}. Een belangrijke speler in dit ecosysteem speelt de \textit{Open Source Geospatial Foundation} (OSGeo). Deze non-profitorganisatie ondersteunt de meeste prominente open-source GIS-projecten, waardoor ze kwalitatief, compatibel en duurzaam beschikbaar blijven voor de hele gemeenschap \autocite{OSGeo2026}.
 \begin{itemize}
-    \item \textbf{QGIS}: Een van de meest gebruikte open-source GIS-programma's, dat integratie biedt met tools zoals GRASS, GDAL en Python. QGIS is populair in zowel praktische toepassingen als wetenschappelijk onderzoek, mede dankzij het ontbreken van licentiekosten en een actieve gemeenschap. Uit recente gegevens blijkt dat QGIS qua populariteit bij zoekopdrachten op Google bijna gelijk staat aan ArcGIS (Graser, 2025; Google Trends, 2026).
-    \item \textbf{GRASS GIS}: Een open-source GIS-systeem dat vaak wordt geïntegreerd in QGIS voor geavanceerde ruimtelijke analyses.
+    \item \textbf{QGIS}: Een van de meest gebruikte open-source GIS-programma's en ondersteund door OSGeo, QGIS is populair in zowel praktische toepassingen als wetenschappelijk onderzoek, mede dankzij de open-source licentie en een actieve gemeenschap. Uit recente gegevens blijkt dat QGIS qua populariteit bij zoekopdrachten op Google bijna gelijk staat aan ArcGIS \autocite{Trends2026}. QGIS biedt integratie met tool zoals: 
+    \begin{itemize}
+        \item \textbf{Geographic Resources Analysis Support System (GRASS)}: een krachtige engine, ondersteund door OSGeo, voor geo-ruimtelijke data verwerking \autocite{GRASS_GIS_software}.
+        \item \textbf{Geospatial Data Abstraction Library (GDAL)}: een open-source bibliotheek, ondersteund door OSGeo, voor het vertalen van raster- en vectorformaten in geo-ruimtelijke data\autocite{Rouault2025}.
+        \item \textbf{PyQGis}: de Python-bibliotheek waarop de QGIS software is gebouwd. De software biedt de mogelijkheid om ook rechtstreeks hierin te kunnen scripten. Dit maakt het mogelijk om workflows te automatiseren.
+    \end{itemize}   
+    \item \textbf{DIVA-GIS}: Een open-source GIS-systeem.
+    \item \textbf{GRASS}: een krachtige engine, ondersteund door OSGeo, voor geo-ruimtelijke data verwerking \autocite{GRASS_GIS_software}. Deze engine kan losstaand gebruikt worden maar zit ook verwerkt in QGIS.
 \end{itemize}
 
 \subsubsection{Betalende/closed-source programma's}
+Deze programma's worden ontwikkeld door een bedrijf of organisatie. De broncode is niet openbaar, gebruikers betalen een licentievergoeding voor toegang tot de software en de bijbehorende functionaliteit.
 \begin{itemize}
-    \item \textbf{ArcGIS}: Een commercieel GIS-pakket van Esri, dat wordt beschouwd als een van de standaarden in de sector. ArcGIS biedt uitgebreide functionaliteit, maar vereist een licentie en kan kostbaar zijn voor organisaties.
-    \item \textbf{ERDAS IMAGINE}: Een gespecialiseerd programma voor afbeeldingsverwerking en remote sensing, vaak gebruikt in professionele omgevingen.
+    \item \textbf{ArcGIS Pro}: Een commercieel GIS-pakket van Esri, dat wordt beschouwd als een van de standaarden in de sector. \autocite{Trends2026}
+    \item \textbf{ERDAS IMAGINE}: Een GIS-pakket van IMAGEM. Dit is echter voornamelijk gefocust op teledetectie.
 \end{itemize}
 
 \subsection{Bibliotheken in programmeertalen}
-Bibliotheken in programmeertalen, zoals Python, bieden flexibiliteit en automatisering voor GIS-analyse. Ze zijn met name nuttig voor gebruikers die scriptgebaseerde workflows prefereren of GIS-analyse willen integreren in grotere data-verwerkingspijplijnen. Voorbeelden zijn:
+Bibliotheken in programmeertalen, zoals Python, bieden flexibiliteit voor de automatisering van GIS-analyse. Ze zijn nuttig voor gebruikers die scriptgebaseerde workflows verkiezen of GIS-analyse willen integreren in grotere data-verwerkingspijplijnen. Het bied de mogelijkheid om op maat gemaakte analyses uit te voeren en deze te automatiseren. Enkele van deze bibliotheken zijn:
 \begin{itemize}
-    \item \textbf{GeoPandas}: Een Python-bibliotheek voor het werken met georuimtelijke data, gebaseerd op Pandas. Het biedt krachtige tools voor data-manipulatie en visualisatie.
+    \item \textbf{GeoPandas}: Een Python-bibliotheek voor het werken met geo-ruimtelijke data gebaseerd op Pandas, een zeer populaire dataverwerkings bibliotheek in Python. Het biedt krachtige tools voor data-manipulatie en visualisatie.
     \item \textbf{PyQGIS}: Een Python-bibliotheek die specifiek is ontworpen voor interactie met QGIS, waardoor gebruikers scripts kunnen schrijven om QGIS-functionaliteit te automatiseren.
-    \item \textbf{GDAL}: Een open-source bibliotheek voor het lezen en schrijven van raster- en vectorgegevens, vaak gebruikt in combinatie met andere tools zoals QGIS en Python.
+    \item \textbf{GeoTools}: Een open-source bibliotheek, ondersteund door OSGeo, voor het werken met GIS-data in de Java programmeertaal.
+    \item \textbf{Spatial4j}: Een open-source bibliotheek voor het werken met GIS-data in de Java programmeertaal.
 \end{itemize}
-
-\subsection{Conclusie}
-QGIS wordt vaak als voorkeursoptie beschouwd binnen de open-source geïntegreerde programma's, vanwege de integratie met andere tools en de gebruiksvriendelijkheid. Voor gebruikers die meer geïnteresseerd zijn in automatisering en scriptgebaseerde analyse, bieden bibliotheken zoals GeoPandas en GDAL een krachtige oplossing.
 
 
 % Tip: Begin elk hoofdstuk met een paragraaf inleiding die beschrijft hoe
