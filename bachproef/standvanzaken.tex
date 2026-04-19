@@ -9,8 +9,7 @@ De ET is voorgesteld om opgebouwd te worden in een driehoek met gelijke zijdes w
 \begin{figure}
 \centering
     \includegraphics[width=0.9\textwidth]{./Einstein_Telescope/einstein_telescope_ALT-EN-01_web.png}
-    \caption[Infografische voorstelling Einstein Telescope]{Infografische voorstelling Einstein Telescope ©T. Balder/Nikhef}
-    \label{fig:infografic-ET}
+    \caption[Infografische voorstelling Einstein Telescope]{Infografische voorstelling Einstein Telescope ©T. Balder/Nikhef}\label{fig:infografic-ET}
 \end{figure}
 
 Naar verwachting zal de ET een invloed hebben vergelijkbaar met CERN in Zwitserland \textcolor{red}{source needed}. Doordat er met hoogtechnologische meetinstrumenten wordt gewerkt waarbij de kleinste verschillen belangrijk zijn is een betrouwbare energievoorziening voor deze instrumenten enorm belangrijk. Hiervoor wordt er, zeker aangezien de klimaatcrisis en de invloed van fossiele brandstoffen hierop steeds duidelijker wordt, voornamelijk gekeken naar ecologische en duurzame energiebronnen. Dit heeft als bijkomend voordeel dat er ook mogelijkheden gecreëerd worden voor verder onderzoek hierin bij de naburige universiteiten. 
@@ -22,8 +21,7 @@ Geographic information system (GIS) is een informatiesysteem waarmee ruimtelijke
 De 2 voornaamste types van GIS-kaarten zijn de vector- en raster-kaarten. Bij rasterkaarten wordt de kaart onderverdeeld in een rooster elk vak in deze rooster kan een lijn in een databank krijgen (Tabel~\ref{tab:fictief_zonne_irradiantie}). Afhankelijk van de datakolommen kunnen er verschillende attributen worden toegekend aan deze vakken. Bij vectorkaarten krijgt een punt (voorgesteld door coördinaten) of een verzameling van punten (lijn of polygon) 1 lijn in een databank en kan er data worden toegewezen aan het punt of de polygon op basis van de kolommen (Tabel~\ref{tab:fictief_landbouwpercelen}).\autocite{OSLRasterVsVector}
 \begin{table}[h]
     \centering
-    \caption{Fictief voorbeeld van GIS-raster-data: zonne-irradiantie}
-    \label{tab:fictief_zonne_irradiantie}
+    \caption{Fictief voorbeeld van GIS-raster-data: zonne-irradiatie}\label{tab:fictief_zonne_irradiantie}
     \begin{tabular}{c c c c c c c c}
     \toprule
     \textbf{ID} & \textbf{\makecell{Breedte-\\graad}} & \textbf{\makecell{Lengte-\\graad}} & \textbf{\makecell{Zonne-\\irradiantie \\(W/m$^2$)}} & \textbf{\makecell{Maand}} & \textbf{\makecell{Tijdstip}} & \textbf{\makecell{Oppervlakte \\Albedo}} & \textbf{\makecell{bewolkings-\\graad}} \\
@@ -39,8 +37,7 @@ De 2 voornaamste types van GIS-kaarten zijn de vector- en raster-kaarten. Bij ra
 
 \begin{table}[h]
     \centering
-    \caption{Fictief voorbeeld van GIS-vector-data: landbouwpercelen}
-    \label{tab:fictief_landbouwpercelen}
+    \caption{Fictief voorbeeld van GIS-vector-data: landbouwpercelen}\label{tab:fictief_landbouwpercelen}
     \begin{tabular}{c c c c}
         \toprule
         \textbf{ID} & \textbf{Gewas} & \textbf{Eigenaar} & \textbf{\makecell{Polygooncoördinaten \\(WGS84)}} \\
@@ -55,15 +52,10 @@ De 2 voornaamste types van GIS-kaarten zijn de vector- en raster-kaarten. Bij ra
 \begin{figure}
 \centering
     \includegraphics[width=0.9\textwidth]{./GIS/RasterAndVector_Ordnance-Survey.png}
-    \caption[Vergelijkende beelden tussen vector en raster data]{Infografische voorbeelden voor vector en raster data © 2026 Ordnance Survey Limited}
-    \label{fig:VectorVsRaster_OS}
+    \caption[Vergelijkende beelden tussen vector en raster data]{Infografische voorbeelden voor vector en raster data © 2026 Ordnance Survey Limited}\label{fig:VectorVsRaster_OS}
 \end{figure}
 
-\section{Energiebronnen}
-De optie van Small Modular Reactors (SMRs) en Advanced Modular Reactors (AMRs) wordt door de onderzoekers niet verder overwogen. Voor deze nieuwe technologieën wordt verwacht dat het eerste exemplaar in Europa pas begin jaren 2030 operationeel zal zijn \autocite{EuropeanCommission2026}. Dit is te laat, aangezien de bouw van de Einstein Telescoop naar verwachting al in 2028 van start zal \autocite{Telescope2026}.
-Vanwege gevoeligheid van de meetapparatuur zijn in de directe omgeving van de detector windmolens uitgesloten. Er is een perimeter van 10 kilometer rond elk hoekpunt van de telescoop ingesteld, waarbinnen nu al geen windmolens gebouwd mogen worden. Deze beperking is nodig om ondergrondse trillingen, die de metingen kunnen verstoren, te voorkomen \autocite{Telescope2026}. Indien de Euregio Maas-Rijn geselecteerd wordt als locatie zullen bestaande exemplaren ook verwijderd worden.
-
-\section{GIS-tools voor data-analyse} \label{sec:GIS-tools}
+\section{GIS-tools voor data-analyse}\label{sec:GIS-tools}
 Voor het analyseren van GIS-data zijn er verschillende mogelijkheden, deze kunnen worden onderverdeeld in twee hoofdgroepen: softwarepaketten en bibliotheken. Beide groepen hebben hun eigen toepassingen en voor- en nadelen.
 
 \subsection{softwarepaketten}
@@ -85,7 +77,7 @@ Open source software zijn programma’s waarvan de broncode vrij beschikbaar is,
 \subsubsection{Betalende/closed-source programma's}
 Deze programma's worden ontwikkeld door een bedrijf of organisatie. De broncode is niet openbaar, gebruikers betalen een licentievergoeding voor toegang tot de software en de bijbehorende functionaliteit.
 \begin{itemize}
-    \item \textbf{ArcGIS Pro}: Een commercieel GIS-pakket van Esri, dat wordt beschouwd als een van de standaarden in de sector. \autocite{Trends2026}
+    \item \textbf{ArcGIS Pro}: Een commercieel GIS-pakket van Esri, dat wordt beschouwd als een van de standaarden in de sector\autocite{Trends2026}>
     \item \textbf{ERDAS IMAGINE}: Een GIS-pakket van IMAGEM. Dit is echter voornamelijk gefocust op teledetectie.
 \end{itemize}
 
@@ -98,6 +90,17 @@ Bibliotheken in programmeertalen, zoals Python, bieden flexibiliteit voor de aut
     \item \textbf{Spatial4j}: Een open-source bibliotheek voor het werken met GIS-data in de Java programmeertaal.
 \end{itemize}
 
+\section{Energiebronnen}\label{sec:energiebronnen}
+\subsection{Nucleair}\label{sec:energiebronnen_Nucleair}
+De optie van Small Modular Reactors (SMRs) en Advanced Modular Reactors (AMRs) wordt door de onderzoekers niet verder overwogen. Voor deze nieuwe technologieën wordt verwacht dat het eerste exemplaar in Europa pas begin jaren 2030 operationeel zal zijn \autocite{EuropeanCommission2026}. Dit is te laat, aangezien de bouw van de Einstein Telescoop naar verwachting al in 2028 van start zal \autocite{Telescope2026}.
+\subsection{Windmolens}\label{sec:energiebronnen_Windmolens}
+Vanwege gevoeligheid van de meetapparatuur zijn in de directe omgeving van de detector windmolens uitgesloten. Er is een perimeter van 10 kilometer rond elk hoekpunt van de telescoop ingesteld, waarbinnen nu al geen windmolens gebouwd mogen worden. Deze beperking is nodig om ondergrondse trillingen, die de metingen kunnen verstoren, te voorkomen \autocite{Telescope2026}. Indien de Euregio Maas-Rijn geselecteerd wordt als locatie zullen bestaande exemplaren ook verwijderd worden.
+\subsection{Zonnepanelen}\label{sec:energiebronnen_Zonnepanelen}
+Zonnepanelen bieden verschillende installatiemogelijkheden, die hieronder verder worden toegelicht: 
+\begin{itemize}
+    \item \textbf{Coöperatieve dakinstallaties:} Er wordt onderzocht of zonnepanelen op daken kunnen worden geplaatst, waarbij samenwerkingen met lokale coöperaties kunnen worden aangegaan om een deel van de benodigde energie te genereren.
+    \item \textbf{AgriPV-systemen:} De mogelijkheid voor Agro-Photovoltaics (AgriPV) wordt onderzocht. De directe omgeving van de ET leent zich hier bijzonder goed voor, dankzij de lage bevolkingsdichtheid en de grote beschikbaarheid van landbouwgebieden. AgriPV biedt de mogelijkheid om zonne-energie op te wekken zonder dat dit ten koste gaat van landbouwactiviteiten.
+\end{itemize}
 
 % Tip: Begin elk hoofdstuk met een paragraaf inleiding die beschrijft hoe
 % dit hoofdstuk past binnen het geheel van de bachelorproef. Geef in het
