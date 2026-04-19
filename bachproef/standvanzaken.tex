@@ -13,58 +13,43 @@ De ET is voorgesteld om opgebouwd te worden in een driehoek met gelijke zijdes w
     \label{fig:infografic-ET}
 \end{figure}
 
-De ET is een toonaangevend Europees onderzoeksproject, dat verwacht wordt een invloed te hebben vergelijkbaar met CERN in Zwitserland \textcolor{red}{source needed}. Doordat er met hoogtechnologische meetinstrumenten wordt gewerkt waarbij de kleinste verschillen belangrijk zijn is een betrouwbare energievoorziening voor deze instrumenten enorm belangrijk. Hiervoor wordt er, zeker aangezien de klimaatcrisis en de invloed van fossiele brandstoffen hierop steeds duidelijker wordt, voornamelijk gekeken naar ecologische en duurzame energiebronnen. Dit heeft als bijkomend voordeel dat er ook kansen gegeven worden voor verder onderzoek hierin bij de naburige universiteiten. Ook wordt de mogelijkheid onderzocht voor gedeeltelijke onafhankelijkheid van het energienet door middel van eigen on-site energieopwekking. Dit is nodig omdat de ET een constante en betrouwbare energievoorziening nodig heeft. Hierdoor wordt een eventuele uitval van het openbare energienet opgevangen door de eigen energieopwekking. \textcolor{red}{source needed}
-
+Naar verwachting zal de ET een invloed hebben vergelijkbaar met CERN in Zwitserland \textcolor{red}{source needed}. Doordat er met hoogtechnologische meetinstrumenten wordt gewerkt waarbij de kleinste verschillen belangrijk zijn is een betrouwbare energievoorziening voor deze instrumenten enorm belangrijk. Hiervoor wordt er, zeker aangezien de klimaatcrisis en de invloed van fossiele brandstoffen hierop steeds duidelijker wordt, voornamelijk gekeken naar ecologische en duurzame energiebronnen. Dit heeft als bijkomend voordeel dat er ook mogelijkheden gecreëerd worden voor verder onderzoek hierin bij de naburige universiteiten. 
+De mogelijkheid voor gedeeltelijke onafhankelijkheid van het energienet door middel van eigen on-site energieopwekking wordt ook onderzocht. Dit is nodig omdat de ET een constante en betrouwbare energievoorziening nodig heeft. Hierdoor wordt een eventuele uitval van het openbare energienet opgevangen door de eigen energieopwekking. \textcolor{red}{source needed}
 De Europese unie heeft al langere tijd een beleid dat inzet op meer duurzame energie en het afbouwen van afhankelijkheid van fossiele brandstoffen, dit zowel in wet \autocite{TFEU194} als in financiële steun zoals het REPowerEU plan ter waarde van 300 miljard euro \autocite{EuropeanCommission2022}. Door hierop in te zetten zal het bod van de Euregio Maas-Rijn op energievlak ook beter aansluiten bij het beleid van de Europese Unie.
 
 \section{Geographic information system (GIS)} 
 Geographic information system (GIS) is een informatiesysteem waarmee ruimtelijke gegevens ofwel geo-informatie kan worden beheerd, bewerkt en geanalyseerd. Het is een brede term voor software en informatie die data met een geografische dimensie kan begrijpen en verwerken \autocite{UniWisconsin–MadisonGIS}. Veel informatie die mee bepaald wat een goede locatie voor energiewinning voor de ET is, is geografisch (gemiddelde zonnestralen per jaar, windsnelheden, grondbestemming, afstand tot de fysieke voorgestelde telescoop). 
-De 2 voornaamste types van GIS-kaarten zijn de vector- en raster-kaarten. Bij rasterkaarten wordt de kaart onderverdeeld in een rooster elk vak in deze rooster kan een lijn in een databank krijgen (Tabel~\ref{tab:zonne_irradiantie}). Afhankelijk van de datakolommen kunnen er verschillende attributen worden toegekend aan deze vakken. Bij vectorkaarten krijgt een punt (voorgesteld door coördinaten) of een verzameling van punten (lijn of polygon) 1 lijn in een databank en kan er data worden toegewezen aan het punt of de polygon op basis van de kolommen (Tabel~\ref{tab:landbouwpercelen}).\autocite{OSLRasterVsVector}
+De 2 voornaamste types van GIS-kaarten zijn de vector- en raster-kaarten. Bij rasterkaarten wordt de kaart onderverdeeld in een rooster elk vak in deze rooster kan een lijn in een databank krijgen (Tabel~\ref{tab:fictief_zonne_irradiantie}). Afhankelijk van de datakolommen kunnen er verschillende attributen worden toegekend aan deze vakken. Bij vectorkaarten krijgt een punt (voorgesteld door coördinaten) of een verzameling van punten (lijn of polygon) 1 lijn in een databank en kan er data worden toegewezen aan het punt of de polygon op basis van de kolommen (Tabel~\ref{tab:fictief_landbouwpercelen}).\autocite{OSLRasterVsVector}
 \begin{table}[h]
     \centering
     \caption{Fictief voorbeeld van GIS-raster-data: zonne-irradiantie}
-    \label{tab:zonne_irradiantie}
-    \begin{tabularx}{\textwidth}{XXXXXXXXXXX}
+    \label{tab:fictief_zonne_irradiantie}
+    \begin{tabular}{c c c c c c c c}
     \toprule
-    \textbf{ID} & \textbf{Breedte-graad} & \textbf{Lengte-graad} & \textbf{Zonne-irradiantie (W/m$^2$)} & \textbf{Maand} & \textbf{Tijdstip} & \textbf{Oppervlakte Albedo} & \textbf{bewolkingsgraad}\\
+    \textbf{ID} & \textbf{\makecell{Breedte-\\graad}} & \textbf{\makecell{Lengte-\\graad}} & \textbf{\makecell{Zonne-\\irradiantie \\(W/m$^2$)}} & \textbf{\makecell{Maand}} & \textbf{\makecell{Tijdstip}} & \textbf{\makecell{Oppervlakte \\Albedo}} & \textbf{\makecell{bewolkings-\\graad}} \\
     \midrule
-    1 & 51.05 & 3.71 & 850 & Juni & 12:00 & 0.20 & 0  \\
-    2 & 51.05 & 3.72 & 920 & Juni & 12:00 & 0.15 & 0\\
-    3 & 51.06 & 3.71 & 780 & Juni & 12:00 & 0.25 & 3\\
+    1 & 51.05 & 3.71 & 850 & Juni & 12:00 & 0.20 & 0 \\
+    2 & 51.05 & 3.72 & 920 & Juni & 12:00 & 0.15 & 0 \\
+    3 & 51.06 & 3.71 & 780 & Juni & 12:00 & 0.25 & 3 \\
     4 & 51.06 & 3.72 & 890 & Juni & 12:00 & 0.18 & 2 \\
     5 & 51.07 & 3.71 & 720 & Juni & 12:00 & 0.30 & 4 \\
     \bottomrule
-    \end{tabularx}
+    \end{tabular}
 \end{table}
 
 \begin{table}[h]
     \centering
-    \caption{Voorbeeld van GIS-vector-data: landbouwpercelen}
-    \label{tab:landbouwpercelen}
-    \begin{tabularx}{\textwidth}{XXXXXXXXXXX}
+    \caption{Fictief voorbeeld van GIS-vector-data: landbouwpercelen}
+    \label{tab:fictief_landbouwpercelen}
+    \begin{tabular}{c c c c}
         \toprule
-        \textbf{ID} & \textbf{Gewas} & \textbf{Opbrengst (ton/ha)} & \textbf{Opp. (ha)} & \textbf{Eigenaar} & \textbf{Polygooncoördinaten (WGS84)} & \textbf{Bodemtype} \\
+        \textbf{ID} & \textbf{Gewas} & \textbf{Eigenaar} & \textbf{\makecell{Polygooncoördinaten \\(WGS84)}} \\
         \midrule
-        1 & Tarwe & 6.5 & 5.2 & Bedrijf A &
-        \begin{tabular}[c]{@{}l@{}}
-        (51.0510, 3.7120), (51.0515, 3.7125), \\
-        (51.0520, 3.7120), (51.0515, 3.7115)
-        \end{tabular} &
-        Klei \\
-        2 & Mais & 8.2 & 3.8 & Bbedrijf B &
-        \begin{tabular}[c]{@{}l@{}}
-        (51.0490, 3.7130), (51.0495, 3.7135), \\
-        (51.0500, 3.7130), (51.0495, 3.7125)
-        \end{tabular} &
-        Zand \\
-        3 & Aardappelen & 12.0 & 4.5 & Bedrijf C &
-        \begin{tabular}[c]{@{}l@{}}
-        (51.0530, 3.7140), (51.0535, 3.7145), \\
-        (51.0540, 3.7140), (51.0535, 3.7135)
-        \end{tabular} &
-        Leem \\
+        1 & Tarwe & Bedrijf A & \makecell[l]{(51.0510, 3.7120), (51.0515, 3.7125), \\(51.0520, 3.7120), (51.0515, 3.7115)} \\
+        2 & Mais & Bedrijf B & \makecell[l]{(51.0490, 3.7130), (51.0495, 3.7135), \\(51.0500, 3.7130), (51.0495, 3.7125)} \\
+        3 & Aardappelen & Bedrijf C & \makecell[l]{(51.0530, 3.7140), (51.0535, 3.7145), \\(51.0540, 3.7140), (51.0535, 3.7135)} \\
         \bottomrule
-    \end{tabularx}
+    \end{tabular}
 \end{table}
 
 \begin{figure}
