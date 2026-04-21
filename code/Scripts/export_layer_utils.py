@@ -372,6 +372,9 @@ def generate_layer_statistics_to_pdf(
 
     if total_count == 0:
         raise ValueError("Layer has no features.")
+    
+    # filter fields based on uniqueness thresholds and prepare data for the report
+    
 
     # ── 1. Collect Statistics ─────────────────────────────────────────────────
     print(f"[stats_pdf] Scanning {total_count:,} features …")
@@ -385,7 +388,8 @@ def generate_layer_statistics_to_pdf(
         field_name = field.name()
         if field.typeName() in ("geometry", "unknown"):
             continue
-
+        
+        categorical = 
         counts = Counter()
         areas = Counter()
         field_total_area = 0.0
