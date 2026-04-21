@@ -8,7 +8,7 @@
 <table class="heading">
 <tr class="heading-text decor">
 <td class="title">&nbsp;<br><strong class="title">multiselect_dialog</strong></td>
-<td class="extra"><a href=".">index</a><br><a href="file:d%3A%5Csync%5Candries%5Cschool%5Chogent%5C2025-2026%5Cbp%5Cbp_andries-ulenaers_2025-2026%5Ccode%5Cscripts%5Cmultiselect_dialog.py">d:\sync\andries\school\hogent\2025-2026\bp\bp_andries-ulenaers_2025-2026\code\scripts\multiselect_dialog.py</a></td></tr></table>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/andries/School/2025-2026/BP/BP_Andries-Ulenaers_2025-2026/code/Scripts/multiselect_dialog.py">/home/andries/School/2025-2026/BP/BP_Andries-Ulenaers_2025-2026/code/Scripts/multiselect_dialog.py</a></td></tr></table>
     <p></p>
 <p>
 <table class="section">
@@ -30,7 +30,16 @@
 <td class="section-title" colspan=3>&nbsp;<br><a name="ColumnMultiselectDialog">class <strong>ColumnMultiselectDialog</strong></a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>)</td></tr>
     
 <tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
-<td class="decor title-decor" colspan=2><span class="code"><a href="#ColumnMultiselectDialog">ColumnMultiselectDialog</a>(title='Select&nbsp;Options',&nbsp;instruction='Select&nbsp;one&nbsp;or&nbsp;more&nbsp;values&nbsp;from&nbsp;the&nbsp;list&nbsp;below:',&nbsp;column_name='Column',&nbsp;options=None,&nbsp;no_selection_allowed=False,&nbsp;select_all_text='Select&nbsp;All',&nbsp;deselect_all_text='Deselect&nbsp;All',&nbsp;parent=None)<br>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#ColumnMultiselectDialog">ColumnMultiselectDialog</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;title='Select&nbsp;Options',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;instruction='Select&nbsp;one&nbsp;or&nbsp;more&nbsp;values&nbsp;from&nbsp;the&nbsp;list&nbsp;below:',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;column_name='Column',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;options=None,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;no_selection_allowed=False,<br>
+&nbsp;&nbsp;&nbsp;&nbsp;select_all_text='Select&nbsp;All',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;deselect_all_text='Deselect&nbsp;All',<br>
+&nbsp;&nbsp;&nbsp;&nbsp;parent=None<br>
+)<br>
 &nbsp;<br>
 <br>&nbsp;</span></td></tr>
 <tr><td>&nbsp;</td>
@@ -46,7 +55,17 @@
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="ColumnMultiselectDialog-__init__"><strong>__init__</strong></a>(self, title='Select Options', instruction='Select one or more values from the list below:', column_name='Column', options=None, no_selection_allowed=False, select_all_text='Select All', deselect_all_text='Deselect All', parent=None)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+<dl><dt><a name="ColumnMultiselectDialog-__init__"><strong>__init__</strong></a>(
+    self,
+    title='Select Options',
+    instruction='Select one or more values from the list below:',
+    column_name='Column',
+    options=None,
+    no_selection_allowed=False,
+    select_all_text='Select All',
+    deselect_all_text='Deselect All',
+    parent=None
+)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-get_selected"><strong>get_selected</strong></a>(self)</dt></dl>
 
@@ -55,39 +74,11 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QD
 <dl><dt><a name="ColumnMultiselectDialog-accept"><strong>accept</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-accept">accept</a>(self)</span></dd></dl>
 
 <strong>accepted</strong> = &lt;unbound PYQT_SIGNAL accepted()&gt;
-<dl><dt><a name="ColumnMultiselectDialog-actionEvent"><strong>actionEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-changeEvent"><strong>changeEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-childEvent"><strong>childEvent</strong></a>(...)</dt></dl>
-
 <dl><dt><a name="ColumnMultiselectDialog-closeEvent"><strong>closeEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-closeEvent">closeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QCloseEvent])</span></dd></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-connectNotify"><strong>connectNotify</strong></a>(...)</dt></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-contextMenuEvent"><strong>contextMenuEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-contextMenuEvent">contextMenuEvent</a>(self,&nbsp;a0:&nbsp;Optional[QContextMenuEvent])</span></dd></dl>
 
-<dl><dt><a name="ColumnMultiselectDialog-create"><strong>create</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-customEvent"><strong>customEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-destroy"><strong>destroy</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt></dl>
-
 <dl><dt><a name="ColumnMultiselectDialog-done"><strong>done</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-done">done</a>(self,&nbsp;a0:&nbsp;int)</span></dd></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-dropEvent"><strong>dropEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-enterEvent"><strong>enterEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-event"><strong>event</strong></a>(...)</dt></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-eventFilter"><strong>eventFilter</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-eventFilter">eventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject],&nbsp;a1:&nbsp;Optional[QEvent])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
 
@@ -96,53 +87,13 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QD
 <dl><dt><a name="ColumnMultiselectDialog-exec_"><strong>exec_</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-exec_">exec_</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
 
 <strong>finished</strong> = &lt;unbound PYQT_SIGNAL finished(int)&gt;
-<dl><dt><a name="ColumnMultiselectDialog-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-hideEvent"><strong>hideEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-initPainter"><strong>initPainter</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt></dl>
-
 <dl><dt><a name="ColumnMultiselectDialog-isSizeGripEnabled"><strong>isSizeGripEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-isSizeGripEnabled">isSizeGripEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-keyPressEvent"><strong>keyPressEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-keyPressEvent">keyPressEvent</a>(self,&nbsp;a0:&nbsp;Optional[QKeyEvent])</span></dd></dl>
 
-<dl><dt><a name="ColumnMultiselectDialog-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-metric"><strong>metric</strong></a>(...)</dt></dl>
-
 <dl><dt><a name="ColumnMultiselectDialog-minimumSizeHint"><strong>minimumSizeHint</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-minimumSizeHint">minimumSizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
 
-<dl><dt><a name="ColumnMultiselectDialog-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-moveEvent"><strong>moveEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt></dl>
-
 <dl><dt><a name="ColumnMultiselectDialog-open"><strong>open</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-open">open</a>(self)</span></dd></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-paintEvent"><strong>paintEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-receivers"><strong>receivers</strong></a>(...)</dt></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-reject"><strong>reject</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-reject">reject</a>(self)</span></dd></dl>
 
@@ -150,10 +101,6 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QD
 <dl><dt><a name="ColumnMultiselectDialog-resizeEvent"><strong>resizeEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-resizeEvent">resizeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QResizeEvent])</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-result"><strong>result</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-result">result</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-sender"><strong>sender</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-setModal"><strong>setModal</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-setModal">setModal</a>(self,&nbsp;modal:&nbsp;bool)</span></dd></dl>
 
@@ -163,19 +110,9 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QD
 
 <dl><dt><a name="ColumnMultiselectDialog-setVisible"><strong>setVisible</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-setVisible">setVisible</a>(self,&nbsp;visible:&nbsp;bool)</span></dd></dl>
 
-<dl><dt><a name="ColumnMultiselectDialog-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt></dl>
-
 <dl><dt><a name="ColumnMultiselectDialog-showEvent"><strong>showEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-showEvent">showEvent</a>(self,&nbsp;a0:&nbsp;Optional[QShowEvent])</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-sizeHint"><strong>sizeHint</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-sizeHint">sizeHint</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-timerEvent"><strong>timerEvent</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt></dl>
-
-<dl><dt><a name="ColumnMultiselectDialog-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt></dl>
 
 <hr>
 Data and other attributes inherited from <a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>:<br>
@@ -193,6 +130,8 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QW
 
 <dl><dt><a name="ColumnMultiselectDialog-accessibleName"><strong>accessibleName</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-accessibleName">accessibleName</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
 
+<dl><dt><a name="ColumnMultiselectDialog-actionEvent"><strong>actionEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-actionEvent">actionEvent</a>(self,&nbsp;a0:&nbsp;Optional[QActionEvent])</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-actions"><strong>actions</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-actions">actions</a>(self)&nbsp;-&gt;&nbsp;list[QAction]</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-activateWindow"><strong>activateWindow</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-activateWindow">activateWindow</a>(self)</span></dd></dl>
@@ -208,6 +147,8 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QW
 <dl><dt><a name="ColumnMultiselectDialog-backgroundRole"><strong>backgroundRole</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-backgroundRole">backgroundRole</a>(self)&nbsp;-&gt;&nbsp;QPalette.ColorRole</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-baseSize"><strong>baseSize</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-baseSize">baseSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-changeEvent"><strong>changeEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-changeEvent">changeEvent</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-childAt"><strong>childAt</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-childAt">childAt</a>(self,&nbsp;p:&nbsp;QPoint)&nbsp;-&gt;&nbsp;Optional[QWidget]<br>
 <a href="#ColumnMultiselectDialog-childAt">childAt</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
@@ -228,20 +169,46 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QW
 
 <dl><dt><a name="ColumnMultiselectDialog-contextMenuPolicy"><strong>contextMenuPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-contextMenuPolicy">contextMenuPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.ContextMenuPolicy</span></dd></dl>
 
+<dl><dt><a name="ColumnMultiselectDialog-create"><strong>create</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-create">create</a>(self,&nbsp;window:&nbsp;PyQt5.sip.voidptr&nbsp;=&nbsp;None,&nbsp;initializeWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroyOldWindow:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-createWindowContainer"><strong>createWindowContainer</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-createWindowContainer">createWindowContainer</a>(window:&nbsp;Optional[QWindow],&nbsp;parent:&nbsp;Optional[QWidget]&nbsp;=&nbsp;None,&nbsp;flags:&nbsp;Union[Qt.WindowFlags,&nbsp;Qt.WindowType]&nbsp;=&nbsp;0)&nbsp;-&gt;&nbsp;QWidget</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-cursor"><strong>cursor</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-cursor">cursor</a>(self)&nbsp;-&gt;&nbsp;QCursor</span></dd></dl>
 
 <strong>customContextMenuRequested</strong> = &lt;unbound PYQT_SIGNAL customContextMenuRequested(QPoint)&gt;
+<dl><dt><a name="ColumnMultiselectDialog-destroy"><strong>destroy</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-destroy">destroy</a>(self,&nbsp;destroyWindow:&nbsp;bool&nbsp;=&nbsp;True,&nbsp;destroySubWindows:&nbsp;bool&nbsp;=&nbsp;True)</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-devType"><strong>devType</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-devType">devType</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-dragEnterEvent"><strong>dragEnterEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-dragEnterEvent">dragEnterEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDragEnterEvent])</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-dragLeaveEvent"><strong>dragLeaveEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-dragLeaveEvent">dragLeaveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDragLeaveEvent])</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-dragMoveEvent"><strong>dragMoveEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-dragMoveEvent">dragMoveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDragMoveEvent])</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-dropEvent"><strong>dropEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-dropEvent">dropEvent</a>(self,&nbsp;a0:&nbsp;Optional[QDropEvent])</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-effectiveWinId"><strong>effectiveWinId</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-effectiveWinId">effectiveWinId</a>(self)&nbsp;-&gt;&nbsp;PyQt5.sip.voidptr</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-ensurePolished"><strong>ensurePolished</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-ensurePolished">ensurePolished</a>(self)</span></dd></dl>
 
+<dl><dt><a name="ColumnMultiselectDialog-enterEvent"><strong>enterEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-enterEvent">enterEvent</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-event"><strong>event</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-event">event</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-find"><strong>find</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-find">find</a>(a0:&nbsp;PyQt5.sip.voidptr)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
 
+<dl><dt><a name="ColumnMultiselectDialog-focusInEvent"><strong>focusInEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-focusInEvent">focusInEvent</a>(self,&nbsp;a0:&nbsp;Optional[QFocusEvent])</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-focusNextChild"><strong>focusNextChild</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-focusNextChild">focusNextChild</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-focusNextPrevChild"><strong>focusNextPrevChild</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-focusNextPrevChild">focusNextPrevChild</a>(self,&nbsp;next:&nbsp;bool)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-focusOutEvent"><strong>focusOutEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-focusOutEvent">focusOutEvent</a>(self,&nbsp;a0:&nbsp;Optional[QFocusEvent])</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-focusPolicy"><strong>focusPolicy</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-focusPolicy">focusPolicy</a>(self)&nbsp;-&gt;&nbsp;Qt.FocusPolicy</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-focusPreviousChild"><strong>focusPreviousChild</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-focusPreviousChild">focusPreviousChild</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-focusProxy"><strong>focusProxy</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-focusProxy">focusProxy</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
 
@@ -292,6 +259,12 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QW
 
 <dl><dt><a name="ColumnMultiselectDialog-hide"><strong>hide</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-hide">hide</a>(self)</span></dd></dl>
 
+<dl><dt><a name="ColumnMultiselectDialog-hideEvent"><strong>hideEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-hideEvent">hideEvent</a>(self,&nbsp;a0:&nbsp;Optional[QHideEvent])</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-initPainter"><strong>initPainter</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-initPainter">initPainter</a>(self,&nbsp;painter:&nbsp;Optional[QPainter])</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-inputMethodEvent"><strong>inputMethodEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-inputMethodEvent">inputMethodEvent</a>(self,&nbsp;a0:&nbsp;Optional[QInputMethodEvent])</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-inputMethodHints"><strong>inputMethodHints</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-inputMethodHints">inputMethodHints</a>(self)&nbsp;-&gt;&nbsp;Qt.InputMethodHints</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-inputMethodQuery"><strong>inputMethodQuery</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-inputMethodQuery">inputMethodQuery</a>(self,&nbsp;a0:&nbsp;Qt.InputMethodQuery)&nbsp;-&gt;&nbsp;Any</span></dd></dl>
@@ -330,11 +303,15 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QW
 
 <dl><dt><a name="ColumnMultiselectDialog-isWindowModified"><strong>isWindowModified</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-isWindowModified">isWindowModified</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
 
+<dl><dt><a name="ColumnMultiselectDialog-keyReleaseEvent"><strong>keyReleaseEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-keyReleaseEvent">keyReleaseEvent</a>(self,&nbsp;a0:&nbsp;Optional[QKeyEvent])</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-keyboardGrabber"><strong>keyboardGrabber</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-keyboardGrabber">keyboardGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-layout"><strong>layout</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-layout">layout</a>(self)&nbsp;-&gt;&nbsp;Optional[QLayout]</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-layoutDirection"><strong>layoutDirection</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-layoutDirection">layoutDirection</a>(self)&nbsp;-&gt;&nbsp;Qt.LayoutDirection</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-leaveEvent"><strong>leaveEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-leaveEvent">leaveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-locale"><strong>locale</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-locale">locale</a>(self)&nbsp;-&gt;&nbsp;QLocale</span></dd></dl>
 
@@ -360,16 +337,30 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QW
 
 <dl><dt><a name="ColumnMultiselectDialog-maximumWidth"><strong>maximumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-maximumWidth">maximumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
 
+<dl><dt><a name="ColumnMultiselectDialog-metric"><strong>metric</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-metric">metric</a>(self,&nbsp;a0:&nbsp;QPaintDevice.PaintDeviceMetric)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-minimumHeight"><strong>minimumHeight</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-minimumHeight">minimumHeight</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-minimumSize"><strong>minimumSize</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-minimumSize">minimumSize</a>(self)&nbsp;-&gt;&nbsp;QSize</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-minimumWidth"><strong>minimumWidth</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-minimumWidth">minimumWidth</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
 
+<dl><dt><a name="ColumnMultiselectDialog-mouseDoubleClickEvent"><strong>mouseDoubleClickEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-mouseDoubleClickEvent">mouseDoubleClickEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-mouseGrabber"><strong>mouseGrabber</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-mouseGrabber">mouseGrabber</a>()&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-mouseMoveEvent"><strong>mouseMoveEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-mouseMoveEvent">mouseMoveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-mousePressEvent"><strong>mousePressEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-mousePressEvent">mousePressEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-mouseReleaseEvent"><strong>mouseReleaseEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-mouseReleaseEvent">mouseReleaseEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMouseEvent])</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-move"><strong>move</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-move">move</a>(self,&nbsp;a0:&nbsp;QPoint)<br>
 <a href="#ColumnMultiselectDialog-move">move</a>(self,&nbsp;ax:&nbsp;int,&nbsp;ay:&nbsp;int)</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-moveEvent"><strong>moveEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-moveEvent">moveEvent</a>(self,&nbsp;a0:&nbsp;Optional[QMoveEvent])</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-nativeEvent"><strong>nativeEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-nativeEvent">nativeEvent</a>(self,&nbsp;eventType:&nbsp;Union[QByteArray,&nbsp;bytes,&nbsp;bytearray],&nbsp;message:&nbsp;Optional[PyQt5.sip.voidptr])&nbsp;-&gt;&nbsp;(bool,&nbsp;Optional[int])</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-nativeParentWidget"><strong>nativeParentWidget</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-nativeParentWidget">nativeParentWidget</a>(self)&nbsp;-&gt;&nbsp;Optional[QWidget]</span></dd></dl>
 
@@ -382,6 +373,8 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QW
 <dl><dt><a name="ColumnMultiselectDialog-overrideWindowState"><strong>overrideWindowState</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-overrideWindowState">overrideWindowState</a>(self,&nbsp;state:&nbsp;Union[Qt.WindowStates,&nbsp;Qt.WindowState])</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-paintEngine"><strong>paintEngine</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-paintEngine">paintEngine</a>(self)&nbsp;-&gt;&nbsp;Optional[QPaintEngine]</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-paintEvent"><strong>paintEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-paintEvent">paintEvent</a>(self,&nbsp;a0:&nbsp;Optional[QPaintEvent])</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-palette"><strong>palette</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-palette">palette</a>(self)&nbsp;-&gt;&nbsp;QPalette</span></dd></dl>
 
@@ -556,6 +549,8 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QW
 
 <dl><dt><a name="ColumnMultiselectDialog-setWindowTitle"><strong>setWindowTitle</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-setWindowTitle">setWindowTitle</a>(self,&nbsp;a0:&nbsp;Optional[str])</span></dd></dl>
 
+<dl><dt><a name="ColumnMultiselectDialog-sharedPainter"><strong>sharedPainter</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-sharedPainter">sharedPainter</a>(self)&nbsp;-&gt;&nbsp;Optional[QPainter]</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-show"><strong>show</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-show">show</a>(self)</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-showFullScreen"><strong>showFullScreen</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-showFullScreen">showFullScreen</a>(self)</span></dd></dl>
@@ -580,6 +575,8 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QW
 
 <dl><dt><a name="ColumnMultiselectDialog-styleSheet"><strong>styleSheet</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-styleSheet">styleSheet</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
 
+<dl><dt><a name="ColumnMultiselectDialog-tabletEvent"><strong>tabletEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-tabletEvent">tabletEvent</a>(self,&nbsp;a0:&nbsp;Optional[QTabletEvent])</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-testAttribute"><strong>testAttribute</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-testAttribute">testAttribute</a>(self,&nbsp;attribute:&nbsp;Qt.WidgetAttribute)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-toolTip"><strong>toolTip</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-toolTip">toolTip</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
@@ -603,11 +600,15 @@ Methods inherited from <a href="PyQt5.QtWidgets.html#QWidget">PyQt5.QtWidgets.QW
 
 <dl><dt><a name="ColumnMultiselectDialog-updateGeometry"><strong>updateGeometry</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-updateGeometry">updateGeometry</a>(self)</span></dd></dl>
 
+<dl><dt><a name="ColumnMultiselectDialog-updateMicroFocus"><strong>updateMicroFocus</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-updateMicroFocus">updateMicroFocus</a>(self)</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-updatesEnabled"><strong>updatesEnabled</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-updatesEnabled">updatesEnabled</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-visibleRegion"><strong>visibleRegion</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-visibleRegion">visibleRegion</a>(self)&nbsp;-&gt;&nbsp;QRegion</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-whatsThis"><strong>whatsThis</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-whatsThis">whatsThis</a>(self)&nbsp;-&gt;&nbsp;str</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-wheelEvent"><strong>wheelEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-wheelEvent">wheelEvent</a>(self,&nbsp;a0:&nbsp;Optional[QWheelEvent])</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-width"><strong>width</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-width">width</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
 
@@ -664,13 +665,21 @@ Methods inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject<
 
 <dl><dt><a name="ColumnMultiselectDialog-blockSignals"><strong>blockSignals</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-blockSignals">blockSignals</a>(self,&nbsp;b:&nbsp;bool)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
 
+<dl><dt><a name="ColumnMultiselectDialog-childEvent"><strong>childEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-childEvent">childEvent</a>(self,&nbsp;a0:&nbsp;Optional[QChildEvent])</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-children"><strong>children</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-children">children</a>(self)&nbsp;-&gt;&nbsp;list[QObject]</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-connectNotify"><strong>connectNotify</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-connectNotify">connectNotify</a>(self,&nbsp;signal:&nbsp;QMetaMethod)</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-customEvent"><strong>customEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-customEvent">customEvent</a>(self,&nbsp;a0:&nbsp;Optional[QEvent])</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-deleteLater"><strong>deleteLater</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-deleteLater">deleteLater</a>(self)</span></dd></dl>
 
 <strong>destroyed</strong> = &lt;unbound PYQT_SIGNAL destroyed(QObject*)&gt;
 <dl><dt><a name="ColumnMultiselectDialog-disconnect"><strong>disconnect</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-disconnect">disconnect</a>(a0:&nbsp;QMetaObject.Connection)&nbsp;-&gt;&nbsp;bool<br>
 <a href="#ColumnMultiselectDialog-disconnect">disconnect</a>(self)</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-disconnectNotify"><strong>disconnectNotify</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-disconnectNotify">disconnectNotify</a>(self,&nbsp;signal:&nbsp;QMetaMethod)</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-dumpObjectInfo"><strong>dumpObjectInfo</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-dumpObjectInfo">dumpObjectInfo</a>(self)</span></dd></dl>
 
@@ -691,6 +700,8 @@ Methods inherited from <a href="PyQt5.QtCore.html#QObject">PyQt5.QtCore.QObject<
 <dl><dt><a name="ColumnMultiselectDialog-inherits"><strong>inherits</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-inherits">inherits</a>(self,&nbsp;classname:&nbsp;Optional[str])&nbsp;-&gt;&nbsp;bool</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-installEventFilter"><strong>installEventFilter</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-installEventFilter">installEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-isSignalConnected"><strong>isSignalConnected</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-isSignalConnected">isSignalConnected</a>(self,&nbsp;signal:&nbsp;QMetaMethod)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-isWidgetType"><strong>isWidgetType</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-isWidgetType">isWidgetType</a>(self)&nbsp;-&gt;&nbsp;bool</span></dd></dl>
 
@@ -717,7 +728,13 @@ appropriate&nbsp;type.<br>
 For&nbsp;signals&nbsp;the&nbsp;signal&nbsp;is&nbsp;connected&nbsp;to&nbsp;the&nbsp;given&nbsp;value&nbsp;which&nbsp;should&nbsp;be&nbsp;a<br>
 callable.</span></dd></dl>
 
+<dl><dt><a name="ColumnMultiselectDialog-receivers"><strong>receivers</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-receivers">receivers</a>(self,&nbsp;signal:&nbsp;PYQT_SIGNAL)&nbsp;-&gt;&nbsp;int</span></dd></dl>
+
 <dl><dt><a name="ColumnMultiselectDialog-removeEventFilter"><strong>removeEventFilter</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-removeEventFilter">removeEventFilter</a>(self,&nbsp;a0:&nbsp;Optional[QObject])</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-sender"><strong>sender</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-sender">sender</a>(self)&nbsp;-&gt;&nbsp;Optional[QObject]</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-senderSignalIndex"><strong>senderSignalIndex</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-senderSignalIndex">senderSignalIndex</a>(self)&nbsp;-&gt;&nbsp;int</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-setObjectName"><strong>setObjectName</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-setObjectName">setObjectName</a>(self,&nbsp;name:&nbsp;Optional[str])</span></dd></dl>
 
@@ -728,6 +745,8 @@ callable.</span></dd></dl>
 <dl><dt><a name="ColumnMultiselectDialog-startTimer"><strong>startTimer</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-startTimer">startTimer</a>(self,&nbsp;interval:&nbsp;int,&nbsp;timerType:&nbsp;Qt.TimerType&nbsp;=&nbsp;Qt.CoarseTimer)&nbsp;-&gt;&nbsp;int</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-thread"><strong>thread</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-thread">thread</a>(self)&nbsp;-&gt;&nbsp;Optional[QThread]</span></dd></dl>
+
+<dl><dt><a name="ColumnMultiselectDialog-timerEvent"><strong>timerEvent</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-timerEvent">timerEvent</a>(self,&nbsp;a0:&nbsp;Optional[QTimerEvent])</span></dd></dl>
 
 <dl><dt><a name="ColumnMultiselectDialog-tr"><strong>tr</strong></a>(...)</dt><dd><span class="code"><a href="#ColumnMultiselectDialog-tr">tr</a>(self,&nbsp;sourceText:&nbsp;Optional[str],&nbsp;disambiguation:&nbsp;Optional[str]&nbsp;=&nbsp;None,&nbsp;n:&nbsp;int&nbsp;=&nbsp;-1)&nbsp;-&gt;&nbsp;str</span></dd></dl>
 

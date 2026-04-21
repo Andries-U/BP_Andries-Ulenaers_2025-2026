@@ -8,7 +8,7 @@
 <table class="heading">
 <tr class="heading-text decor">
 <td class="title">&nbsp;<br><strong class="title">SolarDataClient</strong></td>
-<td class="extra"><a href=".">index</a><br><a href="file:d%3A%5Csync%5Candries%5Cschool%5Chogent%5C2025-2026%5Cbp%5Cbp_andries-ulenaers_2025-2026%5Ccode%5Cscripts%5Csolardataclient.py">d:\sync\andries\school\hogent\2025-2026\bp\bp_andries-ulenaers_2025-2026\code\scripts\solardataclient.py</a></td></tr></table>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/andries/School/2025-2026/BP/BP_Andries-Ulenaers_2025-2026/code/Scripts/SolarDataClient.py">/home/andries/School/2025-2026/BP/BP_Andries-Ulenaers_2025-2026/code/Scripts/SolarDataClient.py</a></td></tr></table>
     <p></p>
 <p>
 <table class="section">
@@ -30,7 +30,9 @@
 <td class="section-title" colspan=3>&nbsp;<br><a name="SolarDataClient">class <strong>SolarDataClient</strong></a>(<a href="abc.html#ABC">abc.ABC</a>)</td></tr>
     
 <tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
-<td class="decor title-decor" colspan=2><span class="code"><a href="#SolarDataClient">SolarDataClient</a>(crs:&nbsp;qgis._core.QgsCoordinateReferenceSystem&nbsp;=&nbsp;&amp;lt;QgsCoordinateReferenceSystem:&nbsp;EPSG:4326&amp;gt;)<br>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#SolarDataClient">SolarDataClient</a>(<br>
+&nbsp;&nbsp;&nbsp;&nbsp;crs:&nbsp;qgis._core.QgsCoordinateReferenceSystem&nbsp;=&nbsp;&amp;lt;QgsCoordinateReferenceSystem:&nbsp;EPSG:4326&amp;gt;<br>
+)<br>
 &nbsp;<br>
 Abstract&nbsp;base&nbsp;class&nbsp;for&nbsp;solar&nbsp;data&nbsp;providers.<br>&nbsp;</span></td></tr>
 <tr><td>&nbsp;</td>
@@ -41,16 +43,39 @@ Abstract&nbsp;base&nbsp;class&nbsp;for&nbsp;solar&nbsp;data&nbsp;providers.<br>&
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="SolarDataClient-__init__"><strong>__init__</strong></a>(self, crs: qgis._core.QgsCoordinateReferenceSystem = &lt;QgsCoordinateReferenceSystem: EPSG:4326&gt;)</dt><dd><span class="code">Args:<br>
+<dl><dt><a name="SolarDataClient-__init__"><strong>__init__</strong></a>(
+    self,
+    crs: qgis._core.QgsCoordinateReferenceSystem = &lt;QgsCoordinateReferenceSystem: EPSG:4326&gt;
+)</dt><dd><span class="code">Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;crs:&nbsp;Coordinate&nbsp;reference&nbsp;system&nbsp;of&nbsp;input&nbsp;coordinates&nbsp;(default&nbsp;WGS84).</span></dd></dl>
 
-<dl><dt><a name="SolarDataClient-fetch"><strong>fetch</strong></a>(self, lat: float, lon: float, src_crs: qgis._core.QgsCoordinateReferenceSystem) -&gt; Dict[str, Any]</dt><dd><span class="code">Fetch&nbsp;raw&nbsp;solar&nbsp;data&nbsp;for&nbsp;location.</span></dd></dl>
+<dl><dt><a name="SolarDataClient-fetch"><strong>fetch</strong></a>(
+    self,
+    lat: float,
+    lon: float,
+    src_crs: qgis._core.QgsCoordinateReferenceSystem
+) -&gt; Dict[str, Any]</dt><dd><span class="code">Fetch&nbsp;raw&nbsp;solar&nbsp;data&nbsp;for&nbsp;location.</span></dd></dl>
 
-<dl><dt><a name="SolarDataClient-get_average_daily_solar_potential"><strong>get_average_daily_solar_potential</strong></a>(self, lat: float, lon: float, src_crs: qgis._core.QgsCoordinateReferenceSystem) -&gt; float</dt><dd><span class="code">Get&nbsp;average&nbsp;daily&nbsp;solar&nbsp;potential.</span></dd></dl>
+<dl><dt><a name="SolarDataClient-get_average_daily_solar_potential"><strong>get_average_daily_solar_potential</strong></a>(
+    self,
+    lat: float,
+    lon: float,
+    src_crs: qgis._core.QgsCoordinateReferenceSystem
+) -&gt; float</dt><dd><span class="code">Get&nbsp;average&nbsp;daily&nbsp;solar&nbsp;potential.</span></dd></dl>
 
-<dl><dt><a name="SolarDataClient-get_yearly_total_solar_potential"><strong>get_yearly_total_solar_potential</strong></a>(self, lat: float, lon: float, src_crs: qgis._core.QgsCoordinateReferenceSystem) -&gt; float</dt><dd><span class="code">Get&nbsp;yearly&nbsp;total&nbsp;solar&nbsp;potential.</span></dd></dl>
+<dl><dt><a name="SolarDataClient-get_yearly_total_solar_potential"><strong>get_yearly_total_solar_potential</strong></a>(
+    self,
+    lat: float,
+    lon: float,
+    src_crs: qgis._core.QgsCoordinateReferenceSystem
+) -&gt; float</dt><dd><span class="code">Get&nbsp;yearly&nbsp;total&nbsp;solar&nbsp;potential.</span></dd></dl>
 
-<dl><dt><a name="SolarDataClient-normalize_coords"><strong>normalize_coords</strong></a>(self, lat: float, lon: float, src_crs: qgis._core.QgsCoordinateReferenceSystem) -&gt; tuple[float, float]</dt><dd><span class="code">Normalize&nbsp;input&nbsp;coordinates&nbsp;to&nbsp;the&nbsp;instance's&nbsp;CRS&nbsp;if&nbsp;necessary.</span></dd></dl>
+<dl><dt><a name="SolarDataClient-normalize_coords"><strong>normalize_coords</strong></a>(
+    self,
+    lat: float,
+    lon: float,
+    src_crs: qgis._core.QgsCoordinateReferenceSystem
+) -&gt; tuple[float, float]</dt><dd><span class="code">Normalize&nbsp;input&nbsp;coordinates&nbsp;to&nbsp;the&nbsp;instance's&nbsp;CRS&nbsp;if&nbsp;necessary.</span></dd></dl>
 
 <hr>
 Data descriptors defined here:<br>

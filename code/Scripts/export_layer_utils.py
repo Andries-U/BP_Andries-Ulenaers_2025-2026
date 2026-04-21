@@ -4,7 +4,7 @@ from qgis.PyQt.QtCore import QSize
 import os
 import tempfile
 from collections import Counter
-from typing import Optional
+from typing import Optional, Dict, List
 
 from qgis.PyQt.QtCore import QSize
 from qgis.PyQt.QtGui import QColor, QImage
@@ -25,11 +25,22 @@ except ImportError:
         "(in the OSGeo4W Shell or the shell that launched QGIS)"
     )
 
-def export_layer_to_pdf(layer: QgsVectorLayer, output_pdf_path: str):
+def export_layer_to_pdf(layer: QgsVectorLayer, output_pdf_path: str, cardinality_threshold_value: int = 50, cardinality_ratio_threshold: float = 0.5):
     """
     Exports a QGIS layer to a PDF using a plain text table (most compatible).
     """
     project = QgsProject.instance()
+
+    # determine the columns to include based on cardinality thresholds
+    field_names = [f.name() for f in layer.fields()]
+    fields_to_include = []
+    total_count = layer.featureCount()
+    cardinality_threshold = min(cardinality_threshold_value, int(total_count * cardinality_ratio_threshold))
+    for field in layer.fields():
+        if field.typeName() in ("geometry", "unknown"):
+            continue 
+        if _has_low_cardinality(layer, field.name(), threshold=cardinality_threshold):
+            fields_to_include.append(field.name())
 
     # Create a new layout
     layout = QgsPrintLayout(project)
@@ -56,11 +67,10 @@ def export_layer_to_pdf(layer: QgsVectorLayer, output_pdf_path: str):
 
     # --- 3. Build Plain Text Table ---
     # Calculate column widths dynamically
-    field_names = [f.name() for f in layer.fields()]
-    col_widths = [max(len(f), 10) for f in field_names]
+    col_widths = [max(len(f), 10) for f in fields_to_include]
     
     # Header
-    header = " | ".join([f"{name:<{w}}" for name, w in zip(field_names, col_widths)])
+    header = " | ".join([f"{name:<{w}}" for name, w in zip(fields_to_include, col_widths)])
     separator = "-+-".join(["-" * w for w in col_widths])
     
     rows = []
@@ -69,11 +79,11 @@ def export_layer_to_pdf(layer: QgsVectorLayer, output_pdf_path: str):
     
     for feature in layer.getFeatures():
         row_vals = []
-        for field in layer.fields():
-            val = feature[field.name()]
+        for field in fields_to_include:
+            val = feature[field]
             # Convert None to string
             val_str = str(val) if val is not None else "NULL"
-            row_vals.append(f"{val_str:<{col_widths[layer.fields().index(field)]}}")
+            row_vals.append(f"{val_str:<{col_widths[fields_to_include.index(field)]}}")
         
         rows.append(" | ".join(row_vals))
     
@@ -123,41 +133,41 @@ def export_layer_to_csv(layer: QgsVectorLayer, output_path: str):
     if error[0] != QgsVectorFileWriter.NoError:
         raise RuntimeError(f"Failed to export layer to CSV: {error[1]}")  
 
-def _filter_fields(layer: QgsVectorLayer, stats_data: Dict, area_data: Dict, field_total_areas: Dict, total_count: int) -> List[str]:
-    """
-    Filter fields based on uniqueness thresholds.
-    Returns a list of field names that should be included in the report.
-    """
-    included_fields = []
-    skipped_fields = []
+# def _filter_fields(layer: QgsVectorLayer, stats_data: Dict, area_data: Dict, field_total_areas: Dict, total_count: int) -> List[str]:
+#     """
+#     Filter fields based on uniqueness thresholds.
+#     Returns a list of field names that should be included in the report.
+#     """
+#     included_fields = []
+#     skipped_fields = []
     
-    # Thresholds (can be made parameters if needed, but kept local for this split)
-    min_unique_ratio = 0.95  # Skip if >95% of rows are unique
-    max_unique_count = 10    # Skip if unique values <= 10 (absolute count)
+#     # Thresholds (can be made parameters if needed, but kept local for this split)
+#     min_unique_ratio = 0.95  # Skip if >95% of rows are unique
+#     max_unique_count = 10    # Skip if unique values <= 10 (absolute count)
 
-    print("[Filter] Analyzing fields for uniqueness...")
+#     print("[Filter] Analyzing fields for uniqueness...")
     
-    for field_name in stats_data.keys():
-        counts = stats_data[field_name]
-        unique_count = len(counts)
-        ratio = unique_count / total_count if total_count > 0 else 1.0
+#     for field_name in stats_data.keys():
+#         counts = stats_data[field_name]
+#         unique_count = len(counts)
+#         ratio = unique_count / total_count if total_count > 0 else 1.0
         
-        # Logic: Skip if (ratio > threshold) OR (unique_count <= absolute_limit)
-        # Note: We use `>` for ratio and `<=` for count.
-        # If unique_count == total_count, ratio is 1.0 (100%), which is > 0.95.
-        skip_field = (ratio > min_unique_ratio) or (unique_count <= max_unique_count)
+#         # Logic: Skip if (ratio > threshold) OR (unique_count <= absolute_limit)
+#         # Note: We use `>` for ratio and `<=` for count.
+#         # If unique_count == total_count, ratio is 1.0 (100%), which is > 0.95.
+#         skip_field = (ratio > min_unique_ratio) or (unique_count <= max_unique_count)
         
-        if not skip_field:
-            included_fields.append(field_name)
-            print(f"  -> Keep '{field_name}' (Ratio: {ratio:.2%}, Count: {unique_count})")
-        else:
-            skipped_fields.append(field_name)
-            print(f"  -> Skip '{field_name}' (Ratio: {ratio:.2%}, Count: {unique_count})")
+#         if not skip_field:
+#             included_fields.append(field_name)
+#             print(f"  -> Keep '{field_name}' (Ratio: {ratio:.2%}, Count: {unique_count})")
+#         else:
+#             skipped_fields.append(field_name)
+#             print(f"  -> Skip '{field_name}' (Ratio: {ratio:.2%}, Count: {unique_count})")
 
-    if not included_fields:
-        print("[Filter] Warning: No fields met the uniqueness criteria.")
+#     if not included_fields:
+#         print("[Filter] Warning: No fields met the uniqueness criteria.")
     
-    return included_fields, skipped_fields
+#     return included_fields, skipped_fields
 
 def _render_map_image(layer: QgsVectorLayer, map_px: int = 1200) -> str:
     """
@@ -357,6 +367,8 @@ def generate_layer_statistics_to_pdf(
     layer: QgsVectorLayer,
     output_path: Optional[str] = None,
     map_px: int = 1200,
+    cardinality_threshold_value: int = 50, 
+    cardinality_ratio_threshold: float = 0.5
 ) -> str:
     """
     Main function: Collects stats, filters fields, renders map, and builds PDF.
@@ -372,9 +384,7 @@ def generate_layer_statistics_to_pdf(
 
     if total_count == 0:
         raise ValueError("Layer has no features.")
-    
-    # filter fields based on uniqueness thresholds and prepare data for the report
-    
+
 
     # ── 1. Collect Statistics ─────────────────────────────────────────────────
     print(f"[stats_pdf] Scanning {total_count:,} features …")
@@ -382,6 +392,7 @@ def generate_layer_statistics_to_pdf(
     area_data = {}
     field_total_areas = {}
 
+    cardinality_threshold = 1000 if total_count * 0.5 > 1000 else int(total_count * 0.5)
     features = list(layer.getFeatures())
 
     for field in layer.fields():
@@ -389,7 +400,7 @@ def generate_layer_statistics_to_pdf(
         if field.typeName() in ("geometry", "unknown"):
             continue
         
-        categorical = 
+        categorical = _has_low_cardinality(layer, field_name)
         counts = Counter()
         areas = Counter()
         field_total_area = 0.0
@@ -410,9 +421,17 @@ def generate_layer_statistics_to_pdf(
         print(f"  '{field_name}': {len(counts)} distinct values")
 
     # ── 2. Filter Fields ───────────────────────────────────────────────────────
-    included_fields, skipped_fields = _filter_fields(
-        layer, stats_data, area_data, field_total_areas, total_count
-    )
+    included_fields = []
+    skipped_fields = []
+    total_count = layer.featureCount()
+    cardinality_threshold = min(cardinality_threshold_value, int(total_count * cardinality_ratio_threshold))
+    for field in layer.fields():
+        if field.typeName() in ("geometry", "unknown"):
+            continue 
+        if _has_low_cardinality(layer, field.name(), threshold=cardinality_threshold):
+            included_fields.append(field.name())
+        else:
+            skipped_fields.append(field.name())
 
     # ── 3. Render Map ──────────────────────────────────────────────────────────
     map_image_path = _render_map_image(layer, map_px)
@@ -441,3 +460,13 @@ def generate_layer_statistics_to_pdf(
     print(f"[stats_pdf] Done → {output_path}")
     return output_path
 
+def _has_low_cardinality(layer: QgsVectorLayer, field_name: str, threshold: int = 10) -> bool:
+    if not layer or not layer.isValid():
+        raise ValueError("Layer is invalid or not a vector layer.")
+
+    if field_name not in [f.name() for f in layer.fields()]:
+        raise ValueError(f"Field '{field_name}' does not exist in the layer.")
+
+    # Use QGIS's built-in method to fetch unique values
+    unique_values = layer.uniqueValues(layer.fields().indexFromName(field_name))
+    return len(unique_values) <= threshold

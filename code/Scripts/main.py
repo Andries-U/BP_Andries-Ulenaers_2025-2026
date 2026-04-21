@@ -202,7 +202,7 @@ def main():
         "Analyze Size (Search Area)": run_size_analysis,
         "Custom layer analysis": layer_analysis_with_settings,
         "Analyze Solar Potential": run_solar_potential,
-        "Test Function": test_analysis_settings,
+        "Test Function": lambda: print("This is a test function. Replace with actual logic."),
     }
 
     # 2. Instantiate and run

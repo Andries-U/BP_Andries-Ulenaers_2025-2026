@@ -8,7 +8,7 @@
 <table class="heading">
 <tr class="heading-text decor">
 <td class="title">&nbsp;<br><strong class="title">qgis_gui_utils</strong></td>
-<td class="extra"><a href=".">index</a><br><a href="file:d%3A%5Csync%5Candries%5Cschool%5Chogent%5C2025-2026%5Cbp%5Cbp_andries-ulenaers_2025-2026%5Ccode%5Cscripts%5Cqgis_gui_utils.py">d:\sync\andries\school\hogent\2025-2026\bp\bp_andries-ulenaers_2025-2026\code\scripts\qgis_gui_utils.py</a></td></tr></table>
+<td class="extra"><a href=".">index</a><br><a href="file:/home/andries/School/2025-2026/BP/BP_Andries-Ulenaers_2025-2026/code/Scripts/qgis_gui_utils.py">/home/andries/School/2025-2026/BP/BP_Andries-Ulenaers_2025-2026/code/Scripts/qgis_gui_utils.py</a></td></tr></table>
     <p></p>
 <p>
 <table class="section">
@@ -31,8 +31,17 @@ Args:<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;T:&nbsp;The&nbsp;user's&nbsp;input&nbsp;if&nbsp;'OK'&nbsp;is&nbsp;pressed,&nbsp;empty&nbsp;string&nbsp;if&nbsp;'Cancel'&nbsp;is&nbsp;pressed.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;Returns&nbsp;False&nbsp;if&nbsp;the&nbsp;user&nbsp;cancels&nbsp;the&nbsp;dialog.</span></dd></dl>
- <dl><dt><a name="-run_selection_dialog_column_values"><strong>run_selection_dialog_column_values</strong></a>(layer: qgis._core.QgsVectorLayer, column_name: str, title: str = None, instruction: str = None) -&gt; list</dt></dl>
- <dl><dt><a name="-select_feature_from_layer_database"><strong>select_feature_from_layer_database</strong></a>(layer: qgis._core.QgsVectorLayer, prompt: str = 'Select a feature', title: str = 'Select a Feature') -&gt; tuple[qgis._core.QgsFeature, int]</dt><dd><span class="code">Select&nbsp;a&nbsp;feature&nbsp;ID&nbsp;from&nbsp;a&nbsp;vector&nbsp;layer.<br>
+ <dl><dt><a name="-run_selection_dialog_column_values"><strong>run_selection_dialog_column_values</strong></a>(
+    layer: qgis._core.QgsVectorLayer,
+    column_name: str,
+    title: str = None,
+    instruction: str = None
+) -&gt; list</dt></dl>
+ <dl><dt><a name="-select_feature_from_layer_database"><strong>select_feature_from_layer_database</strong></a>(
+    layer: qgis._core.QgsVectorLayer,
+    prompt: str = 'Select a feature',
+    title: str = 'Select a Feature'
+) -&gt; tuple[qgis._core.QgsFeature, int]</dt><dd><span class="code">Select&nbsp;a&nbsp;feature&nbsp;ID&nbsp;from&nbsp;a&nbsp;vector&nbsp;layer.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;layer&nbsp;(QgsVectorLayer):&nbsp;The&nbsp;vector&nbsp;layer&nbsp;to&nbsp;select&nbsp;from.<br>
@@ -45,7 +54,11 @@ Returns:<br>
 Raises:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;LayerFeatureError:&nbsp;If&nbsp;features&nbsp;cannot&nbsp;be&nbsp;retrieved.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;SelectionCancelledError:&nbsp;If&nbsp;the&nbsp;user&nbsp;cancels&nbsp;the&nbsp;GUI.</span></dd></dl>
- <dl><dt><a name="-select_item_from_gui_list"><strong>select_item_from_gui_list</strong></a>(items: list[~T], prompt: str = 'Select a item', title: str = 'Select an item from the list') -&gt; tuple[~T, int]</dt><dd><span class="code">Select&nbsp;an&nbsp;item&nbsp;from&nbsp;a&nbsp;list&nbsp;using&nbsp;a&nbsp;GUI&nbsp;dialog.<br>
+ <dl><dt><a name="-select_item_from_gui_list"><strong>select_item_from_gui_list</strong></a>(
+    items: list[~T],
+    prompt: str = 'Select a item',
+    title: str = 'Select an item from the list'
+) -&gt; tuple[~T, int]</dt><dd><span class="code">Select&nbsp;an&nbsp;item&nbsp;from&nbsp;a&nbsp;list&nbsp;using&nbsp;a&nbsp;GUI&nbsp;dialog.<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;items&nbsp;(list[T]):&nbsp;The&nbsp;list&nbsp;of&nbsp;items&nbsp;to&nbsp;select&nbsp;from.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;prompt&nbsp;(str):&nbsp;The&nbsp;prompt&nbsp;to&nbsp;display&nbsp;in&nbsp;the&nbsp;selection&nbsp;dialog.<br>
@@ -56,7 +69,10 @@ Returns:<br>
 Raises:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;SelectionCancelledError:&nbsp;If&nbsp;the&nbsp;user&nbsp;clicks&nbsp;Cancel.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;NoItemSelectedError:&nbsp;If&nbsp;the&nbsp;dialog&nbsp;accepts&nbsp;but&nbsp;returns&nbsp;no&nbsp;item.</span></dd></dl>
- <dl><dt><a name="-select_layer_from_available_layers"><strong>select_layer_from_available_layers</strong></a>(title: str = 'Select a Layer', prompt: str = 'Choose a layer:') -&gt; qgis._core.QgsMapLayer</dt><dd><span class="code">Command&nbsp;line&nbsp;tool&nbsp;to&nbsp;select&nbsp;one&nbsp;layer&nbsp;from&nbsp;the&nbsp;current&nbsp;project.<br>
+ <dl><dt><a name="-select_layer_from_available_layers"><strong>select_layer_from_available_layers</strong></a>(
+    title: str = 'Select a Layer',
+    prompt: str = 'Choose a layer:'
+) -&gt; qgis._core.QgsMapLayer</dt><dd><span class="code">Command&nbsp;line&nbsp;tool&nbsp;to&nbsp;select&nbsp;one&nbsp;layer&nbsp;from&nbsp;the&nbsp;current&nbsp;project.<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;QgsMapLayer:&nbsp;The&nbsp;selected&nbsp;layer</span></dd></dl>
  <dl><dt><a name="-show_error_popup"><strong>show_error_popup</strong></a>(title: str, message: str)</dt><dd><span class="code">Displays&nbsp;a&nbsp;modal&nbsp;error&nbsp;popup&nbsp;dialog&nbsp;that&nbsp;stops&nbsp;execution&nbsp;until&nbsp;the&nbsp;user&nbsp;clicks&nbsp;OK.<br>
