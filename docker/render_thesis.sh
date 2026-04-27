@@ -26,7 +26,8 @@ for latex_file in ${source_files}; do
     -output-directory="${output_dir}" \
     -shell-escape \
     -synctex=1 \
-    -xelatex \
+    -xelatex -shell-escape -8bit\
+    -use-make \
     "${latex_file}"
   set +x
 done

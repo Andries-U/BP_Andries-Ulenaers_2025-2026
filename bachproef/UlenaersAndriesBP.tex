@@ -23,6 +23,11 @@
 \usepackage{tabularx}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 
+\usepackage[acronym]{glossaries} % Voor afkortingen
+\usepackage{hyperref} % Voor hyperlinks (optioneel, maar handig)
+\makeglossaries
+
+\usepackage{morewrites}
 
 %% For source code highlighting, requires pygments to be installed
 %% Compile with the -shell-escape flag!
@@ -81,6 +86,8 @@
 
 \renewcommand{\arraystretch}{1.2}
 
+\input{afkortingen.tex}
+
 %% Content starts here.
 \begin{document}
 
@@ -105,6 +112,7 @@
 \input{voorwoord}
 \input{samenvatting}
 
+
 %---------- Inhoud, lijst figuren, ... -----------------------------------------
 
 \tableofcontents
@@ -127,6 +135,9 @@
 % Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
 % hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
 % https://www.overleaf.com/learn/latex/Glossaries
+
+% Maak de lijst van afkortingen
+\printglossary[type=\acronymtype, title={Lijst van afkortingen}]
 
 %---------- Kern ---------------------------------------------------------------
 
@@ -166,7 +177,7 @@ Het onderwerp van deze bachelorproef is gebaseerd op een onderzoeksvoorstel dat 
 %% TODO: 
 \section*{Samenvatting}
 
-De Euregio Maas-\-Rijn is een kandidaat-\-locatie voor de Einstein Telescope, een gepland Europees observatorium voor zwaartekrachtgolven. Om het biddingsproces van deze locatie te ondersteunen, is het essentieel om inzicht te verkrijgen in de mogelijkheden voor lokale duurzame energieopwekking,  rekening houdend met objectieve en subjectieve criteria. Deze bachelorproef richt zich op de ontwikkeling van een tool die ondersteuning bied van de analyse van GIS datasets in combinatie met gebruikersgedefinieerde criteria voor het identificeren van geschikte locaties voor vershillende duurzame energieopwekkingsmethoden.
+De Euregio Maas-Rijn is een kandidaat-locatie voor de Einstein Telescope, een gepland Europees observatorium voor zwaartekrachtgolven. Om het biddingsproces van deze locatie te ondersteunen, is het essentieel om inzicht te verkrijgen in de mogelijkheden voor lokale duurzame energieopwekking,  rekening houdend met objectieve en subjectieve criteria. Deze bachelorproef richt zich op de ontwikkeling van een tool die ondersteuning bied van de analyse van GIS datasets in combinatie met gebruikersgedefinieerde criteria voor het identificeren van geschikte locaties voor verschillende duurzame energieopwekkingsmethoden.
 
 % Verwijzing naar het bestand met de inhoud van het onderzoeksvoorstel
 \input{../voorstel/voorstel-inhoud}
