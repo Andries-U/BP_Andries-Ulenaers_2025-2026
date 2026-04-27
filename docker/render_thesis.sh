@@ -20,14 +20,13 @@ set +x
 for latex_file in ${source_files}; do
   echo "========== Compiling ${latex_file} =========="
   set -x
-  latexmk \
+   latexmk \
     -file-line-error \
     -interaction=nonstopmode \
     -output-directory="${output_dir}" \
     -shell-escape \
     -synctex=1 \
-    -xelatex -shell-escape -8bit\
-    -use-make \
+    -xelatex \
     "${latex_file}"
   set +x
 done
