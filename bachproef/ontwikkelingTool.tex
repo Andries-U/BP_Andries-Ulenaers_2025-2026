@@ -2,8 +2,80 @@
 %% Ontwikkeling van de tool
 %%=============================================================================
 
-\chapter{\IfLanguageName{dutch}{Ontwikkeling van de tool}{Methodology}}%
+\chapter{\IfLanguageName{dutch}{Ontwikkeling van de tool}{Development of the Tool}}%
 \label{ch:ontwikkelingTool}
 
-De gemaakte tool is ontwikkeld om een voorbereiding te zijn om MCDMA technieken te kunnen toepassen. Er is zo veel mogelijk gekozen om generiek te werken. De herbruikbaarheid van de code is altijd in het achterhoofd gehouden om van beslissing tot gebruik van datasets tot rapportering over te kunnen gaan. Omdat er met python is gewerkt zullen onderzoekers of toekomistige bachelorstudenten de tool kunnnen uitbreiden. Er is voornamelijk gekozen om zeer uitleggende te werk te gaan en elke geschreven functie duidelijke documentatie te geven. Omdat de tool een onderdeel van de analyse en rapportage zal zijn is er gekozen om een output in CSV formaat prioriteit te geven. Doordat dit een open standaard is kunnnen veel programmas waar de onderzoekers bekend mee zijn voor verdere analyse deze data kunnen interpreteren.
+\section{Inleiding}
+Dit hoofdstuk beschrijft de ontwikkeling van de tool die als voorbereiding dient voor het toepassen van \textit{Multi-Criteria Decision-Making Analysis} (MCDMA) technieken. De focus ligt op de technische implementatie, de gebruikte ondersteunende packages, de GUI, de data-exportmogelijkheden en de algemene werking van de tool. Daarnaast wordt het ontwikkelingsproces zelf toegelicht, inclusief de keuzes en uitdagingen die tijdens dit proces naar voren kwamen.
 
+\section{Totstandkoming van de tool}
+\label{sec:totstandkoming}
+
+Het ontwikkelingsproces van de tool is gestart met een duidelijke doelstelling: het creëren van een generieke, herbruikbare tool die onderzoekers en toekomstige studenten in staat stelt om efficiënt analyses uit te voeren en te rapporteren. De keuze voor Python als programmeertaal was bewust gemaakt, gezien de brede ondersteuning, flexibiliteit en de mogelijkheid om eenvoudig uit te breiden. Tijdens de ontwikkeling is steeds rekening gehouden met de herbruikbaarheid van de code, zodat de tool niet alleen geschikt is voor het huidige project, maar ook als basis kan dienen voor toekomstige projecten.
+
+Een belangrijke uitdaging tijdens de ontwikkeling was het balanceren tussen functionaliteit en gebruiksgemak. Zo is er aanvankelijk geëxperimenteerd met directe communicatie met PVGis voor het ophalen van zonnedata. Deze functionaliteit is uiteindelijk niet geïmplementeerd, omdat de vereenvoudigingen (zoals het herleiden van een perceel tot zijn centroïde) en het ontbreken van gedetailleerde kennis over zonneceltechnologieën de nauwkeurigheid van de resultaten te veel zouden beïnvloeden. In plaats daarvan is gekozen voor een meer generieke aanpak, waarbij de gebruiker zelf de benodigde data kan uploaden en analyseren.
+
+Daarnaast is er veel aandacht besteed aan documentatie en uitlegbaarheid. Elke functie is voorzien van duidelijke documentatie, zodat de tool niet alleen functioneel, maar ook begrijpelijk en onderhoudbaar is voor andere ontwikkelaars.
+
+\section{Ondersteunende packages}
+\label{sec:ondersteunendePackages}
+
+Voor het genereren van duidelijke en professionele rapporten is gebruikgemaakt van \texttt{reportlab}. Deze package biedt uitgebreide functionaliteit voor het creëren van PDF-documenten, wat essentieel is voor het rapporteren van de analyseresultaten. Daarnaast is \texttt{pydoc} gebruikt voor het automatisch genereren van documentatie, zodat de codebase toegankelijk en begrijpelijk blijft voor andere ontwikkelaars. De focus van de documentatie is vooral gelegd op duidelijk leesbare en makkelijk toegankelijke documentatie. Door in code met docstring commentaar toe te voegen is het ook zeer duidelijk wat al dan niet gedocumenteerd is.
+
+Voor de GUI is gekozen voor \texttt{PyQt5}. Deze package is ingebakken in PyQGIS en biedt robuuste ondersteuning voor het bouwen van interactieve applicaties. 
+
+\section{Grafische gebruikersinterface (GUI)}
+\label{sec:gui}
+
+De GUI is ontwikkeld met \texttt{PyQt5} en is ontworpen om gebruikers in staat te stellen eenvoudig analyses uit te voeren. De interface leidt de gebruiker door het proces van dataselectie, analyse-instellingen en resultaatweergave. Er is bijzonder aandacht besteed aan het minimaliseren van de leercurve, zodat ook gebruikers zonder diepgaande technische kennis de tool efficiënt kunnen gebruiken.
+
+\section{Functionaliteit van de tool}
+\label{sec:functionaliteit}
+
+De tool is ontwikkeld als een generieke oplossing voor het uitvoeren van MCDMA-analyses. De focus ligt op herbruikbaarheid en flexibiliteit, zodat de tool kan worden toegepast in verschillende contexten en met verschillende datasets. De tool ondersteunt zowel volledige als gedeeltelijke analyses, afhankelijk van de behoeften van de gebruiker.
+
+Voordat de analyse van de datalaag en de zoeklaag begint, wordt het \textit{Coordinate Reference System} (CRS) van beide lagen gecontroleerd en gelijkgezet aan dat van het QGIS-project. Deze stap is essentieel om fouten te voorkomen die kunnen ontstaan door verschillen in coördinatenstelsels, zoals verkeerde ruimtelijke relaties of onjuiste oppervlakteberekeningen.
+
+Bij een volledige analyse wordt voor elke polygon in de dataset de oppervlakte bepaald. Vervolgens wordt voor elke kolom gecontroleerd of er niet te veel verschillende waarden (kardinaliteit) aanwezig zijn. Kolommen met een hoge kardinaliteit worden uitgesloten van verdere analyse. Voor categorische data worden de totale oppervlakte en het aandeel in de totale geanalyseerde oppervlakte per categorie weergegeven.
+
+Bij een gedeeltelijke analyse kan de gebruiker vooraf filteren op basis van kolommen met een lage kardinaliteit. Hierbij kan de gebruiker specifieke waarden selecteren die wel of niet moeten worden opgenomen in de analyse. Na deze filtering verloopt de analyse op dezelfde manier als bij een volledige analyse.
+
+De bekomen resultaten worden niet alleen geëxporteerd naar CSV of PDF, maar ook toegevoegd als een \textit{in-memory datalaag} in het QGIS-project. Hierdoor kunnen gebruikers de resultaten direct visualiseren en verder analyseren binnen QGIS, zonder dat ze de data handmatig hoeven te importeren.
+
+\section{Data-export}
+\label{sec:dataExport}
+
+Voor de export van data is gekozen voor het \texttt{CSV}-formaat. Dit formaat is een open standaard en wordt breed ondersteund door populaire data-analyseprogramma's, zoals Excel, R en Python. Hierdoor kunnen onderzoekers de geëxporteerde data eenvoudig importeren en verder analyseren in hun vertrouwde omgeving.
+
+Naast CSV is er ook de mogelijkheid om resultaten te exporteren naar \texttt{PDF}. Dit formaat is gekozen omdat het een gestandaardiseerde en professionele weergave biedt van de analyseresultaten. PDF's zijn ideaal voor rapportage en delen met stakeholders, omdat ze de opmaak en structuur behouden, ongeacht het apparaat of de software waarmee ze worden geopend. Hierdoor is het ook zeer geschikt voor printing indien het vereist is.
+
+\section{Flow van de tool}
+\label{sec:flowTool}
+
+De tool start met het selecteren van het type analyse. Momenteel is enkel de analyse van een datalaag volledig geïmplementeerd. Vervolgens kiest de gebruiker de kaart waarop de analyse moet worden uitgevoerd, het zoekgebied (indien het om punten in plaats van polygonen gaat, kan de gebruiker een straal instellen om een zoekgebied te genereren), en of er een volledige of gedeeltelijke analyse moet worden uitgevoerd. De resultaten kunnen zowel in CSV- als PDF-formaat worden geëxporteerd en worden tevens toegevoegd als een in-memory datalaag in QGIS.
+
+Bij een volledige analyse worden de oppervlakten van alle polygonen bepaald en worden kolommen met een te hoge kardinaliteit uitgesloten. Voor categorische data worden de totale oppervlakte en het aandeel in de totale geanalyseerde oppervlakte per categorie weergegeven. Bij een gedeeltelijke analyse kan de gebruiker vooraf filteren op basis van kolommen met een lage kardinaliteit, waarna de analyse identiek verloopt aan een volledige analyse.
+
+\section{Conclusie}
+De ontwikkelde tool biedt een flexibele en herbruikbare oplossing voor het uitvoeren van MCDMA-analyses. Door de keuze voor open standaarden, een duidelijke documentatie en de integratie met QGIS is de tool toegankelijk voor zowel ontwikkelaars als eindgebruikers. Toekomstige uitbreidingen en verbeteringen zijn mogelijk dankzij de modulaire opzet en de gebruikte technologieën.
+
+% Ondersteunened packages
+% er is gebruik gemaakt van reportlab om duidelijke pdfs te kunnen maken en pydoc om documentatie te maken
+
+% GUI
+% er is gebruikt gemaakt van pyqt5 omdat het ingebakken is en de correcte ondersteuning bied
+
+% tool
+% De gemaakte tool is ontwikkeld om een voorbereiding te zijn om MCDMA technieken te kunnen toepassen. Er is zo veel mogelijk gekozen om generiek te werken. De herbruikbaarheid van de code is altijd in het achterhoofd gehouden om van beslissing tot gebruik van datasets tot rapportering over te kunnen gaan. Omdat er met python is gewerkt zullen onderzoekers of toekomistige studenten de tool kunnnen uitbreiden. Er is voornamelijk gekozen om zeer uitleggende te werk te gaan en elke geschreven functie duidelijke documentatie te geven. Omdat de tool een onderdeel van de analyse en rapportage zal zijn is er gekozen om een output in CSV formaat prioriteit te geven. Doordat dit een open standaard is kunnnen veel programmas waar de onderzoekers bekend mee zijn voor verdere analyse deze data kunnen interpreteren.
+
+% data export
+% voor data export is er gekozen voor csv omdat dit een open standaard is die de meest populaire data analyse programmas kunnen gebruiken
+
+% flow tool
+% Er wordt eerst gevraagd naar de type analyse. Hiervoor zijn enkele opties niet volledig geimplementeerd. Enkel de analyse van een datalaag is werkzaam. er is gewerkt aan een rechtstreekse communicatie met PVGis om zonnedata over een perceel op te halen met verschillende mogelijkheden. Er is afgedaan hiervan omdat er te veel versimpelingen, een perceel werd herleid naar zijn centroide, waren en de types zonneceltechnologieen nog niet bekend zijn. Hierdoor kan men met de oppervlakte ook een schatting maken die weinig hiervan afwijkt.
+
+% Na het kiezen van een datalaag analyse zal de gebruiker beslissen over de kaart waarop te analyseren, het zoekgebied (indien dit punten ipv polygon laag is zal de straal rond de punten beslist kunnen worden om een zoekgebied te generenen) en kan er een volledige of gedeeltelijke analyse worden gedaan. De uitkomsten hiervan kunnen zowel in csv als pdf uitgegeven worden.
+
+% bij de keuze voor een volledige analyse zal er voor elke polygon een oppervlakte worden bepaald. hierna wordt voor elke colom bepaald of de er niet te veel verschillende mogelijkheden zijn (bv. id veld) hierna Kardinaliteit genoemd en deze worden dan niet opgenomen in de analyse. de kolommen die categorieke data bevatten geven een weergave per optie van de totale oppervlakte die beschikbaar is en het aandeel hiervan in de totale geanalyseerde oppervlakte.
+
+% Bij een gedeeltelijke analyse kan de gebruiker op voorhand al zijn uitkomsten kunnen filteren. op basis van een lage kardinaliteit zullen er kolommen beschikbaar zijn om op te filteren. Er kan hierna voor de gekozen kolom beslist worden welke waardes al dan niet worden toegevoegd aan de analyse. Hierna verloopt de analyse identiek aan de volledige analyse
