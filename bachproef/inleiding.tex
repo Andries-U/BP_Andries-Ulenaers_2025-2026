@@ -5,11 +5,13 @@
 \chapter{\IfLanguageName{dutch}{Inleiding}{Introduction}}%
 \label{ch:inleiding}
 
-De Einstein Telescope (\ac{et}) wordt naar verwachting de meest gevoelige ondergrondse zwaartekrachtgolfdetector ter wereld. De Euregio Maas-Rijn (EMR), een grensregio die België, Nederland en Duitsland omvat, is één van de kandidaat locaties voor dit grootschalig wetenschappelijk infrastructuurproject. Om deze locatie te laten weerhouden in het biddingsprocess moet een uitgewerkt voorstel ingediend worden waarin onder andere een haalbare, duurzame energievoorziening wordt uitgewerkt. Hierbij dient rekening gehouden te worden met de energie die nodig is bij de volledige levensduur van het project, dus zowel de bouwfase, de operationele fase alsook bij de ontmanteling. Dit stelt uitzonderlijke eisen: niet alleen moet de energievoorziening betrouwbaar en stabiel zijn, maar door de extreme gevoeligheid van de meetapparatuur is ook trillingvrije energieopwekking en -levering essentieel. Daarnaast streeft het biddingsvoorstel naar een maatschappelijk verantwoorde energiemix door samen in te zetten op samenwerking met lokale gemeenschappen en te focussen op innovatieve hernieuwbare energiebronnen zoals Agro-Photovoltaics (AgriPV), warmte-krachtkoppeling (WKK) en diepe geothermie. Het voorbereiden van dit energievoorstel vereist een systematische analyse van de geografische mogelijkheden en beperkingen in de EMR.
+De Einstein Telescope (ET) wordt naar verwachting de meest gevoelige ondergrondse zwaartekrachtgolfdetector ter wereld. De Euregio Maas-Rijn (EMR), een grensregio die België, Nederland en Duitsland omvat, is één van de kandidaat locaties voor dit grootschalig wetenschappelijk infrastructuurproject. Om deze locatie te laten weerhouden in het biddingsprocess moet een uitgewerkt voorstel ingediend worden waarin onder andere een haalbare, duurzame energievoorziening wordt uitgewerkt. Hierbij dient rekening gehouden te worden met de energie die nodig is bij de volledige levensduur van het project, dus zowel de bouwfase, de operationele fase alsook bij de ontmanteling. Dit stelt uitzonderlijke eisen: niet alleen moet de energievoorziening betrouwbaar en stabiel zijn, maar door de extreme gevoeligheid van de meetapparatuur is ook trillingvrije energieopwekking en -levering essentieel. Daarnaast streeft het biddingsvoorstel naar een maatschappelijk verantwoorde energiemix waarbij wordt ingezet op samenwerking met lokale gemeenschappen en te focussen op innovatieve hernieuwbare energiebronnen zoals Agro-Photovoltaics (AgriPV), warmte-krachtkoppeling (WKK) en diepe geothermie. Het voorbereiden van dit energievoorstel vereist onder andere een systematische analyse van de geografische mogelijkheden en beperkingen in de EMR.
 
-Het plannen van een dergelijke duurzame energiemix wordt bemoeilijkt door meerdere factoren. Ten eerste is de locatie grensoverschrijdend, wat betekent dat geografische en infrastructurele data afkomstig is van verschillende regionale, nationale en internationale bronnen (Geopunt Vlaanderen, PDOK Nederland, GeoBasis-DE) met uiteenlopende formats, resoluties en toegankelijkheden. Ten tweede leggen Natura2000-gebieden en andere beschermde natuurzones strikte beperkingen op aan de plaatsing van energie-infrastructuur. Ten derde vereist de seismische gevoeligheid van de detectoren dat bepaalde energiebronnen (i.e. windturbines in de nabijheid) uitgesloten worden of extra voorzichtigheid moeten hanteren. Specifiek voor windturbines geldt momenteel een perimeter van 10 kilometer rond de voorgestelde ET locatie, die mogelijk wordt uitgebreid tot 15 kilometer.
+Het plannen van een dergelijke duurzame energiemix is uitdagend vanwege meerdere factoren. Ten eerste is de locatie grensoverschrijdend, wat betekent dat geografische en infrastructurele data afkomstig is van verschillende regionale, nationale en internationale bronnen (Geopunt Vlaanderen, PDOK Nederland, GeoBasis-DE) met uiteenlopende formats, resoluties en toegankelijkheden. Ten tweede leggen Natura2000-gebieden en andere beschermde natuurzones strikte beperkingen op aan de plaatsing van energie-infrastructuur. Ten derde vereist de seismische gevoeligheid van de ondergrondse detectoren van de ET dat bepaalde energiebronnen (i.e. windturbines in de nabijheid) uitgesloten worden of extra voorzichtigheid moeten hanteren. Specifiek voor windturbines geldt momenteel een perimeter van 10 kilometer rond de voorgestelde ET locatie, die mogelijk wordt uitgebreid tot 15 kilometer.
 
 Vanwege de grote impact die de ET zal hebben op de regionale economie en de lokale gemeenschappen in de omgeving, is het belangrijk dat dit voorstel ook maatschappelijk gedragen wordt. Hierdoor wil de ET-onderzoeksgroep een maatschappelijk verantwoorde energiemix ontwerpen, dit zorgt ervoor dat de criteria voor de meeste optimale locaties voor de verschillende energiebronnen niet enkel van objectieve criteria afhangt.
+
+In deze thesis zal een tool ontwikkeld worden die onderzoekers ondersteunt bij het snel analyseren van de mogelijkheden voor verschillende types energieopwekking. De tool vereenvoudigt de analyse van geografische data, zodat onderzoekers, zelfs met beperkte GIS-kennis, grafische en datagedreven analyses kunnen uitvoeren om het potentieel te bepalen. Het resultaat is een interactieve kaart van de geanalyseerde percelen en een bestand met de relevante data in een open data formaat, klaar voor verdere verwerking analyse.
 
 %\begin{itemize}
 %  \item context, achtergrond
@@ -24,21 +26,21 @@ Vanwege de grote impact die de ET zal hebben op de regionale economie en de loka
 \section{\IfLanguageName{dutch}{Probleemstelling}{Problem Statement}}
 \label{sec:probleemstelling}
 
-De ET-onderzoeksgroep staat voor de uitdaging om te bepalen welke combinatie van duurzame energiebronnen technisch haalbaar is voor de huidige voorstellocatie. Aangezien het hier over een onderzoeksproject gaat dat een grote oppervlakte bestrijkt (i.e., een driehoek van 10x10x10 km) is er nood aan een programma dat een duidelijk visueel overzicht geeft over de locatie. Echter ontbreekt op dit moment een snelle analyse mogelijkheid om GIS-datasets uit verschillende regionale, nationale en internationale bronnen te analyseren binnen bepaalde zoekregio's. Het handmatig analyseren en combineren van deze datasets is tijdsintensief, foutgevoelig en vereist vakspecifieke kennis. Bovendien is er behoefte aan een flexibele tool die onderzoekers toelaat om snel nieuwe opties en ideeën te toetsen tegen geografische mogelijkheden.
+De ET-onderzoeksgroep staat voor de uitdaging om te bepalen welke combinaties van duurzame energiebronnen technisch haalbaar zijn voor de huidige voorstel locatie. Aangezien het hier over een onderzoeksproject gaat dat een grote oppervlakte bestrijkt (i.e., een driehoek van 10x10x10 km) is er nood aan een programma dat een duidelijk visueel overzicht geeft over de locatie. Echter ontbreekt op dit moment een snelle analyse mogelijkheid om GIS-datasets uit verschillende regionale, nationale en internationale bronnen te analyseren binnen bepaalde zoekregio's. Het handmatig analyseren en combineren van deze datasets is tijdsintensief, foutgevoelig en vereist vakspecifieke kennis. Bovendien is er behoefte aan een flexibele tool die onderzoekers toelaat om snel nieuwe opties en ideeën af te toetsen tegen geografische mogelijkheden.
 
 \textit{Deelvragen met betrekking tot het probleemdomein:}
 \begin{itemize}
     \item Wat zijn de specifieke technische eisen van de ET aan energievoorziening? Dit zowel tijdens de bouwfase en operationele fase, en welke beperkingen legt deze op aan duurzame energiebronnen?
     \item Welke geografische, ecologische en infrastructurele beperkingen en opportuniteiten zijn van toepassing in de EMR voor energiebronnen en -infrastructuur?
     \item Welke Geographic information system (GIS)-databronnen zijn beschikbaar in België, Nederland en Duitsland, en hoe verschillen deze qua format, resolutie, actualiteit en toegankelijkheid?
-    \item Welke bestaande tools of methoden worden momenteel gebruikt voor GIS-analyse in energieplanning en wat zijn hun beperkingen?
-    \item Welke datasets zijn nodig om de geschiktheid van de verschillende mogelijke energieoplossingen te bepalen?
+    \item Welke bestaande tools of methoden worden momenteel gebruikt voor GIS-analyses in energieplanning en wat zijn hun troeven en beperkingen?
+    \item Welke datasets zijn nodig om de geschiktheid van de verschillende mogelijke energiecombinaties te bepalen?
 \end{itemize}
 
 \textit{Deelvragen met betrekking tot het oplossingsdomein:}
 \begin{itemize}
-    \item Welke van de geïdentificeerde bestaande tools voldoen aan de specifieke doeleinden van de ET-onderzoeksgroep? En kunnen deze eventueel aangepast worden om aan alle eisen te voldoen?
-    \item Welke data is altijd nodig om een kaart goed te analyseren
+    \item Welke van de geïdentificeerde bestaande tools voldoen zo goed mogelijk aan de specifieke doeleinden van de ET-onderzoeksgroep? En kunnen deze tools eventueel aangepast worden om aan alle vereisten te voldoen?
+    \item Welke specifieke data is altijd nodig om een kaart goed te analyseren? Kan deze data gemakkelijk toegevoegd worden aan ingelezen kaarten?
     \item Welke methodes zijn geschikt om de analyse toegankelijk, visueel en makkelijk interpreteerbaar te maken voor niet technische stakeholders?
 \end{itemize}
 
@@ -47,14 +49,14 @@ De ET-onderzoeksgroep staat voor de uitdaging om te bepalen welke combinatie van
 \section{\IfLanguageName{dutch}{Onderzoeksvraag}{Research question}}
 \label{sec:onderzoeksvraag}
 
-Hoe kan een gebruiksvriendelijke tool worden ontworpen die energieonderzoekers van de ET in staat stelt om GIS-kaarten efficiënt te analyseren, relevante data automatisch te extraheren en verschillende scenario’s te simuleren?
+Ontwerpen van een gebruiksvriendelijke tool die energieonderzoekers van de ET in staat stelt om GIS-kaarten efficiënt te analyseren, relevante data automatisch te extraheren en verschillende scenario’s te simuleren?
 
 %Wees zo concreet mogelijk bij het formuleren van je onderzoeksvraag. Een onderzoeksvraag is trouwens iets waar nog niemand op dit moment een antwoord heeft (voor zover je kan nagaan). Het opzoeken van bestaande informatie (bv. ``welke tools bestaan er voor deze toepassing?'') is dus geen onderzoeksvraag. Je kan de onderzoeksvraag verder specifiëren in deelvragen. Bv.~als je onderzoek gaat over performantiemetingen, dan 
 
 \section{\IfLanguageName{dutch}{Onderzoeksdoelstelling}{Research objective}}
 \label{sec:onderzoeksdoelstelling}
 
-Het ontwikkelen van een adaptief, GIS-gebaseerd tool of uitbreiding die de ET-onderzoeksgroep kan gebruiken om locaties voor duurzame energievoorzieningen te evalueren, rekening houdend met gebruikersgedefinieerde beperkingen. Deze tool moet inzetbaar zijn ter ondersteuning voor het opstellen van het biddingsdossier en herbruikbaar of uitbreidbaar zijn bij de mogelijke definitieve uitwerking van de energievoorziening voor de ET in de EMR.
+Het ontwikkelen van een adaptief, GIS-gebaseerde tool of uitbreiding die de ET-onderzoeksgroep kan gebruiken om locaties voor duurzame energievoorzieningen te evalueren, rekening houdend met gebruikersgedefinieerde criteria. Deze tool moet inzetbaar zijn ter ondersteuning voor het opstellen van het biddingsdossier en herbruikbaar of uitbreidbaar zijn bij de mogelijke definitieve uitwerking van de energievoorziening voor de ET in de EMR.
 
 %Wat is het beoogde resultaat van je bachelorproef? Wat zijn de criteria voor succes? Beschrijf die zo concreet mogelijk. Gaat het bv.\ om een proof-of-concept, een prototype, een verslag met aanbevelingen, een vergelijkende studie, enz.
 
