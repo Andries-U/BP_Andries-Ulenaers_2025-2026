@@ -8,7 +8,7 @@
 <table class="heading">
 <tr class="heading-text decor">
 <td class="title">&nbsp;<br><strong class="title">calculation_utils</strong></td>
-<td class="extra"><a href=".">index</a><br><a href="file:/home/andries/School/2025-2026/BP/BP_Andries-Ulenaers_2025-2026/code/Scripts/calculation_utils.py">/home/andries/School/2025-2026/BP/BP_Andries-Ulenaers_2025-2026/code/Scripts/calculation_utils.py</a></td></tr></table>
+<td class="extra"><a href=".">index</a><br><a href="file:d%3A%5Csync%5Candries%5Cschool%5Chogent%5C2025-2026%5Cbp%5Cbp_andries-ulenaers_2025-2026%5Ccode%5Cscripts%5Ccalculation_utils.py">d:\sync\andries\school\hogent\2025-2026\bp\bp_andries-ulenaers_2025-2026\code\scripts\calculation_utils.py</a></td></tr></table>
     <p></p>
 <p>
 <table class="section">
@@ -23,13 +23,7 @@
 <td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
     
 <tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
-<td class="singlecolumn"><dl><dt><a name="-add_column_to_layer"><strong>add_column_to_layer</strong></a>(
-    layer: qgis._core.QgsVectorLayer,
-    column_name: str,
-    data_type: PyQt5.QtCore.QVariant.Type,
-    length: int = 255,
-    precision: int = 0
-) -&gt; tuple[qgis._core.QgsField, int]</dt><dd><span class="code">Adds&nbsp;a&nbsp;new&nbsp;column&nbsp;(field)&nbsp;to&nbsp;the&nbsp;given&nbsp;vector&nbsp;layer.<br>
+<td class="singlecolumn"><dl><dt><a name="-add_column_to_layer"><strong>add_column_to_layer</strong></a>(layer: qgis._core.QgsVectorLayer, column_name: str, data_type: PyQt5.QtCore.QVariant.Type, length: int = 255, precision: int = 0) -&gt; tuple[qgis._core.QgsField, int]</dt><dd><span class="code">Adds&nbsp;a&nbsp;new&nbsp;column&nbsp;(field)&nbsp;to&nbsp;the&nbsp;given&nbsp;vector&nbsp;layer.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;layer&nbsp;(QgsVectorLayer):&nbsp;The&nbsp;vector&nbsp;layer&nbsp;to&nbsp;add&nbsp;the&nbsp;column&nbsp;to.<br>
@@ -44,10 +38,7 @@ Returns:<br>
 Raises:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;If&nbsp;the&nbsp;layer&nbsp;is&nbsp;not&nbsp;a&nbsp;vector&nbsp;layer.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Exception:&nbsp;If&nbsp;adding&nbsp;the&nbsp;attribute&nbsp;fails.</span></dd></dl>
- <dl><dt><a name="-check_equality_of_layer_crs_to_wanted_crs"><strong>check_equality_of_layer_crs_to_wanted_crs</strong></a>(
-    layers: List[qgis._core.QgsMapLayer],
-    wanted_crs: qgis._core.QgsCoordinateReferenceSystem
-) -&gt; bool</dt><dd><span class="code">Check&nbsp;if&nbsp;the&nbsp;CRS&nbsp;of&nbsp;two&nbsp;layers&nbsp;are&nbsp;the&nbsp;same.<br>
+ <dl><dt><a name="-check_equality_of_layer_crs_to_wanted_crs"><strong>check_equality_of_layer_crs_to_wanted_crs</strong></a>(layers: List[qgis._core.QgsMapLayer], wanted_crs: qgis._core.QgsCoordinateReferenceSystem) -&gt; bool</dt><dd><span class="code">Check&nbsp;if&nbsp;the&nbsp;CRS&nbsp;of&nbsp;two&nbsp;layers&nbsp;are&nbsp;the&nbsp;same.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;layers&nbsp;(List[QgsMapLayer]):&nbsp;The&nbsp;layers&nbsp;to&nbsp;check.<br>
@@ -64,10 +55,7 @@ Args:<br>
 &nbsp;<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;QgsMapLayer:&nbsp;A&nbsp;temporary&nbsp;copy&nbsp;of&nbsp;the&nbsp;layer.</span></dd></dl>
- <dl><dt><a name="-copy_mesh_layer_to_temp"><strong>copy_mesh_layer_to_temp</strong></a>(
-    copy_layer_name: str,
-    source_layer: qgis._core.QgsMeshLayer
-) -&gt; qgis._core.QgsMeshLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory<br>
+ <dl><dt><a name="-copy_mesh_layer_to_temp"><strong>copy_mesh_layer_to_temp</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsMeshLayer) -&gt; qgis._core.QgsMeshLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;copy_layer_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;for&nbsp;the&nbsp;copied&nbsp;layer.<br>
@@ -76,10 +64,7 @@ Raises:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NotImplementedError:&nbsp;Always,&nbsp;until&nbsp;this&nbsp;function&nbsp;is&nbsp;implemented.&nbsp;<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;QgsMeshLayer:&nbsp;The&nbsp;in&nbsp;memory&nbsp;copy&nbsp;of&nbsp;the&nbsp;input&nbsp;layer</span></dd></dl>
- <dl><dt><a name="-copy_plugin_layer_to_temp"><strong>copy_plugin_layer_to_temp</strong></a>(
-    copy_layer_name: str,
-    source_layer: qgis._core.QgsMapLayer
-) -&gt; qgis._core.QgsMapLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory<br>
+ <dl><dt><a name="-copy_plugin_layer_to_temp"><strong>copy_plugin_layer_to_temp</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsMapLayer) -&gt; qgis._core.QgsMapLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;copy_layer_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;for&nbsp;the&nbsp;copied&nbsp;layer.<br>
@@ -90,10 +75,7 @@ Returns:<br>
 &nbsp;<br>
 Raises:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NotImplementedError:&nbsp;Always,&nbsp;until&nbsp;this&nbsp;function&nbsp;is&nbsp;implemented.</span></dd></dl>
- <dl><dt><a name="-copy_raster_layer_to_temp"><strong>copy_raster_layer_to_temp</strong></a>(
-    copy_layer_name: str,
-    source_layer: qgis._core.QgsRasterLayer
-) -&gt; qgis._core.QgsRasterLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;raster&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;raster&nbsp;layer.<br>
+ <dl><dt><a name="-copy_raster_layer_to_temp"><strong>copy_raster_layer_to_temp</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsRasterLayer) -&gt; qgis._core.QgsRasterLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;raster&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;raster&nbsp;layer.<br>
 &nbsp;<br>
 This&nbsp;function&nbsp;is&nbsp;currently&nbsp;unimplemented&nbsp;and&nbsp;serves&nbsp;as&nbsp;a&nbsp;placeholder.<br>
 Raster&nbsp;layer&nbsp;cloning/copying&nbsp;in&nbsp;memory&nbsp;is&nbsp;non-trivial&nbsp;in&nbsp;QGIS&nbsp;and&nbsp;often<br>
@@ -108,20 +90,14 @@ Raises:<br>
 &nbsp;<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;QgsRasterLayer:&nbsp;(not&nbsp;returned,&nbsp;placeholder&nbsp;only)</span></dd></dl>
- <dl><dt><a name="-copy_vector_layer_to_temp"><strong>copy_vector_layer_to_temp</strong></a>(
-    copy_layer_name: str,
-    source_layer: qgis._core.QgsVectorLayer
-) -&gt; qgis._core.QgsVectorLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory<br>
+ <dl><dt><a name="-copy_vector_layer_to_temp"><strong>copy_vector_layer_to_temp</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsVectorLayer) -&gt; qgis._core.QgsVectorLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;copy_layer_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;for&nbsp;the&nbsp;copied&nbsp;layer.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;source_layer&nbsp;(QgsVectorLayer):&nbsp;The&nbsp;layer&nbsp;to&nbsp;copy.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<br>
 Returns:</span></dd></dl>
- <dl><dt><a name="-copy_vector_tile_layer_to_temp"><strong>copy_vector_tile_layer_to_temp</strong></a>(
-    copy_layer_name: str,
-    source_layer: qgis._core.QgsVectorTileLayer
-) -&gt; qgis._core.QgsVectorTileLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory<br>
+ <dl><dt><a name="-copy_vector_tile_layer_to_temp"><strong>copy_vector_tile_layer_to_temp</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsVectorTileLayer) -&gt; qgis._core.QgsVectorTileLayer</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;copy_layer_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;for&nbsp;the&nbsp;copied&nbsp;layer.<br>
@@ -132,11 +108,7 @@ Returns:<br>
 &nbsp;<br>
 Raises:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NotImplementedError:&nbsp;Always,&nbsp;until&nbsp;this&nbsp;function&nbsp;is&nbsp;implemented.</span></dd></dl>
- <dl><dt><a name="-generate_search_area_around_point"><strong>generate_search_area_around_point</strong></a>(
-    point: qgis._core.QgsPointXY,
-    radius: float,
-    segments: int = 36
-) -&gt; qgis._core.QgsGeometry</dt><dd><span class="code">Generate&nbsp;a&nbsp;circular&nbsp;search&nbsp;area&nbsp;around&nbsp;a&nbsp;given&nbsp;point.<br>
+ <dl><dt><a name="-generate_search_area_around_point"><strong>generate_search_area_around_point</strong></a>(point: qgis._core.QgsPointXY, radius: float, segments: int = 36) -&gt; qgis._core.QgsGeometry</dt><dd><span class="code">Generate&nbsp;a&nbsp;circular&nbsp;search&nbsp;area&nbsp;around&nbsp;a&nbsp;given&nbsp;point.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;point&nbsp;(QgsPointXY):&nbsp;The&nbsp;point&nbsp;around&nbsp;which&nbsp;to&nbsp;generate&nbsp;a&nbsp;search&nbsp;area.<br>
@@ -145,13 +117,7 @@ Args:<br>
 &nbsp;<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;QgsGeometry:&nbsp;The&nbsp;circular&nbsp;search&nbsp;area&nbsp;geometry.</span></dd></dl>
- <dl><dt><a name="-generate_search_areas_layer_around_points_from_points_layer"><strong>generate_search_areas_layer_around_points_from_points_layer</strong></a>(
-    points: qgis._core.QgsVectorLayer,
-    radius: float,
-    generated_layer_name: str = 'Search_Areas',
-    layer: qgis._core.QgsVectorLayer = None,
-    segments: int = 36
-) -&gt; qgis._core.QgsVectorLayer</dt><dd><span class="code">Generate&nbsp;a&nbsp;layer&nbsp;of&nbsp;circular&nbsp;search&nbsp;areas&nbsp;around&nbsp;given&nbsp;a&nbsp;list&nbsp;of&nbsp;points.<br>
+ <dl><dt><a name="-generate_search_areas_layer_around_points_from_points_layer"><strong>generate_search_areas_layer_around_points_from_points_layer</strong></a>(points: qgis._core.QgsVectorLayer, radius: float, generated_layer_name: str = 'Search_Areas', layer: qgis._core.QgsVectorLayer = None, segments: int = 36) -&gt; qgis._core.QgsVectorLayer</dt><dd><span class="code">Generate&nbsp;a&nbsp;layer&nbsp;of&nbsp;circular&nbsp;search&nbsp;areas&nbsp;around&nbsp;given&nbsp;a&nbsp;list&nbsp;of&nbsp;points.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;points&nbsp;(QgsPointsLayer):&nbsp;The&nbsp;layer&nbsp;containing&nbsp;the&nbsp;points&nbsp;around&nbsp;which&nbsp;to&nbsp;generate&nbsp;search&nbsp;areas.<br>
@@ -162,9 +128,7 @@ Args:<br>
 &nbsp;<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;QgsVectorLayer:&nbsp;The&nbsp;layer&nbsp;containing&nbsp;the&nbsp;circular&nbsp;search&nbsp;areas.</span></dd></dl>
- <dl><dt><a name="-generate_triangle_from_multiline_string_using_convex_hull"><strong>generate_triangle_from_multiline_string_using_convex_hull</strong></a>(
-    multiline_geom: qgis._core.QgsGeometry
-) -&gt; List[qgis._core.QgsPointXY]</dt><dd><span class="code">Generate&nbsp;a&nbsp;triangle&nbsp;from&nbsp;a&nbsp;multiline&nbsp;string&nbsp;geometry&nbsp;using&nbsp;the&nbsp;convex&nbsp;hull&nbsp;method.<br>
+ <dl><dt><a name="-generate_triangle_from_multiline_string_using_convex_hull"><strong>generate_triangle_from_multiline_string_using_convex_hull</strong></a>(multiline_geom: qgis._core.QgsGeometry) -&gt; List[qgis._core.QgsPointXY]</dt><dd><span class="code">Generate&nbsp;a&nbsp;triangle&nbsp;from&nbsp;a&nbsp;multiline&nbsp;string&nbsp;geometry&nbsp;using&nbsp;the&nbsp;convex&nbsp;hull&nbsp;method.<br>
 Args:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
 &nbsp;&nbsp;&nbsp;&nbsp;multiline_geom&nbsp;(QgsGeometry):&nbsp;The&nbsp;input&nbsp;multiline&nbsp;string&nbsp;geometry.<br>
 Returns:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
@@ -195,10 +159,7 @@ Example&nbsp;usage:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;corners&nbsp;=&nbsp;<a href="#-get_corners_of_polygon">get_corners_of_polygon</a>(feature.geometry())<br>
 &nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;for&nbsp;corner&nbsp;in&nbsp;corners:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;print(f"Corner&nbsp;X:&nbsp;{corner.x()},&nbsp;Y:&nbsp;{corner.y()}")</span></dd></dl>
- <dl><dt><a name="-is_intersecting_polygon"><strong>is_intersecting_polygon</strong></a>(
-    search_polygon: qgis._core.QgsGeometry,
-    area_polygon: qgis._core.QgsGeometry
-) -&gt; bool</dt><dd><span class="code">Check&nbsp;if&nbsp;the&nbsp;search&nbsp;polygon&nbsp;intersects&nbsp;with&nbsp;the&nbsp;area&nbsp;polygon.<br>
+ <dl><dt><a name="-is_intersecting_polygon"><strong>is_intersecting_polygon</strong></a>(search_polygon: qgis._core.QgsGeometry, area_polygon: qgis._core.QgsGeometry) -&gt; bool</dt><dd><span class="code">Check&nbsp;if&nbsp;the&nbsp;search&nbsp;polygon&nbsp;intersects&nbsp;with&nbsp;the&nbsp;area&nbsp;polygon.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;search_polygon&nbsp;(QgsGeometry):&nbsp;The&nbsp;polygon&nbsp;to&nbsp;search&nbsp;if&nbsp;within&nbsp;the&nbsp;search&nbsp;area.<br>
@@ -206,10 +167,7 @@ Args:<br>
 &nbsp;<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;if&nbsp;the&nbsp;search&nbsp;polygon&nbsp;intersects&nbsp;with&nbsp;the&nbsp;area&nbsp;polygon,&nbsp;False&nbsp;otherwise.</span></dd></dl>
- <dl><dt><a name="-is_within_polygon"><strong>is_within_polygon</strong></a>(
-    search_polygon: qgis._core.QgsGeometry,
-    area_polygon: qgis._core.QgsGeometry
-) -&gt; bool</dt><dd><span class="code">Check&nbsp;if&nbsp;the&nbsp;search&nbsp;polygon&nbsp;is&nbsp;within&nbsp;the&nbsp;area&nbsp;polygon.<br>
+ <dl><dt><a name="-is_within_polygon"><strong>is_within_polygon</strong></a>(search_polygon: qgis._core.QgsGeometry, area_polygon: qgis._core.QgsGeometry) -&gt; bool</dt><dd><span class="code">Check&nbsp;if&nbsp;the&nbsp;search&nbsp;polygon&nbsp;is&nbsp;within&nbsp;the&nbsp;area&nbsp;polygon.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;search_polygon&nbsp;(QgsGeometry):&nbsp;The&nbsp;polygon&nbsp;to&nbsp;search&nbsp;if&nbsp;within&nbsp;the&nbsp;search&nbsp;area.<br>
@@ -217,10 +175,7 @@ Args:<br>
 &nbsp;<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;bool:&nbsp;True&nbsp;if&nbsp;the&nbsp;search&nbsp;polygon&nbsp;is&nbsp;within&nbsp;the&nbsp;area&nbsp;polygon,&nbsp;False&nbsp;otherwise.</span></dd></dl>
- <dl><dt><a name="-make_empty_copy_of_vector_layer"><strong>make_empty_copy_of_vector_layer</strong></a>(
-    copy_layer_name: str,
-    source_layer: qgis._core.QgsVectorLayer
-)</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;schema&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory&nbsp;(wich&nbsp;is&nbsp;empty,&nbsp;without&nbsp;features)<br>
+ <dl><dt><a name="-make_empty_copy_of_vector_layer"><strong>make_empty_copy_of_vector_layer</strong></a>(copy_layer_name: str, source_layer: qgis._core.QgsVectorLayer)</dt><dd><span class="code">Copy&nbsp;the&nbsp;given&nbsp;layer&nbsp;schema&nbsp;to&nbsp;a&nbsp;new&nbsp;temporary&nbsp;layer&nbsp;in&nbsp;memory&nbsp;(wich&nbsp;is&nbsp;empty,&nbsp;without&nbsp;features)<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;copy_layer_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;for&nbsp;the&nbsp;copied&nbsp;layer.<br>
@@ -230,10 +185,7 @@ Returns:</span></dd></dl>
  <dl><dt><a name="-print_count_layer"><strong>print_count_layer</strong></a>(layer: qgis._core.QgsMapLayer)</dt><dd><span class="code">Print&nbsp;the&nbsp;count&nbsp;of&nbsp;the&nbsp;features&nbsp;of&nbsp;a&nbsp;valid&nbsp;layer.<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;layer&nbsp;(QgsMapLayer):&nbsp;The&nbsp;layer&nbsp;to&nbsp;check&nbsp;and&nbsp;print&nbsp;the&nbsp;feature&nbsp;count&nbsp;for.</span></dd></dl>
- <dl><dt><a name="-split_layer_by_search_areas"><strong>split_layer_by_search_areas</strong></a>(
-    layer: qgis._core.QgsVectorLayer,
-    search_areas_layer: qgis._core.QgsVectorLayer
-) -&gt; Tuple[qgis._core.QgsVectorLayer, qgis._core.QgsVectorLayer, qgis._core.QgsVectorLayer]</dt><dd><span class="code">Split&nbsp;a&nbsp;layer&nbsp;by&nbsp;given&nbsp;search&nbsp;areas.<br>
+ <dl><dt><a name="-split_layer_by_search_areas"><strong>split_layer_by_search_areas</strong></a>(layer: qgis._core.QgsVectorLayer, search_areas_layer: qgis._core.QgsVectorLayer) -&gt; Tuple[qgis._core.QgsVectorLayer, qgis._core.QgsVectorLayer, qgis._core.QgsVectorLayer]</dt><dd><span class="code">Split&nbsp;a&nbsp;layer&nbsp;by&nbsp;given&nbsp;search&nbsp;areas.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;layer&nbsp;(QgsVectorLayer):&nbsp;The&nbsp;layer&nbsp;to&nbsp;split.<br>
@@ -241,10 +193,7 @@ Args:<br>
 &nbsp;<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;A&nbsp;tuple&nbsp;containing&nbsp;three&nbsp;layers:&nbsp;(features_within_search_areas,&nbsp;features_intersecting_search_areas,&nbsp;features_outside_search_areas)</span></dd></dl>
- <dl><dt><a name="-split_layer_by_search_areas_processing"><strong>split_layer_by_search_areas_processing</strong></a>(
-    split_layer: qgis._core.QgsVectorLayer,
-    search_areas_layer: qgis._core.QgsVectorLayer
-) -&gt; Tuple[qgis._core.QgsVectorLayer, qgis._core.QgsVectorLayer, qgis._core.QgsVectorLayer]</dt><dd><span class="code">Efficiently&nbsp;splits&nbsp;a&nbsp;potentially&nbsp;large&nbsp;layer&nbsp;using&nbsp;QGIS&nbsp;Processing&nbsp;(optimized&nbsp;for&nbsp;memory).<br>
+ <dl><dt><a name="-split_layer_by_search_areas_processing"><strong>split_layer_by_search_areas_processing</strong></a>(split_layer: qgis._core.QgsVectorLayer, search_areas_layer: qgis._core.QgsVectorLayer) -&gt; Tuple[qgis._core.QgsVectorLayer, qgis._core.QgsVectorLayer, qgis._core.QgsVectorLayer]</dt><dd><span class="code">Efficiently&nbsp;splits&nbsp;a&nbsp;potentially&nbsp;large&nbsp;layer&nbsp;using&nbsp;QGIS&nbsp;Processing&nbsp;(optimized&nbsp;for&nbsp;memory).<br>
 &nbsp;<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;tuple:&nbsp;(fully_inside_layer,&nbsp;partially_inside_layer,&nbsp;outside_layer)</span></dd></dl>
@@ -256,6 +205,6 @@ Returns:<br>
 <tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
 <td class="singlecolumn"><strong>List</strong> = typing.List<br>
 <strong>Tuple</strong> = typing.Tuple<br>
-<strong>__warningregistry__</strong> = {'version': 506, ('QgsField constructor is deprecated', &lt;class 'DeprecationWarning'&gt;, 391): True}<br>
+<strong>__warningregistry__</strong> = {'version': 281, ('QgsField constructor is deprecated', &lt;class 'DeprecationWarning'&gt;, 391): True}<br>
 <strong>iface</strong> = &lt;qgis._gui.QgisInterface object&gt;</td></tr></table>
 </body></html>

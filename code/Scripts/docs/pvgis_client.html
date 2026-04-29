@@ -8,7 +8,7 @@
 <table class="heading">
 <tr class="heading-text decor">
 <td class="title">&nbsp;<br><strong class="title">pvgis_client</strong></td>
-<td class="extra"><a href=".">index</a><br><a href="file:/home/andries/School/2025-2026/BP/BP_Andries-Ulenaers_2025-2026/code/Scripts/pvgis_client.py">/home/andries/School/2025-2026/BP/BP_Andries-Ulenaers_2025-2026/code/Scripts/pvgis_client.py</a></td></tr></table>
+<td class="extra"><a href=".">index</a><br><a href="file:d%3A%5Csync%5Candries%5Cschool%5Chogent%5C2025-2026%5Cbp%5Cbp_andries-ulenaers_2025-2026%5Ccode%5Cscripts%5Cpvgis_client.py">d:\sync\andries\school\hogent\2025-2026\bp\bp_andries-ulenaers_2025-2026\code\scripts\pvgis_client.py</a></td></tr></table>
     <p></p>
 <p>
 <table class="section">
@@ -37,14 +37,7 @@
 <td class="section-title" colspan=3>&nbsp;<br><a name="PVGISClient">class <strong>PVGISClient</strong></a>(SolarDataClient.SolarDataClient)</td></tr>
     
 <tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
-<td class="decor title-decor" colspan=2><span class="code"><a href="#PVGISClient">PVGISClient</a>(<br>
-&nbsp;&nbsp;&nbsp;&nbsp;peakpower:&nbsp;float&nbsp;=&nbsp;1.0,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;slope:&nbsp;float&nbsp;=&nbsp;0.0,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;aspect:&nbsp;float&nbsp;=&nbsp;0.0,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;losses:&nbsp;float&nbsp;=&nbsp;14.0,<br>
-&nbsp;&nbsp;&nbsp;&nbsp;dataset:&nbsp;str&nbsp;=&nbsp;'PVGIS-SARAH3',<br>
-&nbsp;&nbsp;&nbsp;&nbsp;crs:&nbsp;qgis._core.QgsCoordinateReferenceSystem&nbsp;=&nbsp;&amp;lt;QgsCoordinateReferenceSystem:&nbsp;EPSG:4326&amp;gt;<br>
-)<br>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#PVGISClient">PVGISClient</a>(peakpower:&nbsp;float&nbsp;=&nbsp;1.0,&nbsp;slope:&nbsp;float&nbsp;=&nbsp;0.0,&nbsp;aspect:&nbsp;float&nbsp;=&nbsp;0.0,&nbsp;losses:&nbsp;float&nbsp;=&nbsp;14.0,&nbsp;dataset:&nbsp;str&nbsp;=&nbsp;'PVGIS-SARAH3',&nbsp;crs:&nbsp;qgis._core.QgsCoordinateReferenceSystem&nbsp;=&nbsp;&amp;lt;QgsCoordinateReferenceSystem:&nbsp;EPSG:4326&amp;gt;)<br>
 &nbsp;<br>
 PVGIS&nbsp;API&nbsp;solar&nbsp;data&nbsp;provider&nbsp;with&nbsp;configurable&nbsp;parameters.<br>&nbsp;</span></td></tr>
 <tr><td>&nbsp;</td>
@@ -56,15 +49,7 @@ PVGIS&nbsp;API&nbsp;solar&nbsp;data&nbsp;provider&nbsp;with&nbsp;configurable&nb
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="PVGISClient-__init__"><strong>__init__</strong></a>(
-    self,
-    peakpower: float = 1.0,
-    slope: float = 0.0,
-    aspect: float = 0.0,
-    losses: float = 14.0,
-    dataset: str = 'PVGIS-SARAH3',
-    crs: qgis._core.QgsCoordinateReferenceSystem = &lt;QgsCoordinateReferenceSystem: EPSG:4326&gt;
-)</dt><dd><span class="code">Initialize&nbsp;PVGIS&nbsp;client&nbsp;with&nbsp;default&nbsp;parameters.<br>
+<dl><dt><a name="PVGISClient-__init__"><strong>__init__</strong></a>(self, peakpower: float = 1.0, slope: float = 0.0, aspect: float = 0.0, losses: float = 14.0, dataset: str = 'PVGIS-SARAH3', crs: qgis._core.QgsCoordinateReferenceSystem = &lt;QgsCoordinateReferenceSystem: EPSG:4326&gt;)</dt><dd><span class="code">Initialize&nbsp;PVGIS&nbsp;client&nbsp;with&nbsp;default&nbsp;parameters.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;peakpower:&nbsp;System&nbsp;peak&nbsp;power&nbsp;(kW).<br>
@@ -74,16 +59,7 @@ Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;dataset:&nbsp;PVGIS&nbsp;dataset&nbsp;version.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;crs:&nbsp;Coordinate&nbsp;reference&nbsp;system&nbsp;for&nbsp;input&nbsp;coordinates&nbsp;(default&nbsp;WGS84).</span></dd></dl>
 
-<dl><dt><a name="PVGISClient-fetch"><strong>fetch</strong></a>(
-    self,
-    lat: float,
-    lon: float,
-    peakpower: float = None,
-    slope: float = None,
-    aspect: float = None,
-    losses: float = None,
-    dataset: str = None
-) -&gt; Dict[str, Any]</dt><dd><span class="code">Get&nbsp;the&nbsp;solar&nbsp;production&nbsp;data&nbsp;from&nbsp;the&nbsp;PVGIS&nbsp;API&nbsp;for&nbsp;a&nbsp;given&nbsp;location&nbsp;and&nbsp;parameters.<br>
+<dl><dt><a name="PVGISClient-fetch"><strong>fetch</strong></a>(self, lat: float, lon: float, peakpower: float = None, slope: float = None, aspect: float = None, losses: float = None, dataset: str = None) -&gt; Dict[str, Any]</dt><dd><span class="code">Get&nbsp;the&nbsp;solar&nbsp;production&nbsp;data&nbsp;from&nbsp;the&nbsp;PVGIS&nbsp;API&nbsp;for&nbsp;a&nbsp;given&nbsp;location&nbsp;and&nbsp;parameters.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;lat&nbsp;(float):&nbsp;Latitude&nbsp;of&nbsp;the&nbsp;location.<br>
@@ -96,12 +72,7 @@ Args:<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;Dict[str,&nbsp;Any]:&nbsp;Parsed&nbsp;JSON&nbsp;response&nbsp;from&nbsp;the&nbsp;PVGIS&nbsp;API.</span></dd></dl>
 
-<dl><dt><a name="PVGISClient-get_average_daily_solar_potential"><strong>get_average_daily_solar_potential</strong></a>(
-    self,
-    lat: float,
-    lon: float,
-    src_crs: qgis._core.QgsCoordinateReferenceSystem
-) -&gt; float</dt><dd><span class="code">Get&nbsp;the&nbsp;average&nbsp;daily&nbsp;solar&nbsp;potential&nbsp;(E_d)&nbsp;for&nbsp;a&nbsp;given&nbsp;latitude&nbsp;and&nbsp;longitude.<br>
+<dl><dt><a name="PVGISClient-get_average_daily_solar_potential"><strong>get_average_daily_solar_potential</strong></a>(self, lat: float, lon: float, src_crs: qgis._core.QgsCoordinateReferenceSystem) -&gt; float</dt><dd><span class="code">Get&nbsp;the&nbsp;average&nbsp;daily&nbsp;solar&nbsp;potential&nbsp;(E_d)&nbsp;for&nbsp;a&nbsp;given&nbsp;latitude&nbsp;and&nbsp;longitude.<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;lat&nbsp;(float):&nbsp;Latitude&nbsp;of&nbsp;the&nbsp;location.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;lon&nbsp;(float):&nbsp;Longitude&nbsp;of&nbsp;the&nbsp;location.<br>
@@ -109,12 +80,7 @@ Args:<br>
 Returns:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;float:&nbsp;Average&nbsp;daily&nbsp;solar&nbsp;potential&nbsp;in&nbsp;kWh.</span></dd></dl>
 
-<dl><dt><a name="PVGISClient-get_yearly_total_solar_potential"><strong>get_yearly_total_solar_potential</strong></a>(
-    self,
-    lat: float,
-    lon: float,
-    src_crs: qgis._core.QgsCoordinateReferenceSystem
-) -&gt; float</dt><dd><span class="code">Get&nbsp;the&nbsp;yearly&nbsp;total&nbsp;solar&nbsp;potential&nbsp;(E_y)&nbsp;for&nbsp;a&nbsp;given&nbsp;latitude&nbsp;and&nbsp;longitude.<br>
+<dl><dt><a name="PVGISClient-get_yearly_total_solar_potential"><strong>get_yearly_total_solar_potential</strong></a>(self, lat: float, lon: float, src_crs: qgis._core.QgsCoordinateReferenceSystem) -&gt; float</dt><dd><span class="code">Get&nbsp;the&nbsp;yearly&nbsp;total&nbsp;solar&nbsp;potential&nbsp;(E_y)&nbsp;for&nbsp;a&nbsp;given&nbsp;latitude&nbsp;and&nbsp;longitude.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;lat&nbsp;(float):&nbsp;Latitude&nbsp;of&nbsp;the&nbsp;location.<br>
@@ -131,12 +97,7 @@ Data and other attributes defined here:<br>
 
 <hr>
 Methods inherited from SolarDataClient.SolarDataClient:<br>
-<dl><dt><a name="PVGISClient-normalize_coords"><strong>normalize_coords</strong></a>(
-    self,
-    lat: float,
-    lon: float,
-    src_crs: qgis._core.QgsCoordinateReferenceSystem
-) -&gt; tuple[float, float]</dt><dd><span class="code">Normalize&nbsp;input&nbsp;coordinates&nbsp;to&nbsp;the&nbsp;instance's&nbsp;CRS&nbsp;if&nbsp;necessary.</span></dd></dl>
+<dl><dt><a name="PVGISClient-normalize_coords"><strong>normalize_coords</strong></a>(self, lat: float, lon: float, src_crs: qgis._core.QgsCoordinateReferenceSystem) -&gt; tuple[float, float]</dt><dd><span class="code">Normalize&nbsp;input&nbsp;coordinates&nbsp;to&nbsp;the&nbsp;instance's&nbsp;CRS&nbsp;if&nbsp;necessary.</span></dd></dl>
 
 <hr>
 Data descriptors inherited from SolarDataClient.SolarDataClient:<br>
