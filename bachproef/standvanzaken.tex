@@ -5,7 +5,6 @@
 De Einstein Telescoop (ET) is een voorgestelde Europese zwaartekrachtgolfdetector van de derde generatie opgenomen door de European Strategy Forum on Research (ESFRI) in hun roadmap van 2021 \autocite{ResearchInfrastructures2021}. Deze voorgestelde detector zal verder bouwen op de successen van de VIRGO (Italie), LIGO (Verenigde Staten) en KAGRA (Japan) projecten, welke detectoren van de 2de generatie zijn. De locatie van de ET is op dit moment nog in beraad en wordt actief onderzocht. Er zijn hiervoor nog drie kandidaat sites in de running, één in de EMR een tweede locatie in Sardinië en een derde site in Saksen.\bigskip
 
 De ET is voorgesteld om opgebouwd te worden in een driehoek met gelijke zijdes van elk 10 km lang. De zijdes van de driehoek zijn ondergrondse tunnels met een diepte tussen de 250 en 300 meter (Figuur~\ref{fig:infografic-ET}). De ET gaat zwaartekrachtgolven meten door de lengte van deze 3 tunnels constant te monitoren. Dit wordt gedaan met behulp van laserstralen en trillingsvrij opgehangen spiegels in vacuümbuizen. Door de patronen van de verandering van de lengtes van de tunnels te analyseren gaan onderzoekers er zwaartekrachtgolven kunnen detecteren \autocite{Telescope2026}.\bigskip
-
 \begin{figure}
 \centering
     \includegraphics[width=0.9\textwidth]{./Einstein_Telescope/einstein_telescope_ALT-EN-01_web.png}
@@ -20,6 +19,11 @@ De Europese unie heeft al langere tijd een beleid dat inzet op meer duurzame ene
 \section{Geographic information system (GIS)} 
 Geographic information system (GIS) is een informatiesysteem waarmee ruimtelijke gegevens beheerd, bewerkt en geanalyseerd kunnen worden. Het is een brede term voor software en informatie die data met een geografische dimensie kan begrijpen, verwerken en opslaan \autocite{UniWisconsin–MadisonGIS}. Veel informatie die mee bepaald wat een goede locatie voor energiewinning voor de ET is, is geografisch (i.e. gemiddelde zonnestralen per jaar, windsnelheden, grondbestemming, afstand tot de fysieke voorgestelde telescoop). 
 De 2 voornaamste types van GIS-kaarten zijn de vector- en raster-kaarten (Figuur~\ref{fig:VectorVsRaster_OS}). Bij rasterkaarten wordt de kaart onderverdeeld in een rooster waarbij elk vak in dit rooster een lijn in een databank kan krijgen (Tabel~\ref{tab:fictief_zonne_irradiantie}). Afhankelijk van de datakolommen kunnen er verschillende attributen worden toegekend aan deze vakken. Bij vectorkaarten krijgt een punt (voorgesteld door coördinaten) of een verzameling van punten (lijn of polygon) één lijn in een databank en kan er data worden toegewezen aan het punt of de polygon (Tabel~\ref{tab:fictief_landbouwpercelen}).\autocite{OSLRasterVsVector}
+\begin{figure}
+\centering
+    \includegraphics[width=0.9\textwidth]{./GIS/RasterAndVector_Ordnance-Survey.png}
+    \caption[Illustratieve voorbeelden voor vector en raster data]{Illustratieve voorbeelden voor vector en raster data © 2026 Ordnance Survey Limited}\label{fig:VectorVsRaster_OS}
+\end{figure}
 \begin{table}[h]
     \centering
     \caption{Fictief voorbeeld van GIS-raster-data: zonne-irradiatie}\label{tab:fictief_zonne_irradiantie}
@@ -35,7 +39,6 @@ De 2 voornaamste types van GIS-kaarten zijn de vector- en raster-kaarten (Figuur
     \bottomrule
     \end{tabular}
 \end{table}
-
 \begin{table}[h]
     \centering
     \caption{Fictief voorbeeld van GIS-vector-data: landbouwpercelen}\label{tab:fictief_landbouwpercelen}
@@ -50,11 +53,6 @@ De 2 voornaamste types van GIS-kaarten zijn de vector- en raster-kaarten (Figuur
     \end{tabular}
 \end{table}
 
-\begin{figure}
-\centering
-    \includegraphics[width=0.9\textwidth]{./GIS/RasterAndVector_Ordnance-Survey.png}
-    \caption[Illustratieve voorbeelden voor vector en raster data]{Illustratieve voorbeelden voor vector en raster data © 2026 Ordnance Survey Limited}\label{fig:VectorVsRaster_OS}
-\end{figure}
 
 \section{GIS-tools voor data-analyse}\label{sec:GIS-tools}
 Voor het ontwikkelen van een software analyse tool van GIS-data bestaan er verschillende mogelijkheden, welke kunnen worden onderverdeeld in twee groepen: softwarepakketten en bibliotheken. Beide groepen hebben hun eigen toepassingen alsook hun voor- en nadelen.
