@@ -4,22 +4,10 @@
 
 \chapter{\IfLanguageName{dutch}{Vergelijking beschikbare tools}{Methodology}}\label{ch:vergelijkingTools}
 
-% In dit hoofdstuk wordt eerst bepaald uit welke groep, en later uit welke subgroep, van de tools, besproken in Sectie~\ref{sec:GIS-tools}, de geschikte tool moet worden geselecteerd. Vervolgens worden alle tools binnen deze subgroep nader geanalyseerd, waarbij hun voor- en nadelen worden afgewogen. Op basis hiervan wordt uiteindelijk de basis van de tool vastgesteld.
-
-% \section{softwarepakket of library}
-% Vanwege de nood om zowel visueel als analystisch te kunnen werken is er gekozen een softwarepakket te selecteren. Omdat de bedoeling is dat onderzoekers met weinig relevante gis of programeerkennis ook gebruik kunnen maken van deze tool is er voornamelijk naar de software pakketten gekeken. De uiteindelijke geselecteerde tool maakt het gebruik van een krachtige library binnen het softwarepakket ook zeer toegankelijk zodat de flexibiliteit van een library ook van toepassing is op dat softwarepakket
-
-% \section{Open of closed source}
-% Vanwege een eerder beperkt budget en de zeer hoge licentiekosten van betalende closed source softwarepakketten is de blik snel gericht op open source mogelijkheden. De drijvende kracht van samenwerking en mutueele verbetering die achter open source zit sluit zich ook zeer mooi aan bij de spirit van onderzoek. Omdat de ET het gevolgd is van een grootschalige open Europese samenwerking is het verkiezen van een open source softwarepakket ook voor de hand liggend
-
-% \section{QGIS}
-% Zoals al besproken in Sectie~\ref{sec:GIS-tools_open-source} is QGIS een krachtig en populair softwarepakket. Het bied enorm veel plugins aan om het leven gemakkelijker te maken. Door de naadloze integratie van PyQGIS binnen de Grafische User Interface (GUI) en de integratie van meerdere geidentificeerde opties is deze uitgekozen als startpunt voor de ontwikkeling.
-
-
 Dit hoofdstuk beschrijft het selectieproces van een geschikte tool uit de in Sectie~\ref{sec:GIS-tools} gepresenteerde mogelijkheden. Dit proces verloopt in twee fasen: eerst wordt bepaald uit welke hoofdgroep en vervolgens uit welke subgroep de tool geselecteerd zal worden. Vervolgens worden alle tools binnen de geselecteerde subgroep kritisch geëvalueerd op basis van hun functionele mogelijkheden alsook hun voor- en nadelen, om zo tot een gefundeerde keuze voor de basistool te komen.
 
-\section{Softwarepakket versus library}
-Vanwege de vereiste om zowel visuele als analytische functionaliteiten te integreren alsook de wens om de tool ook toegankelijk te maken voor onderzoekers zonder uitgebreide kennis van GIS of programmeren. Is besloten om een softwarepakket te selecteren in plaats van een losstaande library. Het uiteindelijk geselecteerde softwarepakket biedt de mogelijkheid om krachtige libraries te gebruiken, waardoor de flexibiliteit en krachtige functionaliteit van een library behouden blijft binnen een gebruiksvriendelijke grafische omgeving. Bovendien bespaart deze aanpak aanzienlijke tijd, aangezien grafische analyses niet vanaf nul hoeven te worden ontwikkeld.
+\section{Softwarepakket versus bibliotheek}
+Vanwege de vereiste om zowel visuele als analytische functionaliteiten te integreren alsook de wens om de tool toegankelijk te maken voor onderzoekers zonder uitgebreide kennis van GIS of programmeren. Is besloten om een softwarepakket te selecteren in plaats van een losstaande bibliotheek. Het uiteindelijk geselecteerde softwarepakket biedt de mogelijkheid om krachtige libraries te gebruiken, waardoor de flexibiliteit en krachtige functionaliteit van een bibliotheek behouden blijft binnen een gebruiksvriendelijke grafische omgeving. Bovendien bespaart deze aanpak aanzienlijke tijd, aangezien grafische analyses niet vanaf nul hoeven te worden ontwikkeld.
 
 \section{Open source versus closed source}
 Gelet op de beperkte budgettaire middelen en de hoge licentiekosten van de closed source oplossingen, is de focus snel komen te liggen op de open source softwarepakketten. Deze optie sluit niet alleen beter aan bij de financiële randvoorwaarden, maar ook bij de collaboratieve en transparante aard van wetenschappelijk onderzoek, specifiek in het kader van de Europese samenwerking rondom de ET. Bovendien maken de gemeenschappelijke ontwikkeling, continue verbetering en vrij beschikbare broncode open source software niet alleen kosteneffectief, maar ook duurzaam en aanpasbaar voor toekomstige onderzoeksbehoeften. Hierdoor kan het geleverde werk ook buiten de huidige toepassing waardevol zijn.
@@ -27,14 +15,14 @@ Gelet op de beperkte budgettaire middelen en de hoge licentiekosten van de close
 \section{Selectie van tool}
 Zoals reeds besproken in Sectie~\ref{sec:GIS-tools_open-source}, is QGIS een krachtig, wijdverspreid en open source GIS softwarepakket. Andere opties, zoals GRASS en DIVA-GIS, bleken om volgende redenen minder geschikt:
 \begin{itemize}
-\item \textbf{GRASS} is grotendeels geïntegreerd in QGIS, waardoor de GUI losstaand gebruiken overbodig is.
+\item \textbf{GRASS} is grotendeels geïntegreerd in QGIS, waardoor zijn GUI losstaand gebruiken overbodig is.
 \item \textbf{DIVA-GIS} is niet langer actief in ontwikkeling en heeft verouderde documentatie (laatste update in 2010), wat het voor dit onderzoek ongeschikt maakt.
 \end{itemize}
-De uiteindelijke keuze voor QGIS is gebaseerd op de volgende kernargumenten
+De uiteindelijke keuze voor QGIS is ook gebaseerd op de volgende kernargumenten
 \begin{itemize}
 \item \textbf{Uitgebreide functionaliteit}: QGIS biedt een rijke set aan geavanceerde tools voor zowel ruimtelijke analyse als visualisatie, wat essentieel is voor de beoogde toepassingen.
 \item \textbf{Plugin-ecosysteem}: De beschikbaarheid van talrijke plugins vergemakkelijkt het uitbreiden van functionaliteiten zonder complexe programmeerkennis.
-\item \textbf{Integratie met PyQGIS}: De naadloze integratie van Python (PyQGIS) binnen de grafische gebruikersinterface (GUI) stelt gebruikers in staat om geautomatiseerde workflows en aangepaste analyses te ontwikkelen, zonder afbreuk te doen aan de gebruiksvriendelijkheid. Daarnaast is Python een veelgebruikte programmeertaal, zowel in academische instellingen \autocite{Mason2024} als in de praktijk \autocite{Carbonnelle2026}.
+\item \textbf{Integratie met PyQGIS}: De naadloze integratie van Python, met de PyQGIS bibliotheek ingebouwd, binnen de GUI stelt gebruikers in staat om geautomatiseerde workflows en aangepaste analyses te ontwikkelen, zonder afbreuk te doen aan de gebruiksvriendelijkheid. Daarnaast is Python een veelgebruikte programmeertaal, zowel in academische instellingen \autocite{Mason2024} als in de praktijk \autocite{Carbonnelle2026}.
 \end{itemize}
 Deze argumenten gecombineerd met de moeilijkheden en tekortkomingen van de andere geïdentificeerde softwarepakketten maken dat QGIS het meest geschikte startpunt voor de ontwikkeling van de tool binnen dit onderzoek is.
 
