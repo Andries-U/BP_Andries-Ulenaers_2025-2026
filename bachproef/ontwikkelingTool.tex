@@ -21,71 +21,43 @@ Om de duurzaamheid en toegankelijkheid van de tool te garanderen, is er aandacht
 
 \section{Ondersteunende packages}\label{sec:ontwikkelingTool_ondersteunendePackages}
 
-Voor het genereren van duidelijke en professionele rapporten is gebruikgemaakt van \texttt{reportlab}. Deze package biedt uitgebreide functionaliteit voor het creëren van PDF-documenten, wat essentieel is voor het rapporteren van de analyseresultaten. Daarnaast is \texttt{pydoc}, een ingebouwde Python module, gebruikt voor het automatisch genereren van documentatie, zodat de codebase toegankelijk en begrijpelijk blijft voor andere ontwikkelaars. De focus van de documentatie is vooral gelegd op duidelijk leesbare en makkelijk toegankelijke documentatie. Door in code met docstring commentaar toe te voegen is het ook zeer duidelijk wat al dan niet gedocumenteerd is.\bigskip
+Voor het genereren van duidelijke en professionele rapporten is gebruikgemaakt van \texttt{reportlab}. Deze package biedt uitgebreide functionaliteit voor het creëren van PDF-documenten, wat essentieel is voor het rapporteren van de analyseresultaten. Daarnaast is \texttt{pydoc}, een ingebouwde Python module, gebruikt voor het automatisch genereren van documentatie op basis van docstrings, zodat de codebase toegankelijk en begrijpelijk blijft voor andere ontwikkelaars. De focus van de documentatie is vooral gelegd op duidelijk leesbare en makkelijk toegankelijke documentatie. Doordat pydoc op basis commentaar in code documentatie genereert, is het ook zeer duidelijk wat al dan niet gedocumenteerd is.\bigskip
 
-Voor de GUI is gekozen voor \texttt{PyQt5}. Deze module van PyQGIS en biedt robuuste ondersteuning voor het bouwen van interactieve applicaties. 
+Voor de GUI is gekozen voor PyQt5, een QGIS module die robuuste ondersteuning biedt voor het bouwen van een interactieve tool die naadloos integreert met de QGIS-omgeving, zowel functioneel als visueel.
 
 \section{Grafische gebruikersinterface (GUI)}\label{sec:ontwikkelingTool_gui}
-De GUI is ontwikkeld met \texttt{PyQt5} en is ontworpen om gebruikers in staat te stellen eenvoudig analyses uit te voeren. De interface leidt de gebruiker door het proces van dataselectie, analyse-instellingen en resultaatweergave. Er is bijzonder aandacht besteed aan het minimaliseren van de leercurve, zodat ook gebruikers zonder diepgaande technische kennis de tool efficiënt kunnen gebruiken.
+De GUI is ontwikkeld met \texttt{PyQt5} en is ontworpen om gebruikers in staat te stellen eenvoudig analyses uit te voeren. De interface leidt de gebruiker door het proces van dataselectie, analyse-instellingen en resultaatweergave. Er is bijzonder aandacht besteed aan het minimaliseren van de leercurve, zodat ook gebruikers zonder diepgaande technische kennis de tool efficiënt kunnen gebruiken. Dit uit zich in een dropdown met zoekfunctie voor de kaartselectie, het voorstellen van standaardwaarde en het verbergen van informatie en opties die niet van toepassing zijn.
 
 \section{Functionaliteit van de tool}\label{sec:ontwikkelingTool_functionaliteit}
 
-Voordat de analyse van de datalaag en de zoeklaag begint, wordt het \textit{Coordinate Reference System} (CRS) van beide lagen gecontroleerd en gelijkgezet aan dat van het QGIS-project. Deze stap is essentieel om fouten te voorkomen die kunnen ontstaan door verschillen in coördinatenstelsels, zoals verkeerde ruimtelijke relaties of onjuiste oppervlakteberekeningen.\bigskip
-
-Bij een volledige analyse wordt voor elke polygon in de dataset de oppervlakte bepaald. Vervolgens wordt voor elke kolom gecontroleerd of er niet te veel verschillende waarden (kardinaliteit) aanwezig zijn. Kolommen met een hoge kardinaliteit worden uitgesloten van verdere analyse. Voor categorische data worden de totale oppervlakte en het aandeel in de totale geanalyseerde oppervlakte per categorie weergegeven.\bigskip
-
-Bij een gedeeltelijke analyse kan de gebruiker vooraf filteren op basis van kolommen met een lage kardinaliteit. Hierbij kan de gebruiker specifieke waarden selecteren die wel of niet moeten worden opgenomen in de analyse. Na deze filtering verloopt de analyse op dezelfde manier als bij een volledige analyse.\bigskip
-
-De bekomen resultaten worden niet alleen geëxporteerd naar CSV of PDF, maar ook toegevoegd als een \textit{in-memory datalaag} in het QGIS-project. Hierdoor kunnen gebruikers de resultaten direct visualiseren en verder analyseren binnen QGIS, zonder dat ze de data handmatig hoeven te importeren.
+De tool analyseert een datalaag binnen een door de gebruiker gekozen of gegenereerd zoekgebied, volgens diens specifieke wensen. Op basis van de ingestelde parameters genereert de tool rapporten die zowel de informatie uit de geselecteerde datalaag als de beschikbare oppervlaktes weergeven. Deze rapporten worden standaard aangeboden in open formaten zoals PDF of CSV voor verdere verwerking in een andere programma of directe rapportage. Voor gevorderde gebruikers is er bovendien  een tijdelijke, in memory, datalaag gegenereerd. Hierop kunnen verdere analyses worden uitgevoerd binnen QGIS of een ander GIS programma.
 
 \section{Data-export}\label{sec:ontwikkelingTool_dataExport}
 
-Voor de export van data is gekozen voor het \texttt{CSV}-formaat. Dit formaat is een open standaard en wordt breed ondersteund door populaire data-analyseprogramma's, zoals Excel, R en Python. Hierdoor kunnen onderzoekers de geëxporteerde data eenvoudig importeren en verder analyseren in hun vertrouwde omgeving.
+Voor de export van de bekomen ruwe data is gekozen voor het CSV formaat, een open standaard die breed ondersteund wordt door populaire data-analyseprogramma's zoals Excel, R en Python. Hierdoor kunnen onderzoekers de geëxporteerde data eenvoudig importeren en verder analyseren in hun vertrouwde omgeving.
 
-Naast CSV is er ook de mogelijkheid om resultaten te exporteren naar \texttt{PDF}. Dit formaat is gekozen omdat het een gestandaardiseerde en professionele weergave biedt van de analyseresultaten. PDF's zijn ideaal voor rapportage en delen met stakeholders, omdat ze de opmaak en structuur behouden, ongeacht het apparaat of de software waarmee ze worden geopend. Hierdoor is het ook zeer geschikt voor printing indien het vereist is.
+Naast CSV is er ook de mogelijkheid om resultaten te exporteren naar PDF. Dit formaat biedt een gestandaardiseerde en professionele weergave van de analyseresultaten, ideaal voor rapportage en delen met stakeholders. PDF bestanden behouden hun opmaak en structuur, ongeacht het apparaat of de software waarmee ze worden geopend, en zijn daardoor ook geschikt voor drukwerk.
 
 \section{Flow van de tool}\label{sec:ontwikkelingTool_flowTool}
-De ontwikkelde tool binnen QGIS is ontworpen om gebruikers te begeleiden door een gestructureerd proces voor de analyse van ruimtelijke data. Hieronder wordt de functionaliteit van de tool beschreven, inclusief de stappen die de gebruiker doorloopt en de onderliggende werking van het programma. Daarnaast wordt de exportfunctionaliteit toegelicht, evenals de flow van de tool.
+De ontwikkelde tool binnen QGIS is ontworpen om gebruikers te begeleiden door een gestructureerd proces voor de analyse van geografische data. Hieronder wordt de werking van de tool beschreven, inclusief de stappen die de gebruiker doorloopt en de onderliggende werking van de tool die de gebruiker niet ziet. De exportfunctionaliteit wordt ook toegelicht.
 
 \subsection{Selectie analyse en zoekgebied}
-De gebruiker selecteert de te analyseren datalaag en het zoekgebied via twee keuzemenu's. Het eerste menu is bedoeld voor de selectie van de analyselaag, het tweede voor het zoekgebied. Achterliggend controleert de tool of de geselecteerde zoeklaag polygonen of punten bevat. Indien de laag punten bevat, kan de gebruiker een straal instellen waarmee rond elk punt een zoekgebied wordt gegenereerd. De tool maakt automatisch een nieuwe in-memory laag aan met deze zoekgebieden. Bij bevestiging controleert de tool of het Coordinate Reference System (CRS) van de kaarten overeenstemt met elkaars. Indien niet, wordt het CRS omgezet naar dat van het QGIS-project en ontvangt de gebruiker hiervan een melding.
+De gebruiker selecteert de te analyseren datalaag en het zoekgebied via twee keuzemenu's. Het eerste menu is bedoeld voor de selectie van de analyselaag, het tweede voor het zoekgebied. Achterliggend controleert de tool of de geselecteerde laag voor het zoekgebied polygonen of punten bevat. Indien de laag punten bevat, kan de gebruiker een straal instellen waarmee rond elk punt een cirkel wordt gegenereerd. De tool maakt automatisch een nieuwe in memory laag aan met deze zoekgebieden. Bij bevestiging controleert de tool of de Coordinate Reference Systems (CRS's) van de kaarten overeenstemmen. Indien niet, wordt elke kaart omgezet naar het CRS van het QGIS-project en ontvangt de gebruiker hiervan een melding.
 
 \subsection{Type analyse}
-Na het selecteren van de analyselaag en het zoekgebied kiest de gebruiker tussen een volledige of gedeeltelijke analyse. Daarnaast selecteert de gebruiker het exportformaat (PDF en/of CSV) en de exportlocatie. Er worden per exportformaat twee aparte bestanden aangemaakt: één voor locaties die volledig binnen het zoekgebied vallen, en één voor locaties die de grens van het zoekgebied snijden.
+Na het selecteren van de analyselaag en de keuze of generatie van het zoekgebied kiest de gebruiker tussen een volledige of gedeeltelijke analyse. Daarnaast selecteert de gebruiker het exportformaat (PDF en/of CSV) en de opslaglocatie van de gegenereerde bestanden. Er worden per geselecteerd exportformaat twee aparte bestanden aangemaakt: één voor locaties die volledig binnen het zoekgebied vallen, en één voor locaties die de grens van het zoekgebied snijden.
 
-\subsubsection{volledige analyse}
-De tool maakt twee lege in-memory klonen van de analyselaag: één voor locaties die volledig binnen het zoekgebied vallen, en één voor locaties die deels binnen en deels buiten het zoekgebied liggen. Voor beide lagen worden de volgende stappen uitgevoerd:
+\subsubsection{Volledige analyse}
+De tool maakt twee lege in memory klonen van de analyselaag: één voor locaties die volledig binnen het zoekgebied vallen, en een tweede voor locaties die deels binnen en deels buiten het zoekgebied liggen. Voor beide lagen worden de volgende stappen uitgevoerd:
 \begin{enumerate}
     \item De oppervlakte van elke locatie en de totale oppervlakte van de analyselaag worden berekend.
     \item Kolommen met een lage kardinaliteit (aantal unieke waarden onder een opgegeven drempel) worden geïdentificeerd.
-    \item Enkel kolommen met een lage kardinaliteit worden opgenomen in de output.
-    \item Voor elke kolom met lage kardinaliteit wordt een overzicht gegenereerd, met per unieke waarde de totale oppervlakte van de waarde en het aandeel in de totale oppervlakte van de analyselaag.
-    \item In de PDF-output wordt een grafische weergave van de locaties opgenomen, samen met randinformatie zoals het aantal percelen.
+    \item Voor elke kolom met een lage kardinaliteit wordt een overzicht gegenereerd, met per unieke waarde de totale oppervlakte van de waarde en het aandeel er van in de totale oppervlakte van de analyselaag.
+    \item In de PDF-output wordt een grafische weergave van de locaties opgenomen, samen met randinformatie zoals het aantal percelen. \textcolor{red}{wat nog?}
 \end{enumerate}
 
-\subsubsection{gedeeltelijke analyse}
-Bij een gedeeltelijke analyse selecteert de gebruiker eerst een kolom met lage kardinaliteit. Vervolgens krijgt de gebruiker een overzicht van alle unieke waarden in deze kolom en kan selecteren welke waarden moeten worden opgenomen in de analyse. Bijvoorbeeld: bij een landbouwkaart kan de gebruiker kiezen om enkel grasland en fruitplantages te analyseren. Na deze selectie verloopt de analyse identiek aan de volledige analyse, de analyselaag is dan de gefilterde laag. In de PDF-output wordt aanvullende informatie opgenomen over welke kolommen en locaties niet zijn opgenomen in de analyse.
+\subsubsection{Gedeeltelijke analyse}
+Bij een gedeeltelijke analyse selecteert de gebruiker eerst een kolom met lage kardinaliteit uit een gegenereerde lijst. Vervolgens krijgt de gebruiker een overzicht van alle unieke waarden in de geselecteerde kolom en kan de gebruiker selecteren welke waarden moeten worden opgenomen in de analyse. Bijvoorbeeld: bij een landbouwkaart kan de gebruiker kiezen om enkel grasland en fruitplantages te analyseren. Na deze selectie verloopt de verdere analyse identiek aan de volledige analyse, de analyselaag is dan de gefilterde laag. In de PDF-output wordt aanvullende informatie opgenomen over welke kolommen en locaties niet zijn opgenomen in de analyse.
 
 \section{Conclusie}
-De ontwikkelde tool biedt een flexibele en herbruikbare oplossing voor de analyses van geografische data. Door het gebruik van open standaarden, duidelijke documentatie, de integratie met QGIS en een gebruiksvriendelijke GUI is de tool toegankelijk voor eindgebruikers met beperkte programmeerkennis. Voor de gebruiker met programmeerkennis biedt de tool bovendien de mogelijkheid om de analyses aan te passen en te optimaliseren. Dankzij de modulaire opzet en de gebruikte technologieën zijn toekomstige uitbreidingen mogelijk, zoals de integratie van nieuwe databronnen of geavanceerdere analysemethoden.
-
-% Ondersteunened packages
-% er is gebruik gemaakt van reportlab om duidelijke pdfs te kunnen maken en pydoc om documentatie te maken
-
-% GUI
-% er is gebruikt gemaakt van pyqt5 omdat het ingebakken is en de correcte ondersteuning bied
-
-% tool
-% De gemaakte tool is ontwikkeld om een voorbereiding te zijn om MCDMA technieken te kunnen toepassen. Er is zo veel mogelijk gekozen om generiek te werken. De herbruikbaarheid van de code is altijd in het achterhoofd gehouden om van beslissing tot gebruik van datasets tot rapportering over te kunnen gaan. Omdat er met python is gewerkt zullen onderzoekers of toekomistige studenten de tool kunnnen uitbreiden. Er is voornamelijk gekozen om zeer uitleggende te werk te gaan en elke geschreven functie duidelijke documentatie te geven. Omdat de tool een onderdeel van de analyse en rapportage zal zijn is er gekozen om een output in CSV formaat prioriteit te geven. Doordat dit een open standaard is kunnnen veel programmas waar de onderzoekers bekend mee zijn voor verdere analyse deze data kunnen interpreteren.
-
-% data export
-% voor data export is er gekozen voor csv omdat dit een open standaard is die de meest populaire data analyse programmas kunnen gebruiken
-
-% flow tool
-% Er wordt eerst gevraagd naar de type analyse. Hiervoor zijn enkele opties niet volledig geimplementeerd. Enkel de analyse van een datalaag is werkzaam. er is gewerkt aan een rechtstreekse communicatie met PVGis om zonnedata over een perceel op te halen met verschillende mogelijkheden. Er is afgedaan hiervan omdat er te veel versimpelingen, een perceel werd herleid naar zijn centroide, waren en de types zonneceltechnologieen nog niet bekend zijn. Hierdoor kan men met de oppervlakte ook een schatting maken die weinig hiervan afwijkt.
-
-% Na het kiezen van een datalaag analyse zal de gebruiker beslissen over de kaart waarop te analyseren, het zoekgebied (indien dit punten ipv polygon laag is zal de straal rond de punten beslist kunnen worden om een zoekgebied te generenen) en kan er een volledige of gedeeltelijke analyse worden gedaan. De uitkomsten hiervan kunnen zowel in csv als pdf uitgegeven worden.
-
-% bij de keuze voor een volledige analyse zal er voor elke polygon een oppervlakte worden bepaald. hierna wordt voor elke colom bepaald of de er niet te veel verschillende mogelijkheden zijn (bv. id veld) hierna Kardinaliteit genoemd en deze worden dan niet opgenomen in de analyse. de kolommen die categorieke data bevatten geven een weergave per optie van de totale oppervlakte die beschikbaar is en het aandeel hiervan in de totale geanalyseerde oppervlakte.
-
-% Bij een gedeeltelijke analyse kan de gebruiker op voorhand al zijn uitkomsten kunnen filteren. op basis van een lage kardinaliteit zullen er kolommen beschikbaar zijn om op te filteren. Er kan hierna voor de gekozen kolom beslist worden welke waardes al dan niet worden toegevoegd aan de analyse. Hierna verloopt de analyse identiek aan de volledige analyse
+De ontwikkelde tool biedt een flexibele en herbruikbare oplossing voor de analyses van geografische data. Door het gebruik van open standaarden, duidelijke documentatie, de integratie met QGIS en een gebruiksvriendelijke GUI is de tool toegankelijk voor eindgebruikers met beperkte programmeerkennis. Voor de gebruiker met programmeerkennis biedt de tool bovendien de mogelijkheid om de analyses aan te passen en te optimaliseren alsook om verdere analyses uit te voeren op de bekomen data. Dankzij de modulaire opzet en de gebruikte technologieën zijn toekomstige uitbreidingen mogelijk, zoals de integratie van energiepotentieel of geavanceerdere analysemethoden.
