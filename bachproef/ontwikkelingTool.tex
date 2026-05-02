@@ -64,10 +64,10 @@ De gebruiker selecteert de te analyseren datalaag en het zoekgebied via twee keu
 Na het selecteren van de analyselaag en de keuze of generatie van het zoekgebied kiest de gebruiker tussen een volledige of gedeeltelijke analyse. Daarnaast selecteert de gebruiker het exportformaat (PDF en/of CSV) en de opslaglocatie van de gegenereerde bestanden. Er worden, ongeacht het gekozen analysetype, per geselecteerd exportformaat twee aparte bestanden aangemaakt: één voor locaties die volledig binnen het zoekgebied vallen, en één voor locaties die de grens van het zoekgebied snijden.
 
 \subsubsection{Volledige analyse}
-De tool maakt twee lege `in-memory' kopieën van de analyselaag: één voor locaties die volledig binnen het zoekgebied vallen, en een tweede voor locaties die deels binnen en deels buiten het zoekgebied liggen. Voor beide lagen worden de volgende stappen uitgevoerd:
+De tool maakt twee lege in-memory kopieën van de analyselaag: één voor locaties die volledig binnen het zoekgebied vallen, en een tweede voor locaties die deels binnen en deels buiten het zoekgebied liggen. Voor beide lagen worden de volgende stappen uitgevoerd:
 \begin{enumerate}
     \item De oppervlakte van elke locatie en de totale oppervlakte van de analyselaag worden berekend.
-    \item Kolommen met een lage kardinaliteit (aantal unieke waarden onder een opgegeven drempel) worden geïdentificeerd.
+    \item Kolommen met een lage kardinaliteit (d.w.z. een lage verhouding van unieke waarden ten opzichte van het totaal aantal waarden) worden geïdentificeerd.
     \item Voor elke kolom met een lage kardinaliteit wordt een overzicht gegenereerd, met per unieke waarde de totale oppervlakte van de waarde en het aandeel ervan in de totale oppervlakte van de analyselaag.
     \item In de PDF-output wordt een grafische weergave van de locaties opgenomen, samen met randinformatie zoals het aantal percelen. \textcolor{red}{wat nog?}
 \end{enumerate}
