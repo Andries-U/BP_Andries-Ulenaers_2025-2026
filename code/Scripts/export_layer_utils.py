@@ -367,7 +367,8 @@ def generate_layer_statistics_to_pdf(
     layer: QgsVectorLayer,
     output_path: Optional[str] = None,
     map_px: int = 1200,
-    cardinality_threshold_value: int = 50, 
+    area_field: Optional[str] = None,
+    cardinality_threshold_value: int = 500, 
     cardinality_ratio_threshold: float = 0.5
 ) -> str:
     """
@@ -392,7 +393,7 @@ def generate_layer_statistics_to_pdf(
     area_data = {}
     field_total_areas = {}
 
-    cardinality_threshold = 1000 if total_count * 0.5 > 1000 else int(total_count * 0.5)
+    cardinality_threshold = cardinality_threshold_value if total_count * cardinality_ratio_threshold > cardinality_threshold_value else int(total_count * cardinality_ratio_threshold)
     features = list(layer.getFeatures())
 
     for field in layer.fields():

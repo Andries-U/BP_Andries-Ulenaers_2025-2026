@@ -21,7 +21,8 @@ MY_MODULES = [
     "analyse_layer_dialog",
     "filtered_item_selector",
     "export_layer_utils",
-    "main"
+    "main",
+    "layer_utils"
 ]
 
 def reload_all_custom_modules(modules: list[str] = MY_MODULES):

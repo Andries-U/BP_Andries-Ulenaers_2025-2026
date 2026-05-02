@@ -1,3 +1,4 @@
+from layer_utils import add_area_field_crs_aware
 from reset_module_cache import reload_all_custom_modules
 from generate_docs import generate_docs_for_custom_modules
 from qgis_gui_utils import run_selection_dialog_column_values, select_item_from_gui_list, select_layer_from_available_layers,get_user_input_dialog, show_error_popup
@@ -30,6 +31,7 @@ TEMP_GROUP_NAME = "Temp_Group_For_Processing"
 coverage_factor_solar_fields = 0.8  # Assuming 80% of the area can be covered with solar panels.
 default_search_circle_diameter = 5000  # Diameter of the search circle around the corner points of the ET in meters.
 features_added = 0
+add_area_field_name = "QGIS_calculated_area"
 
 def prepare_temporary_group(group_name: str) -> QgsLayerTreeGroup:
     root = QgsProject.instance().layerTreeRoot()
@@ -72,10 +74,11 @@ def run_layer_analysis():
     dialog.exec_()
 
 def run_full_layer_analysis_within_search_area(analyze_layer: QgsVectorLayer, search_area_layer: QgsVectorLayer, csv: bool = False, output_folder: str = None, pdf: bool = False):
+    
     layer_within, layer_intersecting, layer_outside = split_layer_by_search_areas_processing(analyze_layer, search_area_layer)
     
-    search_area_layer.updateFields()
-    search_area_layer.commitChanges()
+    layer_within_with_area = add_area_field_crs_aware(layer_within, field_name=add_area_field_name + "m2")
+    layer_intersecting_with_area = add_area_field_crs_aware(layer_intersecting, field_name=add_area_field_name + "m2")
 
     select_group_layer(TEMP_GROUP_NAME)
     if search_area_layer is not None:
@@ -90,14 +93,13 @@ def run_full_layer_analysis_within_search_area(analyze_layer: QgsVectorLayer, se
         project.addMapLayer(layer_outside)
 
     if csv and output_folder:
-        export_layer_to_csv(layer_within, output_folder + f"/{analyze_layer.name()}_within_search_area.csv")
-        export_layer_to_csv(layer_intersecting, output_folder + f"/{analyze_layer.name()}_intersecting_search_area.csv")
+        export_layer_to_csv(layer_within_with_area, output_folder + f"/{analyze_layer.name()}_within_search_area.csv")
+        export_layer_to_csv(layer_intersecting_with_area, output_folder + f"/{analyze_layer.name()}_intersecting_search_area.csv")
 
     if pdf and output_folder:
-        generate_layer_statistics_to_pdf(layer_within, output_folder + f"/{analyze_layer.name()}_within_search_area.pdf")
-        generate_layer_statistics_to_pdf(layer_intersecting, output_folder + f"/{analyze_layer.name()}_intersecting_search_area.pdf")
+        generate_layer_statistics_to_pdf(layer_within_with_area, output_folder + f"/{analyze_layer.name()}_within_search_area.pdf", area_field=None, cardinality_threshold_value=500, cardinality_ratio_threshold=0.5)
+        generate_layer_statistics_to_pdf(layer_intersecting_with_area, output_folder + f"/{analyze_layer.name()}_intersecting_search_area.pdf", area_field=None, cardinality_threshold_value=500, cardinality_ratio_threshold=0.5)
 
-    
 
 def run_size_analysis():
     selected_area = select_layer_from_available_layers(title="Select the analysis layer", prompt="Select the layer you want to analyze inside the search area:")
@@ -171,6 +173,15 @@ def layer_analysis_with_settings():
     if search_area_layer.geometryType() == QgsWkbTypes.PointGeometry:
         print("The search area layer holds Points. Generating circular search areas around the points.") 
         search_area_layer = generate_search_areas_layer_around_points_from_points_layer(points=search_area_layer, radius=settings.search_radius, segments=36)
+
+    if not check_equality_of_layer_crs_to_wanted_crs([search_area_layer], iface.mapCanvas().mapSettings().destinationCrs()):
+        print("CRS of the search area layer does not match the CRS of the map canvas. Please reproject the layer to the correct CRS and try again.")
+        show_error_popup("CRS Mismatch", "The CRS of the search area layer does not match the CRS of the map canvas. Please reproject the layer to the correct CRS and try again.")
+        return
+    if not check_equality_of_layer_crs_to_wanted_crs([settings.analyze_layer], iface.mapCanvas().mapSettings().destinationCrs()):
+        print("CRS of the analyze layer does not match the CRS of the map canvas. Please reproject the layer to the correct CRS and try again.")
+        show_error_popup("CRS Mismatch", "The CRS of the analyze layer does not match the CRS of the map canvas. Please reproject the layer to the correct CRS and try again.")
+        return
 
     if settings.full_analysis:
         run_full_layer_analysis_within_search_area(settings.analyze_layer, search_area_layer, csv=(settings.export_csv), output_folder=settings.output_folder, pdf=(settings.export_pdf))
