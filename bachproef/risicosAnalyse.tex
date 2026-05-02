@@ -5,13 +5,28 @@
 \chapter{\IfLanguageName{dutch}{Analyseren van de gebruiksrisico's}{Analyzing the risks of use}}%
 \label{ch:risicosAnalyse}
 
-De ontwikkelde tool is een ondersteuning voor de analyse voor de samenstelling van de energievoorziening van de ET. Het gebruik van de tool is niet zonder risico's. In dit hoofdstuk zal ik proberen de risico's van het gebruik van de tool te identificeren en mogelijke oplossingen hiervoor te formuleren.
+De ontwikkelde tool is een ondersteuning voor de analyse voor de samenstelling van de energievoorziening van de ET. Het gebruik deze tool bevat enkele risico's en valkuilen die in het achterhoofd gehouden moeten worden tijdens het gebruik van de tool alsook bij de interpretatie van de gegenereerde data. In dit hoofdstuk zal getracht worden de risico's en valkuilen te identificeren en mogelijke (toekomstige) oplossingen hiervoor te formuleren.
 
 \section{Dubbele telling van locaties}
-Omdat de tool verschillende kaarten kan analyseren en niet de mogelijkheid om al deze analyses samen uit te voeren. Is er de mogelijkheid dat bepaalde locaties meerdere keren voorkomen. Het zal echter fysiek niet mogelijk zijn om bijvoorbeeld AgriPv en een solar farm op dezelfde locatie te hebben. Zeker wanneer de analyse per hoekpunt wordt uitgevoerd bestaat de kans dat meerdere locaties binnen de gekozen straal van meerdere hoekpunten valt. Om dit deels te voorkomen zal er bij een gesplitste analyse ook een volledige analyse uitgevoerd worden. Hierdoor kan er snel een beeld gevormd worden over de oppervlakte die dubbel of eventueel driedubbel is geteld (totaal punt 1 + totaal punt 2 + totaal punt 3 - totaal alle punten = overtelde oppervlakte). Er is nog een mogelijkheid om al deze opties op te splitsen maar dit zou de moeilijkheid om de data te interpreteren verhogen.
 
-\section{Afhankelijkheid van voorziene data}
-De tool werkt enkel met voorziene data. Indien er fouten in deze data zitten of indien locaties hier dubbel in zitten zal de analyse foutief zijn. Het is dus belangrijk dat de data die wordt gebruikt correct is. Indien de dit een groot probleem zou vormen is het eventueel mogelijk om hiervoor een uitbreiding te maken. Echter gaat hier het bepalen van prioriteit over welke data te behouden en welke niet een obstakel vormen.
+Omdat de tool niet de mogelijkheid biedt om meerdere kaarten gelijktijdig te analyseren, kan het voorkomen dat dezelfde locatie in de resultaten van verschillende analyses voorkomt. In de praktijk is het echter niet mogelijk dat op éénzelfde locatie bijvoorbeeld zowel een AgriPV-installatie als een klassiek zonnepaneelveld wordt geplaatst.
+
+Dit probleem treedt vooral op wanneer de analyse wordt uitgevoerd op basis van afzonderlijke hoekpunten (i.e. een gelijkaardige analyse met als zoekregio telkens een ander hoekpunt van de ET). In dat geval kan eenzelfde locatie binnen de ingestelde straal van meerdere hoekpunten vallen, waardoor deze meerdere keren wordt meegerekend.
+
+Om dit deels te mitigeren, kan naast de gesplitste analyse ook een volledige analyse worden uitgevoerd. Op die manier kan eenvoudig worden ingeschat hoeveel oppervlakte mogelijks meervoudig geteld wordt. Dit kan benaderend worden berekend als:
+
+\[
+\text{Dubbel getelde oppervlakte} \approx (\text{som van deelanalyses}) - (\text{resultaat volledige analyse})
+\]
+
+Het is wel mogelijk om deze correctie op een meer nauwkeurige manier uit te voeren. Hierbij zou, bij het inladen van een zoeklaag met punten, de analyse per individueel punt kunnen worden uitgevoerd. Aan de resulterende dataset kan vervolgens een extra kolom (of meerdere kolommen) worden toegevoegd die aangeeft binnen het zoekgebied van welk(e) punt(en) een bepaalde locatie valt.\bigskip
+
+Hoewel dit een nauwkeuriger inzicht zou opleveren in de mate van overlap, maakt het de interpretatie van de resultaten aanzienlijk complexer en vermindert het de overzichtelijkheid.
+
+\section{Afhankelijkheid van de voorziene data}
+De ontwikkelde tool werkt met de voorziene data. Indien er fouten in deze data zitten of indien locaties hier dubbel in zitten zal de analyse ook onbetrouwbaar zijn. Het is dus belangrijk dat de data die wordt gebruikt voor de analyse correct is. Indien dit een groot probleem zou vormen is het eventueel mogelijk om een uitbreiding te maken om dubbele locaties te identificeren. Echter gaat hier het bepalen van prioriteit over welke data te behouden en welke niet een obstakel vormen.
 
 \section{Grensoverschrijdende data}
-Vanwege de locatie op grensgebieden en verschillende aanpakken over het verzamelen van data is het niet mogelijk om bijvoorbeeld een analyse van landbouw gebied grensoverschrijdend te doen. Hiervoor zou de data laag per laag gelijkgemaakt moeten worden.
+Door de grensoverschrijdende ligging van het studiegebied van de ET en de verschillende methoden voor dataverzameling en -classificatie is het niet mogelijk om bepaalde analyses, zoals een uniforme analyse van landbouwgebieden, rechtstreeks over landsgrenzen heen uit te voeren. De onderliggende datasets zijn immers niet consistent opgebouwd. Zo kan één instantie perenplantages als afzonderlijke categorie registreren, terwijl een andere instantie fruitteelt als één geheel beschouwt.\bigskip
+
+Om dergelijke analyses mogelijk te maken, zouden de datasets eerst geharmoniseerd moeten worden, waarbij categorieën en classificaties op elkaar worden afgestemd. Dit proces is echter niet eenduidig en introduceert bijkomende complexiteiten, aangezien het samenvoegen van verschillende classificatiesystemen op zich een afzonderlijke probleemstelling vormt.
