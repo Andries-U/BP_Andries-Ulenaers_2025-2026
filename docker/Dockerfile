@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     biber \
     git \
     texlive-xetex \
+    texlive-extra-utils \
     python3-pip \
     latexmk \
     && pip install pygments \

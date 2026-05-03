@@ -50,9 +50,9 @@ De GUI is ontwikkeld met PyQt5 en is ontworpen om gebruikers in staat te stellen
 De tool analyseert een datalaag binnen een door de gebruiker gekozen of gegenereerd zoekgebied. Op basis van de ingestelde parameters genereert de tool rapporten die zowel de informatie uit de geselecteerde datalaag als de beschikbare oppervlaktes weergeven. Deze rapporten worden standaard aangeboden in open formaten zoals PDF of CSV voor verdere verwerking in andere programma's of directe rapportage. 
 Voor gevorderde gebruikers worden bovendien tijdelijke in-memory datalagen gegenereerd. Deze lagen zijn uitsluitend in het werkgeheugen opgeslagen en terug te vinden in een tijdelijke groep binnen het lagenpaneel van QGIS. Ze kunnen verder worden geanalyseerd of gebruikt voor visualisaties binnen QGIS of andere GIS-software (Figuur~\ref{fig:map-after-analyzing}).
 
-\begin{figure}
+\begin{figure}[h]
 \centering
-    \includegraphics[width=0.9\textwidth]{./Tool/maps_after_analyze.png}
+    \includegraphics[width=0.8\textwidth]{./Tool/maps_after_analyze.png}
     \caption{Screenshot van de gegenereerde in-memory lagen na analyse}\label{fig:map-after-analyzing}
 \end{figure}
 
@@ -90,7 +90,7 @@ Naast CSV is er ook de mogelijkheid om resultaten te exporteren naar PDF. Dit fo
 
 Om de opmaak en structuur van de gegenereerde PDF te illustreren, wordt in Figuur~\ref{fig:ontwikkeling-tool_pdfvoorbeeld} een voorbeeld van de output weergegeven.\bigskip
 
-\begin{figure}
+\begin{figure}[h]
     \centering
     \includegraphics[width=0.85\textwidth]{./Tool/pdf-output-example.png}
     \caption{Voorbeeld van de gegenereerde PDF-output}
@@ -105,13 +105,13 @@ De ontwikkelde tool binnen QGIS is ontworpen om gebruikers te begeleiden door ee
 \subsection{Selectie van het analyselaag en zoekgebied}
 De gebruiker selecteert de te analyseren datalaag en het zoekgebied via twee keuzemenu's (Figuur~\ref{fig:tool_first-screen-ingevuld}). Het eerste menu is bedoeld voor de selectie van de datalaag, het tweede voor het zoekgebied. Achterliggend controleert de tool of de geselecteerde laag voor het zoekgebied polygonen of punten bevat. Indien de laag punten bevat, kan de gebruiker een straal instellen (Figuur~\ref{fig:tool_first-screen-straal}) waarmee rond elk punt een cirkel wordt gegenereerd dewelke het zoekgebied definiëren. De tool maakt automatisch een nieuwe in-memory laag aan met deze zoekgebieden. Na bevestiging door de gebruiker controleert de tool of de Coordinate Reference Systems (CRS's) van de kaarten overeenstemmen. Indien niet, wordt elke kaart omgezet naar het CRS van het QGIS-project en ontvangt de gebruiker hiervan een melding.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
     \includegraphics[width=0.9\textwidth]{./Tool/first_gui_screen_ingevuld_v2.png}
     \caption{Screenshot van de ontwikkelde tool met een gedeeltelijk ingevulde lagenselectie voor de analyse}\label{fig:tool_first-screen-ingevuld}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h]
 \centering
     \includegraphics[width=0.9\textwidth]{./Tool/first_gui_screen_ingevuld_met-straal_v2.png}
     \caption{Screenshot van de ontwikkelde tool na bevestiging van de datalagenselectie, waarbij een invoerveld voor de straal van het zoekgebied beschikbaar is}\label{fig:tool_first-screen-straal}
@@ -132,7 +132,7 @@ De tool maakt twee lege in-memory kopieën van de analyselaag: één voor locati
 \subsubsection{Gedeeltelijke analyse}
 Bij een gedeeltelijke analyse selecteert de gebruiker eerst een kolom met lage kardinaliteit uit een gegenereerde lijst. Vervolgens krijgt de gebruiker een overzicht van alle unieke waarden in de geselecteerde kolom en kan de gebruiker selecteren welke waarden moeten worden opgenomen in de analyse (Figuur~\ref{fig:tool_gedeeltelijke-analyse-kolom-selectie}). Bijvoorbeeld: bij een landbouwkaart kan de gebruiker kiezen om enkel grasland en fruitplantages te analyseren. Na deze selectie verloopt de verdere analyse identiek aan de volledige analyse, de analyselaag is dan de gefilterde laag. In de PDF-output wordt aanvullende informatie opgenomen over welke kolommen en locaties niet zijn opgenomen in de analyse.
 
-\begin{figure}
+\begin{figure}[h]
 \centering
     \includegraphics[width=0.9\textwidth]{./Tool/first_gui_screen_gedeeltelijke_analyse_v2.png}
     \caption{Screenshot van de ontwikkelde tool met een gedeeltelijke analyse geselecteerd. De beschikbare analyseopties zijn zichtbaar}\label{fig:tool_gedeeltelijke-analyse-kolom-selectie}

@@ -28,5 +28,18 @@ for latex_file in ${source_files}; do
     -synctex=1 \
     -xelatex \
     "${latex_file}"
+
+     # Genereer glossaries/afkortingen
+    makeglossaries -d "${output_dir}" "$(basename "${latex_file}" .tex)"
+
+    # Tweede pass om referenties te verwerken
+    latexmk \
+      -file-line-error \
+      -interaction=nonstopmode \
+      -output-directory="${output_dir}" \
+      -shell-escape \
+      -synctex=1 \
+      -xelatex \
+      "${latex_file}"
   set +x
 done
