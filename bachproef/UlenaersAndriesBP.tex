@@ -30,13 +30,12 @@
 
 % afkortingen
 \usepackage[acronym, nogroupskip, nopostdot, nonumberlist, toc]{glossaries}
-\makeglossaries
 \setacronymstyle{short-long}  % afkorting eerst, dan volledige naam
 \setglossarystyle{long}
 \renewcommand{\glsnamefont}[1]{\textbf{#1}}
 \glssetwidest{~~~~~~~~~~~~}
 \setlength{\glsdescwidth}{0.7\textwidth}  % meer ruimte voor beschrijving
-\makeglossaries
+\makeglossaries %
 
 
 %% For source code highlighting, requires pygments to be installed
