@@ -1,0 +1,23 @@
+# info dump
+
+- Bart vermang universiteit vlaanderen
+- geothermie seismische trillingen VITO
+- econimische impact CERN
+- lege daken fluvius
+- 24 ha zonnepaneelvelden
+- 1m^2 = 240wp
+- 15% loss
+- veld +- 80% vol
+- ontginningsterreinen zonder 2de leven = optie
+- digitale energie atlas
+- zuidelijke punt belangrijk
+- industriedak 80% vol
+- particulier dak 40% vol
+- connectie clermont
+- AgriPv
+  - fruitbomen
+    - peren
+  - blackberry
+  - strawberry
+  - blueberry
+  - boomgaarden
