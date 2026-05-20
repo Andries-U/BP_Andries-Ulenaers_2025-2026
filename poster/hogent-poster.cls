@@ -289,6 +289,7 @@
     \medskip
     \raggedright\Large Co-promotor: \@cosupervisor
   \fi
+
   \endgroup
 
   \begingroup

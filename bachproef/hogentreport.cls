@@ -32,6 +32,7 @@
 \let\@title\@empty
 \let\@supervisor\@empty
 \let\@cosupervisor\@empty
+% \let\@begeleider\@empty
 \let\@institution\@empty
 \let\@academicyear\@empty
 \let\@examperiod\@empty
@@ -42,6 +43,7 @@
 
 \newcommand{\supervisor}[1]{\def\@supervisor{#1}}
 \newcommand{\cosupervisor}[1]{\def\@cosupervisor{#1}}
+% \newcommand{\begeleider}[1]{\def\@begeleider{#1}}
 \newcommand{\institution}[1]{\def\@institution{#1}}
 \newcommand{\academicyear}[1]{\def\@academicyear{#1}}
 \newcommand{\examperiod}[1]{\def\@examperiod{#1}}
@@ -500,6 +502,10 @@
               \textbf{Co-promotor:}}{%
               \textbf{Co-Supervisor:}} \@cosupervisor\\
           \fi
+        %   \ifx\@begeleider\@empty\else
+        %     \IfLanguageName{dutch}{%
+        %       \textbf{Begeleider:}}{\textbf{Advisor:}} \@begeleider\\
+        %   \fi
           \ifx\@institution\@empty\else
             \IfLanguageName{dutch}{%
               \textbf{Instelling:}}{\textbf{Institution:}} \@institution\\
