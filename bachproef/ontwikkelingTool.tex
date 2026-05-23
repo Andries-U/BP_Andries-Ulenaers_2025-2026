@@ -21,7 +21,7 @@ Het ontwikkelingsproces van de tool is gestart met een overkoepelend doel: het o
 Na de keuze voor QGIS als basissoftwarepakket werd gekozen om de meest recente Long Term Release (LTR) te gebruiken, namelijk versie 3.40 (Bratislava). De selectie van Python als programmeertaal een logisch gevolg. Deze keuze werd namelijk bepaald door de sterke integratie van Python in QGIS via de PyQGIS-bibliotheek,  de flexibiliteit van de programmeertaal en de brede verspreiding ervan binnen de academische wereld. 
 Tijdens de gehele ontwikkelingsfase is de nadruk gelegd op modulariteit en herbruikbaarheid van de broncode, zodat de tool niet enkel voor het huidige project gebruikt kan worden, maar ook als fundament voor toekomstige onderzoeken kan dienen.\bigskip
 
-Tijdens de ontwikkeling van de tool moesten er een afweging worden gemaakt tussen enerzijds de functionaliteit van de tool en anderzijds de kwaliteit van de resultaten. 
+Tijdens de ontwikkeling van de tool werd er een afweging gemaakt tussen enerzijds de functionaliteit van de tool en anderzijds de kwaliteit van de resultaten.
 In dit kader is er aanvankelijk geëxperimenteerd met een Application Programming Interface (API), een gestandaardiseerde methode om gegevens op te vragen bij externe systemen, connectie met Photovoltaic Geographical Information System (PVGIS), een veel gebruikte tool ontwikkeld door de Joint Research Centre (JRC) van de European Commission (EC) om het zonnepotentieel van een locatie te bepalen. 
 Deze integratie zou het mogelijk maken om zonnedata voor de verschillende locaties op te halen en het energiepotentieel toe te voegen aan de analyse. Deze functionaliteit is echter niet volledig geïmplementeerd, omdat de noodzakelijke vereenvoudigingen (i.e. het herleiden van een perceel tot zijn centroïde, ontbrekende gedetailleerde gegevens van de zonneceltechnologieën die gebruikt gaan worden, etc.) de nauwkeurigheid van de resultaten zodanig zouden beïnvloeden dat de kwaliteit van deze resultaten onvoldoende zouden zijn. De code hiervoor is wel behouden zodat, mits implementatie van GUI om de zonnepaneeltechnologie te kunnen kiezen per analyse, deze kan worden toegevoegd aan de analyse indien het ET project in de EMR overgaat naar een volgende fase. Deze functie kan dan een analyse voor het bepalen van de zonneceltechnologie en de uitvoering ervan vergemakkelijken.\bigskip
 \bigskip
@@ -41,7 +41,7 @@ Daarnaast is pydoc, een ingebouwde Python module, gebruikt voor het automatisch 
 Voor het ontwikkelen van de GUI is gekozen voor PyQt5. Deze bibliotheek biedt Python-bindings voor het Qt-framework, een verzameling van cross-platform C++-bibliotheken voor het ontwikkelen van interactieve applicaties. 
 Aangezien de GUI van QGIS eveneens op PyQt5 is gebaseerd, zal de ontwikkelde tool mooi aansluiten bij de QGIS-omgeving. Dankzij de uitgebreide ondersteuning voor GUI-componenten en de naadloze integratie met verschillende besturingssystemen, laat PyQt5 toe om op een efficiënte en gestructureerde manier een gebruiksvriendelijke en functionele interface te bouwen.
 
-\section{Grafische gebruikersinterface (GUI)}\label{sec:ontwikkelingTool_gui}
+\section{Grafische gebruikersinterface}\label{sec:ontwikkelingTool_gui}
 
 De GUI is ontwikkeld met PyQt5 en is ontworpen om gebruikers in staat te stellen eenvoudig analyses uit te voeren. De interface leidt de gebruiker door het proces van dataselectie, analyse-instellingen en resultaatweergave. Er is bijzondere aandacht besteed aan het minimaliseren van de leercurve, zodat ook gebruikers zonder diepgaande technische kennis de tool efficiënt kunnen gebruiken. Dit uit zich in een dropdown met zoekfunctie voor de kaartselectie, het voorstellen van standaardwaarde en het verbergen van informatie en opties die niet van toepassing zijn.
 
@@ -53,7 +53,7 @@ Voor gevorderde gebruikers worden bovendien tijdelijke in-memory datalagen gegen
 \begin{figure}[h]
 \centering
     \includegraphics[width=0.8\textwidth]{./Tool/maps_after_analyze.png}
-    \caption{Screenshot van de gegenereerde in-memory lagen na analyse}\label{fig:map-after-analyzing}
+    \caption{Screenshot van de gegenereerde in-memory lagen na analyse.}\label{fig:map-after-analyzing}
 \end{figure}
 
 
@@ -86,7 +86,7 @@ ID & OBJID & LOCALID & Decl. & UOM & CropID & Crop & Code & Omschrijving & Org &
 \label{tab:ontwikkeling-tool_csv-voorbeeld}
 \end{table}
 
-Naast CSV is er ook de mogelijkheid om resultaten te exporteren naar PDF. Dit formaat biedt een gestandaardiseerde en professionele weergave van de analyseresultaten, ideaal voor rapportage en delen met stakeholders. PDF-bestanden behouden hun opmaak en structuur, ongeacht het apparaat of de software waarmee ze worden geopend, en zijn daardoor ook geschikt voor drukwerk. 
+Naast CSV is er ook de mogelijkheid om resultaten te exporteren naar PDF. Dit formaat biedt een gestandaardiseerde en professionele weergave van de analyseresultaten, ideaal voor rapportering en het delen met stakeholders. PDF-bestanden behouden hun opmaak en structuur, ongeacht het apparaat of de software waarmee ze worden geopend, en zijn daardoor ook geschikt voor drukwerk. 
 
 Om de opmaak en structuur van de gegenereerde PDF te illustreren, wordt in Figuur~\ref{fig:ontwikkeling-tool_pdfvoorbeeld} een voorbeeld van de output weergegeven.\bigskip
 
@@ -125,8 +125,8 @@ De tool maakt twee lege in-memory kopieën van de analyselaag: één voor locati
 \begin{enumerate}
     \item De oppervlakte van elke locatie en de totale oppervlakte van de analyselaag worden berekend.
     \item Kolommen met een lage kardinaliteit (d.w.z. een lage verhouding van unieke waarden ten opzichte van het totaal aantal waarden) worden geïdentificeerd.
-    \item Voor elke kolom met een lage kardinaliteit wordt een overzicht gegenereerd, met per unieke waarde de totale oppervlakte van de waarde en het aandeel ervan in de totale oppervlakte van de analyselaag.
-    \item In de PDF-output wordt een grafische weergave van de locaties opgenomen, samen met randinformatie zoals het aantal percelen. \textcolor{red}{wat nog?}
+    \item Voor elke kolom met lage kardinaliteit wordt een overzicht gegenereerd waarin per unieke waarde de totale oppervlakte en het aandeel daarvan in de totale oppervlakte van de analyselaag worden weergegeven.
+    \item In de PDF-output wordt een grafische weergave van de locaties opgenomen, samen met randinformatie zoals het aantal percelen, het totale aantal datakolommen, het aantal geanalyseerde kolommen en de instellingen voor kardinaliteitsbepaling.
 \end{enumerate}
 
 \subsubsection{Gedeeltelijke analyse}
