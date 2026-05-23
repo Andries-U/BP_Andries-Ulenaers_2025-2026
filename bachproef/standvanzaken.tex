@@ -1,7 +1,7 @@
 \chapter{\IfLanguageName{dutch}{Stand van zaken}{State of the art}}%
 \label{ch:stand-van-zaken}
 
-\section{De Einstein Telescoop}
+\section{De Einstein Telescope}
 De ET, ondanks de naam geen traditionele optische telescoop, is een voorgestelde Europese zwaartekrachtgolfdetector van de derde generatie. Het project is opgenomen in de ESFRI-roadmap van 2021 \autocite{ResearchInfrastructures2021} en bouwt voort op de successen van de tweede generatie detectoren zoals VIRGO (Italië), LIGO (Verenigde Staten) en KAGRA (Japan). De ET streeft naar een gevoeligheid die tot wel tien keer hoger ligt dan die van zijn voorgangers \autocite{aei2026}.
 De locatie van de ET is nog niet definitief vastgesteld. Momenteel worden drie kandidaat-sites onderzocht: de EMR, Sardinië (Italië) en Saksen (Duitsland).
 
@@ -10,14 +10,14 @@ Voor zijn fysieke uitvoering is de ET ontworpen als een ondergronds observatoriu
 \begin{figure}[h]
 \centering
     \includegraphics[width=0.8\textwidth]{./Einstein_Telescope/einstein_telescope_ALT-EN-01_web.png}
-    \caption[Illustratieve voorstelling van de Einstein Telescoop]{Illustratieve voorstelling van de Einstein Telescoop ©T. Balder/Nikhef}\label{fig:infografic-ET}
+    \caption[Illustratieve voorstelling van de Einstein Telescope]{Illustratieve voorstelling van de Einstein Telescope ©T. Balder/Nikhef}\label{fig:infografic-ET}
 \end{figure}
 
 Binnen deze driehoekige configuratie worden drie in elkaar geneste V-vormige detectoren. Figuur~\ref{fig:ET-geneste-driehoeken} illustreert deze opbouw. Hierdoor functioneert de ET in feite als drie onafhankelijke detectoren in één observatorium, in plaats van één enkele detector in een L-vorm zoals bij tweede generatie systemen. Elke hoek van de driehoek herbergt een V-vormige opstelling van twee laserinterferometers, één geoptimaliseerd voor lage frequenties (LF) en één voor hoge frequenties (HF). Deze configuratie zorgt ervoor dat de ET zowel lage als hoge frequenties met maximale gevoeligheid kan meten.\par
 \begin{figure}[h]
 \centering
     \includegraphics[width=0.3\textwidth]{./Einstein_Telescope/Voorbeeld-geneste-V-detectoren.png}
-    \caption[Drie in elkaar geneste detectoren in een driehoekige opstelling zullen de uiteindelijke geometrie van de Einstein Telescoop vormen (Zie Figuur 6.1, p. 93) \autocite{ETDesignReport2020}.]{Drie in elkaar geneste detectoren in een driehoekige opstelling zullen de uiteindelijke geometrie van de Einstein Telescoop vormen (Zie Figuur 6.1, p. 93) \autocite{ETDesignReport2020}.}\label{fig:ET-geneste-driehoeken}
+    \caption[Drie in elkaar geneste detectoren in een driehoekige opstelling zullen de uiteindelijke geometrie van de Einstein Telescope vormen (Zie Figuur 6.1, p. 93) \autocite{ETDesignReport2020}.]{Drie in elkaar geneste detectoren in een driehoekige opstelling zullen de uiteindelijke geometrie van de Einstein Telescope vormen (Zie Figuur 6.1, p. 93) \autocite{ETDesignReport2020}.}\label{fig:ET-geneste-driehoeken}
 \end{figure}
 
 Deze interferometers zijn meetinstrumenten die extreem kleine veranderingen in afstand detecteren door gesplitst laserlicht heen en weer te sturen en de teruggekaatste signalen met elkaar te vergelijken. Op die manier kunnen minuscule lengtevariaties tussen de armen continu worden gemeten. In elke hoek bevinden zich zeer nauwkeurig gepolijste spiegels, die trillingsvrij en cryogeen gekoeld worden opgehangen in vacuümomstandigheden om externe verstoringen te minimaliseren. Laserstralen worden tussen deze spiegels heen en weer gestuurd om verschuivingen met uiterst hoge precisie te registreren. Door de gemeten lengteverschillen te analyseren, kunnen verstoringen in de ruimtetijd worden geïdentificeerd. Op deze manier maakt de ET de detectie van zwaartekrachtgolven mogelijk \autocite{Telescope2026}\autocite[p.~29--48]{ETDesignReport2020}\autocite[p.~29--48]{Branchesi2023}.\bigskip
@@ -61,12 +61,14 @@ De twee voornaamste types GIS-kaarten zijn vector- en rasterkaarten (Figuur~\ref
 Bij vectorkaarten worden ruimtelijke objecten voorgesteld als punten, lijnen of polygonen, gedefinieerd door coördinaten. Elk object wordt opgeslagen als één entiteit in een databank waaraan attributen kunnen worden gekoppeld (Tabel~\ref{tab:fictief_landbouwpercelen}).\autocite{OSLRasterVsVector}
 
 De 2 voornaamste types van GIS-kaarten zijn de vector- en raster-kaarten (Figuur~\ref{fig:VectorVsRaster_OS}). Bij rasterkaarten wordt de kaart onderverdeeld in een rooster waarbij elk vak in dit rooster een lijn in een databank kan krijgen (Tabel~\ref{tab:fictief_zonne_irradiantie}). Afhankelijk van de datakolommen kunnen er verschillende attributen worden toegekend aan deze vakken. Bij vectorkaarten krijgt een punt (voorgesteld door coördinaten) of een verzameling van punten (lijn of polygon) één lijn in een databank en kan er data worden toegewezen aan het punt of de polygon (Tabel~\ref{tab:fictief_landbouwpercelen}).\autocite{OSLRasterVsVector}\par
-\begin{figure}[h]
+
+\begin{figure}[htpb]
 \centering
     \includegraphics[width=0.8\textwidth]{./GIS/RasterAndVector_Ordnance-Survey.png}
     \caption[Illustratieve voorbeelden voor vector- en rasterdata]{Illustratieve voorbeelden voor vector- en rasterdata © 2026 Ordnance Survey Limited}\label{fig:VectorVsRaster_OS}
 \end{figure}
-\begin{table}[h]
+
+\begin{table}[htpb]
     \centering
     \caption{Fictief voorbeeld van GIS rasterdata: zonne-irradiatie}\label{tab:fictief_zonne_irradiantie}
     \begin{tabular}{c c c c c c c c}
@@ -81,7 +83,8 @@ De 2 voornaamste types van GIS-kaarten zijn de vector- en raster-kaarten (Figuur
     \bottomrule
     \end{tabular}
 \end{table}
-\begin{table}[h]
+
+\begin{table}[htpb]
     \centering
     \caption{Fictief voorbeeld van GIS vectordata: landbouwpercelen}\label{tab:fictief_landbouwpercelen}
     \begin{tabular}{c c c c}

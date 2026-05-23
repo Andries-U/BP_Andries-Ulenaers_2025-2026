@@ -37,6 +37,16 @@
 \setlength{\glsdescwidth}{0.7\textwidth}  % meer ruimte voor beschrijving
 \makeglossaries %
 
+% flowcharts
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows, positioning, calc}
+\usepackage{float}
+\usepackage{caption} % Voor betere caption-controle
+
+%minder witruimte
+\renewcommand{\floatpagefraction}{0.9}
+\renewcommand{\textfraction}{0.1}
+
 
 %% For source code highlighting, requires pygments to be installed
 %% Compile with the -shell-escape flag!
