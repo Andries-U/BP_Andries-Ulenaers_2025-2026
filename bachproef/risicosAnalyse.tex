@@ -5,11 +5,11 @@
 \chapter{\IfLanguageName{dutch}{Analyseren van de gebruiksrisico's}{Analyzing the risks of use}}%
 \label{ch:risicosAnalyse}
 
-De ontwikkelde tool biedt ondersteuning bij de analyse van de samenstelling van de energievoorziening voor de ET. Het gebruik van deze tool brengt echter specifieke risico's en valkuilen met zich mee, zowel tijdens het gebruik als bij de interpretatie van de gegenereerde data. In dit hoofdstuk zullen deze risico's en valkuilen worden geïdentificeerd, en zullen mogelijke (toekomstige) oplossingen hiervoor worden geformuleerd.
+De ontwikkelde tool biedt ondersteuning bij de analyse van de samenstelling van de energievoorziening voor de ET. Het gebruik van deze tool brengt echter specifieke risico's en valkuilen met zich mee, zowel tijdens het gebruik als bij de interpretatie van de gegenereerde data. In dit hoofdstuk wordt getracht deze risico's en valkuilen te identificeren, en zullen mogelijke (toekomstige) oplossingen hiervoor worden geformuleerd.
 
 \section{Dubbele telling van locaties}
 
-Omdat de tool niet de mogelijkheid biedt om meerdere kaarten gelijktijdig te analyseren, kan het voorkomen dat dezelfde locatie in de resultaten van verschillende analyses voorkomt. In de praktijk is het echter niet mogelijk dat op éénzelfde locatie bijvoorbeeld zowel een agriPV-installatie als een klassiek zonnepaneelveld wordt geplaatst.
+Omdat de tool niet de mogelijkheid biedt om meerdere kaarten gelijktijdig te analyseren, kan het voorkomen dat dezelfde locatie in de resultaten van verschillende analyses voorkomt. In de praktijk is het echter niet mogelijk dat op eenzelfde locatie bijvoorbeeld zowel een agriPV-installatie als een klassiek zonnepaneelveld wordt geplaatst. Dit kan voorkomen indien een stortplaats zonder restricties ook als landbouwgebied wordt gebruikt.
 
 Dit probleem treedt vooral op wanneer de analyse wordt uitgevoerd op basis van afzonderlijke hoekpunten (i.e. een gelijkaardige analyse met als zoekregio telkens een ander hoekpunt van de ET). In dat geval kan eenzelfde locatie binnen de ingestelde straal van meerdere hoekpunten vallen, waardoor deze meerdere keren wordt meegerekend.
 
@@ -27,6 +27,6 @@ Hoewel dit een nauwkeuriger inzicht zou opleveren in de mate van overlap, maakt 
 De ontwikkelde tool werkt met de voorziene data. Indien er fouten in deze data zitten of indien locaties hier dubbel in zitten zal de analyse ook onbetrouwbaar zijn. Het is dus belangrijk dat de data die wordt gebruikt voor de analyse correct is. Indien dit een groot probleem zou vormen is het eventueel mogelijk om een uitbreiding te maken om dubbele locaties te identificeren. Echter gaat hier het bepalen van prioriteit over welke data te behouden en welke niet een obstakel vormen.
 
 \section{Grensoverschrijdende data}
-Door de grensoverschrijdende ligging van het studiegebied van de ET en de verschillende methoden voor dataverzameling en -classificatie is het niet mogelijk om bepaalde analyses, zoals een uniforme analyse van landbouwgebieden, rechtstreeks over landsgrenzen heen uit te voeren. De onderliggende datasets zijn immers niet consistent opgebouwd. Zo kan één instantie perenplantages als afzonderlijke categorie registreren, terwijl een andere instantie fruitteelt als één geheel beschouwt.\bigskip
+Door de grensoverschrijdende ligging van het studiegebied van de ET en de verschillende methoden voor dataverzameling en -classificatie is het niet mogelijk om bepaalde analyses, zoals bv. een uniforme analyse van landbouwgebieden, rechtstreeks over landsgrenzen heen uit te voeren. De onderliggende datasets zijn immers niet consistent opgebouwd. Zo kan één instantie perenplantages als afzonderlijke categorie registreren, terwijl een andere instantie fruitteelt als één categorie beschouwt. 
 
-Om dergelijke analyses mogelijk te maken, zouden de datasets eerst geharmoniseerd moeten worden, waarbij categorieën en classificaties op elkaar worden afgestemd. Dit proces is echter niet eenduidig en introduceert bijkomende complexiteiten, aangezien het samenvoegen van verschillende classificatiesystemen op zich een afzonderlijke probleemstelling vormt.
+Om dergelijke analyses mogelijk te maken, zouden de datasets eerst geharmoniseerd moeten worden, waarbij categorieën en classificaties op elkaar worden afgestemd. Dit proces is echter niet eenduidig en introduceert bijkomende complexiteiten, aangezien het samenvoegen van verschillende classificatiesystemen op zich een afzonderlijke probleemstelling vormt. Dit zou ook tot een enorm verlies van detail kunnen leiden.
