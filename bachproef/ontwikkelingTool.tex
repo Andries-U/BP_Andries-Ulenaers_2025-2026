@@ -5,40 +5,42 @@
 \chapter{\IfLanguageName{dutch}{Ontwikkeling van de tool}{Development of the Tool}}\label{ch:ontwikkelingTool}
 
 \section{Inleiding}
-Dit hoofdstuk beschrijft de ontwikkeling van de tool die GIS-datasets analyseert naar de behoefte van de ET-onderzoekers binnen een gedefinieerde zoekregio. De ontwikkelde tool kan dienen als startpunt voor directe kwantificatie van het energiepotentieel binnen een zoekgebied of in de toekomst voor het toepassen van Multi-Criteria Decision-Making Analysis (MCDMA) technieken. De focus van dit hoofdstuk ligt op de technische implementatie, de gebruikte ondersteunende packages, de GUI, de mogelijkheden voor data export en de algemene werking van de tool. Daarnaast wordt het ontwikkelingsproces zelf toegelicht, inclusief de keuzes en uitdagingen die tijdens dit proces naar voren kwamen.
+Dit hoofdstuk beschrijft de ontwikkeling van de tool die GIS-datasets analyseert naar de behoefte van de ET-onderzoekers binnen een gedefinieerde of gegenereerde zoekregio. De ontwikkelde tool kan dienen als startpunt voor directe kwantificatie van het energiepotentieel binnen een zoekgebied of in de toekomst voor het toepassen van multi-criteria decision analysis (MCDMA) technieken. De focus van dit hoofdstuk ligt op de technische implementatie, de gebruikte ondersteunende packages, de GUI, de mogelijkheden voor data export en de algemene werking van de tool. Daarnaast wordt het ontwikkelingsproces zelf toegelicht, inclusief de keuzes en uitdagingen die tijdens dit proces naar voren kwamen.
 
 \section{Totstandkoming van de tool}\label{sec:ontwikkelingTool_totstandkoming}
 
 Het ontwikkelingsproces van de tool is gestart met een overkoepelend doel: het ondersteunen van ET-onderzoekers bij het analyseren van GIS-datasets, zodat snel en efficiënt het energiepotentieel voor diverse bronnen in een specifieke regio bepaald kunnen worden. Uit dit doel, aangevuld met bevindingen uit  de interviews, is volgende technische specificatie voortgekomen:
 
-\bigskip
 \noindent
 \begin{quote}
     \textit{De creatie van een generieke en herbruikbare tool die analyses en rapportages op GIS-datasets mogelijk maakt, met een architectuur die toekomstige uitbreidingen mogelijk maakt.}
 \end{quote}
-\bigskip
 
-Na de keuze voor QGIS als basissoftwarepakket werd gekozen om de meest recente Long Term Release (LTR) te gebruiken, namelijk versie 3.40 (Bratislava). De selectie van Python als programmeertaal een logisch gevolg. Deze keuze werd namelijk bepaald door de sterke integratie van Python in QGIS via de PyQGIS-bibliotheek,  de flexibiliteit van de programmeertaal en de brede verspreiding ervan binnen de academische wereld. 
-Tijdens de gehele ontwikkelingsfase is de nadruk gelegd op modulariteit en herbruikbaarheid van de broncode, zodat de tool niet enkel voor het huidige project gebruikt kan worden, maar ook als fundament voor toekomstige onderzoeken kan dienen.\bigskip
+Na de keuze van QGIS als basissoftwarepakket werd de meest recente long term release (LTR) op het moment van aanvang van de ontwikkeling gebruikt, namelijk versie 3.40 (Bratislava). De selectie van Python als programmeertaal volgt logisch uit de sterke integratie met QGIS via de PyQGIS-bibliotheek, de flexibiliteit van de taal en de brede verspreiding ervan binnen de academische wereld. 
+Tijdens de gehele ontwikkelingsfase is de nadruk gelegd op de modulariteit en herbruikbaarheid van de broncode, zodat de tool niet enkel voor het huidige project gebruikt kan worden, maar ook als fundament voor toekomstige onderzoeken kan dienen.
+\bigskip
 
 Tijdens de ontwikkeling van de tool werd er een afweging gemaakt tussen enerzijds de functionaliteit van de tool en anderzijds de kwaliteit van de resultaten.
-In dit kader is er aanvankelijk geëxperimenteerd met een Application Programming Interface (API), een gestandaardiseerde methode om gegevens op te vragen bij externe systemen, connectie met Photovoltaic Geographical Information System (PVGIS), een veel gebruikte tool ontwikkeld door de Joint Research Centre (JRC) van de European Commission (EC) om het zonnepotentieel van een locatie te bepalen. 
-Deze integratie zou het mogelijk maken om zonnedata voor de verschillende locaties op te halen en het energiepotentieel toe te voegen aan de analyse. Deze functionaliteit is echter niet volledig geïmplementeerd, omdat de noodzakelijke vereenvoudigingen (i.e. het herleiden van een perceel tot zijn centroïde, ontbrekende gedetailleerde gegevens van de zonneceltechnologieën die gebruikt gaan worden, etc.) de nauwkeurigheid van de resultaten zodanig zouden beïnvloeden dat de kwaliteit van deze resultaten onvoldoende zouden zijn. De code hiervoor is wel behouden zodat, mits implementatie van GUI om de zonnepaneeltechnologie te kunnen kiezen per analyse, deze kan worden toegevoegd aan de analyse indien het ET project in de EMR overgaat naar een volgende fase. Deze functie kan dan een analyse voor het bepalen van de zonneceltechnologie en de uitvoering ervan vergemakkelijken.\bigskip
+In dit kader is er aanvankelijk geëxperimenteerd met een Application Programming Interface (API), een gestandaardiseerde methode om gegevens op te vragen bij externe systemen, connectie met Photovoltaic Geographical Information System (PVGIS), een veel gebruikte tool ontwikkeld door de Joint Research Centre (JRC) van de European Commission (EC), om het zonnepotentieel van een locatie te bepalen. 
+Deze integratie zou het mogelijk maken om zonnedata voor de verschillende locaties op te halen en het energiepotentieel toe te voegen aan de analyse. Deze functionaliteit is echter niet volledig geïmplementeerd, omdat de noodzakelijke vereenvoudigingen (i.e. het herleiden van een perceel tot zijn centroïde, ontbrekende gedetailleerde gegevens van de zonneceltechnologieën die gebruikt gaan worden, etc.) de nauwkeurigheid van de resultaten zodanig zouden beïnvloeden dat de kwaliteit van deze resultaten onvoldoende zouden zijn. De code hiervoor is wel behouden zodat, mits implementatie van GUI om de zonnepaneeltechnologie te kunnen kiezen per analyse, deze kan worden toegevoegd aan de analyse indien het ET project in de EMR overgaat naar een volgende fase. Deze functie kan dan een analyse voor het bepalen van de zonneceltechnologie en de uitvoering ervan vergemakkelijken.
 \bigskip
 
-De dynamische vereisten vormde een tweede cruciale uitdaging. De tool werd parallel ontwikkeld met de energiestrategie. Hierdoor stonden de analysecriteria niet vast gedurende het proces en moesten deze aangepast worden naarmate nieuwe inzichten verkregen werden of nieuwe mogelijkheden werden geïdentificeerd. Deze situatie benadrukte het belang van een flexibele ontwikkelmethodiek en een nauwe, continue samenwerking met de ET-onderzoekers. Het resultaat is een tool die inspeelt op de veranderende behoeften van de onderzoekers, wat de kans op daadwerkelijk en efficiënt gebruik vergroot.\bigskip
+De dynamische vereisten vormde een tweede cruciale uitdaging. De tool werd parallel ontwikkeld met de energiestrategie. Hierdoor stonden de analysecriteria niet vast gedurende het proces en moesten deze aangepast worden naarmate nieuwe inzichten verkregen werden of nieuwe mogelijkheden werden geïdentificeerd. Deze situatie benadrukte het belang van een flexibele ontwikkelmethodiek en een nauwe, continue samenwerking met de ET-onderzoekers. Het resultaat is een tool die inspeelt op de veranderende behoeften van de onderzoekers, wat de kans op daadwerkelijk en efficiënt gebruik vergroot.
+\bigskip
 
-Om de duurzaamheid en toegankelijkheid van de tool te garanderen, is er aandacht besteed aan de documentatie van de code en leesbaarheid ervan. Elke functie is voorzien van duidelijke commentaar en technische documentatie. Hierdoor is de tool voor andere ontwikkelaars of de ET-onderzoekers begrijpelijk en onderhoudsvriendelijk.\bigskip
+Om de duurzaamheid en toegankelijkheid van de tool te garanderen, is er aandacht besteed aan de documentatie van de code en leesbaarheid van de code. Elke functie in de code is voorzien van duidelijke commentaar en technische documentatie. Hierdoor blijft de tool begrijpelijk en onderhoudsvriendelijk voor andere ontwikkelaars of de ET-onderzoekers.
+\bigskip
 
 \section{Ondersteunende bibliotheken, packages en modules}\label{sec:ontwikkelingTool_ondersteunendePackages}
 
-In deze sectie wordt een overzicht gegeven van de gebruikte Python bibliotheken, packages en modules, met hun respectieve rol binnen de ontwikkeling van de tool. 
+In deze sectie wordt een overzicht gegeven van de gebruikte Python bibliotheken, packages en modules, met hun respectieve rol binnen de ontwikkeling of werking van de tool. 
+\bigskip
 
 Voor het genereren van duidelijke en professionele rapporten is gebruikgemaakt van ReportLab. Deze bibliotheek biedt uitgebreide functionaliteiten voor het creëren van PDF-documenten, wat essentieel is voor het rapporteren van de analyseresultaten. \bigskip
 
-Daarnaast is pydoc, een ingebouwde Python module, gebruikt voor het automatisch genereren van documentatie op basis van docstrings, korte beschrijvende teksten in de code voor documentatiedoeleinden, zodat de codebase toegankelijk en begrijpelijk blijft voor andere ontwikkelaars. Doordat pydoc a.d.h.v. commentaar in code documentatie genereert, is het ook zeer duidelijk wat al dan niet gedocumenteerd is.\bigskip
+Daarnaast werd \textit{pydoc}, een ingebouwde Python module, gebruikt voor het automatisch genereren van documentatie op basis van docstrings, korte beschrijvende teksten in de code voor documentatiedoeleinden, zodat de codebase toegankelijk en begrijpelijk blijft voor andere ontwikkelaars. Doordat pydoc op basis van docstring als commentaar in code documentatie genereert, is het ook zeer duidelijk wat al dan niet gedocumenteerd is. Dit leidt tot vollediger gedocumenteerde code en maakt sneller zichtbaar welke onderdelen nog documentatie missen.\bigskip
 
-Voor het ontwikkelen van de GUI is gekozen voor PyQt5. Deze bibliotheek biedt Python-bindings voor het Qt-framework, een verzameling van cross-platform C++-bibliotheken voor het ontwikkelen van interactieve applicaties. 
+Voor het ontwikkelen van de GUI is gekozen voor \texttt{PyQt5}. Deze bibliotheek biedt Python-bindings voor het Qt-framework, een verzameling van cross-platform C++-bibliotheken voor het ontwikkelen van interactieve applicaties. 
 Aangezien de GUI van QGIS eveneens op PyQt5 is gebaseerd, zal de ontwikkelde tool mooi aansluiten bij de QGIS-omgeving. Dankzij de uitgebreide ondersteuning voor GUI-componenten en de naadloze integratie met verschillende besturingssystemen, laat PyQt5 toe om op een efficiënte en gestructureerde manier een gebruiksvriendelijke en functionele interface te bouwen.
 
 \section{Grafische gebruikersinterface}\label{sec:ontwikkelingTool_gui}
@@ -47,7 +49,7 @@ De GUI is ontwikkeld met PyQt5 en is ontworpen om gebruikers in staat te stellen
 
 \section{Functionaliteit van de tool}\label{sec:ontwikkelingTool_functionaliteit}
 
-De tool analyseert een datalaag binnen een door de gebruiker gekozen of gegenereerd zoekgebied. Op basis van de ingestelde parameters genereert de tool rapporten die zowel de informatie uit de geselecteerde datalaag als de beschikbare oppervlaktes weergeven. Deze rapporten worden standaard aangeboden in open formaten zoals PDF of CSV voor verdere verwerking in andere programma's of directe rapportage. 
+De tool analyseert een datalaag binnen een door de gebruiker gekozen of door de tool gegenereerd zoekgebied. Op basis van de ingestelde parameters genereert de tool rapporten die zowel de informatie uit de geselecteerde datalaag als de beschikbare oppervlaktes weergeven. Deze rapporten worden aangeboden in open formaten zoals PDF of CSV voor verdere verwerking in andere programma's of directe rapportage. 
 Voor gevorderde gebruikers worden bovendien tijdelijke in-memory datalagen gegenereerd. Deze lagen zijn uitsluitend in het werkgeheugen opgeslagen en terug te vinden in een tijdelijke groep binnen het lagenpaneel van QGIS. Ze kunnen verder worden geanalyseerd of gebruikt voor visualisaties binnen QGIS of andere GIS-software (Figuur~\ref{fig:map-after-analyzing}).
 
 \begin{figure}
