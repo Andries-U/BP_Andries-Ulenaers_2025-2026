@@ -43,6 +43,13 @@
 \usepackage{float}
 \usepackage{caption} % Voor betere caption-controle
 
+% todo
+\usepackage[colorinlistoftodos]{todonotes}
+
+
+% TEST sloppy
+\sloppy
+
 %minder witruimte
 \renewcommand{\floatpagefraction}{0.9}
 \renewcommand{\textfraction}{0.1}
@@ -64,6 +71,10 @@
     linenos,
     tabsize=4
 }
+
+% Eigen commando's: \todo{tekst}
+\newcommand{\mytodo}[1]{\textbf{\textcolor{red}{#1}}}
+\newcommand{\td}[1]{\todo[inline, color=green!35]{#1}}
 
 %% Ensure the list of listings is in the table of contents
 \renewcommand\listoflistingscaption{%
@@ -155,6 +166,9 @@
 \input{afkortingen}
 
 \printglossary[type=\acronymtype, title={Lijst van afkortingen}]
+
+% todolijst
+\listoftodos
 
 % Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
 % hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
