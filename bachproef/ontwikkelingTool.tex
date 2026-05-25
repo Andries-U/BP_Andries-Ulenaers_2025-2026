@@ -22,7 +22,7 @@ Tijdens de gehele ontwikkelingsfase is de nadruk gelegd op de modulariteit en he
 
 Tijdens de ontwikkeling van de tool werd er een afweging gemaakt tussen enerzijds de functionaliteit van de tool en anderzijds de kwaliteit van de resultaten.
 In dit kader is er aanvankelijk geëxperimenteerd met een Application Programming Interface (API), een gestandaardiseerde methode om gegevens op te vragen bij externe systemen, connectie met Photovoltaic Geographical Information System (PVGIS), een veel gebruikte tool ontwikkeld door de Joint Research Centre (JRC) van de European Commission (EC), om het zonnepotentieel van een locatie te bepalen. 
-Deze integratie zou het mogelijk maken om zonnedata voor de verschillende locaties op te halen en het energiepotentieel toe te voegen aan de analyse. Deze functionaliteit is echter niet volledig geïmplementeerd, omdat de noodzakelijke vereenvoudigingen (i.e. het herleiden van een perceel tot zijn centroïde, ontbrekende gedetailleerde gegevens van de zonneceltechnologieën die gebruikt gaan worden, etc.) de nauwkeurigheid van de resultaten zodanig zouden beïnvloeden dat de kwaliteit van deze resultaten onvoldoende zouden zijn. De code hiervoor is wel behouden zodat, mits implementatie van GUI om de zonnepaneeltechnologie te kunnen kiezen per analyse, deze kan worden toegevoegd aan de analyse indien het ET project in de EMR overgaat naar een volgende fase. Deze functie kan dan een analyse voor het bepalen van de zonneceltechnologie en de uitvoering ervan vergemakkelijken.
+Deze integratie zou het mogelijk maken om zonnedata voor de verschillende locaties op te halen en het energiepotentieel toe te voegen aan de analyse. Deze functionaliteit is echter niet volledig geïmplementeerd, omdat de noodzakelijke vereenvoudigingen (i.e.\ het herleiden van een perceel tot zijn zwaartepunt, ontbrekende gedetailleerde gegevens van de zonneceltechnologieën die gebruikt gaan worden, etc.) de nauwkeurigheid van de resultaten zodanig zouden beïnvloeden dat de kwaliteit van deze resultaten onvoldoende zouden zijn. De code hiervoor is wel behouden zodat, mits implementatie van GUI om de zonnepaneeltechnologie te kunnen kiezen per analyse, deze kan worden toegevoegd aan de analyse indien het ET project in de EMR overgaat naar een volgende fase. Deze functie kan dan een analyse voor het bepalen van de zonneceltechnologie en de uitvoering ervan vergemakkelijken.
 \bigskip
 
 De dynamische vereisten vormde een tweede cruciale uitdaging. De tool werd parallel ontwikkeld met de energiestrategie. Hierdoor stonden de analysecriteria niet vast gedurende het proces en moesten deze aangepast worden naarmate nieuwe inzichten verkregen werden of nieuwe mogelijkheden werden geïdentificeerd. Deze situatie benadrukte het belang van een flexibele ontwikkelmethodiek en een nauwe, continue samenwerking met de ET-onderzoekers. Het resultaat is een tool die inspeelt op de veranderende behoeften van de onderzoekers, wat de kans op daadwerkelijk en efficiënt gebruik vergroot.
@@ -55,9 +55,118 @@ Voor gevorderde gebruikers worden bovendien tijdelijke in-memory datalagen gegen
 \begin{figure}
 \centering
     \includegraphics[width=0.8\textwidth]{./Tool/maps_after_analyze.png}
-    \caption{Gegenereerde in-memory lagen na analyse. De lagen zijn weergegeven op een OpenStreetMap-achtergrond. Bron: eigen visualisatie in QGIS; basemap: © OpenStreetMap, Licence (ODbL) \url{https://www.openstreetmap.org/copyright} \autocite{OpenStreetMap}.}\label{fig:map-after-analyzing}
+    \caption{Gegenereerde in-memory lagen na analyse. De lagen zijn weergegeven op een OpenStreetMap-achtergrond. Bron: eigen visualisatie in QGIS;\ basemap: © OpenStreetMap, licentie (ODbL) \url{https://www.openstreetmap.org/copyright} \autocite{OpenStreetMap}.}\label{fig:map-after-analyzing}
 \end{figure}
 
+\begin{table}
+    \centering
+    \caption{Attributen en omschrijvingen van de data in de landbouwgebruiksperceelkaart \autocite{vlaanderen_landbouwpercelen_2025}}\label{tab:ontwikkelingTool_landbouwkaart-vlaanderen-attributen}
+    \footnotesize
+    \begin{tabularx}{1.05\textwidth}{@{} >{\raggedright\arraybackslash}l >{\raggedright\arraybackslash}X @{}}
+        \toprule
+        \textbf{Attribuut} & \textbf{Omschrijving} \\
+        \midrule
+        AGPAKEY & Unieke identificatiesleutel van het landbouwgebruiksperceel binnen één campagne \\
+        BT\_OMSCH & Bedrijfstypologie (economische specialisatie) \\
+        BT\_BRON & Bron van de bedrijfstypologie (jaartal berekening of aangegeven specialisatie) \\
+        PRC\_NMR & Perceelsnummer van het perceel in de verzamelaanvraag \\
+        GRAF\_OPP & Grafische oppervlakte (ha, tot 1m² nauwkeurig) \\
+        REF\_ID & Europees verplicht perceelsID. Verandert mee met de verschijningsvorm van het perceel \\
+        GWSCOD\_V & Code voorteelt \\
+        GWSNAM\_V & Naam voorteelt \\
+        GWSCOD\_H & Code hoofdteelt \\
+        GWSNAM\_H & Naam hoofdteelt \\
+        GWSGRPH\_LB & Naam groep hoofdteelt \\
+        GWSCOD\_N & Code eerste nateelt \\
+        CWSNAM\_N & Naam eerste nateelt \\
+        GWSCOD\_N2 & Code tweede nateelt \\
+        GWSNAM\_N2 & Naam tweede nateelt \\
+        AMKM & Code agromilieumaatregel \\
+        AMKM\_LB & Naam agromilieumaatregel \\
+        ECOREGELING (ECOR) & Code ecoregeling \\
+        ECOREGELING\_LB & Naam ecoregeling \\
+        BLS & Code aanplantsubsidie boslandbouwsystemen \\
+        BLS\_LB & Naam aanplantsubsidie boslandbouwsystemen \\
+        GESP\_PM & Gespecialiseerde productiemethode \\
+        GESP\_PM\_LB & Beschrijving gespecialiseerde productiemethode \\
+        BOPAKCOD & Code beheerovereenkomst VLM \\
+        BOPAKCOD\_L(B) & Naam beheerovereenkomst VLM \\
+        BIOCERT & Perceel onder bio-controle bij een bio-controleorgaan (J/N) \\
+        ERO\_NAM & Erosiecode (kleur) van het perceel \\
+        STAT\_BGV & Status Blijvend Grasland (BG) \\
+        MEERJARIG\_GRASLAND (MG) & Status Meerjarig Grasland (MG6 of hoger). Voorbeeld: “MG16 = 16de jaar grasland” \\
+        LANDBSTR & Landbouwstreek waarin het middelpunt van het perceel ligt \\
+        STAT\_AAR & Status Aardappelen, opvolgen rotatieplicht \\
+        PCT\_EKBG & Percentage van het perceel dat ecologisch kwetsbaar blijvend grasland is (range) \\
+        PCT\_WETVEE(N) & Percentage van het perceel dat wetland en/of veengebied is (range) \\
+        PRC\_GEM & Gemeente waarin het middelpunt van het perceel zich bevindt \\
+        PRC\_NIS & NIS-code van de gemeente waarin het middelpunt van het perceel zich bevindt \\
+        X\_REF & X-coördinaat van het middelpunt van het perceel (Lambert) \\
+        Y\_REF & Y-coördinaat van het middelpunt van het perceel (Lambert) \\
+        WGS84\_LG & Lengtegraad van het middelpunt van het perceel (WGS1984) \\
+        WGS84\_BG & Breedtegraad van het middelpunt van het perceel (WGS1984) \\
+        \bottomrule
+    \end{tabularx}
+\end{table}
+
+
+
+\subsection{Verwerking en analyse van vectordata}\label{subsec:dataVerwerking}
+
+Om de analyse die door de tool wordt uitgevoerd te illustreren, wordt hieronder een voorbeeldanalyse besproken.
+Als analyselaag wordt gebruikgemaakt van de data van landbouwgebruikspercelen van het Agentschap Landbouw en Zeevisserij van de Vlaamse overheid \autocite{vlaanderen_landbouwpercelen_2025}.
+Deze dataset werd geselecteerd omdat ze gebruikt wordt bij het onderzoeken van het energiepotentieel van agriPV en beschikt over een uitgebreide documentatie van de attributen.
+Een overzicht van deze attributen is opgenomen in Tabel~\ref{tab:ontwikkelingTool_landbouwkaart-vlaanderen-attributen}.
+De documentatie werd door het agentschap meegeleverd bij de download van de dataset.
+
+Voordat de analyse kan starten, moet eerst een zoekgebied worden gedefinieerd.
+In dit voorbeeld gebeurt dit op basis van een datalaag met de meest waarschijnlijke voorgestelde hoekpunten van de ET.
+Rond deze punten genereert de tool automatisch drie zoekgebieden met een door de onderzoekers gekozen straal van vijf kilometer.
+
+Na het starten van de analyse filtert de tool de analyselaag in twee afzonderlijke datalagen:
+\begin{itemize}
+    \item \textbf{Laag 1:} Percelen die volledig binnen het zoekgebied liggen.
+    \item \textbf{Laag 2:} Percelen die het zoekgebied slechts gedeeltelijk overlappen.
+\end{itemize}
+
+De opsplitsing in deze categorieën werd gemaakt omdat percelen die het zoekgebied slechts gedeeltelijk overlappen bijkomende aandacht vereisen bij het bepalen van hun geschiktheid.
+Percelen die niet aan een van beide voorwaarden voldoen, worden niet verder verwerkt.
+Vervolgens voert de tool op beide lagen dezelfde analysetappen uit:
+
+\begin{enumerate}
+    \item \textbf{Oppervlakteberekening:}
+    
+    Voor elk perceel wordt de oppervlakte berekend.
+    Hoewel deze informatie in de gebruikte dataset reeds beschikbaar is, wordt de oppervlakte opnieuw berekend om onafhankelijk te blijven van de kwaliteit en consistentie van de brondata.
+    Daarnaast weegt de kost (i.e.\ rekenkracht en tijdsverlies) van deze bewerking momenteel niet op tegen de bijkomende complexiteit om bestaande oppervlaktekolommen te identificeren, te valideren en eventueel om te zetten naar een uniforme eenheid (i.e.\ $m^2$, ha, \ldots).
+
+    \item \textbf{Identificatie van kolommen met hoge kardinaliteit:}
+    
+    Aan de hand van vooraf ingestelde drempelwaarden identificeert de tool kolommen met unieke of bijna-unieke waarden.
+    Dergelijke kolommen worden uitgesloten van verdere aggregatie, aangezien zij geen zinvolle groepering toelaten.
+    Deze drempelwaarden zijn momenteel hardcoded in de implementatie via parameters.
+    Hierdoor bestaat echter wel de mogelijkheid om deze waarden in de toekomst als geavanceerde instellingen configureerbaar te maken.
+
+    \item \textbf{Aggregatie per categorie:}
+    
+    Voor elke geselecteerde kolom wordt de data geaggregeerd op basis van unieke waarden.
+    Daarbij worden de volgende statistieken berekend:
+    
+    \begin{itemize}
+        \item de totale oppervlakte van alle percelen binnen elke categorie;
+        \item het aandeel van deze oppervlakte ten opzichte van de totale oppervlakte van de laag.
+        \item het aantal percelen per categorie.
+        \item het aandeel van het aantal percelen ten opzichte van het totaal aantal percelen in de laag.
+    \end{itemize}
+\end{enumerate}
+
+Indien geconfigureerd genereert de tool automatisch een CSV-bestand met alle aangemaakte tabellen, evenals een PDF-rapport.
+Dit rapport bevat zowel een visuele voorstelling van de percelen als de gegenereerde tabellen, zodat de resultaten snel geïnterpreteerd kunnen worden.
+
+De analyse biedt inzicht in de beschikbare oppervlaktes per categorie binnen de aangeleverde data.
+Deze informatie is essentieel voor het inschatten van het potentieel voor zonne-energie, de voornaamste hernieuwbare energiebron binnen het onderzoek.
+Op basis van de resultaten kunnen onderzoekers voor verschillende zonne-energietechnologieën, zoals agriPV of zonnepanelen op stortplaatsen, een schatting maken van de mogelijke opwekkingscapaciteit.
+Door de capaciteit van verschillende paneeltechnologieën uit te drukken in \text{kW/m$^2$} kunnen deze bovendien onderling vergeleken worden.
 
 \section{Data-export}\label{sec:ontwikkelingTool_dataExport}
 
