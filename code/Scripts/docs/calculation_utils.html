@@ -23,22 +23,7 @@
 <td class="section-title" colspan=3>&nbsp;<br><strong class="bigsection">Functions</strong></td></tr>
     
 <tr><td class="decor functions-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
-<td class="singlecolumn"><dl><dt><a name="-add_column_to_layer"><strong>add_column_to_layer</strong></a>(layer: qgis._core.QgsVectorLayer, column_name: str, data_type: PyQt5.QtCore.QVariant.Type, length: int = 255, precision: int = 0) -&gt; tuple[qgis._core.QgsField, int]</dt><dd><span class="code">Adds&nbsp;a&nbsp;new&nbsp;column&nbsp;(field)&nbsp;to&nbsp;the&nbsp;given&nbsp;vector&nbsp;layer.<br>
-&nbsp;<br>
-Args:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;layer&nbsp;(QgsVectorLayer):&nbsp;The&nbsp;vector&nbsp;layer&nbsp;to&nbsp;add&nbsp;the&nbsp;column&nbsp;to.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;column_name&nbsp;(str):&nbsp;The&nbsp;name&nbsp;of&nbsp;the&nbsp;new&nbsp;column.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;data_type&nbsp;(QVariant.Type):&nbsp;The&nbsp;data&nbsp;type&nbsp;of&nbsp;the&nbsp;new&nbsp;column&nbsp;(e.g.,&nbsp;QVariant.String,&nbsp;QVariant.Int).<br>
-&nbsp;&nbsp;&nbsp;&nbsp;length&nbsp;(int,&nbsp;optional):&nbsp;The&nbsp;length&nbsp;of&nbsp;the&nbsp;field&nbsp;(for&nbsp;string&nbsp;types).&nbsp;Defaults&nbsp;to&nbsp;255.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;precision&nbsp;(int,&nbsp;optional):&nbsp;The&nbsp;precision&nbsp;of&nbsp;the&nbsp;field&nbsp;(for&nbsp;numeric&nbsp;types).&nbsp;Defaults&nbsp;to&nbsp;0.<br>
-&nbsp;<br>
-Returns:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;QgsField:&nbsp;The&nbsp;field&nbsp;that&nbsp;was&nbsp;added&nbsp;to&nbsp;the&nbsp;layer.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;<br>
-Raises:<br>
-&nbsp;&nbsp;&nbsp;&nbsp;ValueError:&nbsp;If&nbsp;the&nbsp;layer&nbsp;is&nbsp;not&nbsp;a&nbsp;vector&nbsp;layer.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;Exception:&nbsp;If&nbsp;adding&nbsp;the&nbsp;attribute&nbsp;fails.</span></dd></dl>
- <dl><dt><a name="-check_equality_of_layer_crs_to_wanted_crs"><strong>check_equality_of_layer_crs_to_wanted_crs</strong></a>(layers: List[qgis._core.QgsMapLayer], wanted_crs: qgis._core.QgsCoordinateReferenceSystem) -&gt; bool</dt><dd><span class="code">Check&nbsp;if&nbsp;the&nbsp;CRS&nbsp;of&nbsp;two&nbsp;layers&nbsp;are&nbsp;the&nbsp;same.<br>
+<td class="singlecolumn"><dl><dt><a name="-check_equality_of_layer_crs_to_wanted_crs"><strong>check_equality_of_layer_crs_to_wanted_crs</strong></a>(layers: List[qgis._core.QgsMapLayer], wanted_crs: qgis._core.QgsCoordinateReferenceSystem) -&gt; bool</dt><dd><span class="code">Check&nbsp;if&nbsp;the&nbsp;CRS&nbsp;of&nbsp;two&nbsp;layers&nbsp;are&nbsp;the&nbsp;same.<br>
 &nbsp;<br>
 Args:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;layers&nbsp;(List[QgsMapLayer]):&nbsp;The&nbsp;layers&nbsp;to&nbsp;check.<br>
@@ -205,6 +190,6 @@ Returns:<br>
 <tr><td class="decor data-decor"><span class="code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td><td>&nbsp;</td>
 <td class="singlecolumn"><strong>List</strong> = typing.List<br>
 <strong>Tuple</strong> = typing.Tuple<br>
-<strong>__warningregistry__</strong> = {'version': 461, ('QgsField constructor is deprecated', &lt;class 'DeprecationWarning'&gt;, 350): True}<br>
+<strong>__warningregistry__</strong> = {'version': 266, ('QgsField constructor is deprecated', &lt;class 'DeprecationWarning'&gt;, 350): True}<br>
 <strong>iface</strong> = &lt;qgis._gui.QgisInterface object&gt;</td></tr></table>
 </body></html>
