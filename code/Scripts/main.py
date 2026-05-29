@@ -3,7 +3,7 @@ from reset_module_cache import reload_all_custom_modules
 from generate_docs import generate_docs_for_custom_modules
 from qgis_gui_utils import run_selection_dialog_column_values, select_item_from_gui_list, select_layer_from_available_layers,get_user_input_dialog, show_error_popup
 from calculation_utils import generate_search_areas_layer_around_points_from_points_layer, split_layer_by_search_areas, check_equality_of_layer_crs_to_wanted_crs, split_layer_by_search_areas_processing
-from export_layer_utils import export_layer_to_pdf, export_layer_to_csv, generate_layer_statistics_to_pdf
+from export_layer_utils import export_layer_to_pdf, export_layer_to_csv, generate_layer_statistics_to_pdf_full_analysis, generate_layer_statistics_to_pdf_partial_analysis
 
 from qgis.core import QgsProject, QgsMapLayer, QgsVectorLayer, QgsWkbTypes, QgsLayerTreeGroup
 from qgis.utils import iface
@@ -73,34 +73,6 @@ def run_layer_analysis():
     dialog = LayerStatisticsDialog(selected_area, parent=iface.mainWindow())
     dialog.exec_()
 
-def run_full_layer_analysis_within_search_area(analyze_layer: QgsVectorLayer, search_area_layer: QgsVectorLayer, csv: bool = False, output_folder: str = None, pdf: bool = False):
-    
-    layer_within, layer_intersecting, layer_outside = split_layer_by_search_areas_processing(analyze_layer, search_area_layer)
-    
-    layer_within_with_area = add_area_field_crs_aware(layer_within, field_name=add_area_field_name + "m2")
-    layer_intersecting_with_area = add_area_field_crs_aware(layer_intersecting, field_name=add_area_field_name + "m2")
-
-    select_group_layer(TEMP_GROUP_NAME)
-    if search_area_layer is not None:
-        project.addMapLayer(search_area_layer)
-    if layer_within is not None:
-        project.addMapLayer(layer_within)
-        layer_within.setName(f"{analyze_layer.name()} - Within Search Area")
-    if layer_intersecting is not None:
-        project.addMapLayer(layer_intersecting)
-        layer_intersecting.setName(f"{analyze_layer.name()} - Intersecting Search Area")
-    if layer_outside is not None:
-        project.addMapLayer(layer_outside)
-
-    if csv and output_folder:
-        export_layer_to_csv(layer_within_with_area, output_folder + f"/{analyze_layer.name()}_within_search_area.csv")
-        export_layer_to_csv(layer_intersecting_with_area, output_folder + f"/{analyze_layer.name()}_intersecting_search_area.csv")
-
-    if pdf and output_folder:
-        generate_layer_statistics_to_pdf(layer_within_with_area, output_folder + f"/{analyze_layer.name()}_within_search_area.pdf", area_field=None, cardinality_threshold_value=500, cardinality_ratio_threshold=0.5)
-        generate_layer_statistics_to_pdf(layer_intersecting_with_area, output_folder + f"/{analyze_layer.name()}_intersecting_search_area.pdf", area_field=None, cardinality_threshold_value=500, cardinality_ratio_threshold=0.5)
-
-
 def run_size_analysis():
     selected_area = select_layer_from_available_layers(title="Select the analysis layer", prompt="Select the layer you want to analyze inside the search area:")
 
@@ -146,6 +118,70 @@ def run_size_analysis():
     dialog2 = LayerStatisticsDialog(layer_intersecting, parent=iface.mainWindow(), title="Features Intersecting Search Area")
     dialog2.exec_()
 
+def run_full_layer_analysis_within_search_area(analyze_layer: QgsVectorLayer, search_area_layer: QgsVectorLayer, csv: bool = False, output_folder: str = None, pdf: bool = False):
+    
+    layer_within, layer_intersecting, layer_outside = split_layer_by_search_areas_processing(analyze_layer, search_area_layer)
+    
+    layer_within_with_area = add_area_field_crs_aware(layer_within, field_name=add_area_field_name + "m2")
+    layer_intersecting_with_area = add_area_field_crs_aware(layer_intersecting, field_name=add_area_field_name + "m2")
+
+    select_group_layer(TEMP_GROUP_NAME)
+    if search_area_layer is not None:
+        project.addMapLayer(search_area_layer)
+    if layer_within is not None:
+        project.addMapLayer(layer_within)
+        layer_within.setName(f"{analyze_layer.name()} - Within Search Area")
+    if layer_intersecting is not None:
+        project.addMapLayer(layer_intersecting)
+        layer_intersecting.setName(f"{analyze_layer.name()} - Intersecting Search Area")
+    if layer_outside is not None:
+        project.addMapLayer(layer_outside)
+
+    if csv and output_folder:
+        export_layer_to_csv(layer_within_with_area, output_folder + f"/{analyze_layer.name()}_Full-analysis_within-search-area.csv")
+        export_layer_to_csv(layer_intersecting_with_area, output_folder + f"/{analyze_layer.name()}_Full-analysis_intersecting-search-area.csv")
+
+    if pdf and output_folder:
+        generate_layer_statistics_to_pdf_full_analysis(layer_within_with_area, output_folder + f"/{analyze_layer.name()}_Full-analysis_within-search-area.pdf", area_field=None, cardinality_threshold_value=200, cardinality_ratio_threshold=0.4)
+        generate_layer_statistics_to_pdf_full_analysis(layer_intersecting_with_area, output_folder + f"/{analyze_layer.name()}_Full-analysis_intersecting-search-area.pdf", area_field=None, cardinality_threshold_value=200, cardinality_ratio_threshold=0.4)
+
+def run_partial_layer_analysis_within_search_area(analyze_layer, search_area_layer, csv, output_folder, pdf, column_name, distinct_values):
+
+    layer_within, layer_intersecting, layer_outside = split_layer_by_search_areas_processing(analyze_layer, search_area_layer)
+    
+    # Filter layers to only keep features with distinct values in the specified column
+    if distinct_values and column_name:
+        values_str = ", ".join([f"'{v}'" for v in distinct_values])
+        filter_expression = f'"{column_name}" IN ({values_str})'
+        
+        if layer_within is not None:
+            layer_within.setSubsetString(filter_expression)
+        if layer_intersecting is not None:
+            layer_intersecting.setSubsetString(filter_expression)
+    
+    layer_within_with_area = add_area_field_crs_aware(layer_within, field_name=add_area_field_name + "m2")
+    layer_intersecting_with_area = add_area_field_crs_aware(layer_intersecting, field_name=add_area_field_name + "m2")
+
+    select_group_layer(TEMP_GROUP_NAME)
+    if search_area_layer is not None:
+        project.addMapLayer(search_area_layer)
+    if layer_within is not None:
+        project.addMapLayer(layer_within)
+        layer_within.setName(f"{analyze_layer.name()} - Within Search Area")
+    if layer_intersecting is not None:
+        project.addMapLayer(layer_intersecting)
+        layer_intersecting.setName(f"{analyze_layer.name()} - Intersecting Search Area")
+    if layer_outside is not None:
+        project.addMapLayer(layer_outside)
+
+    if csv and output_folder:
+        export_layer_to_csv(layer_within_with_area, output_folder + f"/{analyze_layer.name()}_Partial_within-search-area.csv")
+        export_layer_to_csv(layer_intersecting_with_area, output_folder + f"/{analyze_layer.name()}_Partial_intersecting-search-area.csv")
+
+    if pdf and output_folder:
+        generate_layer_statistics_to_pdf_partial_analysis(layer_within_with_area, output_folder + f"/{analyze_layer.name()}_Partial_within-search-area.pdf", area_field=None, cardinality_threshold_value=100, cardinality_ratio_threshold=0.2, filtered_column=column_name, included_values=distinct_values)
+        generate_layer_statistics_to_pdf_partial_analysis(layer_intersecting_with_area, output_folder + f"/{analyze_layer.name()}_Partial_intersecting-search-area.pdf", area_field=None, cardinality_threshold_value=100, cardinality_ratio_threshold=0.2, filtered_column=column_name, included_values=distinct_values)
+
 
 def layer_analysis_with_settings():
     print("Running layer analysis with settings...")
@@ -185,6 +221,8 @@ def layer_analysis_with_settings():
 
     if settings.full_analysis:
         run_full_layer_analysis_within_search_area(settings.analyze_layer, search_area_layer, csv=(settings.export_csv), output_folder=settings.output_folder, pdf=(settings.export_pdf))
+    else:
+        run_partial_layer_analysis_within_search_area(settings.analyze_layer, search_area_layer, csv=(settings.export_csv), output_folder=settings.output_folder, pdf=(settings.export_pdf), column_name=settings.column_name, distinct_values=settings.distinct_values)
 
 
 def test_folder():

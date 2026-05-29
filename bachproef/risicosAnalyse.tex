@@ -5,21 +5,24 @@
 \chapter{\IfLanguageName{dutch}{Analyseren van de gebruiksrisico's}{Analyzing the risks of use}}%
 \label{ch:risicosAnalyse}
 
-De ontwikkelde tool biedt ondersteuning bij de analyse van de samenstelling van de energievoorziening voor de ET.\@ Het gebruik van deze tool brengt echter specifieke risico's en valkuilen met zich mee, zowel tijdens het gebruik als bij de interpretatie van de gegenereerde data. In dit hoofdstuk wordt getracht deze risico's en valkuilen te identificeren, en zullen mogelijke (toekomstige) oplossingen hiervoor worden geformuleerd.
+De ontwikkelde tool biedt ondersteuning bij de analyse van de samenstelling van de energievoorziening voor de ET.\@ 
+Het gebruik van deze tool brengt echter specifieke risico's en valkuilen met zich mee, zowel tijdens het gebruik als bij de interpretatie van de gegenereerde data. 
+Daarom is het belangrijk dat deze risico's gekend zijn zodat gebruik van de tool en interpretatie van de bekomen resultaten correct kan gebeuren. In dit hoofdstuk wordt getracht deze risico's en valkuilen te identificeren, en zullen mogelijke (toekomstige) oplossingen hiervoor worden geformuleerd.
 
 \section{Dubbele telling van locaties}
 
-Omdat de tool niet de mogelijkheid biedt om meerdere kaarten gelijktijdig te analyseren, kan het voorkomen dat dezelfde locatie in de resultaten van verschillende analyses voorkomt. In de praktijk is het echter niet mogelijk dat op eenzelfde locatie bijvoorbeeld zowel een agriPV-installatie als een klassiek zonnepaneelveld wordt geplaatst. Dit kan voorkomen indien een stortplaats zonder restricties ook als landbouwgebied wordt gebruikt.
+Omdat de tool niet de mogelijkheid biedt om meerdere kaarten gelijktijdig te analyseren, kan het voorkomen dat dezelfde locatie in de resultaten van verschillende analyses voorkomt. In de praktijk is het echter niet mogelijk dat op eenzelfde locatie bijvoorbeeld zowel een AgriPV-installatie als een klassiek zonnepaneelveld wordt geplaatst. Dit kan bijvoorbeeld voorkomen indien een stortplaats zonder restricties ook als landbouwgebied wordt gebruikt.
+\medskip
 
 Dit probleem treedt vooral op wanneer de analyse wordt uitgevoerd op basis van afzonderlijke hoekpunten (i.e.\ een gelijkaardige analyse met als zoekregio telkens een ander hoekpunt van de ET). In dat geval kan eenzelfde locatie binnen de ingestelde straal van meerdere hoekpunten vallen, waardoor deze meerdere keren wordt meegerekend.
 
-Om dit deels te mitigeren, kan naast de gesplitste analyse ook een volledige analyse worden uitgevoerd. Op die manier kan eenvoudig worden ingeschat hoeveel oppervlakte mogelijks meervoudig geteld wordt. Dit kan benaderend worden berekend als:
+Om dit deels te mitigeren, kan naast de voor elk hoekpunt afzonderlijke analyse ook een analyse met alle drie de hoekpunten worden uitgevoerd. Op die manier kan eenvoudig worden ingeschat hoeveel oppervlakte mogelijks meervoudig geteld wordt. Dit kan benaderend worden berekend als:
 
 \[
 \text{Dubbel getelde oppervlakte} \approx (\text{som van deelanalyses}) - (\text{resultaat volledige analyse})
 \]
 
-Het is wel mogelijk om deze correctie op een meer nauwkeurige manier uit te voeren. Hierbij zou, bij het inladen van een zoeklaag met punten, de analyse per individueel punt kunnen worden uitgevoerd. Aan de resulterende dataset kan vervolgens een extra kolom (of meerdere kolommen) worden toegevoegd die aangeeft binnen het zoekgebied van welk(e) punt(en) een bepaalde locatie valt.
+Het is mogelijk om op een meer nauwkeurige manier te corrigeren. Hierbij zou, na het filteren van de dataset op binnen of snijden van het zoekgebied, een subanalyse per individueel punt kunnen worden uitgevoerd. Aan de dataset kan een extra kolom (of meerdere kolommen) worden toegevoegd die aangeeft binnen het zoekgebied van welk(e) punt(en) een bepaalde locatie valt.
 Hoewel dit een nauwkeuriger inzicht zou opleveren in de mate van overlap, maakt het de interpretatie van de resultaten aanzienlijk complexer en vermindert het de overzichtelijkheid.
 
 \section{Afhankelijkheid van de voorziene data}

@@ -3,22 +3,21 @@
 %%=============================================================================
 
 \chapter{\IfLanguageName{dutch}{Ontwikkeling van de tool}{Development of the Tool}}\label{ch:ontwikkelingTool}
-
 \section{Inleiding}
 
-In dit hoofdstuk wordt de ontwikkeling en werking van de PoC tool besproken die GIS-datasets analyseert binnen een zoekregio.
-De ontwikkelde tool zal dienen als ondersteuning voor het bepalen van het energiepotentieel binnen een zoekgebied. De focus binnen dit hoofdstuk ligt op de werking, technische implementatie, ondersteunende packages, GUI en data export. Daarnaast wordt ook het ontwikkelingsproces toegelicht, inclusief de keuzes en uitdagingen die tijdens dit proces naar voren kwamen.
+In dit hoofdstuk wordt de ontwikkeling en werking van de proof of concept (PoC) tool besproken die GIS-datasets analyseert binnen een zoekregio.
+De ontwikkelde tool zal dienen als ondersteuning voor het bepalen van het energiepotentieel binnen het zoekgebied van de ET. De focus binnen dit hoofdstuk ligt op de werking, technische implementatie, ondersteunende packages, GUI en data export van de tool. Daarnaast wordt ook het ontwikkelingsproces toegelicht, inclusief de keuzes en uitdagingen die tijdens dit proces naar voren kwamen.
 
 \section{Ontwerp en uitgangspunten}\label{sec:ontwikkelingTool_totstandkoming}
 
-Het ontwikkelingsproces vertrok vanuit het doel om ET-onderzoekers te ondersteunen bij het analyseren van GIS-datasets om het energiepotentieel van verschillende energiebronnen en hun verschillende implementatie mogelijkheden binnen een specifieke regio te bepalen.
-Uit dit doel en de resultaten van interviews werd de volgende technische vereiste geformuleerd:
+Het ontwikkelingsproces vertrok vanuit de vraag om ET-onderzoekers te ondersteunen bij het analyseren van GIS-datasets om het energiepotentieel van verschillende energiebronnen en hun verschillende implementatie mogelijkheden binnen een specifieke regio te bepalen.
+Uit dit doel en de resultaten van interviews werden de volgende technische vereisten geformuleerd:
 \begin{quote}
 \textit{De ontwikkeling van een generieke en herbruikbare tool voor snelle GIS-analyse en rapportage, met een architectuur die toekomstige uitbreidingen ondersteunt.}
 \end{quote}
 
 De tool werd, zoals bepaald in Sectie~\ref{sec:verg-tool_selectie-swpakket}, ontwikkeld voor gebruik binnen de QGIS-omgeving met Python als programmeertaal. 
-Er werd gekozen voor de, bij aanvang van het ontwikkelingsproces, meest recente long term release (LTR) versie van QGIS in combinatie met de standaard meegeleverde Python-versie. De LTR-versie is gekozen vanwege de voorkeur op stabiliteit en een gebrek aan behoefte voor nieuwere functionaliteiten. Specifiek is dit QGIS versie 3.40 LTR “Bratislava” en Python versie 3.12.12.\medskip
+Er werd gekozen voor de meest recente long term release (LTR) versie van QGIS, beschikbaar bij aanvang van het ontwikkelingsproces, in combinatie met de standaard meegeleverde Python-versie. De LTR-versie is gekozen vanwege de voorkeur op stabiliteit en een gebrek aan behoefte voor nieuwere functionaliteiten. Specifiek zijn QGIS versie 3.40 LTR “Bratislava” en Python versie 3.12.12 gebruikt.\medskip
 
 Tijdens de ontwikkeling van de tool werd geëxperimenteerd met een connectie naar het photovoltaic geographical information system (PVGIS), een veel gebruikte tool ontwikkeld door het joint research centre (JRC) van de European Commission (EC). Deze connectie zou verlopen via een application programming interface (API), een gestandaardiseerde methode om gegevens op uit te wisselen met externe computersystemen. Met deze connectie zou de tool de mogelijkheid hebben het zonnepotentieel van een locatie te bepalen. 
 Deze functionaliteit werd uiteindelijk niet volledig uitgewerkt vanwege beperkingen in de nauwkeurigheid en bruikbaarheid van de resultaten. Deze beperkingen waren voornamelijk het gevolg van noodzakelijke vereenvoudigingen, zoals de nood om percelen te herleiden naar hun zwaartepunt, waardoor de meerwaarde die PVGIS kan bieden teniet werd gedaan.
@@ -27,13 +26,14 @@ Deze functionaliteit werd uiteindelijk niet volledig uitgewerkt vanwege beperkin
 
 Om de analyse die door de tool wordt uitgevoerd te illustreren, zal hieronder een voorbeeldanalyse besproken worden.
 Als analyselaag wordt gebruikgemaakt van de dataset `Landbouwgebruikspercelen 2025` van het Agentschap Landbouw en Zeevisserij van de Vlaamse overheid \autocite{vlaanderen_landbouwpercelen_2025}.
-Deze dataset werd geselecteerd omdat ze gebruikt wordt bij het onderzoeken van het energiepotentieel van agriPV en beschikt over een duidelijke documentatie van de beschikbare attributen.
-Het volledige overzicht van deze attributen is opgenomen in Appendix~\ref{app:ontwikkelingTool_landbouwkaart-vlaanderen-attributen} een subset van de meest relevante attributen is terug te vinden in Tabel~\ref{tab:ontwikkeling-tool_landb-VL-att-subsec}.
-De documentatie werd door het agentschap meegeleverd bij de dataset.\medskip          
+Deze dataset werd geselecteerd omdat ze gebruikt wordt bij het onderzoeken van het energiepotentieel van AgriPV en beschikt over een duidelijke documentatie van de beschikbare attributen.
+Het volledige overzicht van deze attributen is opgenomen in Appendix~\ref{app:ontwikkelingTool_landbouwkaart-vlaanderen-attributen} een subset van de meest relevante attributen voor deze voorbeeldanalyse is terug te vinden in Tabel~\ref{tab:ontwikkeling-tool_landb-VL-att-subsec}.
+De documentatie omtrent de beschrijving van de attributen werd door het agentschap bij de dataset verstrekt.
+\medskip          
 
 \begin{table}[htbp]
     \centering
-    \caption{Relevante subsectie van attributen uit Appendix~\ref{app:ontwikkelingTool_landbouwkaart-vlaanderen-attributen}}\label{tab:ontwikkeling-tool_landb-VL-att-subsec}
+    \caption{Relevante subsectie van attributen voor de uitgewerkte voorbeeldanalyse uit Appendix~\ref{app:ontwikkelingTool_landbouwkaart-vlaanderen-attributen}}\label{tab:ontwikkeling-tool_landb-VL-att-subsec}
     \footnotesize
     \begin{tabularx}{\textwidth}{@{} >{\raggedright\arraybackslash}l >{\raggedright\arraybackslash}X @{}}
         \toprule
@@ -56,7 +56,7 @@ De documentatie werd door het agentschap meegeleverd bij de dataset.\medskip
 Voordat de analyse kan starten, moet eerst een zoekgebied worden gedefinieerd.
 In dit voorbeeld gebeurt dit op basis van een dataset met de drie meest waarschijnlijke voorgestelde hoekpunten van de ET.\@
 Rond elk van deze punten genereerde de tool één zoekgebied met een straal van, in dit voorbeeld, vijf kilometer.
-Er kan hierna gekozen worden voor een volledige of gedeeltelijke analyse welke beide zijn toegelicht.
+Er kan hierna gekozen worden voor een volledige of gedeeltelijke analyse welke beide in de volgende onderdelen worden toegelicht.
 
 \subsection{Volledige analyse}\label{subsec:volledige-analyse}
 Na het starten van de analyse filtert de tool de analyselaag in twee afzonderlijke datalagen:
@@ -67,7 +67,7 @@ Na het starten van de analyse filtert de tool de analyselaag in twee afzonderlij
 
 De keuze voor opsplitsing in deze twee categorieën werd gemaakt omdat percelen die het zoekgebied slechts gedeeltelijk overlappen bijkomende aandacht vereisen bij het bepalen van hun geschiktheid.
 Percelen die niet aan één van beide voorwaarden voldoen, worden niet verder verwerkt.
-Vervolgens voert de tool op beide lagen dezelfde analyse\-stappen uit:
+Vervolgens voert de tool op beide datalagen dezelfde analyse\-stappen uit:
 
 \begin{enumerate}
     \item \textbf{Oppervlakteberekening:} Voor elk perceel wordt de oppervlakte berekend.
@@ -75,9 +75,9 @@ Vervolgens voert de tool op beide lagen dezelfde analyse\-stappen uit:
     Daarnaast weegt de kost (i.e.\ rekenkracht en tijdsverlies) van deze bewerking momenteel niet op tegen de bijkomende complexiteit om bestaande oppervlakte\-kolommen te identificeren, te valideren en eventueel om te zetten naar een uniforme eenheid (e.g.\ m$^2$, ha, \ldots).
 
     \item \textbf{Identificatie van kolommen met unieke of bijna-unieke waarden:} Aan de hand van drempelwaarden identificeert de tool kolommen met unieke of bijna-unieke waarden (e.g.\ id, oppervlakte, eigenaar, \ldots).
-    Dergelijke kolommen worden uitgesloten van verdere aggregatie, aangezien deze geen zinvolle groepering toelaten en geen waardevolle informatie geven.
+    Dergelijke kolommen worden uitgesloten van verdere verwerking, aangezien deze geen zinvolle groepering toelaten en dus geen waardevolle informatie geven voor de analyse.
     Deze drempelwaarden zijn momenteel vast gedefinieerd in de implementatie via parameters. 
-    In een toekomstige uitbreiding kunnen deze waarden configureerbaar worden gemaakt via instellingen.
+    In een toekomstige uitbreiding kunnen deze waarden eventueel configureerbaar worden gemaakt via instellingen.
 
     \item \textbf{Aggregatie per categorie:} Voor elke kolom die wel groepering toelaat (e.g.\ naam hoofdteelt, naam voorteelt, \ldots) wordt de data geaggregeerd op basis van de beperkte unieke waarden (e.g.\ aardappelen, voedergewassen, \ldots).
     Daarbij worden de volgende statistieken berekend:
@@ -92,31 +92,32 @@ Vervolgens voert de tool op beide lagen dezelfde analyse\-stappen uit:
 
 Een volledige analyse biedt inzicht in de beschikbare oppervlaktes per categorie binnen de dataset.
 Deze informatie is essentieel voor het inschatten van het potentieel voor zonne-energie, de voornaamste hernieuwbare energiebron binnen het onderzoek.
-Op basis van deze resultaten kunnen onderzoekers voor verschillende zonne-energietechnologieën (e.g.\ agriPV, zonnepanelen op stortplaatsen, \ldots) een schatting maken van de mogelijke beschikbare oppervlaktes.
-Door de capaciteit van verschillende paneeltechnologieën uit te drukken in \text{kW/m$^2$} kunnen deze onderling vergeleken worden.
+Op basis van deze resultaten kunnen onderzoekers voor verschillende zonne-energietechnologieën (e.g.\ AgriPV, zonnepanelen op stortplaatsen, \ldots) een schatting maken van de mogelijke beschikbare oppervlaktes.
+Door de mogelijke capaciteit van verschillende zonne-energietechnologieën uit te drukken in \text{kW/m$^2$} kan er ook een schatting van het energiepotentieel gemaakt worden.
 
 \subsection{Gedeeltelijke analyse}\label{subsec:gedeeltelijke-analyse}
-Bij een gedeeltelijke analyse kan de gebruiker zelf bepalen op welke specifieke datakolom de analyse wordt uitgevoerd. Vervolgens krijgt de gebruiker de mogelijkheid om te selecteren welke unieke waarden binnen deze kolom in de analyse worden opgenomen.\td{verwijs fig met vb}\medskip
+Bij een gedeeltelijke analyse kan de gebruiker zelf bepalen op welke specifieke datakolom de analyse wordt uitgevoerd. Vervolgens krijgt de gebruiker de mogelijkheid om te selecteren welke unieke waarden (e.g.\ peren, appels, aardappelen, \ldots) van deze kolom in de analyse worden opgenomen.
+\medskip
 
 Na deze selectie verloopt de analyse op bijna identieke wijze als de volledige analyse zoals beschreven in Sectie~\ref{subsec:volledige-analyse}. Het verschil met de volledige analyse is dat de stap voor het identificeren van unieke en bijna-unieke kolommen wordt overgeslagen aangezien de gebruiker al één te analyseren kolom heeft gekozen. Bij de aggregatie worden ook enkel de door de gebruiker geselecteerde waarden gebruikt.\medskip
 
-Het voordeel van deze analysemethode komt vooral tot uiting als aanvullende of verfijnende analyse na een reeds uitgevoerde volledige analyse. Waar in een eerste globale analyse bijvoorbeeld perenplantages als verder te onderzoeken categorie kunnen worden geïdentificeerd, maakt een daaropvolgende gedeeltelijke analyse het mogelijk om specifiek hierop te filteren. Hierdoor kan een gerichte PDF-rapportage worden gegenereerd die uitsluitend perenplantages bevat en deze ook visueel weergeeft. En kunnen met de in-memory laag exacte percelen worden geïdentificeerd voor verdere uitwerking.
+Het voordeel van deze analysemethode komt vooral tot uiting als aanvullende of verfijnende analyse na een reeds uitgevoerde volledige analyse. Waar in een eerste globale analyse bijvoorbeeld perenplantages als verder te onderzoeken categorie kunnen worden geïdentificeerd, maakt een daaropvolgende gedeeltelijke analyse het mogelijk om specifiek hierop te filteren. Hierdoor kan een gerichte portable document format (PDF) rapportage worden gegenereerd die uitsluitend perenplantages bevat en deze ook visueel weergeeft. Ook kunnen met de in-memory datalagen exacte percelen worden geïdentificeerd voor verdere uitwerking.
 
 \subsection{Resultaten}
-De tool kan zowel een CSV-bestand als een PDF-rapport genereren. Het CSV-bestand bevat een tabel met gefilterde data waar de oppervlaktes aan zijn toegevoegd voor mogelijke verdere analyse.
-Het PDF-rapport bevat zowel een visuele voorstelling van de percelen als de gegenereerde gegroepeerde tabellen, zodat de resultaten snel geïnterpreteerd en gepresenteerd kunnen worden. De gebruiker kan kiezen tussen enkel een PDF-rapport, enkel een CSV-bestand of beide. Een voorbeeld van een PDF-rapport voor een gedeeltelijke analyse op perenplantages wordt weergegeven in Figuur \td{maak de figuur}. Figuur \td{} geeft een voorbeeld van een PDF-rapport voor een volledige analyse op de `landbouwgebruikspercelen 2025'. In Tabel \td{} is een subset van de CSV-output van de volledige analyse weergegeven
+De tool kan zowel een comma-separated values (CSV) bestand als een PDF-rapport genereren. Het CSV-bestand bevat een tabel met de ruwe niet-geaggregeerde gefilterde data waar de oppervlaktes aan zijn toegevoegd voor mogelijke verdere analyse.
+Het PDF-rapport bevat zowel een visuele voorstelling van de percelen als de gegenereerde gegroepeerde tabellen, zodat de resultaten snel geïnterpreteerd en gepresenteerd kunnen worden. De gebruiker kan kiezen tussen enkel een PDF-rapport, enkel een CSV-bestand of beide. Een gedeeltelijk voorbeeld van een PDF-rapport voor een gedeeltelijke analyse op perenplantages wordt weergegeven in Figuur~\ref{fig:partial-anal-pdf-peren}. Figuur~\ref{fig:full-anal-pdf-landbouw} geeft een voorbeeld van een PDF-rapport voor een volledige analyse op de `landbouwgebruikspercelen 2025', zie Appendix~\ref{app:full_anal} voor het volledige PDF-rapport.
 
-\subsection{Resultaten}
-De tool kan een CSV-bestand en/of een PDF-rapport genereren. Het CSV-bestand bevat een tabel met gefilterde data, waaraan de oppervlakte van elk perceel is toegevoegd voor mogelijke verdere analyse.  
-Het PDF-rapport bevat zowel een visuele voorstelling van de percelen als de gegenereerde gegroepeerde tabellen, zodat de resultaten snel geïnterpreteerd en gepresenteerd kunnen worden. De gebruiker kan kiezen tussen enkel een PDF-rapport, enkel een CSV-bestand of beide.
+\begin{figure}[htbp]
+\centering
+    \includegraphics[width=0.8\textwidth]{./Tool/pdf-output-partial-analysis_landbouwgebruikspercelen-peren.png}
+    \caption{Screenshot van een PDF rapport van een gedeeltelijke analyse op `landbouwgebruikspercelen' met filter `Meerjarige fruitteelten \(Peer\)' op kolom `GWSNAM\_H'}\label{fig:partial-anal-pdf-peren}
+\end{figure}
 
-% Een voorbeeld van een PDF-rapport voor een gedeeltelijke analyse op perenplantages wordt weergegeven in Figuur \td{fig:peren_gedeeltelijk}.  
-% Figuur \td{fig:peren_volledig} geeft een voorbeeld van een PDF-rapport van een volledige analyse op de `landbouwgebruikspercelen 2025' dataset.  
-% In Tabel \td{tab:csv_volledig_subset} wordt een subset van de CSV-output van de volledige analyse weergegeven.
-% \ref{fig:deelanalyse_peren_pdf}.
-
-% \section{Verwerkingspipeline voor GIS-data}
-% \td{voeg hier toe hoe alles wordt verwerkt in detail, misschien }
+\begin{figure}[htbp]
+\centering
+    \includegraphics[width=0.8\textwidth]{./Tool/pdf-output-full-analysis_landbouwgebruikspercelen.png}
+    \caption{Screenshot van een PDF rapport van een gedeeltelijke analyse op `landbouwgebruikspercelen' met filter `Meerjarige fruitteelten \(Peer\)' op kolom `GWSNAM\_H'}\label{fig:full-anal-pdf-landbouw}
+\end{figure}
 
 \section{Implementatie van ondersteunende componenten}\label{sec:werking-tool_ondersteunende-packages}
 
@@ -124,14 +125,15 @@ In deze sectie wordt een overzicht gegeven van de gebruikte Python bibliotheken,
 
 Voor het genereren van duidelijke en professionele rapporten is gebruikgemaakt van de ReportLab PDF library \autocite{ReportLab2026}. Deze bibliotheek biedt uitgebreide functionaliteiten voor het creëren van PDF-documenten, wat essentieel is voor het rapporteren van de analyseresultaten.\medskip
 
-Daarnaast werd pydoc \autocite{PSF2026}, een standaard Python module, gebruikt voor het automatisch genereren van documentatie op basis van docstrings, korte beschrijvende teksten in de code voor documentatiedoeleinden, zodat de code toegankelijk en begrijpelijk blijft voor andere ontwikkelaars. Doordat pydoc op basis van docstrings in de vorm van commentaar in de code documentatie genereert, is het ook duidelijk wat al dan niet gedocumenteerd is. Dit leidt tot een vollediger gedocumenteerde code en maakt sneller zichtbaar welke onderdelen nog documentatie missen.\medskip
+Daarnaast is pydoc \autocite{PSF2026}, een standaard Python module, gebruikt voor het automatisch genereren van documentatie op basis van docstrings, korte beschrijvende teksten in de code voor documentatiedoeleinden, zodat de code toegankelijk en begrijpelijk blijft voor andere ontwikkelaars. Doordat pydoc op basis van docstrings in de vorm van commentaar in de code documentatie genereert, is het ook duidelijk wat al dan niet gedocumenteerd is. Dit leidt tot een vollediger gedocumenteerde code, waarin eenvoudig zichtbaar is welke onderdelen nog documentatie missen.
+\medskip
 
 Voor het maken van de GUI is gekozen voor PyQt5 \autocite{RCL2023}. Deze bibliotheek biedt Python-bindings voor het Qt-framework, een verzameling van cross-platform C++-bibliotheken voor het ontwikkelen van interactieve applicaties. 
 Aangezien de GUI van QGIS eveneens op PyQt5 is gebaseerd, zal de ontwikkelde tool mooi aansluiten bij de QGIS-omgeving. Dankzij de uitgebreide ondersteuning voor GUI-componenten en de naadloze integratie met verschillende besturingssystemen, laat PyQt5 toe om op een efficiënte en gestructureerde manier een gebruiksvriendelijke en functionele interface te bouwen.\medskip
 
 
 \section{Grafische gebruikersinterface}
-De GUI is, zoals aangegeven in Sectie~\ref{sec:werking-tool_ondersteunende-packages}, ontwikkeld met PyQt5 en is ontworpen om gebruikers in staat te stellen eenvoudig analyses uit te voeren. De interface leidt de gebruiker door het bepalen van de te analyseren dataset, het zoekgebied, de analyse-instellingen en de resultaatuitgave. Er is bijzondere aandacht besteed aan het minimaliseren van de leercurve, zodat ook gebruikers zonder diepgaande technische kennis de tool makkelijk en correct kunnen gebruiken. Dit uit zich in keuzes als een dropdown met zoekfunctie voor de analyse dataset en zoekgebied selectie, het voorstellen van standaardwaarden en het verbergen van informatie en opties die niet van toepassing zijn. Figuur~\ref{fig:config_flowchart} geeft een flowchart weer die de volledige werking van de GUI voor het configureren van de analyse beschrijft.\medskip
+De GUI is, zoals aangegeven in Sectie~\ref{sec:werking-tool_ondersteunende-packages}, ontwikkeld met PyQt5 en is ontworpen om gebruikers in staat te stellen eenvoudig analyses uit te voeren. De interface leidt de gebruiker door het bepalen van de te analyseren dataset, het zoekgebied, de analyse-instellingen en de resultaatuitgave. Er is bijzondere aandacht besteed aan het minimaliseren van de leercurve bij gebruik van de tool, zodat ook gebruikers zonder diepgaande technische kennis de tool makkelijk en correct kunnen gebruiken. Dit uit zich in keuzes als een dropdown met zoekfunctie voor de analyse dataset en zoekgebied selectie, het voorstellen van standaardwaarden en het verbergen van informatie en opties die niet van toepassing zijn. Figuur~\ref{fig:config_flowchart} geeft een flowchart weer die de volledige werking van de GUI voor het configureren van de analyse beschrijft.\medskip
 
 \begin{figure}[htbp]
     \centering
@@ -208,7 +210,7 @@ De GUI is, zoals aangegeven in Sectie~\ref{sec:werking-tool_ondersteunende-packa
 \end{figure}
 
 \subsection{Selectie van de analyselaag en het zoekgebied}
-De gebruiker selecteert de te analyseren dataset en het zoekgebied via twee keuzemenu's. Na bevestiging van de lagen door de gebruiker controleert de tool of het geselecteerde zoekgebied polygonen of punten bevat. Indien de laag punten geometrie bevat, krijgt de gebruiker een veld om de straal in te stellen waarmee rond elk punt een cirkel wordt gegenereerd dewelke het zoekgebied definieert. De tool maakt automatisch een nieuwe in-memory laag aan met deze zoekgebieden. Na bevestiging door de gebruiker controleert de tool of het Coordinate Reference System (CRS) van beide kaarten overeenstemt. Indien niet, wordt elke kaart omgezet naar het CRS van het QGIS-project en ontvangt de gebruiker hiervan een melding. Figuur~\ref{fig:ontwikkeling-tool_volledige-analyse-ingevuld} toont een screenshot van de ingevulde GUI voor een volledige analyse.\medskip
+De gebruiker selecteert de te analyseren dataset en het zoekgebied via twee keuzemenu's. Na bevestiging van deze keuze door de gebruiker controleert de tool of het geselecteerde zoekgebied polygonen of punten bevat. Indien de zoeklaag punten geometrie bevat, krijgt de gebruiker een veld om de straal in te stellen waarmee rond elk punt een cirkel wordt gegenereerd dewelke het zoekgebied definieert. De tool maakt automatisch een nieuwe in-memory laag aan met deze zoekgebieden. Na bevestiging door de gebruiker controleert de tool of het Coordinate Reference System (CRS) van beide kaarten overeenstemt. Indien niet, wordt elke kaart omgezet naar het CRS van het QGIS-project en ontvangt de gebruiker hiervan een melding. Figuur~\ref{fig:ontwikkeling-tool_volledige-analyse-ingevuld} toont een screenshot van de ingevulde GUI voor een volledige analyse.\medskip
 
 \begin{figure}[htbp]
 \centering
@@ -222,24 +224,27 @@ De gebruiker selecteert de te analyseren dataset en het zoekgebied via twee keuz
     \caption{Screenshot van de ontwikkelde tool met ingevulde parameters voor een gedeeltelijke analyse}\label{fig:ontwikkeling-tool_gedeeltelijke-analyse-ingevuld}
 \end{figure}
 
-\subsection{Type analyse}
-Na bepaling van de analyselaag en het zoekgebied kiest de gebruiker tussen een volledige of gedeeltelijke analyse. Bij keuze voor een gedeeltelijke analyse selecteert de gebruiker via een dropdownmenu de kolom waarop de analyse moet worden uitgevoerd. Vervolgens kan worden bepaald welke waarden uit deze kolom in de analyse worden opgenomen. Indien het aantal mogelijke waarden te groot is, wordt in het keuzevak een melding weergegeven die aangeeft dat er te veel waarden zijn en hoeveel waarden er mogelijk zijn. De grenswaarde is momenteel vastgelegd in de broncode en kan in een toekomstige update als instelling configureerbaar worden gemaakt. Ongeacht het analysetype selecteert de gebruiker het exportformaat (PDF en/of CSV) en de opslaglocatie voor de gegenereerde bestanden. Er worden, ongeacht het gekozen analysetype, per geselecteerd exportformaat twee aparte bestanden aangemaakt: één voor locaties die volledig binnen het zoekgebied vallen, en een tweede voor locaties die de grens van het zoekgebied snijden. Figuur~\ref{fig:ontwikkeling-tool_volledige-analyse-ingevuld} toont een screenshot van een volledig ingevulde GUI voor een volledige analyse.\@ Figuur~\ref{fig:ontwikkeling-tool_gedeeltelijke-analyse-ingevuld} toont een screenshot van een volledig ingevulde GUI voor een gedeeltelijke analyse.\@
+\subsection{Type analyse en export}
+Na bepaling van de analyselaag en het zoekgebied kiest de gebruiker tussen een volledige of gedeeltelijke analyse. Bij keuze voor een gedeeltelijke analyse selecteert de gebruiker via een dropdownmenu de kolom waarop de analyse moet worden uitgevoerd. Vervolgens kan worden bepaald welke waarden uit deze kolom in de analyse worden opgenomen. Omdat dit veel mogelijkheden kan geven is een tekstveld voorzien om de mogelijke waarden te filteren. Ook zijn er knoppen voorzien om alle mogelijke waarden te selecteren of deselecteren, deze selectie is onafhankelijk van de filtering door het tekstveld.
+\medskip
+
+Ongeacht het analysetype selecteert de gebruiker het exportformaat (PDF en/of CSV) en de opslaglocatie voor de gegenereerde bestanden. Er worden, ongeacht het gekozen analysetype, per geselecteerd exportformaat twee aparte bestanden aangemaakt: één voor locaties die volledig binnen het zoekgebied vallen, en een tweede voor locaties die de grens van het zoekgebied snijden. Figuur~\ref{fig:ontwikkeling-tool_volledige-analyse-ingevuld} toont een screenshot van een volledig ingevulde GUI voor een volledige analyse.\@ Figuur~\ref{fig:ontwikkeling-tool_gedeeltelijke-analyse-ingevuld} toont een screenshot van een volledig ingevulde GUI voor een gedeeltelijke analyse.\@
 
 \section{Data-export en outputformaten}
 
 Voor de export van de bekomen ruwe data is gekozen voor het CSV-formaat, een open standaard die breed ondersteund wordt door populaire data-analyseprogramma's zoals Microsoft Excel of Google Sheets, eveneens is dit formaat eenvoudig te gebruiken voor scripting in programmeertalen zoals R of Python. Hierdoor kunnen onderzoekers de geëxporteerde data importeren en verder verwerken in hun vertrouwde omgeving. \medskip
 
-Naast CSV is er ook de mogelijkheid om resultaten te exporteren naar PDF.\@ Dit formaat biedt een professionele weergave van de analyse\-resultaten, ideaal voor rapportering en het delen met stakeholders. PDF-bestanden behouden hun opmaak en structuur, ongeacht het apparaat of de software waarmee ze worden geopend, en zijn daardoor ook uitermate geschikt voor drukwerk. Om de opmaak en structuur van de gegenereerde PDF te illustreren, wordt in Figuur~\ref{fig:ontwikkeling-tool_pdfvoorbeeld} een voorbeeld van de output weergegeven.\medskip
+Naast CSV is er ook de mogelijkheid om resultaten te exporteren naar PDF.\@ Dit formaat biedt een professionele weergave van de analyse\-resultaten, ideaal voor rapportering en het delen met stakeholders. PDF-bestanden behouden hun opmaak en structuur, ongeacht het apparaat of de software waarmee ze worden geopend, en zijn daardoor ook uitermate geschikt voor drukwerk. Een voorbeeld van de opmaak van de PDF-output is te zien in Figuur~\ref{fig:partial-anal-pdf-peren} en Figuur~\ref{fig:full-anal-pdf-landbouw}.\medskip
 
-\begin{figure}[htbp]
-\centering
-    \includegraphics[width=0.9\textwidth]{./Tool/pdf-output-example.png}
-    \caption{Screenshot van een PDF output}\label{fig:ontwikkeling-tool_pdfvoorbeeld}
-\end{figure}
+% \begin{figure}[htbp]
+% \centering
+%     \includegraphics[width=0.9\textwidth]{./Tool/pdf-output-example.png}
+%     \caption{Screenshot van een PDF output}\label{fig:ontwikkeling-tool_pdfvoorbeeld}
+% \end{figure}
 
-Uiteindelijk worden binnen het QGIS project ook de gegenereerde in-memory lagen beschikbaar gesteld binnen een door de tool gegenereerde tijdelijke groep. Deze lagen kunnen door de gebruiker verder worden geanalyseerd of gebruikt voor visualisaties binnen QGIS.\@ Vanuit QGIS kunnen deze datasets geëxporteerd worden naar een ondersteund bestandsformaat voor permanente opslag en eventueel gebruik in andere GIS-toepassingen.
+Uiteindelijk worden in QGIS ook de gegenereerde in-memory lagen beschikbaar gesteld binnen een door de tool gegenereerde tijdelijke groep. Deze lagen kunnen door de gebruiker verder worden geanalyseerd of gebruikt voor visualisaties binnen QGIS.\@ Vanuit QGIS kunnen deze datasets geëxporteerd worden naar een ondersteund bestandsformaat voor permanente opslag en eventueel gebruik in andere GIS-toepassingen.
 
 
-\section{Conclusie}
+\section{Samenvatting van de ontwikkelde tool}
 
 De ontwikkelde tool biedt een flexibele en herbruikbare oplossing voor de analyse van geografische data. Door het gebruik van open standaarden, duidelijke documentatie, integratie met QGIS en een gebruiksvriendelijke GUI is de tool toegankelijk voor eindgebruikers met beperkte GIS- of programmeerkennis. Voor de gebruiker met GIS- of programmeerkennis biedt de tool bovendien de mogelijkheid om de analyses aan te passen en te optimaliseren alsook om verdere analyses uit te voeren op de bekomen data. Dankzij de modulaire opzet en de gebruikte technologieën zijn toekomstige uitbreidingen mogelijk, zoals de integratie van energiepotentieel of geavanceerdere analysemethoden.

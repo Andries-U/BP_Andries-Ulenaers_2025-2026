@@ -32,13 +32,13 @@
 \usepackage{microtype}
 
 % afkortingen
-\usepackage[acronym, nogroupskip, nopostdot, nonumberlist, toc]{glossaries}
+\usepackage[acronym]{glossaries}
 \setacronymstyle{short-long}  % afkorting eerst, dan volledige naam
 \setglossarystyle{long}
 \renewcommand{\glsnamefont}[1]{\textbf{#1}}
 \glssetwidest{~~~~~~~~~~~~}
 \setlength{\glsdescwidth}{0.7\textwidth}  % meer ruimte voor beschrijving
-\makeglossaries %
+\makeglossaries
 
 % flowcharts
 \usepackage{tikz}
@@ -46,8 +46,11 @@
 \usepackage{float}
 \usepackage{caption} % Voor betere caption-controle
 
-% todo
-\usepackage[colorinlistoftodos]{todonotes}
+% % % todo
+% % \usepackage[colorinlistoftodos]{todonotes}
+% % Eigen commando's: \todo{tekst}
+% \newcommand{\mytodo}[1]{\textbf{\textcolor{red}{#1}}}
+% \newcommand{\td}[1]{\todo[inline, color=green!35]{#1}}
 
 % pdf appendix
 \usepackage{pdfpages}
@@ -78,9 +81,7 @@
     tabsize=4
 }
 
-% Eigen commando's: \todo{tekst}
-\newcommand{\mytodo}[1]{\textbf{\textcolor{red}{#1}}}
-\newcommand{\td}[1]{\todo[inline, color=green!35]{#1}}
+
 
 %% Ensure the list of listings is in the table of contents
 \renewcommand\listoflistingscaption{%
@@ -172,11 +173,12 @@
 \listoftables
 
 %\listoflistings
-\glsaddall
+\input{afkortingen}
+\gls{gis}
 \printglossary[type=\acronymtype, title={Lijst van afkortingen}]
 
 % todolijst
-\listoftodos
+% \listoftodos
 
 % Als je een lijst van afkortingen of termen wil toevoegen, dan hoort die
 % hier thuis. Gebruik bijvoorbeeld de ``glossaries'' package.
@@ -236,7 +238,15 @@ De Euregio Maas-Rijn is een kandidaat-locatie voor de Einstein Telescope, een ge
 \chapter{Attribuutbeschrijving van de landbouwgebruikspercelen}
 \input{appendices/landbouwkaarten_vlaanderen_attributen.tex}
 % \section{Bijlage: extra document}
-% \includepdf[pages=-]{bestand.pdf}
+
+\chapter{PDF data exporten}
+
+\section{Voorbeeld PDF output van een volledige analyse op `landbouwgebruikspercelen'}\label{app:full_anal}
+\includepdf[pages=-]{appendices/Landbouwgebruikspercelen_Full-analysis_within-search-area.pdf}
+
+% \section{Voorbeeld PDF output van een gedeeltelijke analyse op `landbouwgebruikspercelen' met filter `Meerjarige fruitteelten \(Peer\)' op kolom `GWSNAM\_H'}
+% \includepdf[pages=-]{appendices/Landbouwgebruikspercelen_Partial_within-search-area.pdf}\label{app:part_anal}
+
 
 %%---------- Backmatter, referentielijst ---------------------------------------
 

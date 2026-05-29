@@ -30,7 +30,7 @@
 <td class="section-title" colspan=3>&nbsp;<br><a name="AnalyzeLayerSettingsDialog">class <strong>AnalyzeLayerSettingsDialog</strong></a>(<a href="PyQt5.QtWidgets.html#QDialog">PyQt5.QtWidgets.QDialog</a>)</td></tr>
     
 <tr><td class="decor title-decor" rowspan=2><span class="code">&nbsp;&nbsp;&nbsp;</span></td>
-<td class="decor title-decor" colspan=2><span class="code"><a href="#AnalyzeLayerSettingsDialog">AnalyzeLayerSettingsDialog</a>(analyze_layers:&nbsp;list,&nbsp;search_area_layers:&nbsp;list&nbsp;=&nbsp;None,&nbsp;search_radius:&nbsp;int&nbsp;=&nbsp;5000,&nbsp;max_distinct_values:&nbsp;int&nbsp;=&nbsp;20,&nbsp;parent=None)<br>
+<td class="decor title-decor" colspan=2><span class="code"><a href="#AnalyzeLayerSettingsDialog">AnalyzeLayerSettingsDialog</a>(analyze_layers:&nbsp;list,&nbsp;search_area_layers:&nbsp;list&nbsp;=&nbsp;None,&nbsp;search_radius:&nbsp;int&nbsp;=&nbsp;5000,&nbsp;max_distinct_values:&nbsp;int&nbsp;=&nbsp;20,&nbsp;max_display_items:&nbsp;int&nbsp;=&nbsp;20,&nbsp;parent=None)<br>
 &nbsp;<br>
 <br>&nbsp;</span></td></tr>
 <tr><td>&nbsp;</td>
@@ -46,11 +46,15 @@
 </dl>
 <hr>
 Methods defined here:<br>
-<dl><dt><a name="AnalyzeLayerSettingsDialog-__init__"><strong>__init__</strong></a>(self, analyze_layers: list, search_area_layers: list = None, search_radius: int = 5000, max_distinct_values: int = 20, parent=None)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
+<dl><dt><a name="AnalyzeLayerSettingsDialog-__init__"><strong>__init__</strong></a>(self, analyze_layers: list, search_area_layers: list = None, search_radius: int = 5000, max_distinct_values: int = 20, max_display_items: int = 20, parent=None)</dt><dd><span class="code">Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</span></dd></dl>
 
 <dl><dt><a name="AnalyzeLayerSettingsDialog-deselect_all"><strong>deselect_all</strong></a>(self)</dt><dd><span class="code">Deselect&nbsp;all&nbsp;checkboxes.</span></dd></dl>
 
+<dl><dt><a name="AnalyzeLayerSettingsDialog-display_grid"><strong>display_grid</strong></a>(self, values)</dt><dd><span class="code">Display&nbsp;values&nbsp;in&nbsp;a&nbsp;grid&nbsp;layout&nbsp;with&nbsp;responsive&nbsp;columns.</span></dd></dl>
+
 <dl><dt><a name="AnalyzeLayerSettingsDialog-exec_"><strong>exec_</strong></a>(self)</dt><dd><span class="code">Override&nbsp;exec_&nbsp;to&nbsp;ensure&nbsp;settings&nbsp;are&nbsp;collected&nbsp;before&nbsp;closing.</span></dd></dl>
+
+<dl><dt><a name="AnalyzeLayerSettingsDialog-filter_distinct_values"><strong>filter_distinct_values</strong></a>(self)</dt><dd><span class="code">Filter&nbsp;distinct&nbsp;values&nbsp;based&nbsp;on&nbsp;search&nbsp;box&nbsp;input.</span></dd></dl>
 
 <dl><dt><a name="AnalyzeLayerSettingsDialog-get_settings"><strong>get_settings</strong></a>(self) -&gt; analyse_layer_settings.AnalyseLayerSettings</dt><dd><span class="code">Return&nbsp;the&nbsp;selected&nbsp;settings&nbsp;as&nbsp;a&nbsp;typed&nbsp;dataclass.</span></dd></dl>
 

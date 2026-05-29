@@ -1,7 +1,8 @@
 from PyQt5.QtWidgets import (
     QDialog, QFileDialog, QVBoxLayout, QHBoxLayout, QLabel, QComboBox,
     QPushButton, QCheckBox, QGroupBox, QLineEdit, QMessageBox,
-    QDoubleSpinBox, QWidget, QRadioButton, QButtonGroup
+    QDoubleSpinBox, QWidget, QRadioButton, QButtonGroup, QGridLayout,
+    QScrollArea
 )
 from PyQt5.QtCore import Qt
 from analyse_layer_settings import AnalyseLayerSettings
@@ -9,7 +10,7 @@ from qgis.core import QgsProject, QgsWkbTypes
 from filtered_item_selector import FilteredItemSelector
 
 class AnalyzeLayerSettingsDialog(QDialog):
-    def __init__(self, analyze_layers: list, search_area_layers: list = None, search_radius: int = 5000, max_distinct_values: int = 20, parent=None):
+    def __init__(self, analyze_layers: list, search_area_layers: list = None, search_radius: int = 5000, max_distinct_values: int = 20, max_display_items: int = 20, parent=None):
         super().__init__(parent)
         self.setWindowTitle("Analysis Settings")
         self.setMinimumWidth(400)
@@ -18,6 +19,7 @@ class AnalyzeLayerSettingsDialog(QDialog):
         layout = QVBoxLayout()
 
         self.max_distinct_values = max_distinct_values
+        self.max_display_items = max_display_items
 
         # Analyze Layer Selector
         self.analyze_layer_selector = FilteredItemSelector(
@@ -173,7 +175,7 @@ class AnalyzeLayerSettingsDialog(QDialog):
 
     def update_distinct_values(self):
         """Update distinct values checkboxes for the selected column."""
-        # Clear existing checkboxes
+        # Clear existing checkboxes and widgets
         for i in reversed(range(self.values_layout.count())):
             widget = self.values_layout.itemAt(i).widget()
             if widget and widget != self.select_all_btn and widget != self.deselect_all_btn:
@@ -188,41 +190,99 @@ class AnalyzeLayerSettingsDialog(QDialog):
         print(f"Getting distinct values for column '{column_name}' in layer '{selected_layer.name()}'...")
 
         column_index = selected_layer.fields().indexFromName(column_name)
-        unique_values = selected_layer.uniqueValues(column_index) if column_index != -1 else []
+        unique_values = sorted([str(v) for v in selected_layer.uniqueValues(column_index)]) if column_index != -1 else []
         
         print("started populating checkboxes...")
-        # Show/hide the distinct values section based on the number of unique values
-        if len(unique_values) < self.max_distinct_values:
-            self.values_group.show()
-            # Add checkboxes for each value
-            self.checkboxes = []
+        self.values_group.show()
+        self.all_values = unique_values  # Store all values for filtering
+        self.checkboxes = []
+
+        # Show/hide buttons and add search bar for many values
+        if len(unique_values) >= self.max_distinct_values:
+            # Show buttons
+            self.select_all_btn.show()
+            self.deselect_all_btn.show()
+            
+            # Add search bar
+            search_label = QLabel("Search:")
+            self.search_box = QLineEdit()
+            self.search_box.setPlaceholderText("Filter values...")
+            self.search_box.textChanged.connect(self.filter_distinct_values)
+            search_layout = QHBoxLayout()
+            search_layout.addWidget(search_label)
+            search_layout.addWidget(self.search_box)
+            self.values_layout.addLayout(search_layout)
+            
+            # Info label
+            self.values_info_label = QLabel(f"Showing results (Total: {len(unique_values)})")
+            self.values_layout.addWidget(self.values_info_label)
+            
+            # Create scrollable area with grid layout
+            scroll_area = QScrollArea()
+            scroll_area.setWidgetResizable(True)
+            scroll_widget = QWidget()
+            self.grid_layout = QGridLayout(scroll_widget)
+            self.grid_layout.setSpacing(5)
+            scroll_area.setWidget(scroll_widget)
+            scroll_area.setMaximumHeight(300)
+            self.values_layout.addWidget(scroll_area)
+            
+            # Store for later use
+            self.filtered_values = unique_values[:self.max_display_items]  # Show first N by default
+            self.display_grid(self.filtered_values)
+        else:
+            # Show/hide buttons for few values
+            self.select_all_btn.show()
+            self.deselect_all_btn.show()
+            
+            # Add checkboxes in vertical layout for few values
             for value in unique_values:
                 checkbox = QCheckBox(str(value))
                 checkbox.setChecked(True)
                 self.values_layout.addWidget(checkbox)
                 self.checkboxes.append(checkbox)
-        else:
-            self.values_group.show()  # Show the group to display the message
-            # Add a message label for too many values
-            message_label = QLabel(f"Too many unique values to display ({len(unique_values)}).")
-            self.values_layout.addWidget(message_label)
-            # Hide the select all/deselect all buttons if there are too many values
-            self.select_all_btn.hide()
-            self.deselect_all_btn.hide()
 
-        # Connect Select All/Deselect All buttons (only if checkboxes exist)
-        if len(unique_values) < 20:
-            self.select_all_btn.show()
-            self.deselect_all_btn.show()
-            self.select_all_btn.clicked.connect(self.select_all)
-            self.deselect_all_btn.clicked.connect(self.deselect_all)
-        else:
-            self.select_all_btn.hide()
-            self.deselect_all_btn.hide()
+        # Connect Select All/Deselect All buttons
+        try:
+            self.select_all_btn.clicked.disconnect()
+            self.deselect_all_btn.clicked.disconnect()
+        except:
+            pass
+        self.select_all_btn.clicked.connect(self.select_all)
+        self.deselect_all_btn.clicked.connect(self.deselect_all)
 
-            # Connect Select All/Deselect All buttons
-            self.select_all_btn.clicked.connect(self.select_all)
-            self.deselect_all_btn.clicked.connect(self.deselect_all)
+    def display_grid(self, values):
+        """Display values in a grid layout with responsive columns."""
+        # Clear existing grid items
+        while self.grid_layout.count():
+            item = self.grid_layout.takeAt(0)
+            if item.widget():
+                item.widget().deleteLater()
+        
+        self.checkboxes = []
+        
+        # Calculate columns based on dialog width (estimate ~150px per column)
+        dialog_width = self.width() if self.width() > 0 else 400
+        num_columns = max(1, (dialog_width - 60) // 150)
+        
+        # Display up to max_display_items in grid
+        for idx, value in enumerate(values[:self.max_display_items]):
+            checkbox = QCheckBox(str(value))
+            checkbox.setChecked(True)
+            self.checkboxes.append(checkbox)
+            row = idx // num_columns
+            col = idx % num_columns
+            self.grid_layout.addWidget(checkbox, row, col)
+        
+        # Update info label
+        if hasattr(self, 'values_info_label'):
+            self.values_info_label.setText(f"Showing {len(values[:self.max_display_items])} of {len(self.all_values)} results")
+    
+    def filter_distinct_values(self):
+        """Filter distinct values based on search box input."""
+        search_text = self.search_box.text().lower()
+        self.filtered_values = [v for v in self.all_values if search_text in v.lower()]
+        self.display_grid(self.filtered_values)
 
     def select_all(self):
         """Select all checkboxes."""

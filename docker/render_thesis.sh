@@ -39,6 +39,7 @@ for latex_file in ${source_files}; do
         -interaction=nonstopmode \
         -output-directory="${output_dir}" \
         -shell-escape \
+        -use-make \
         -synctex=1 \
         -xelatex \
         "${latex_file}"
