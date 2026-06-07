@@ -254,49 +254,84 @@
 %% -----------------------------------------------------------------------------
 %% Titel
 
+% Origineel
+% \renewcommand{\@maketitle}{%
+%   \begingroup
+%   \raggedright\titlefont\color{title}\Large
+%   \textsc{\@course\ \@studyprogramme\ (\@academicyear)}
+%   \endgroup
+
+%   \begingroup
+%   \medskip
+%   \raggedright\titlefont\color{title}\VeryHuge\@title
+
+%   \if\@subtitle\@empty\else
+%     \raggedright\titlefont\Huge\textit{\@subtitle}
+%   \fi
+%   \endgroup
+
+%   \begingroup
+%   \bigskip
+%   \raggedright\huge\textbf{\@author}
+
+%   \if\@email\@empty\else
+%     \medskip
+%     \raggedright\@email
+%   \fi
+%   \endgroup
+
+%   \begingroup
+%   \if\@supervisor\@empty\else
+%     \medskip
+%     \raggedright\Large Promotor: \@supervisor
+%   \fi
+
+%   \if\@cosupervisor\@empty\else
+%     \medskip
+%     \raggedright\Large Co-promotor: \@cosupervisor
+%   \fi
+
+%   \endgroup
+
+%   \begingroup
+%   \bigskip
+%   \raggedright\Large\@institution
+%   \endgroup
+
+%   \bigskip
+% }
+
+% Gekregen van Claude
 \renewcommand{\@maketitle}{%
-  \begingroup
-  \raggedright\titlefont\color{title}\Large
-  \textsc{\@course\ \@studyprogramme\ (\@academicyear)}
-  \endgroup
-
-  \begingroup
-  \medskip
-  \raggedright\titlefont\color{title}\VeryHuge\@title
-
-  \if\@subtitle\@empty\else
-    \raggedright\titlefont\Huge\textit{\@subtitle}
-  \fi
-  \endgroup
-
-  \begingroup
-  \bigskip
-  \raggedright\huge\textbf{\@author}
-
-  \if\@email\@empty\else
-    \medskip
-    \raggedright\@email
-  \fi
-  \endgroup
-
-  \begingroup
-  \if\@supervisor\@empty\else
-    \medskip
-    \raggedright\Large Promotor: \@supervisor
-  \fi
-
-  \if\@cosupervisor\@empty\else
-    \medskip
-    \raggedright\Large Co-promotor: \@cosupervisor
-  \fi
-
-  \endgroup
-
-  \begingroup
-  \bigskip
-  \raggedright\Large\@institution
-  \endgroup
-
+  \noindent
+  \begin{minipage}[t]{0.65\textwidth}
+    % Titel
+    \raggedright\titlefont\color{title}\VeryHuge\@title
+    \if\@subtitle\@empty\else\\[4pt]
+      \raggedright\titlefont\Huge\textit{\@subtitle}
+    \fi
+  \end{minipage}%
+  \hfill
+  \begin{minipage}[t]{0.32\textwidth}
+    \raggedleft % -> Right-align the content in the right column
+    % Cursus, opleiding, jaar
+    {\titlefont\color{title}\Large
+      \textsc{\@course\ \@studyprogramme\ (\@academicyear)}}\\[8pt]
+    % Auteur
+    {\huge\textbf{\@author}}
+    \if\@email\@empty\else\\[4pt]
+      {\normalsize\@email}
+    \fi
+    % Supervisor
+    \if\@supervisor\@empty\else\\[8pt]
+      {\Large Promotor: \@supervisor}
+    \fi
+    \if\@cosupervisor\@empty\else\\[4pt]
+      {\Large Co-promotor: \@cosupervisor}
+    \fi
+    % Instelling
+    \\[8pt]{\Large\@institution}
+  \end{minipage}
   \bigskip
 }
 
@@ -411,7 +446,7 @@
 
 %% Section headers
 \titleformat{\section}
-{\Large\titlefont}
+{\LARGE\titlefont}
 {\bfseries\thesection.\ }
 {0pt}
 {\bfseries\color{title}}

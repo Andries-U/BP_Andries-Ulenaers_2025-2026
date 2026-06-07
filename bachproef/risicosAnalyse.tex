@@ -17,11 +17,9 @@ Omdat de tool niet de mogelijkheid biedt om meerdere kaarten gelijktijdig te ana
 Dit probleem treedt vooral op wanneer de analyse wordt uitgevoerd op basis van afzonderlijke hoekpunten (i.e.\ een gelijkaardige analyse met als zoekregio telkens een ander hoekpunt van de ET). In dat geval kan eenzelfde locatie binnen de ingestelde straal van meerdere hoekpunten vallen, waardoor deze meerdere keren wordt meegerekend.
 
 Om dit deels te mitigeren, kan naast de voor elk hoekpunt afzonderlijke analyse ook een analyse met alle drie de hoekpunten worden uitgevoerd. Op die manier kan eenvoudig worden ingeschat hoeveel oppervlakte mogelijks meervoudig geteld wordt. Dit kan benaderend worden berekend als:
-
 \[
 \text{Dubbel getelde oppervlakte} \approx (\text{som van deelanalyses}) - (\text{resultaat volledige analyse})
 \]
-
 Het is mogelijk om op een meer nauwkeurige manier te corrigeren. Hierbij zou, na het filteren van de dataset op binnen of snijden van het zoekgebied, een subanalyse per individueel punt kunnen worden uitgevoerd. Aan de dataset kan een extra kolom (of meerdere kolommen) worden toegevoegd die aangeeft binnen het zoekgebied van welk(e) punt(en) een bepaalde locatie valt.
 Hoewel dit een nauwkeuriger inzicht zou opleveren in de mate van overlap, maakt het de interpretatie van de resultaten aanzienlijk complexer en vermindert het de overzichtelijkheid.
 

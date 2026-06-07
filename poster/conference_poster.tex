@@ -6,6 +6,10 @@
 
 \documentclass[a0,portrait]{hogent-poster}
 
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{wrapfig}
+
 % Info over de opleiding
 \course{Bachelorproef}
 \studyprogramme{toegepaste informatica}
@@ -15,82 +19,171 @@
 % Info over de bachelorproef
 \title{Ondersteuning van energieplanning via GIS: ontwerp en implementatie van een analysetool voor de Einstein Telescoop}
 % \subtitle{Ondertitel (eventueel)}
-\author{Andries Ulenaers}
+\author{Andries\ Ulenaers}
 \email{andries.ulenaers@student.hogent.be}
-\supervisor{V. Depestele}
-\cosupervisor{Prof. dr. B. Vermang (EnergyVille/UHasselt)}
+\supervisor{V.\ Depestele} 
+\cosupervisor{Prof.\ dr.\ B.\ Vermang\ (EnergyVille/UHasselt)}
 
 % Indien ingevuld, wordt deze informatie toegevoegd aan het einde van de
 % abstract. Zet in commentaar als je dit niet wilt.
 \specialisation{Softwareontwikkeling}
 \keywords{Lambda-calculus, Scheme}
-\projectrepo{https://github.com/user/repo}
+\projectrepo{https://github.com/Andries-U/BP_Andries-Ulenaers_2025-2026}
 \date{\today}
 
 \begin{document}
 
 \maketitle
 
-\begin{abstract}
-Deze bachelorproef onderzoekt hoe een GIS-gebaseerde tool kan bijdragen aan de energieplanning voor de \textbf{Einstein Telescoop (ET)}, een geplande zwaartekrachtgolfdetector in de \textbf{Euregio Maas-Rijn (EMR)}. De ET stelt hoge eisen aan energievoorziening: betrouwbaarheid, trillingsvrijheid, en duurzaamheid, met aandacht voor lokale maatschappelijke draagkracht en innovatieve hernieuwbare bronnen zoals \textbf{Agro-Photovoltaics (AgriPV)}. De tool analyseert geografische datasets om potentiële locaties voor energie-infrastructuur te identificeren, rekening houdend met ecologische beperkingen (bv. Natura2000-gebieden) en grensoverschrijdende data.
-\end{abstract}
+% \begin{abstract}
+% Deze bachelorproef onderzoekt hoe een GIS-gebaseerde tool kan bijdragen aan de energieplanning voor de \textbf{Einstein Telescoop (ET)}, een geplande zwaartekrachtgolfdetector in de \textbf{Euregio Maas-Rijn (EMR)}. De ET stelt hoge eisen aan energievoorziening: betrouwbaarheid, trillingsvrijheid, en duurzaamheid, met aandacht voor lokale maatschappelijke draagkracht en innovatieve hernieuwbare bronnen zoals \textbf{Agro-Photovoltaics (AgriPV)}. De tool analyseert geografische datasets om potentiële locaties voor energie-infrastructuur te identificeren, rekening houdend met ecologische beperkingen (bv. Natura2000-gebieden) en grensoverschrijdende data.
+% \end{abstract}
+
+{\color{black}\hrule height 1pt width \hsize}
 
 \begin{multicols}{2}
-
 \section{Inleiding}
-De \textbf{Einstein Telescoop (ET)} is een toekomstige ondergrondse zwaartekrachtgolfdetector die in de \textbf{Euregio Maas-Rijn (EMR)} zou kunnen worden gebouwd. Een cruciale uitdaging is het ontwerpen van een \textbf{duurzame, trillingsvrije energievoorziening} die voldoet aan de extreme eisen van de ET. Deze thesis presenteert een \textbf{GIS-gebaseerde analysetool} die onderzoekers ondersteunt bij het evalueren van locaties voor energiebronnen zoals zonne-energie (AgriPV, drijvende panelen) en geothermie, met inachtneming van:
+
+\noindent
+\begin{minipage}[t]{0.62\columnwidth}
+
+De \textbf{Einstein Telescope (ET)} is een toekomstige, ultragevoelige zwaartekrachtgolfdetector die mogelijk in de Euregio Maas-Rijn (EMR) (Figuur~\ref{fig:einstein-telescope}) wordt gebouwd. Het gebruik van de telescoop vereist \textbf{veel energie}. Ook stelt de onderzoeksgroep hoge eisen aan \textbf{betrouwbaarheid}, \textbf{duurzaamheid} en \textbf{trillingsvrijheid}.
+
+In dit onderzoek wordt een \textbf{GIS-analysetool} ontwikkeld die onderzoekers ondersteunt bij het \textbf{analyseren} van \textbf{geografische data}, zoals landbouwgebieden, stortplaatsen en waterlichamen. Hierdoor kunnen onderzoekers snel en nauwkeurig bepalen waar en hoeveel \textbf{capaciteit} voor duurzame \textbf{energiebronnen} beschikbaar is, bijvoorbeeld voor zonnepanelen op landbouwgrond of wateroppervlakken.
+
+\end{minipage}\hfill
+\begin{minipage}[t]{0.32\columnwidth}
+    \vspace{0pt}
+    \centering
+    \includegraphics[width=\linewidth]{../graphics/Tool/search-area_20260523_v2.png}
+    \captionof{figure}{Voorgesteld zoekgebied (lichtblauw) voor de locatie van de ET in de EMR}\label{fig:einstein-telescope}
+\end{minipage}
+
+\section{Achtergrond}
+
+% De Einstein Telescope zal een grote impact hebben, zowel wetenschappelijk als regionaal. Op wetenschappelijk vlak biedt het project nieuwe inzichten in zwaartekrachtgolven, fundamentele natuurkunde en gerelateerde technologische ontwikkelingen. Voor de Euregio Maas-Rijn brengt de komst van de Einstein Telescope onder andere de volgende voordelen met zich mee:
+
+% \begin{itemize}
+%     \item \textbf{Economische groei}: jobcreatie en technologische innovatie.
+%     \item \textbf{Maatschappelijke impact}: meer bedrijvigheid in stille landerlijke regio.
+% \end{itemize}
+\begin{wrapfigure}{r}{0.25\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{../graphics/Einstein_Telescope/einstein_telescope_ALT-EN-01_web.png}
+    \captionof{figure}{Illustratieve voorstelling van de Einstein Telescope ©T. Balder/Nikhef}
+\end{wrapfigure}
+
+
+De Einstein Telescope zal een grote impact hebben:
+
 \begin{itemize}
-    \item Grensoverschrijdende datasets (België, Nederland, Duitsland).
-    \item Ecologische beperkingen (bv. Natura2000-gebieden).
-    \item Maatschappelijke criteria (lokaal draagvlak).
+    \item \textcolor{hogent-darkgreen}{\textbf{Wetenschappelijk}}:
+    \begin{itemize}
+        \item nieuwe inzichten in \textbf{zwaartekrachtgolven}.
+        \item beter begrip \textbf{fundamentele natuurkunde}
+        \item andere gerelateerde en ongerelateerde \textbf{technologische ontwikkelingen}
+    \end{itemize}
+    \item \textcolor{hogent-pink}{\textbf{Regionaal}}:
+    \begin{itemize}
+        \item \textbf{Economische groei}: jobcreatie en technologische innovatie
+        \item \textbf{Maatschappelijke impact}: meer bedrijvigheid in een stille landerlijke regio
+    \end{itemize}
+\end{itemize}
+\medskip
+
+Om de Einstein Telescope naar de EMR-regio te halen, moet een haalbaar energie\-plan worden voorgelegd. Dit plan moet rekening houden met verschillende aspecten:
+\begin{itemize}
+    \item \textcolor{hogent-ochre}{\textbf{Technische eisen}}: trillingsvrije en duurzame energie.
+    \item \textcolor{hogent-purple}{\textbf{Ecologische beperkingen}}: Natura 2000-gebieden en verantwoord landgebruik.
+    \item \textcolor{hogent-lightgreen}{\textbf{Maatschappelijke wensen}}: lokale betrokkenheid en innovatieve oplossingen.
 \end{itemize}
 
-\section{Methodologie}
-De tool is ontwikkeld in \textbf{QGIS} met \textbf{PyQGIS} en biedt:
-\begin{itemize}
-    \item \textbf{Dynamische zoekgebieden}: Flexibele straal of polygoonselectie rond ET-hoekpunten.
-    \item \textbf{Gedeeltelijke/volledige analyses}: Filteren op specifieke gewassen (bv. fruitteelt voor AgriPV).
-    \item \textbf{Exportopties}: CSV (voor verdere analyse) en PDF (voor rapportage).
-\end{itemize}
-De workflow omvat:
+\section{Methode}
+
+Voor de ontwikkeling van de analysetool werden vier fasen doorlopen:
+
 \begin{enumerate}
-    \item Selectie van datalagen (bv. landbouwpercelen, beschermde gebieden).
-    \item Definiëren van zoekgebied (cirkel of polygoon).
-    \item Keuze voor volledige of gefilterde analyse.
-    \item Genereren van in-memory lagen en export van resultaten.
+    \item \textcolor{hogent-brown}{\textbf{Vereistenanalyse}}: identificatie van behoeften onderzoekers en benodigde datasets.
+    
+    \item \textcolor{hogent-grey}{\textbf{Vergelijking van GIS-tools}}: evalueren geschiktheid GIS-oplossingen.
+    
+    \item \textcolor{hogent-yellow}{\textbf{Ontwikkeling van een proof-of-concept}}:
+    % \begin{itemize}
+    %     \item \textbf{Genereren} hoekpunten van de Einstein Telescope.
+    %     \item \textbf{Filteren} van datasets op basis van onderzoeksgebied en gebruikersvereisten.
+    %     \item \textbf{Visualiseren} en \textbf{exporteren} van resultaten.
+    % \end{itemize}
+    
+    \item \textcolor{hogent-orange}{\textbf{Risicoanalyse}}: identificatie van beperkingen en risico's
 \end{enumerate}
 
+
 \section{Resultaten}
-De tool produceert:
-\begin{itemize}
-    \item \textbf{In-memory GIS-lagen} voor visualisatie in QGIS (Figuur \ref{fig:memory_layers}).
-    \item \textbf{CSV-bestanden} met gekwantificeerde data (bv. oppervlakte per gewas).
-    \item \textbf{PDF-rapporten} met statistische samenvattingen (Tabel \ref{tab:csv_example}).
-\end{itemize}
+
+
+\begin{enumerate}
+    \item \textbf{Selectie QGIS} als basis: open-source, krachtige GIS-functionaliteiten, en uitgebreide Python-integratie.
+    \item \textbf{Proof-of-concept} tool ontwikkeld met functionaliteiten voor:
+    \begin{itemize}
+        \item \textbf{Genereren zoekgebied} met instelbare straal rond hoekpunten van de ET.\@
+        \item \textbf{Berekenen oppervlakte} van percelen binnen het zoekgebied.
+         \item \textbf{Volledige analyse}: geeft een overzicht van alle categorieën binnen een dataset, inclusief oppervlakte per categorie. Ideaal om een \textbf{algemeen beeld} van de dataset en mogelijkheden te krijgen.
+        \item \textbf{Gedeeltelijke analyse}: filtert de dataset op \textbf{specifieke waarden}, zoals landbouwpercelen met een bepaald type teelt. Ideaal om gericht te zoeken naar specifieke locaties.
+        \item \textbf{Export analyseresultaten} via:
+            \begin{itemize}
+                \item \textbf{PDF-rapporten} met kaarten en tabellen, 
+                \item \textbf{QGIS-datalagen} 
+                \item \textbf{CSV-bestanden} met ruwe data.
+            \end{itemize}
+    \end{itemize}
+    \item \textbf{Identificatie beperkingen en risico's} zoals dubbele telling en beperkingen door datakwaliteit
+
+\end{enumerate}
+
+% De proof-of-concept tool heeft twee types van analyses:
+% \begin{itemize}
+%     \item \textbf{Volledige analyse}: geeft een overzicht van alle categorieën binnen een dataset, inclusief oppervlakte per categorie. Ideaal om een algemeen beeld van de dataset en mogelijkheden te krijgen.
+%     \item \textbf{Gedeeltelijke analyse}: filtert de dataset op specifieke waarden, zoals landbouwpercelen met een bepaald type teelt. Ideaal om gericht te zoeken naar specifieke locaties.
+% \end{itemize}
 
 \begin{center}
-  \captionsetup{type=figure}
-  \includegraphics[width=0.9\linewidth]{../graphics/Tool/maps_after_analyze.png} % Vervang met je eigen afbeelding (bv. Figuur 6.1 of 6.2)
-  \captionof{figure}{\textbf{Voorbeeld van in-memory lagen} gegenereerd door de tool: interactieve kaart met geanalyseerde percelen binnen het zoekgebied (bron: eigen visualisatie in QGIS).}
-  \label{fig:memory_layers}
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../graphics/Tool/gui-screen_volledige-analyse_V2.png}
+        \captionof{figure}{Illustratieve voorstelling van de Einstein Telescope ©T. Balder/Nikhef}
+    \end{minipage}%
+    \hspace{1cm}
+    \begin{minipage}{0.45\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../graphics/Tool/maps_after_analyze.png}
+        \captionof{figure}{Illustratieve voorstelling van de Einstein Telescope ©T. Balder/Nikhef}
+    \end{minipage}
 \end{center}
 
-\section{Conclusies}
-De ontwikkelde tool:
-\begin{itemize}
-    \item \textbf{Vereenvoudigt} de analyse van grensoverschrijdende GIS-datasets.
-    \item \textbf{Ondersteunt} besluitvorming voor duurzame energieplanning.
-    \item \textbf{Is uitbreidbaar} voor toekomstige functionaliteiten (bv. energiepotentieelberekeningen).
-\end{itemize}
-Beperkingen omvatten afhankelijkheid van datakwaliteit en handmatige controle op dubbele telling van locaties.
 
-\section{Toekomstig Onderzoek}
-Mogelijke uitbreidingen:
+\section{Conclusie}
+
+Dit onderzoek toont aan dat open-source GIS-tools zoals QGIS, gecombineerd met Python, krachtige oplossingen kunnen bieden voor complexe specifieke ruimtelijke vraagstukken. De ontwikkelde tool:
+
 \begin{itemize}
-    \item Integratie van \textbf{energieproductiemodellen} (bv. PVGIS API).
-    \item Toepassing van \textbf{Multi-Criteria Decision Analysis (MCDA)}.
-    \item Harmoniseringsmethoden voor grensoverschrijdende datasets.
+    \item ondersteunt Einstein Telescope-onderzoekers bij het identificeren van geschikte locaties voor duurzame energieproductie;
+    \item maakt geografische analyses toegankelijk voor gebruikers met beperkte GIS expertise.
+    \item vormt een basis voor mogelijke toekomstige uitbreidingen
+    \begin{itemize}
+        \item Integratie van \textbf{energiepotentieelberekeningen}
+        \item Implementatie van \textbf{multi-criteria-analyses} waarin objectieve gegevens met subjectieve criteria afwegen
+    \end{itemize}
 \end{itemize}
+
+
+
+% Tijdens het onderzoek werden bovendien enkele belangrijke inzichten opgedaan:
+
+% \begin{itemize}
+%     \item Samenwerking met stakeholders, waaronder onderzoekers en overheden, is essentieel voor een succesvol resultaat.
+%     \item Flexibiliteit in de software is noodzakelijk omdat vereisten tijdens het project kunnen evolueren.
+%     \item Het expliciet benoemen van beperkingen en risico's, zoals datakwaliteit en mogelijke dubbele tellingen, is belangrijk voor realistische verwachtingen en correcte interpretatie van resultaten.
+% \end{itemize}
 
 \end{multicols}
 
